@@ -7,7 +7,7 @@ const lato = Lato({
   subsets: ["latin"],
   variable: "--font-lato",
   display: "swap",
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
   fallback: ["system-ui", "arial"],
 });
