@@ -11,11 +11,13 @@ const FeaturedProject = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=70"
           alt="Featured Project Background"
           fill
           className="object-cover"
-          priority
+          sizes="100vw"
+          quality={75}
+          priority={false}
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0e2a47] via-[#0e2a47]/60 to-transparent z-10" />

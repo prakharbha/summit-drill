@@ -18,8 +18,16 @@ const Discovery = () => {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
+            aria-label="Background video showing Summit Drilling operations"
           >
             <source src="/videos/hero-background.mp4" type="video/mp4" />
+            <track
+              kind="captions"
+              srcLang="en"
+              src="/videos/hero-background.vtt"
+              label="English captions"
+              default
+            />
           </video>
           {/* Base Dark Overlay */}
           <div className="absolute inset-0 bg-black/40" />
@@ -125,6 +133,9 @@ const Discovery = () => {
             alt="Background"
             fill
             className="object-cover"
+            sizes="100vw"
+            quality={75}
+            priority={false}
           />
           <div className="absolute inset-0 bg-blue-900/90 mix-blend-multiply" />
         </div>

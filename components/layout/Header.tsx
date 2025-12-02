@@ -71,13 +71,13 @@ const Header = () => {
             </Link>
 
             <div className="flex items-center gap-4 border-l border-white/30 pl-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on LinkedIn">
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on Facebook">
                 <FaFacebookF className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on Instagram">
                 <FaInstagram className="w-4 h-4" />
               </a>
             </div>
@@ -291,13 +291,13 @@ const Header = () => {
 
                 {/* Mobile Social Icons */}
                 <div className="flex items-center gap-8 mt-6 pt-6 border-t border-gray-200 justify-center">
-                  <a href="https://linkedin.com" className="text-gray-600 hover:text-sky-600 transition-colors">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
                     <FaLinkedinIn className="w-6 h-6" />
                   </a>
-                  <a href="https://facebook.com" className="text-gray-600 hover:text-sky-600 transition-colors">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on Facebook">
                     <FaFacebookF className="w-6 h-6" />
                   </a>
-                  <a href="https://instagram.com" className="text-gray-600 hover:text-sky-600 transition-colors">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on Instagram">
                     <FaInstagram className="w-6 h-6" />
                   </a>
                 </div>
