@@ -35,7 +35,7 @@ const Header = () => {
     { name: "Health & Safety", href: "/health-safety" },
     { name: "Industries", href: "/industries", hasDropdown: true, items: industriesItems },
     { name: "News", href: "/news" },
-    { name: "Project Gallery", href: "/projects-gallery" },
+    { name: "Project Gallery", href: "/project-gallery" },
   ];
 
   return (
