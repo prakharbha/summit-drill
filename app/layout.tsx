@@ -7,6 +7,9 @@ const lato = Lato({
   subsets: ["latin"],
   variable: "--font-lato",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {

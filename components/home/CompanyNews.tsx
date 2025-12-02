@@ -41,7 +41,7 @@ const CompanyNews = () => {
       image: "/images/news-thumb-1.jpg",
       date: "October 24, 2024",
       category: "Acquisition",
-      link: "/news/summit-welcomes-saedacco",
+      link: "/news",
     },
     {
       title: "Joseph C. Negro joins Summit to Lead the Expansion of Remediation Services Division",
@@ -49,7 +49,7 @@ const CompanyNews = () => {
       image: "/images/news-thumb-2.jpg",
       date: "September 15, 2024",
       category: "Leadership",
-      link: "/news/joseph-negro-joins-summit",
+      link: "/news",
     },
     {
       title: "Summit Doubles Down on Its Commitment to H&S with HIGHWIRE GOLD SAFETY Awards",
@@ -57,7 +57,7 @@ const CompanyNews = () => {
       image: "/images/news-thumb-3.jpg",
       date: "August 10, 2024",
       category: "Awards",
-      link: "/news/highwire-gold-safety-award",
+      link: "/news",
     },
     {
       title: "Expanding Our Fleet with New Sonic Rigs",
@@ -65,7 +65,7 @@ const CompanyNews = () => {
       image: "/images/news-thumb-1.jpg",
       date: "July 05, 2024",
       category: "Equipment",
-      link: "/news/new-sonic-rigs",
+      link: "/news",
     },
   ];
 
@@ -130,7 +130,7 @@ const CompanyNews = () => {
                         href={item.link}
                         className="inline-flex items-center text-sky-400 font-bold uppercase text-sm hover:text-white transition-colors gap-2"
                       >
-                        Read More <HiArrowRight className="w-4 h-4" />
+                        Read article: {item.title} <HiArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>

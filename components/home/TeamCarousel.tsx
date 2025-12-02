@@ -88,12 +88,14 @@ export default function TeamCarousel() {
                     <button
                         onClick={prevSlide}
                         className="absolute left-4 lg:left-12 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
+                        aria-label="Previous team member"
                     >
                         <ChevronLeft size={40} />
                     </button>
                     <button
                         onClick={nextSlide}
                         className="absolute right-4 lg:right-12 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
+                        aria-label="Next team member"
                     >
                         <ChevronRight size={40} />
                     </button>
