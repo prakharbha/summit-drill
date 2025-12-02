@@ -1,0 +1,169 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+
+const Discovery = () => {
+  return (
+    <div className="relative">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[800px] h-auto lg:h-[900px] w-full overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          {/* Base Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+          {/* Gradient Overlay for Menu and Text Contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-transparent to-blue-950/95" />
+        </div>
+
+        {/* 3-Column Service Overlay */}
+        <div className="relative lg:absolute inset-0 container mx-auto px-4 lg:px-8 flex items-end pb-10 pt-32 lg:pt-0 lg:pb-40 z-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+
+            {/* Column 1: Geophysics */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center text-center md:items-start md:text-left space-y-0"
+            >
+              {/* Custom Mountain Icon */}
+              <div className="w-44 h-24 relative -ml-4">
+                <Image
+                  src="/images/mountain.webp"
+                  alt="Mountain Icon"
+                  fill
+                  className="object-contain drop-shadow-md"
+                />
+              </div>
+              <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Geophysics</h2>
+              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+                <span className="text-[#8BC34A] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
+              </p>
+              <Button asChild className="bg-green-600 hover:bg-green-700 text-white font-bold uppercase tracking-wide rounded-sm px-6 shadow-lg mt-4">
+                <Link href="/services/geophysics">Take a closer look &gt;&gt;</Link>
+              </Button>
+            </motion.div>
+
+            {/* Column 2: Drilling */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col items-center text-center md:items-start md:text-left space-y-0"
+            >
+              {/* Custom Mountain Icon */}
+              <div className="hidden md:block w-44 h-24 relative -ml-4">
+                <Image
+                  src="/images/mountain.webp"
+                  alt="Mountain Icon"
+                  fill
+                  className="object-contain drop-shadow-md"
+                />
+              </div>
+              <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Drilling</h2>
+              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+                <span className="text-[#8BC34A] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
+              </p>
+              <Button asChild className="bg-sky-500 hover:bg-sky-600 text-white font-bold uppercase tracking-wide rounded-sm px-6 shadow-lg mt-4">
+                <Link href="/services/drilling">Go a little deeper &gt;&gt;</Link>
+              </Button>
+            </motion.div>
+
+            {/* Column 3: Remediation */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col items-center text-center md:items-start md:text-left space-y-0"
+            >
+              {/* Custom Mountain Icon */}
+              <div className="hidden md:block w-44 h-24 relative -ml-4">
+                <Image
+                  src="/images/mountain.webp"
+                  alt="Mountain Icon"
+                  fill
+                  className="object-contain drop-shadow-md"
+                />
+              </div>
+              <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Remediation</h2>
+              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+                <span className="text-[#8BC34A] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
+              </p>
+              <Button asChild className="bg-green-600 hover:bg-green-700 text-white font-bold uppercase tracking-wide rounded-sm px-6 shadow-lg mt-4">
+                <Link href="/services/remediation">Dig in &gt;&gt;</Link>
+              </Button>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* BLUE CONTENT SECTION */}
+      <section
+        className="relative py-32 lg:py-48 z-20 -mt-[6.3rem]"
+        style={{
+          clipPath:
+            "polygon(0 100px, 65% 0, 100% 100px, 100% calc(100% - 100px), 35% 100%, 0 calc(100% - 100px))",
+        }}
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/blue-section-bg.webp"
+            alt="Background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-blue-900/90 mix-blend-multiply" />
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-8 text-center relative z-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto space-y-8"
+          >
+            <h2 className="text-[2rem] leading-[2.75rem] font-bold text-white">
+              Summit's ability to consistently manage a diverse range of complex projects safely, efficiently and with excellent results is sustained through our unique customer promise—
+              <span>An Exceptional Experience</span>
+            </h2>
+
+            <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed max-w-4xl mx-auto">
+              We care about this work, the environment, and your experience with us. We take pride in listening, responding, and delivering because your satisfaction drives our success.
+            </p>
+
+            <p className="text-2xl md:text-3xl text-white font-bold">
+              Approachable. Appreciative. Eager to Serve.
+            </p>
+
+            <div className="pt-8">
+              <Button
+                asChild
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-xl font-bold uppercase tracking-wider rounded-sm"
+              >
+                <Link href="/about-us">About Us &gt;&gt;</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section >
+    </div >
+  );
+};
+
+export default Discovery;

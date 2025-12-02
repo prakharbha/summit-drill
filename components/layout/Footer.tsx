@@ -1,0 +1,50 @@
+import Link from "next/link";
+import Image from "next/image";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#004990] text-white relative overflow-hidden -mt-[100px] z-10">
+
+
+      <div className="container mx-auto px-4 lg:px-8 py-12 pt-32 relative z-10 flex flex-col items-center text-center">
+        {/* Logo */}
+        <div className="mb-8">
+          <Image
+            src="/images/summit-logo-update.webp"
+            alt="Summit Drilling, LLC"
+            width={256}
+            height={80}
+            className="h-20 w-auto"
+          />
+        </div>
+
+        {/* Contact Info Row */}
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm md:text-base font-semibold mb-8">
+          <span>81 Chimney Rock Road, Bridgewater, NJ 08807</span>
+          <span className="hidden md:inline">|</span>
+          <a href="mailto:Sales@SummitDrilling.com" className="hover:text-sky-300 transition-colors">
+            Sales@SummitDrilling.com
+          </a>
+          <span className="hidden md:inline">|</span>
+          <Link href="/locations" className="hover:text-sky-300 transition-colors">
+            Locations
+          </Link>
+          <span className="hidden md:inline">|</span>
+          <a href="tel:800-242-6648" className="hover:text-sky-300 transition-colors">
+            800-242-6648
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-sm text-sky-200/80">
+          <p>©{currentYear} Summit Drilling, LLC.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
