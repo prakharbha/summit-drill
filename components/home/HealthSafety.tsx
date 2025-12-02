@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 
 const HealthSafety = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#A8C686] text-[#0e2a47]">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-16 md:py-24 bg-[#A8C686] text-[#0e2a47] overflow-x-hidden">
+      <div className="container mx-auto px-4 lg:px-8 max-w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -48,7 +48,7 @@ const HealthSafety = () => {
             <div className="pt-4">
               <Button
                 asChild
-                className="bg-[#5c8a45] hover:bg-[#4a7038] text-white px-8 py-6 text-lg font-bold shadow-lg"
+                className="bg-[#5c8a45] hover:bg-[#4a7038] text-white px-4 py-4 md:px-8 md:py-6 text-base md:text-lg font-bold shadow-lg w-full md:w-auto whitespace-normal md:whitespace-nowrap text-center"
               >
                 <Link href="/health-safety">Learn more about our H&S culture and leadership &gt;&gt;</Link>
               </Button>
