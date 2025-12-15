@@ -80,7 +80,7 @@ const Header = () => {
 
             {/* Right: Actions & Socials (Desktop) */}
             <div className="hidden lg:flex items-center justify-end gap-6 w-full">
-              <Link href="/start-a-project" className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors">
+              <Link href="/resources/start-a-project" className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors">
                 Start-A-Project
               </Link>
               <Link
@@ -341,7 +341,7 @@ const Header = () => {
 
               <div className="flex flex-col gap-4 mb-6">
                 <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white uppercase font-bold">
-                  <Link href="/start-a-project" onClick={() => setMobileMenuOpen(false)}>Start a Project</Link>
+                  <Link href="/resources/start-a-project" onClick={() => setMobileMenuOpen(false)}>Start a Project</Link>
                 </Button>
                 <Link
                   href="/contact"

@@ -17,14 +17,24 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/start-project',
-        destination: '/start-a-project',
+        destination: '/resources/start-a-project',
         permanent: true,
       },
       {
         source: '/start-project/:path*',
-        destination: '/start-a-project/:path*',
+        destination: '/resources/start-a-project/:path*',
         permanent: true,
       },
+      {
+        source: '/start-a-project',
+        destination: '/resources/start-a-project',
+        permanent: true,
+      },
+      {
+        source: '/start-a-project/:path*',
+        destination: '/resources/start-a-project/:path*',
+        permanent: true,
+      }
     ];
   },
   async headers() {

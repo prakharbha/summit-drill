@@ -39,7 +39,7 @@ const StartProject = () => {
                 size="lg"
                 className="bg-[#1a365d] hover:bg-[#132845] text-white px-8 py-6 text-lg font-bold italic shadow-lg"
               >
-                <Link href="/start-a-project">We're eager to serve you &gt;&gt;</Link>
+                <Link href="/resources/start-a-project">We're eager to serve you &gt;&gt;</Link>
               </Button>
             </div>
           </motion.div>
