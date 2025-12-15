@@ -64,7 +64,7 @@ export default function ProjectGalleryPage() {
                 {/* Request Form Section */}
                 <DrillingRequestForm />
             </main>
-            <Footer />
+            <Footer hasDividerAbove />
         </>
     );
 }

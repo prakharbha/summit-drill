@@ -27,14 +27,14 @@ const Header = () => {
   }, []);
 
   const servicesItems = [
-    { name: "Geophysics", href: "/services/geophysics" },
-    { name: "Drilling", href: "/services/drilling" },
-    { name: "— Sonic Drilling", href: "/services/drilling/sonic" },
-    { name: "— Direct Push", href: "/services/drilling/direct-push" },
-    { name: "— Auger Drilling", href: "/services/drilling/auger" },
-    { name: "— Air Rotary", href: "/services/drilling/air-rotary" },
-    { name: "— Drilling & Injection", href: "/services/drilling/injection" },
-    { name: "Remediation", href: "/services/remediation" },
+    { name: "Geophysics", href: "/services/geophysics-services" },
+    { name: "Drilling", href: "/services/drilling-techniques" },
+    { name: "— Sonic Drilling", href: "/services/sonic-drilling" },
+    { name: "— Direct Push", href: "/services/direct-push" },
+    { name: "— Auger Drilling", href: "/services/auger-drilling" },
+    { name: "— Air Rotary", href: "/services/air-rotary-drilling" },
+    { name: "— Drilling & Injection", href: "/services/injection-remediation-services" },
+    { name: "Remediation", href: "/services/remediation-services" },
   ];
 
   const industriesItems = [
@@ -50,7 +50,7 @@ const Header = () => {
     { name: "About Us", href: "/about-us" },
     { name: "Health & Safety", href: "/health-safety" },
     { name: "Industries", href: "/industries", hasDropdown: true, items: industriesItems },
-    { name: "News", href: "/news" },
+    { name: "News", href: "/about-us/news" },
     { name: "Project Gallery", href: "/project-gallery" },
   ];
 

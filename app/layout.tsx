@@ -56,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lato.variable} ${workSans.variable}`}>
-      <body className="antialiased font-lato">
+      <body className="antialiased font-work-sans">
         {children}
       </body>
     </html>

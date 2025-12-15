@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 import PageTemplate from "@/components/layout/PageTemplate";
 
-export const metadata: Metadata = {
-  title: "Careers - Summit Drilling, LLC",
-  description: "Join our team. Explore career opportunities, benefits, and our culture of excellence at Summit Drilling.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/careers");
 
 export default function CareersPage() {
   return (

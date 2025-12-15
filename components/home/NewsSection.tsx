@@ -48,7 +48,7 @@ const NewsSection = () => {
                             viewport={{ once: true }}
                             className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
                         >
-                            <Link href={`/news/${post.slug}`} className="block">
+                            <Link href={`/about-us/news/${post.slug}`} className="block">
                                 {/* Image */}
                                 <div className="relative h-52 overflow-hidden">
                                     <Image
@@ -90,7 +90,7 @@ const NewsSection = () => {
                     className="text-center"
                 >
                     <Link
-                        href="/news"
+                        href="/about-us/news"
                         className="inline-flex items-center gap-2 bg-[#1a365d] hover:bg-[#132845] text-white font-bold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105"
                     >
                         View All News

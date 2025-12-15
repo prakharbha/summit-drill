@@ -8,11 +8,11 @@ interface DrillingSidebarProps {
 }
 
 const drillingServices = [
-    { name: "Sonic Drilling", href: "/services/drilling/sonic", slug: "sonic" },
-    { name: "Direct Push", href: "/services/drilling/direct-push", slug: "direct-push" },
-    { name: "Auger", href: "/services/drilling/auger", slug: "auger" },
-    { name: "Air Rotary", href: "/services/drilling/air-rotary", slug: "air-rotary" },
-    { name: "Drilling & Injection", href: "/services/drilling/injection", slug: "injection" },
+    { name: "Sonic Drilling", href: "/services/sonic-drilling", slug: "sonic" },
+    { name: "Direct Push", href: "/services/direct-push", slug: "direct-push" },
+    { name: "Auger", href: "/services/auger-drilling", slug: "auger" },
+    { name: "Air Rotary", href: "/services/air-rotary-drilling", slug: "air-rotary" },
+    { name: "Drilling & Injection", href: "/services/injection-remediation-services", slug: "injection" },
 ];
 
 export default function DrillingSidebar({ currentPage }: DrillingSidebarProps) {
@@ -31,7 +31,7 @@ export default function DrillingSidebar({ currentPage }: DrillingSidebarProps) {
 
             {/* Back to Drilling Link */}
             <Link
-                href="/services/drilling"
+                href="/services/drilling-techniques"
                 className="block bg-[#A04020] hover:bg-[#8a361b] text-white font-bold italic text-xl px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-[1.02]"
             >
                 Back to Drilling &gt;&gt;

@@ -11,7 +11,7 @@ const FeaturedProject = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=70"
+          src="/images/home/featured-project-bg.jpg"
           alt="Featured Project Background"
           fill
           className="object-cover"
@@ -59,14 +59,14 @@ const FeaturedProject = () => {
               size="lg"
               className="bg-[#5c8a45] hover:bg-[#4a7038] text-white font-bold px-8 py-6 text-lg w-full sm:w-auto rounded shadow-lg"
             >
-              <Link href="/projects-gallery">Read more about this project &gt;&gt;</Link>
+              <Link href="/project-gallery">Read more about this project &gt;&gt;</Link>
             </Button>
             <Button
               asChild
               size="lg"
               className="bg-[#c25e2e] hover:bg-[#a65027] text-white font-bold px-8 py-6 text-lg w-full sm:w-auto rounded shadow-lg"
             >
-              <Link href="/projects-gallery">Visit our project gallery &gt;&gt;</Link>
+              <Link href="/project-gallery">Visit our project gallery &gt;&gt;</Link>
             </Button>
           </motion.div>
         </div>
