@@ -1,75 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
+import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 
 export default function FeaturedProjectPage() {
     return (
         <>
             <Header />
             <main>
-                {/* Hero Section */}
-                <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image
-                            src="/images/drilling-hero.jpg"
-                            alt="Airport Earth Work Project"
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                        {/* Blue Gradient Overlay (Top and Bottom) */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#004990]/90 via-transparent to-[#004990]/90 mix-blend-multiply opacity-80" />
-                        <div className="absolute inset-0 bg-black/20" />
-                    </div>
-
-                    <div className="container mx-auto px-4 lg:px-8 z-10 relative mt-20">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="max-w-4xl text-white text-left"
-                        >
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 border border-[#7A9A70] px-6 py-2 mb-8 rounded-sm">
-                                <svg width="30" height="15" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                                    <path d="M12 0L24 12H0L12 0Z" fill="currentColor" />
-                                </svg>
-                                <span className="text-base font-bold tracking-[0.2em] uppercase text-[#B5D48C]">Featured Project</span>
-                            </div>
-
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-                                Airport Earth Work
-                            </h1>
-                            <p className="text-xl md:text-2xl text-white font-bold leading-relaxed max-w-3xl drop-shadow-md mb-10">
-                                This active North Carolina project required a team that could work safety around a critical transportation facility. But that’s not all!
-                            </p>
-
-                            <Button asChild className="bg-[#6B8E4E] hover:bg-[#5a7a3e] text-white font-bold text-lg px-8 py-6 shadow-lg rounded-md">
-                                <Link href="/project-gallery/airport-earth-work">
-                                    Read the Full Story &gt;&gt;
-                                </Link>
-                            </Button>
-
-                            <div className="mt-16">
-                                <p className="text-lg md:text-xl font-bold text-white max-w-3xl">
-                                    Scroll down to learn about how Summit is applying its wide range of services from Maine to Florida.
-                                </p>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    {/* Bottom Green Shape Hint */}
-                    <div
-                        className="absolute bottom-0 left-0 right-0 h-24 bg-[#5e745d] z-10"
-                        style={{ clipPath: "polygon(0 100%, 50% 0, 100% 100%)", height: "100px", marginBottom: "-50px" }}
-                    ></div>
-                </section>
+                {/* Hero Section using PageHeroBanner */}
+                <PageHeroBanner
+                    backgroundImage="/images/drilling-hero.jpg"
+                    backgroundAlt="Airport Earth Work Project"
+                    ribbonText="Featured Project"
+                    title="Airport Earth Work"
+                    description="This active North Carolina project required a team that could work safely around a critical transportation facility. But that's not all!"
+                    button={
+                        <Button asChild className="bg-[#6B8E4E] hover:bg-[#5a7a3e] text-white font-bold text-lg px-8 py-6 shadow-lg rounded-md">
+                            <Link href="/project-gallery/airport-earth-work">
+                                Read the Full Story &gt;&gt;
+                            </Link>
+                        </Button>
+                    }
+                    dividerColor="#5e745d"
+                />
 
                 {/* Project Gallery Grid Section */}
                 <section className="py-20 bg-[#5e745d] text-white">

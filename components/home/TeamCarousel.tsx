@@ -1,57 +1,51 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TEAM_MEMBERS = [
-    {
-        id: 1,
-        name: "Lauren DiVello",
-        title: "VP of Sales & Business Development",
-        image: "/images/summit-logo.png", // Placeholder
-    },
-    {
-        id: 2,
-        name: "John Doe",
-        title: "Project Manager",
-        image: "/images/summit-logo.png", // Placeholder
-    },
-    {
-        id: 3,
-        name: "Jane Smith",
-        title: "Operations Director",
-        image: "/images/summit-logo.png", // Placeholder
-    },
-    {
-        id: 4,
-        name: "Mike Johnson",
-        title: "Senior Driller",
-        image: "/images/summit-logo.png", // Placeholder
-    },
-    {
-        id: 5,
-        name: "Sarah Williams",
-        title: "Safety Coordinator",
-        image: "/images/summit-logo.png", // Placeholder
-    },
-    {
-        id: 6,
-        name: "David Brown",
-        title: "Field Supervisor",
-        image: "/images/summit-logo.png", // Placeholder
-    },
+    { id: 1, name: "Ron Bucca", title: "CEO", image: "/images/team/ron-bucca-ceo.webp" },
+    { id: 2, name: "Matthew Vetter", title: "COO", image: "/images/team/matthew-vetter-coo.webp" },
+    { id: 3, name: "Joel Bernstein", title: "Senior VP", image: "/images/team/joel-bernstein-sr-vp.webp" },
+    { id: 4, name: "Joan Baer", title: "VP Operations", image: "/images/team/joan-baer-vp-operations.webp" },
+    { id: 5, name: "Jack Byer", title: "VP Operations", image: "/images/team/jack-byer-vice-president-operations.webp" },
+    { id: 6, name: "Joey Negro", title: "VP Remediation", image: "/images/team/joey-negro-vp-remediation.webp" },
+    { id: 7, name: "Lauren DiVello", title: "VP of Sales", image: "/images/team/lauren-divello-vp-of-sales.webp" },
+    { id: 8, name: "Dermot Dillon", title: "VP Major Accounts", image: "/images/team/dermot-dillon-vice-president-major-accounts.webp" },
+    { id: 9, name: "Pete Byer", title: "Head of Corp Dev", image: "/images/team/pete-byer-head-of-corp-dev.webp" },
+    { id: 10, name: "Ben Shaffer", title: "Director of Health & Safety", image: "/images/team/ben-shaffer-director-of-health-safety.webp" },
+    { id: 11, name: "Jerry Aquino", title: "Director of Fleet Services", image: "/images/team/jerry-aquino-director-of-fleet-services.webp" },
+    { id: 12, name: "Trevor Quinn", title: "Director of IT", image: "/images/team/trevor-quinn-director-it.webp" },
+    { id: 13, name: "Brian Moriarty", title: "Project Manager", image: "/images/team/brian-moriarty-project-manager.webp" },
+    { id: 14, name: "Ed Ruger", title: "Project Manager", image: "/images/team/ed-ruger-project-manager.webp" },
+    { id: 15, name: "Jessica Parell", title: "Project Manager", image: "/images/team/jessica-parell-pm.webp" },
+    { id: 16, name: "Katie West", title: "Project Manager", image: "/images/team/katie-west-proj-mangr.webp" },
+    { id: 17, name: "Yecenia DeTorrice", title: "Project Manager", image: "/images/team/yecenia-detorrice-pm.webp" },
+    { id: 18, name: "Mary Holmes", title: "Project Administrator", image: "/images/team/mary-holmes-project-administrator.webp" },
+    { id: 19, name: "Abigail George", title: "Accounts Receivable Manager", image: "/images/team/abigail-george-accounts-receiveable-manager.webp" },
+    { id: 20, name: "Glenn Brennan", title: "Geophysicist", image: "/images/team/glenn-brennan-geophysicist.webp" },
+    { id: 21, name: "Mike Wilson", title: "Drilling Field Supervisor", image: "/images/team/mike-wilson-drilling-field-supervisor.webp" },
+    { id: 22, name: "Richey Lamire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
+    { id: 23, name: "Zach Thompson", title: "Drilling Field Supervisor", image: "/images/team/zach-thompson-drilling-field-super.webp" },
+    { id: 24, name: "Christian Tormen", title: "Driller", image: "/images/team/christian-tormen-driller.webp" },
+    { id: 25, name: "Matt Jelinski", title: "Driller", image: "/images/team/matt-jelinski-driller.webp" },
 ];
 
 export default function TeamCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [hoveredId, setHoveredId] = useState<number | null>(null);
+    const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
+    const spacing = typeof window !== 'undefined' && window.innerWidth < 768 ? 100 : 180;
 
     const nextSlide = () => {
+        setDirection(1);
         setCurrentIndex((prev) => (prev + 1) % TEAM_MEMBERS.length);
     };
 
     const prevSlide = () => {
+        setDirection(-1);
         setCurrentIndex((prev) => (prev - 1 + TEAM_MEMBERS.length) % TEAM_MEMBERS.length);
     };
 
@@ -74,10 +68,25 @@ export default function TeamCarousel() {
         return items;
     };
 
+    const slideVariants = {
+        enter: (dir: number) => ({
+            x: dir > 0 ? spacing * 3 : -spacing * 3,
+            opacity: 0,
+        }),
+        center: (offset: number) => ({
+            x: offset * spacing,
+            opacity: offset === 0 ? 1 : 0.7,
+            scale: offset === 0 ? 1 : 0.85,
+            zIndex: offset === 0 ? 10 : 5 - Math.abs(offset),
+        }),
+        exit: (dir: number) => ({
+            x: dir > 0 ? -spacing * 3 : spacing * 3,
+            opacity: 0,
+        }),
+    };
+
     return (
-        <section
-            className="relative bg-[#4d7c55] py-8 z-20 -mt-1"
-        >
+        <section className="relative bg-[#4d7c55] py-8 z-20 -mt-1">
             <div className="container mx-auto px-4 text-center">
                 <h2 className="text-3xl lg:text-4xl font-bold text-white">
                     We Are Responsible for Your Experience
@@ -102,42 +111,54 @@ export default function TeamCarousel() {
 
                     {/* Carousel Items */}
                     <div className="flex items-center justify-center w-full overflow-hidden">
-                        <AnimatePresence mode="popLayout">
-                            {getVisibleItems().map((item) => (
-                                <motion.div
-                                    key={`${item.id}-${item.offset}`}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.8, x: 100 * item.offset }}
-                                    animate={{
-                                        opacity: item.offset === 0 ? 1 : 0.5,
-                                        scale: item.offset === 0 ? 1.2 : 0.8,
-                                        x: item.offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 80 : 150), // Adjust spacing based on screen size if possible, or just fixed
-                                        zIndex: item.offset === 0 ? 10 : 5 - Math.abs(item.offset),
-                                    }}
-                                    transition={{ duration: 0.5, type: "spring" }}
-                                    className="absolute flex flex-col items-center justify-center"
-                                >
-                                    <div
-                                        className={`relative rounded-full overflow-hidden border-4 transition-colors duration-300 ${item.offset === 0 ? "border-white w-48 h-48 lg:w-64 lg:h-64" : "border-transparent w-32 h-32 lg:w-40 lg:h-40 grayscale"
-                                            }`}
-                                    >
-                                        <Image
-                                            src={item.image}
-                                            alt={item.name}
-                                            fill
-                                            className="object-cover"
-                                        />
+                        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                            {getVisibleItems().map((item) => {
+                                const isActive = item.offset === 0;
+                                const isHovered = hoveredId === item.id && !isActive;
 
-                                        {/* Overlay for Active Item */}
-                                        {item.offset === 0 && (
-                                            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white p-4 text-center">
-                                                <h3 className="text-lg lg:text-xl font-bold">{item.name}</h3>
-                                                <p className="text-xs lg:text-sm">{item.title}</p>
+                                return (
+                                    <motion.div
+                                        key={item.id}
+                                        custom={item.offset}
+                                        variants={slideVariants}
+                                        initial="enter"
+                                        animate="center"
+                                        exit="exit"
+                                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                                        className="absolute flex flex-col items-center cursor-pointer"
+                                        onMouseEnter={() => setHoveredId(item.id)}
+                                        onMouseLeave={() => setHoveredId(null)}
+                                    >
+                                        <div
+                                            className={`relative rounded-full overflow-hidden border-4 transition-all duration-300 ${isActive
+                                                ? "border-white w-44 h-44 lg:w-52 lg:h-52"
+                                                : `border-white/30 w-36 h-36 lg:w-44 lg:h-44 ${isHovered ? "" : "grayscale"}`
+                                                }`}
+                                        >
+                                            <Image
+                                                src={item.image}
+                                                alt={item.name}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        {/* Text below image for active item */}
+                                        {isActive && (
+                                            <div className="mt-4 text-center text-white">
+                                                <h3 className="text-xl lg:text-2xl font-bold">{item.name}</h3>
+                                                <p className="text-sm lg:text-base opacity-90">{item.title}</p>
                                             </div>
                                         )}
-                                    </div>
-                                </motion.div>
-                            ))}
+                                        {/* Text below image for hovered inactive item */}
+                                        {isHovered && (
+                                            <div className="absolute top-full mt-2 text-center text-white whitespace-nowrap">
+                                                <h3 className="text-sm lg:text-base font-semibold">{item.name}</h3>
+                                                <p className="text-xs opacity-80">{item.title}</p>
+                                            </div>
+                                        )}
+                                    </motion.div>
+                                );
+                            })}
                         </AnimatePresence>
                     </div>
                 </div>

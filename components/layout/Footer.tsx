@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Footer = () => {
+interface FooterProps {
+  hasDividerAbove?: boolean;
+}
+
+const Footer = ({ hasDividerAbove = false }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#004990] text-white relative overflow-hidden -mt-[100px] z-10">
+    <footer className={`bg-[#0065a5] text-white relative overflow-hidden z-10 ${hasDividerAbove ? '-mt-[100px] pt-[100px]' : ''}`}>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/footer-bg.webp"
+          alt=""
+          fill
+          className="object-cover"
+        />
+      </div>
 
-
-      <div className="container mx-auto px-4 lg:px-8 py-12 pt-32 relative z-10 flex flex-col items-center text-center">
+      <div className="container mx-auto px-4 lg:px-8 py-8 relative z-10 flex flex-col items-center text-center">
         {/* Logo */}
         <div className="mb-8">
           <Image

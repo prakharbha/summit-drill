@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
+import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 
 export default function DrillingPage() {
   const services = [
@@ -37,74 +38,39 @@ export default function DrillingPage() {
     <>
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/drilling-hero.jpg"
-              alt="Summit Drilling Rig Operation"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          </div>
-
-          <div className="container mx-auto px-4 lg:px-8 z-10 relative mt-20">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl text-white text-left"
-            >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 border border-white/30 bg-black/30 backdrop-blur-sm px-4 py-1.5 mb-6 rounded-sm">
-                {/* Mountain Icon (Simple SVG representation) */}
-                <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                  <path d="M12 0L24 12H0L12 0Z" fill="currentColor" />
-                </svg>
-                <span className="text-sm font-bold tracking-widest uppercase">Summit Services</span>
-              </div>
-
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-                Drilling
-              </h1>
-              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-2xl drop-shadow-md">
-                In an industry where geology, risk and timelines intersect, seasoned insight becomes the most valuable piece of equipment on site
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        {/* Hero Section using reusable PageHeroBanner */}
+        <PageHeroBanner
+          backgroundImage="/images/drilling/hero-banner.webp"
+          backgroundAlt="Summit Drilling Rig Operation"
+          ribbonText="Summit Services"
+          title="Drilling"
+          description="In an industry where geology, risk and timelines intersect, seasoned insight becomes the most valuable piece of equipment on site"
+        />
 
         {/* Specialty Applications Section */}
-        <section className="py-20 bg-[#B5D48C]">
+        <section className="pt-8 pb-20 bg-[#B5D48C]">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left Column: Text Content */}
-              <div className="space-y-6 text-gray-900">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+              {/* Left Column: Text Content - 2/3 width */}
+              <div className="lg:col-span-2 space-y-6 text-gray-900">
                 <p className="text-xl md:text-2xl font-bold leading-relaxed text-[#1A365D]">
                   You may think that drilling experience going back to the late 1950s has little relevance now. To a degree, there is some truth to that. Technology, applications, processes, have all advanced.
                 </p>
 
                 <p className="text-lg font-bold text-[#1A365D]">
-                  One thing however that nearly 6 decades of drilling does provide is crystalized knowledge. Knowing what geology is below the surface and drilling in it, from Maine to Florida, can be of great value.
+                  One thing however that nearly 6 decades of drilling did provide is crystalized knowledge. Knowing what geology is below the surface and drilling in it, from Maine to Florida, can be of great value.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  The knowledge transfer that has passed through the generations, across thousands of job sites, has manifested into an AI-like source for countless environmental consultants and geotechnical engineers.
+                  The knowledge transfer that has passed through the generations, across thousands of job sites, has manifested into an AI-like source for countless environmental consultants and geotechnical engineers. Summit is counted on for insights in approach development, rig technology requirements, sampling timeframes and safety parameters associated with specific locations and regions up and down the eastern U.S.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  Summit is counted on for insights in approach development, rig technology requirements, sampling timeframes and safety parameters associated with specific locations and regions up and down the eastern U.S.
+                  Today, Summit's drilling technology is one of the most comprehensive. From multiple drilling technologies to expertise in dealing with emerging contaminants, they have become a "Go To" source for large and complex projects. The more critical the scope of work, the more valuable Summit is to its customers.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  Today, Summit's drilling technology is one of the most comprehensive. From multiple drilling technologies to expertise in dealing with emerging contaminants, they are a "Go To" source for large and complex projects.
-                </p>
-
-                <p className="text-lg font-bold text-[#1A365D]">
-                  The more critical the scope of work, the more valuable Summit is to its customers.
+                  Increasing their value further, Summit's growth has expanded their services platform enabling them to wrap support services around their drilling capabilities that had in the past required additional contractors. This is proving to be highly efficient for customers by reducing complexity in scheduling and contractor management.
                 </p>
 
                 <div className="pt-4">
@@ -138,8 +104,7 @@ export default function DrillingPage() {
                     "Over water barge drilling",
                     "Horizontal drilling",
                     "Drilling & In-Situ injection",
-                    "Low clearance",
-                    "Remote access",
+                    "Low clearance / Remote access",
                     "Well decommissioning",
                     "Geotechnical Investigations",
                     "Cathodic systems services",
@@ -160,34 +125,42 @@ export default function DrillingPage() {
         <section className="py-20 bg-[#5e745d] text-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center md:text-left">
-              Summit&apos;s complete range of drilling technologies:
+              Learn more about Summit&apos;s complete range of drilling technologies:
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
               {[
                 {
                   title: "Sonic Drilling",
-                  image: "/images/drilling.jpg", // Placeholder
-                  subtitle: "Sonic Drilling—The difference is our operators!",
-                  description: "Having a Sonic Rig and using it effectively in the field are 2 very different things. At Summit, our Sonic drillers have logged thousands of hours handling these sophisticated rigs and operate them like a fine instrument."
+                  href: "/services/drilling/sonic",
+                  image: "/images/drilling/sonic.webp",
+                  subtitle: "Sonic Drilling – The difference is our operators!",
+                  description: "Having a Sonic Rig and using it effectively in the field are 2 very different things. At Summit, our Sonic drillers have logged thousands of hours handling these sophisticated rigs and operate them like a fine instrument.",
+                  ctaText: "Industry Leading Sonic Capabilities"
                 },
                 {
                   title: "Direct Push",
-                  image: "/images/drilling-hero.jpg", // Placeholder
-                  subtitle: "Direct Push—Fast, Efficient & Exceptionally Precise!",
-                  description: "There are no drilling technologies better suited to collect high-quality soil, groundwater, and soil-gas data quickly. Summit offers a large number of Probes with specialty tooling that will help you accelerate site characterization and remediation planning."
+                  href: "/services/drilling/direct-push",
+                  image: "/images/drilling/direct-push.webp",
+                  subtitle: "Direct Push – Fast, Efficient & Exceptionally Precise!",
+                  description: "There are no drilling technologies better suited to collect high-quality soil, groundwater, and soil-gas data quickly. Summit offers a large number of Probes with specialty tooling that will help you accelerate site characterization and remediation planning.",
+                  ctaText: "Our Broad Direct Push Capabilities"
                 },
                 {
                   title: "Auger Drilling",
-                  image: "/images/drilling.jpg", // Placeholder
-                  subtitle: "Hollow Stem Auger Drilling (HSA)—Go deeper in unconsolidated soils!",
-                  description: "Need stable, cased boreholes? How about track-mounted rigs for difficult to access locations? Summit's HSA rigs are diverse, dependable and a highly effective method for environmental and geotechnical investigations."
+                  href: "/services/drilling/auger",
+                  image: "/images/drilling/auger.webp",
+                  subtitle: "Hollow Stem Auger Drilling (HSA) – Go deeper in unconsolidated soils!",
+                  description: "Need stable, cased boreholes? How about track-mounted rigs for difficult to access locations? Summit's HSA rigs are diverse, dependable and a highly effective method for environmental and geotechnical investigations.",
+                  ctaText: "Our Auger Drilling Capabilities"
                 },
                 {
                   title: "Air Rotary",
-                  image: "/images/drilling-hero.jpg", // Placeholder
-                  subtitle: "Air Rotary Drilling—Speed, Depth and clarity of geological formations!",
-                  description: "Summit's air rotary rigs and talented operators are unequaled for deep borings and bedrock investigations requiring high-productivity drilling. Need to penetrate hard rock?"
+                  href: "/services/drilling/air-rotary",
+                  image: "/images/drilling/air-rotary.webp",
+                  subtitle: "Air Rotary Drilling – Speed, Depth and clarity of geological formations!",
+                  description: "Summit's air rotary rigs and talented operators unequaled for deeper boring, bedrock investigations requiring high-productivity drilling. Need to penetrate hard rock?",
+                  ctaText: "Our Air Rotary Drilling Capabilities"
                 }
               ].map((tech) => (
                 <div key={tech.title} className="flex flex-col">
@@ -219,8 +192,8 @@ export default function DrillingPage() {
                       {tech.description}
                     </p>
                     <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-[#6b8a61] text-white font-bold px-6 shadow-md mt-2">
-                      <Link href="/contact">
-                        More &gt;&gt;
+                      <Link href={tech.href}>
+                        {tech.ctaText} &gt;&gt;
                       </Link>
                     </Button>
                   </div>
@@ -230,7 +203,7 @@ export default function DrillingPage() {
 
             {/* Lauren DiVello Contact Footer */}
             <div className="mt-24 pt-12 border-t border-white/10 text-center md:text-left">
-              <div className="max-w-4xl">
+              <div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">
                   Summit&apos;s Lauren DiVello is a dedicated and experienced customer advocate.
                 </h3>

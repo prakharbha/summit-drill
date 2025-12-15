@@ -3,38 +3,56 @@
 import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
+import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
+import { ReactNode } from "react";
 
 interface PageTemplateProps {
+  /** Page title (h1) */
   title: string;
+  /** Description text below title */
   description?: string;
-  children?: React.ReactNode;
+  /** Background image path - defaults to generic banner */
+  backgroundImage?: string;
+  /** Alt text for background image */
+  backgroundAlt?: string;
+  /** Ribbon text (e.g., "Summit Services") */
+  ribbonText?: string;
+  /** Optional button/CTA element */
+  button?: ReactNode;
+  /** Page content */
+  children?: ReactNode;
+  /** Whether to show the mountain logo */
+  showMountainLogo?: boolean;
 }
 
-const PageTemplate = ({ title, description, children }: PageTemplateProps) => {
+/**
+ * Page Template with Hero Banner
+ * Use this for inner pages that need the standard hero banner layout
+ */
+const PageTemplate = ({
+  title,
+  description,
+  backgroundImage = "/images/drilling/hero-banner.webp",
+  backgroundAlt,
+  ribbonText = "Summit Services",
+  button,
+  children,
+  showMountainLogo = true,
+}: PageTemplateProps) => {
   return (
     <>
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-20 md:py-32">
-          <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                {title}
-              </h1>
-              {description && (
-                <p className="text-xl md:text-2xl text-gray-300 font-light">
-                  {description}
-                </p>
-              )}
-            </motion.div>
-          </div>
-        </section>
+        {/* Hero Section using PageHeroBanner */}
+        <PageHeroBanner
+          backgroundImage={backgroundImage}
+          backgroundAlt={backgroundAlt || `${title} - Summit Drilling`}
+          ribbonText={ribbonText}
+          title={title}
+          description={description}
+          button={button}
+          showMountainLogo={showMountainLogo}
+        />
 
         {/* Content Section */}
         {children ? (
@@ -50,20 +68,7 @@ const PageTemplate = ({ title, description, children }: PageTemplateProps) => {
               >
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-600 leading-relaxed mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                    sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                    veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Content coming soon...
                   </p>
                 </div>
               </motion.div>
@@ -77,4 +82,3 @@ const PageTemplate = ({ title, description, children }: PageTemplateProps) => {
 };
 
 export default PageTemplate;
-

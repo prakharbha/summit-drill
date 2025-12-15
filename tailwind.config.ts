@@ -58,6 +58,7 @@ const config: Config = {
       },
       fontFamily: {
         lato: ["var(--font-lato)", "sans-serif"],
+        "work-sans": ["var(--font-work-sans)", "sans-serif"],
       },
     },
   },

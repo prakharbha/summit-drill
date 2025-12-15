@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,10 +14,26 @@ const Header = () => {
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const servicesItems = [
     { name: "Geophysics", href: "/services/geophysics" },
     { name: "Drilling", href: "/services/drilling" },
+    { name: "— Sonic Drilling", href: "/services/drilling/sonic" },
+    { name: "— Direct Push", href: "/services/drilling/direct-push" },
+    { name: "— Auger Drilling", href: "/services/drilling/auger" },
+    { name: "— Air Rotary", href: "/services/drilling/air-rotary" },
+    { name: "— Drilling & Injection", href: "/services/drilling/injection" },
     { name: "Remediation", href: "/services/remediation" },
   ];
 
@@ -39,14 +55,156 @@ const Header = () => {
   ];
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full">
+    <header className={`${isScrolled ? 'fixed' : 'absolute'} top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled
+      ? 'bg-[#004990] shadow-md'
+      : 'bg-transparent'
+      }`}>
       <div className="flex flex-col w-full">
-        {/* Top Row: Logo & Actions */}
-        <div className="container mx-auto px-4 lg:px-8 h-24 flex items-center justify-between relative">
-          {/* Logo - Centered */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {/* Top Row: Logo & Actions (shown when not scrolled) */}
+        {!isScrolled && (
+          <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative h-24">
+            {/* Logo - Centered */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <Link href="/" className="flex items-center gap-2 group">
+                <div className="relative w-64 h-20">
+                  <Image
+                    src="/images/summit-logo-update.webp"
+                    alt="Summit Drilling"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
+            </div>
+
+            {/* Right: Actions & Socials (Desktop) */}
+            <div className="hidden lg:flex items-center justify-end gap-6 w-full">
+              <Link href="/start-a-project" className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors">
+                Start-A-Project
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors"
+              >
+                Contact
+              </Link>
+
+              <div className="flex items-center gap-4 pl-6 border-l border-white/30">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
+                  <FaLinkedinIn className="w-4 h-4" />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Facebook">
+                  <FaFacebookF className="w-4 h-4" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Instagram">
+                  <FaInstagram className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 absolute right-0 text-white hover:text-sky-300 drop-shadow-lg transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <HiX className="w-8 h-8" />
+              ) : (
+                <HiMenu className="w-8 h-8" />
+              )}
+            </button>
+          </div>
+        )}
+
+        {/* BOTTOM ROW: Navigation (Desktop, not scrolled) */}
+        {!isScrolled && (
+          <div className="hidden lg:block w-full border-t border-white/10 bg-gradient-to-b from-black/10 to-transparent">
+            <div className="container mx-auto px-4 lg:px-8">
+              <nav className="flex items-center justify-center gap-8 h-14">
+                {navigation.map((item) => (
+                  <div
+                    key={item.name}
+                    className="relative group h-full flex items-center"
+                    onMouseEnter={() => {
+                      if (item.hasDropdown) {
+                        if (item.name === "Services") {
+                          setServicesOpen(true);
+                          setIndustriesOpen(false);
+                        } else if (item.name === "Industries") {
+                          setIndustriesOpen(true);
+                          setServicesOpen(false);
+                        }
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (item.hasDropdown) {
+                        setServicesOpen(false);
+                        setIndustriesOpen(false);
+                      }
+                    }}
+                  >
+                    {item.hasDropdown ? (
+                      <>
+                        <button
+                          className="text-sm font-bold transition-colors flex items-center gap-1 uppercase tracking-wide h-full border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
+                          onClick={() => {
+                            if (item.name === "Services") {
+                              setServicesOpen(!servicesOpen);
+                              setIndustriesOpen(false);
+                            } else if (item.name === "Industries") {
+                              setIndustriesOpen(!industriesOpen);
+                              setServicesOpen(false);
+                            }
+                          }}
+                        >
+                          {item.name}
+                          <HiChevronDown className="w-3 h-3" />
+                        </button>
+                        <AnimatePresence>
+                          {(item.name === "Services" && servicesOpen) || (item.name === "Industries" && industriesOpen) ? (
+                            <motion.div
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: 10 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-0 w-64 bg-white rounded-sm shadow-xl border-t-4 border-[#4d7c55] py-2 z-50"
+                            >
+                              {item.items?.map((subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  className="block px-6 py-3 text-sm font-semibold text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-100 last:border-0"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-sm font-bold transition-colors uppercase tracking-wide h-full flex items-center border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </nav>
+            </div>
+          </div>
+        )}
+
+        {/* SCROLLED: Single row with logo left, nav right */}
+        {isScrolled && (
+          <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
+            {/* Logo - Left */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative w-64 h-20">
+              <div className="relative w-40 h-10 lg:w-44 lg:h-12">
                 <Image
                   src="/images/summit-logo-update.webp"
                   alt="Summit Drilling"
@@ -56,51 +214,9 @@ const Header = () => {
                 />
               </div>
             </Link>
-          </div>
 
-          {/* Right: Actions & Socials (Desktop) */}
-          <div className="hidden lg:flex items-center justify-end gap-6 w-full">
-            <Link href="/start-a-project" className="text-sm font-bold text-white hover:text-sky-300 uppercase tracking-wide transition-colors drop-shadow-md">
-              Start-A-Project
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-bold text-white hover:text-sky-300 uppercase tracking-wide transition-colors drop-shadow-md"
-            >
-              Contact
-            </Link>
-
-            <div className="flex items-center gap-4 border-l border-white/30 pl-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on LinkedIn">
-                <FaLinkedinIn className="w-4 h-4" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on Facebook">
-                <FaFacebookF className="w-4 h-4" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 transition-colors drop-shadow-md" aria-label="Visit Summit Drilling on Instagram">
-                <FaInstagram className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-white hover:text-sky-300 drop-shadow-lg absolute right-0"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <HiX className="w-8 h-8" />
-            ) : (
-              <HiMenu className="w-8 h-8" />
-            )}
-          </button>
-        </div>
-
-        {/* BOTTOM ROW: Navigation (Desktop) */}
-        <div className="hidden lg:block w-full border-t border-white/10 bg-gradient-to-b from-black/10 to-transparent">
-          <div className="container mx-auto px-4 lg:px-8">
-            <nav className="flex items-center justify-center h-14 gap-8">
+            {/* Navigation - Right (Desktop) */}
+            <nav className="hidden lg:flex items-center gap-6">
               {navigation.map((item) => (
                 <div
                   key={item.name}
@@ -126,7 +242,7 @@ const Header = () => {
                   {item.hasDropdown ? (
                     <>
                       <button
-                        className="text-sm font-bold text-white hover:text-sky-300 transition-colors flex items-center gap-1 drop-shadow-md uppercase tracking-wide h-full border-b-2 border-transparent hover:border-sky-300"
+                        className="text-sm font-bold transition-colors flex items-center gap-1 uppercase tracking-wide text-white hover:text-sky-300"
                         onClick={() => {
                           if (item.name === "Services") {
                             setServicesOpen(!servicesOpen);
@@ -147,13 +263,13 @@ const Header = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-0 w-64 bg-white/95 backdrop-blur-sm rounded-sm shadow-xl border-t-4 border-green-500 py-2 z-50"
+                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-sm shadow-xl border-t-4 border-[#4d7c55] py-2 z-50"
                           >
                             {item.items?.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className="block px-6 py-3 text-sm font-medium text-gray-800 hover:bg-sky-50 hover:text-sky-600 transition-colors border-b border-gray-100 last:border-0"
+                                className="block px-6 py-3 text-sm font-semibold text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-100 last:border-0"
                               >
                                 {subItem.name}
                               </Link>
@@ -165,7 +281,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-sm font-bold text-white hover:text-sky-300 transition-colors drop-shadow-md uppercase tracking-wide h-full flex items-center border-b-2 border-transparent hover:border-sky-300"
+                      className="text-sm font-bold transition-colors uppercase tracking-wide text-white hover:text-sky-300"
                     >
                       {item.name}
                     </Link>
@@ -173,8 +289,21 @@ const Header = () => {
                 </div>
               ))}
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-white hover:text-sky-300 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <HiX className="w-8 h-8" />
+              ) : (
+                <HiMenu className="w-8 h-8" />
+              )}
+            </button>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Mobile Menu Overlay */}

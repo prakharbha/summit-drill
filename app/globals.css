@@ -63,8 +63,22 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground font-lato;
+    @apply bg-background text-foreground;
+    font-family: var(--font-work-sans), sans-serif;
+  }
+
+  /* Headings use Work Sans bold italic */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-work-sans), sans-serif;
+    font-weight: 700;
+    font-style: italic;
   }
 }
 
@@ -89,4 +103,3 @@
 html {
   scroll-behavior: smooth;
 }
-

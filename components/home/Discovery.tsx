@@ -137,7 +137,6 @@ const Discovery = () => {
             quality={75}
             priority={false}
           />
-          <div className="absolute inset-0 bg-blue-900/90 mix-blend-multiply" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-20">

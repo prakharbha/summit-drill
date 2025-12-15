@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Lato } from "next/font/google";
+import { Lato, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const lato = Lato({
@@ -10,6 +10,14 @@ const lato = Lato({
   preload: false,
   adjustFontFallback: true,
   fallback: ["system-ui", "arial"],
+});
+
+const workSans = Work_Sans({
+  weight: ["300", "400", "600", "700", "800"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-work-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -47,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={lato.variable}>
+    <html lang="en" className={`${lato.variable} ${workSans.variable}`}>
       <body className="antialiased font-lato">
         {children}
       </body>
