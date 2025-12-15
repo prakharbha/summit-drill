@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface DrillingSidebarProps {
     currentPage?: string;
@@ -17,6 +18,17 @@ const drillingServices = [
 export default function DrillingSidebar({ currentPage }: DrillingSidebarProps) {
     return (
         <div className="space-y-4">
+            {/* Sidebar Icon */}
+            <div className="flex justify-center mb-6">
+                <Image
+                    src="/images/drillingsidebar-icon.webp"
+                    alt="Drilling Services"
+                    width={120}
+                    height={120}
+                    className="object-contain"
+                />
+            </div>
+
             {/* Back to Drilling Link */}
             <Link
                 href="/services/drilling"

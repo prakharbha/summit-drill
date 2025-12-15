@@ -7,7 +7,15 @@ import { Button } from "@/components/ui/button";
 
 const StartProject = () => {
   return (
-    <section className="relative bg-[#8B3A28] text-white overflow-hidden pt-20 pb-32 lg:pt-24 lg:pb-40">
+    <section
+      className="relative bg-[#913c20] text-white overflow-hidden pt-20 pb-32 lg:pt-24 lg:pb-40 bg-no-repeat"
+      style={{
+        backgroundImage: 'url(/images/start-bg.webp)',
+        backgroundPosition: 'right center',
+        backgroundSize: 'auto 100%',
+        backgroundBlendMode: 'multiply'
+      }}
+    >
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -17,7 +25,7 @@ const StartProject = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
+            <h2 className="font-extrabold" style={{ fontSize: '3rem', lineHeight: '1.2' }}>
               Start-a-Project 24/7
             </h2>
 
@@ -43,14 +51,9 @@ const StartProject = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Placeholder for the laptop/forms image */}
-            <div className="relative h-80 lg:h-[400px] w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
-                alt="Start a Project"
-                fill
-                className="object-contain object-right opacity-50 mix-blend-overlay"
-              />
+            {/* Right side area for background image visibility */}
+            <div className="relative h-80 lg:h-[400px] w-full invisible">
+              {/* Content hidden to reveal background */}
             </div>
           </motion.div>
         </div>

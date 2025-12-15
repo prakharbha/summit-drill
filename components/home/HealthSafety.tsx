@@ -16,9 +16,9 @@ const HealthSafety = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="relative h-80 lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="relative h-80 lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80"
+                src="/images/health-safety-home-bg.webp"
                 alt="Health & Safety Team"
                 fill
                 className="object-cover"

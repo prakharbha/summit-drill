@@ -23,6 +23,10 @@ interface PageTemplateProps {
   children?: ReactNode;
   /** Whether to show the mountain logo */
   showMountainLogo?: boolean;
+  /** Custom divider color */
+  dividerColor?: string;
+  /** Whether the footer has a divider above (pulls footer up) */
+  footerHasDivider?: boolean;
 }
 
 /**
@@ -38,6 +42,8 @@ const PageTemplate = ({
   button,
   children,
   showMountainLogo = true,
+  dividerColor,
+  footerHasDivider = false,
 }: PageTemplateProps) => {
   return (
     <>
@@ -52,6 +58,7 @@ const PageTemplate = ({
           description={description}
           button={button}
           showMountainLogo={showMountainLogo}
+          dividerColor={dividerColor}
         />
 
         {/* Content Section */}
@@ -76,7 +83,7 @@ const PageTemplate = ({
           </section>
         )}
       </main>
-      <Footer />
+      <Footer hasDividerAbove={footerHasDivider} />
     </>
   );
 };

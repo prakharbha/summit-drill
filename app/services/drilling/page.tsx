@@ -87,16 +87,19 @@ export default function DrillingPage() {
                 <div className="text-center mb-8">
                   {/* Icon Placeholder - using Lucide icon as substitute for the custom graphic */}
                   <div className="flex justify-center mb-4">
-                    <div className="text-[#C05030]">
-                      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 2v20M2 12h20M12 2l4 4M12 2l-4 4M12 22l4-4M12 22l-4-4M2 12l4-4M2 12l4 4M22 12l-4-4M22 12l-4 4" />
-                      </svg>
+                    <div className="relative w-24 h-24">
+                      <Image
+                        src="/images/drillingsidebar-icon.webp"
+                        alt="Specialty Applications"
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#C05030] tracking-widest uppercase">
+                  <h3 className="text-2xl font-bold text-[#923d21] tracking-widest uppercase">
                     Specialty<br />Applications
                   </h3>
-                  <div className="w-full h-1 bg-[#C05030] mt-4 mx-auto max-w-[200px]"></div>
+                  <div className="w-full h-1 bg-[#923d21] mt-4 mx-auto max-w-[200px]"></div>
                 </div>
 
                 <ul className="space-y-4 text-[#1A365D] text-lg font-medium">
@@ -122,7 +125,13 @@ export default function DrillingPage() {
         </section>
 
         {/* Drilling Technologies Section */}
-        <section className="py-20 bg-[#5e745d] text-white">
+        <section
+          className="py-20 bg-[#5e745d] text-white bg-no-repeat bg-cover"
+          style={{
+            backgroundImage: "url('/images/drilling-types-bg.webp')",
+            backgroundPosition: "bottom center"
+          }}
+        >
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center md:text-left">
               Learn more about Summit&apos;s complete range of drilling technologies:
@@ -222,7 +231,7 @@ export default function DrillingPage() {
         {/* Request Form Section */}
         <DrillingRequestForm />
       </main>
-      <Footer />
+      <Footer hasDividerAbove />
     </>
   );
 }

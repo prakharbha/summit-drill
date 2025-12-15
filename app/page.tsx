@@ -21,7 +21,7 @@ export default function Home() {
         <HealthSafety />
         <NewsSection />
       </main>
-      <Footer hasDividerAbove />
+      <Footer />
     </>
   );
 }

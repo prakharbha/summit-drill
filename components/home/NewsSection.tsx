@@ -16,7 +16,7 @@ const NewsSection = () => {
     }, []);
 
     return (
-        <section className="py-20 bg-gradient-to-b from-[#f8f9fa] to-white">
+        <section className="relative py-20 bg-gradient-to-b from-[#f8f9fa] to-white pb-32">
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Header */}
                 <motion.div
@@ -97,6 +97,22 @@ const NewsSection = () => {
                         <span className="text-lg">&rarr;</span>
                     </Link>
                 </motion.div>
+            </div>
+
+            {/* Custom SVG Divider */}
+            <div className="absolute bottom-0 left-0 w-full leading-none z-20 translate-y-[1px]">
+                <svg
+                    viewBox="0 0 1440 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-auto block"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0 100V40L400 40L550 15L650 35L720 5L790 35L890 15L1040 40H1440V100H0Z"
+                        fill="#0065a5"
+                    />
+                </svg>
             </div>
         </section>
     );

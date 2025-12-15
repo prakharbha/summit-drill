@@ -7,38 +7,47 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CloudUpload, Calendar, ArrowRight, ArrowLeft } from "lucide-react";
 
-const services = [
-    "GPR: Utility Location",
-    "Drilling & Injection",
-    "Capping",
-    "GPR: UST or Septic Detection",
-    "Air Rotary Drilling",
-    "In-Situ Solidification/Stabilization (ISS)",
-    "Borehole/Downhole Geophysics",
-    "Auger Drilling",
-    "In-Situ Soil Mixing",
-    "Electrical Resistivity",
-    "Track Mounted Rigs",
-    "Slurry Walls",
-    "Seismic Refraction",
-    "Over Water/Barge Drilling",
-    "Permeable Reactive Barriers",
-    "Drilling Support: Clearing & Grubbing",
-    "Horizontal Drilling",
-    "Ecosystem Restoration",
-    "Drilling Support: Road Building/Matts",
-    "Low Clearance Drilling",
-    "Remediation System Vaults",
-    "Drilling Support: Air Bridge Construction",
-    "Test Pitting",
-    "Groundwater Treatment Systems",
-    "Sonic Drilling",
-    "Soil Excavation & Disposal",
-    "Well Filters",
-    "Direct Push Drilling",
-    "Stream/Shoreline/Wetland Restoration",
-    "Vapor Mitigation Systems"
-];
+// Services organized by category
+const serviceCategories = {
+    "Geophysical Services": [
+        "GPR: Utility Location",
+        "GPR: UST or Septic Detection",
+        "Borehole/Downhole Geophysics",
+        "Electrical Resistivity",
+        "Seismic Refraction",
+    ],
+    "Drilling Services": [
+        "Sonic Drilling",
+        "Direct Push Drilling",
+        "Drilling & Injection",
+        "Air Rotary Drilling",
+        "Auger Drilling",
+        "Over Water/Barge Drilling",
+        "Horizontal Drilling",
+        "Low Clearance Drilling",
+        "Track Mounted Rigs",
+    ],
+    "Remediation Services": [
+        "Test Pitting",
+        "Soil Excavation & Disposal",
+        "Stream/Shoreline/Wetland Restoration",
+        "Capping",
+        "In-Situ Solidification/Stabilization (ISS)",
+        "In-Situ Soil Mixing",
+        "Slurry Walls",
+        "Permeable Reactive Barriers",
+        "Ecosystem Restoration",
+        "Remediation System Vaults",
+        "Groundwater Treatment Systems",
+        "Well Filters",
+        "Vapor Mitigation Systems",
+    ],
+    "Drilling Support": [
+        "Clearing & Grubbing",
+        "Road Building/Matts",
+        "Air Bridge Construction",
+    ],
+};
 
 const DrillingRequestForm = () => {
     const [currentStep, setCurrentStep] = useState(1);
@@ -63,14 +72,14 @@ const DrillingRequestForm = () => {
         >
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Header with Step Indicator */}
-                <div className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-2">
-                            Start a Project
+                        <h2 className="text-4xl md:text-5xl font-extrabold italic mb-2">
+                            Start-a-Project
                         </h2>
-                        <p className="text-lg md:text-xl font-medium">
-                            To start a project, please fill out the form below.
-                        </p>
+                        <h3 className="text-xl md:text-2xl font-bold mb-1">
+                            Quick Response Proposal Request Form
+                        </h3>
                     </div>
 
                     {/* Step Indicator */}
@@ -90,49 +99,159 @@ const DrillingRequestForm = () => {
                 {/* Step 1: Service Selection */}
                 {currentStep === 1 && (
                     <div className="animate-fadeIn">
-                        {/* Checkboxes Section */}
-                        <div className="mb-12">
-                            <h3 className="text-2xl md:text-3xl font-bold italic mb-8">
-                                Please check all boxes that align with your Request for Proposal:
-                            </h3>
+                        {/* Subtitle */}
+                        <p className="text-lg mb-8 opacity-90">
+                            (Please check all boxes that align with your Request for Proposal)
+                        </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
-                                {services.map((service) => (
-                                    <div key={service} className="flex items-start space-x-3">
-                                        <Checkbox
-                                            id={service}
-                                            className="border-white/50 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-6 h-6 mt-0.5 rounded-sm"
-                                        />
-                                        <label
-                                            htmlFor={service}
-                                            className="text-lg leading-tight cursor-pointer select-none"
-                                        >
-                                            {service}
-                                        </label>
+                        {/* Categorized Checkboxes Section */}
+                        <div className="mb-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+                                {/* Column 1: Geophysical + Drilling Services */}
+                                <div className="space-y-6">
+                                    {/* Geophysical Services */}
+                                    <div>
+                                        <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
+                                            Geophysical Services
+                                        </h4>
+                                        <div className="space-y-2.5">
+                                            {serviceCategories["Geophysical Services"].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={service}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={service}
+                                                        className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                ))}
+
+                                    {/* Drilling Services */}
+                                    <div>
+                                        <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
+                                            Drilling Services
+                                        </h4>
+                                        <div className="space-y-2.5">
+                                            {serviceCategories["Drilling Services"].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={service}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={service}
+                                                        className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Column 2: Remediation Services */}
+                                <div>
+                                    <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
+                                        Remediation Services
+                                    </h4>
+                                    <div className="space-y-2.5">
+                                        {serviceCategories["Remediation Services"].map((service) => (
+                                            <div key={service} className="flex items-center space-x-3 group">
+                                                <Checkbox
+                                                    id={service}
+                                                    className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                />
+                                                <label
+                                                    htmlFor={service}
+                                                    className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                >
+                                                    {service}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Column 3: Additional Services + Drilling Support */}
+                                <div className="space-y-6">
+                                    {/* Additional Services */}
+                                    <div>
+                                        <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
+                                            Additional Services
+                                        </h4>
+                                        <div className="space-y-2.5">
+                                            {[
+                                                "Slurry Walls",
+                                                "Permeable Reactive Barriers",
+                                                "Ecosystem Restoration",
+                                                "Remediation System Vaults",
+                                                "Groundwater Treatment Systems",
+                                                "Well Filters",
+                                                "Vapor Mitigation Systems",
+                                            ].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={`add-${service}`}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={`add-${service}`}
+                                                        className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Drilling Support */}
+                                    <div>
+                                        <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
+                                            Drilling Support
+                                        </h4>
+                                        <div className="space-y-2.5">
+                                            {serviceCategories["Drilling Support"].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={service}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={service}
+                                                        className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         {/* Bottom Section */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-end mb-8">
-                            <div className="lg:col-span-2">
+                        <div className="flex flex-col lg:flex-row items-end gap-6">
+                            <div className="flex-1 w-full">
                                 <Textarea
                                     placeholder="Don't see a service you're looking for, add a note here:"
-                                    className="bg-white/30 border-none text-white placeholder:text-white/70 min-h-[100px] text-xl p-6 resize-none rounded-xl"
+                                    className="bg-white/20 border-none text-white placeholder:text-white/70 min-h-[80px] text-lg p-4 resize-none rounded-lg w-full"
                                 />
                             </div>
-                        </div>
-
-                        {/* Next Button */}
-                        <div className="flex justify-end">
                             <Button
                                 onClick={nextStep}
                                 size="lg"
-                                className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-xl px-12 py-6 shadow-xl flex items-center gap-3"
+                                className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg"
                             >
-                                Next Step
-                                <ArrowRight className="w-6 h-6" />
+                                Next &gt;&gt;
                             </Button>
                         </div>
                     </div>
@@ -141,131 +260,141 @@ const DrillingRequestForm = () => {
                 {/* Step 2: Contact Information */}
                 {currentStep === 2 && (
                     <div className="animate-fadeIn">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             {/* Left Column: Input Fields (Takes up 2 cols) */}
-                            <div className="lg:col-span-2 space-y-6">
+                            <div className="lg:col-span-2 space-y-5">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Your Name *</label>
                                         <Input
                                             placeholder="David"
-                                            className="bg-white/30 border-none text-white placeholder:text-white/70 h-12 text-lg"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Company Name</label>
                                         <Input
                                             placeholder="Smith"
-                                            className="bg-white/30 border-none text-white placeholder:text-white/70 h-12 text-lg"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="space-y-2">
+                                <div className="space-y-1">
                                     <label className="text-sm font-medium ml-1">Address</label>
                                     <Input
-                                        className="bg-white/30 border-none text-white h-12 text-lg"
+                                        placeholder="123 Main Street"
+                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                     />
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">City</label>
                                         <Input
-                                            className="bg-white/30 border-none text-white h-12 text-lg"
+                                            placeholder="Bridgewater"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">State</label>
                                         <Input
-                                            className="bg-white/30 border-none text-white h-12 text-lg"
+                                            placeholder="NJ"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="w-full md:w-1/2 pr-0 md:pr-3">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium ml-1">Zip Code</label>
-                                        <Input
-                                            className="bg-white/30 border-none text-white h-12 text-lg"
-                                        />
-                                    </div>
+                                <div className="space-y-1">
+                                    <label className="text-sm font-medium ml-1">Zip Code</label>
+                                    <Input
+                                        placeholder="08807"
+                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                    />
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Phone Number</label>
                                         <Input
-                                            placeholder="(   )"
-                                            className="bg-white/30 border-none text-white placeholder:text-white/70 h-12 text-lg"
+                                            placeholder="(     )"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Cell Number</label>
                                         <Input
-                                            placeholder="(   )"
-                                            className="bg-white/30 border-none text-white placeholder:text-white/70 h-12 text-lg"
+                                            placeholder="(     )"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="w-full md:w-1/2 pr-0 md:pr-3">
-                                    <div className="space-y-2">
+                                <div className="flex items-end gap-4">
+                                    <div className="flex-1 space-y-1">
                                         <label className="text-sm font-medium ml-1">Estimated Start Date</label>
-                                        <div className="relative">
-                                            <Input
-                                                className="bg-white/30 border-none text-white h-12 text-lg pr-12"
-                                            />
-                                            <Calendar className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white" />
-                                        </div>
+                                        <Input
+                                            placeholder="MM/DD/YYYY"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                        />
+                                    </div>
+                                    <div className="w-12 h-12 rounded-lg bg-[#c9917a] flex items-center justify-center cursor-pointer hover:bg-[#b8806a] transition-colors">
+                                        <Calendar className="w-6 h-6 text-white" />
                                     </div>
                                 </div>
                             </div>
 
                             {/* Right Column: File Upload */}
-                            <div className="lg:col-span-1 flex flex-col items-center justify-center text-center space-y-6 mt-8 lg:mt-0">
-                                <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/40">
-                                    <CloudUpload className="w-12 h-12 text-white" />
+                            <div className="lg:col-span-1 flex flex-col items-center text-center space-y-4">
+                                {/* Upload Icon */}
+                                <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/40">
+                                    <CloudUpload className="w-10 h-10 text-white" />
                                 </div>
 
-                                <div className="space-y-2">
-                                    <h4 className="text-2xl font-bold">
+                                {/* Upload Text */}
+                                <div className="space-y-1">
+                                    <h4 className="text-xl font-bold italic">
                                         Upload Project Related<br />Documents/Scope of Work
                                     </h4>
-                                    <p className="text-white/80">
+                                    <p className="text-white/80 text-sm">
                                         You Can Upload Multiple Documents
                                     </p>
                                 </div>
 
-                                <div className="w-full max-w-xs bg-black/20 rounded-xl p-8 border-2 border-dashed border-white/20 hover:bg-black/30 transition-colors cursor-pointer relative group">
-                                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                                        {/* Mountain graphic placeholder */}
-                                        <svg width="60" height="30" viewBox="0 0 60 30" fill="none" className="text-white/20">
-                                            <path d="M30 0L60 30H0L30 0Z" fill="currentColor" />
-                                        </svg>
+                                {/* Drop Zone with Mountain Background */}
+                                <div
+                                    className="w-full max-w-[220px] rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity relative"
+                                    style={{
+                                        backgroundImage: 'url(/images/files-bg.webp)',
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center'
+                                    }}
+                                >
+                                    <div className="py-6 px-4 flex flex-col items-center">
+                                        <p className="text-lg mb-3 text-white">(Drop Files Here)</p>
+                                        <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-6 py-2 border border-white/30">
+                                            Select Files
+                                        </Button>
                                     </div>
-                                    <p className="text-lg mb-4">(Drop Files Here)</p>
-                                    <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic border border-white/20">
-                                        Select Files
-                                    </Button>
                                 </div>
                             </div>
                         </div>
 
                         {/* Navigation Buttons */}
-                        <div className="flex justify-between">
+                        <div className="flex justify-between mt-8">
                             <Button
                                 onClick={prevStep}
                                 size="lg"
                                 variant="outline"
-                                className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold italic text-xl px-12 py-6 shadow-xl flex items-center gap-3"
+                                className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg"
                             >
-                                <ArrowLeft className="w-6 h-6" />
-                                Previous
+                                &lt;&lt; Previous
                             </Button>
+
+                            {/* Submit Button - Moved here */}
                             <Button
                                 size="lg"
-                                className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-xl px-12 py-6 shadow-xl border-2 border-[#1a365d] hover:border-white/20"
+                                className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg"
                             >
                                 Submit Project
                             </Button>
@@ -273,7 +402,7 @@ const DrillingRequestForm = () => {
                     </div>
                 )}
             </div>
-        </section>
+        </section >
     );
 };
 

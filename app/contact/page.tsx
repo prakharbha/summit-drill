@@ -112,58 +112,71 @@ export default function ContactPage() {
 
         {/* Team List Section */}
         <section className="py-20 bg-[#B5D48C] text-[#1A365D]">
-          <div className="container mx-auto px-4 lg:px-8">
+          <div className="container mx-auto px-4 lg:px-8 space-y-20">
+
+            {/* Corporate Leadership */}
+            <div>
+              <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Corporate Leadership</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                {CORPORATE.map((employee, i) => (
+                  <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <EmployeeCard employee={employee} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Operations */}
+            <div>
+              <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Operations Team</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {OPERATIONS.map((employee, i) => (
+                  <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <EmployeeCard employee={employee} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Business Development */}
+            <div>
+              <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Business Development</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {BUSINESS_DEVELOPMENT.map((employee, i) => (
+                  <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <EmployeeCard employee={employee} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Support Departments */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              {/* Operations */}
+              {/* Health & Safety */}
               <div>
-                <h3 className="text-3xl font-bold mb-8">Operations</h3>
-                <div className="space-y-8">
-                  {OPERATIONS.map((employee, i) => (
-                    <EmployeeCard key={i} employee={employee} />
+                <h3 className="text-2xl font-bold mb-8 text-center md:text-left border-b border-[#1A365D]/20 pb-2">Health & Safety</h3>
+                <div className="space-y-6">
+                  {HEALTH_SAFETY.map((employee, i) => (
+                    <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <EmployeeCard employee={employee} />
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Right Column (Health & Safety, Finance, Corporate) */}
-              <div className="space-y-16">
-                <div>
-                  <h3 className="text-3xl font-bold mb-8">Health & Safety</h3>
-                  <div className="space-y-8">
-                    {HEALTH_SAFETY.map((employee, i) => (
-                      <EmployeeCard key={i} employee={employee} />
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-3xl font-bold mb-8">Finance & Administration</h3>
-                  <div className="space-y-8">
-                    {FINANCE.map((employee, i) => (
-                      <EmployeeCard key={i} employee={employee} />
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-3xl font-bold mb-8">Corporate</h3>
-                  <div className="space-y-8">
-                    {CORPORATE.map((employee, i) => (
-                      <EmployeeCard key={i} employee={employee} />
-                    ))}
-                  </div>
+              {/* Finance */}
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-center md:text-left border-b border-[#1A365D]/20 pb-2">Finance & Administration</h3>
+                <div className="space-y-6">
+                  {FINANCE.map((employee, i) => (
+                    <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <EmployeeCard employee={employee} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {/* Business Development (Full Width) */}
-            <div className="mt-16">
-              <h3 className="text-3xl font-bold mb-8">Business Development</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                {BUSINESS_DEVELOPMENT.map((employee, i) => (
-                  <EmployeeCard key={i} employee={employee} />
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
