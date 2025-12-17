@@ -200,7 +200,7 @@ export default function DrillingTechniquesContent() {
                                         <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                             {tech.description}
                                         </p>
-                                        <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-[#6b8a61] text-white font-bold px-6 shadow-md mt-2">
+                                        <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                                             <Link href={tech.href}>
                                                 {tech.ctaText} &gt;&gt;
                                             </Link>

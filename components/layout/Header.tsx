@@ -8,6 +8,12 @@ import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
+interface MenuItem {
+  name: string;
+  href: string;
+  children?: MenuItem[];
+}
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -26,22 +32,48 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const servicesItems = [
-    { name: "Geophysics", href: "/services/geophysics-services" },
-    { name: "Drilling", href: "/services/drilling-techniques" },
-    { name: "— Sonic Drilling", href: "/services/sonic-drilling" },
-    { name: "— Direct Push", href: "/services/direct-push" },
-    { name: "— Auger Drilling", href: "/services/auger-drilling" },
-    { name: "— Air Rotary", href: "/services/air-rotary-drilling" },
-    { name: "— Drilling & Injection", href: "/services/injection-remediation-services" },
-    { name: "Remediation", href: "/services/remediation-services" },
+  const servicesItems: MenuItem[] = [
+    {
+      name: "Geophysics",
+      href: "/services/geophysical-services",
+      children: [
+        { name: "Utility Locating", href: "/services/utility-locating" },
+        { name: "UST & Septic Detection", href: "/services/ust-septic-detection" },
+        { name: "Borehole Geophysics", href: "/services/borehole-geophysics" },
+        { name: "Electrical Resistivity", href: "/services/electrical-resistivity" },
+        { name: "Seismic Refraction", href: "/services/seismic-refraction" },
+      ]
+    },
+    {
+      name: "Drilling",
+      href: "/services/drilling-techniques",
+      children: [
+        { name: "Sonic Drilling", href: "/services/sonic-drilling" },
+        { name: "Direct Push", href: "/services/direct-push" },
+        { name: "Auger Drilling", href: "/services/auger-drilling" },
+        { name: "Air Rotary", href: "/services/air-rotary-drilling" },
+        { name: "Drilling & Injection", href: "/services/injection-remediation-services" },
+      ]
+    },
+    {
+      name: "Remediation",
+      href: "/services/remediation-services",
+      children: [
+        { name: "Remediation Systems", href: "/services/remediation-systems" },
+        { name: "In-Situ Remediation", href: "/services/in-situ-remediation" },
+        { name: "Injection Remediation", href: "/services/injection-remediation" },
+        { name: "Barrier Walls", href: "/services/barrier-walls" },
+        { name: "Earthwork", href: "/services/earthwork-remediation" },
+        { name: "Drilling Support", href: "/services/drilling-support" },
+      ]
+    },
   ];
 
-  const industriesItems = [
-    { name: "Environmental", href: "/industries#environmental" },
-    { name: "Geotechnical", href: "/industries#geotechnical" },
-    { name: "Cathodic", href: "/industries#cathodic" },
-    { name: "Mining/Aggregate", href: "/industries#mining" },
+  const industriesItems: MenuItem[] = [
+    { name: "Environmental", href: "/industries/environmental" },
+    { name: "Geotechnical", href: "/industries/geotechnical" },
+    { name: "Cathodic", href: "/industries/cathodic" },
+    { name: "Aggregate", href: "/industries/aggregate" },
   ];
 
   const navigation = [
@@ -172,13 +204,30 @@ const Header = () => {
                               className="absolute top-full left-0 mt-0 w-64 bg-white/90 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
                             >
                               {item.items?.map((subItem) => (
-                                <Link
-                                  key={subItem.name}
-                                  href={subItem.href}
-                                  className="block px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
-                                >
-                                  {subItem.name}
-                                </Link>
+                                <div key={subItem.name} className="relative group/sub">
+                                  <Link
+                                    href={subItem.href}
+                                    className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                  >
+                                    {subItem.name}
+                                    {subItem.children && subItem.children.length > 0 && (
+                                      <HiChevronDown className="w-3 h-3 -rotate-90" />
+                                    )}
+                                  </Link>
+                                  {subItem.children && subItem.children.length > 0 && (
+                                    <div className="absolute left-full top-0 ml-0 w-56 bg-white/90 backdrop-blur-xl rounded-sm border-l-4 border-[#4d7c55] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50">
+                                      {subItem.children.map((child: { name: string; href: string }) => (
+                                        <Link
+                                          key={child.name}
+                                          href={child.href}
+                                          className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                        >
+                                          {child.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
                               ))}
                             </motion.div>
                           ) : null}
@@ -266,13 +315,30 @@ const Header = () => {
                             className="absolute top-full left-0 mt-0 w-64 bg-white/90 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
                           >
                             {item.items?.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
-                              >
-                                {subItem.name}
-                              </Link>
+                              <div key={subItem.name} className="relative group/sub">
+                                <Link
+                                  href={subItem.href}
+                                  className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                >
+                                  {subItem.name}
+                                  {subItem.children && subItem.children.length > 0 && (
+                                    <HiChevronDown className="w-3 h-3 -rotate-90" />
+                                  )}
+                                </Link>
+                                {subItem.children && subItem.children.length > 0 && (
+                                  <div className="absolute left-full top-0 ml-0 w-56 bg-white/90 backdrop-blur-xl rounded-sm border-l-4 border-[#4d7c55] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50">
+                                    {subItem.children.map((child: { name: string; href: string }) => (
+                                      <Link
+                                        key={child.name}
+                                        href={child.href}
+                                        className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                      >
+                                        {child.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
                             ))}
                           </motion.div>
                         ) : null}
@@ -389,18 +455,37 @@ const Header = () => {
                                 className="pl-4 overflow-hidden bg-white/10"
                               >
                                 {item.items?.map((subItem) => (
-                                  <Link
-                                    key={subItem.name}
-                                    href={subItem.href}
-                                    className="block text-sm font-medium text-white/80 hover:text-sky-300 transition-colors py-3 border-b border-white/10 last:border-0"
-                                    onClick={() => {
-                                      setMobileMenuOpen(false);
-                                      setMobileServicesOpen(false);
-                                      setMobileIndustriesOpen(false);
-                                    }}
-                                  >
-                                    {subItem.name}
-                                  </Link>
+                                  <div key={subItem.name}>
+                                    <Link
+                                      href={subItem.href}
+                                      className="block text-sm font-bold text-white hover:text-sky-300 transition-colors py-3 border-b border-white/10"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setMobileServicesOpen(false);
+                                        setMobileIndustriesOpen(false);
+                                      }}
+                                    >
+                                      {subItem.name}
+                                    </Link>
+                                    {subItem.children && subItem.children.length > 0 && (
+                                      <div className="pl-4 bg-white/5">
+                                        {subItem.children.map((child) => (
+                                          <Link
+                                            key={child.name}
+                                            href={child.href}
+                                            className="block text-sm font-medium text-white/70 hover:text-sky-300 transition-colors py-2 border-b border-white/5 last:border-0"
+                                            onClick={() => {
+                                              setMobileMenuOpen(false);
+                                              setMobileServicesOpen(false);
+                                              setMobileIndustriesOpen(false);
+                                            }}
+                                          >
+                                            — {child.name}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
                                 ))}
                               </motion.div>
                             )}
