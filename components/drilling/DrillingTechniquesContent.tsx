@@ -231,7 +231,7 @@ export default function DrillingTechniquesContent() {
                 {/* Request Form Section */}
                 <DrillingRequestForm />
             </main>
-            <Footer hasDividerAbove />
+            <Footer />
         </>
     );
 }

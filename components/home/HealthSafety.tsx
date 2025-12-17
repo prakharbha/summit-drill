@@ -1,25 +1,25 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { GreenButton } from "@/components/ui/GreenButton";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const HealthSafety = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#A8C686] text-[#0e2a47] overflow-x-hidden">
+    <section className="py-8 md:py-12 bg-[#A8C686] text-[#0e2a47] overflow-x-hidden">
       <div className="container mx-auto px-4 lg:px-8 max-w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="relative h-80 lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-80 lg:h-[450px] rounded-3xl overflow-hidden">
               <Image
                 src="/images/health-safety-home-bg.webp"
-                alt="Health & Safety Team"
+                alt="Health &amp; Safety Team"
                 fill
                 className="object-cover"
               />
@@ -31,28 +31,23 @@ const HealthSafety = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0e2a47]">
+            <SectionHeading variant="light">
               Health & Safety
-            </h2>
+            </SectionHeading>
 
             <h3 className="text-xl md:text-2xl font-bold text-[#0e2a47]/90">
-              Our Health & Safety programs are unique.
+              Our Health &amp; Safety programs are unique.
             </h3>
 
-            <p className="text-lg text-[#0e2a47]/80 leading-relaxed font-medium">
-              How? We blend best practice trainings, PPE use, equipment maintenance and Sr. team mentors with the industry’s most hands-on approach. Our H&S leaders are out in the field to guide where the work is being done.
+            <p className="text-xl text-[#0e2a47]/80 leading-relaxed font-medium !mt-0">
+              How? We blend best practice trainings, PPE use, equipment maintenance and Sr. team mentors with the industry's most hands-on approach. Our H&amp;S leaders are out in the field to guide where the work is being done.
             </p>
 
-            <div className="pt-4">
-              <Button
-                asChild
-                className="bg-[#5c8a45] hover:bg-[#4a7038] text-white px-4 py-4 md:px-8 md:py-6 text-base md:text-lg font-bold shadow-lg w-full md:w-auto whitespace-normal md:whitespace-nowrap text-center"
-              >
-                <Link href="/health-safety">Learn more about our H&S culture and leadership &gt;&gt;</Link>
-              </Button>
-            </div>
+            <GreenButton href="/health-safety" className="mt-[15px] w-full md:w-auto whitespace-normal md:whitespace-nowrap text-center">
+              Learn more about our H&amp;S culture and leadership &gt;&gt;
+            </GreenButton>
           </motion.div>
         </div>
       </div>

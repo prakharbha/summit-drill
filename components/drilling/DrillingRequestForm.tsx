@@ -67,8 +67,7 @@ const DrillingRequestForm = () => {
 
     return (
         <section
-            className="pt-20 pb-48 bg-[#8B4513] text-white relative z-20"
-            style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 100px), 35% 98%, 0 calc(100% - 100px))" }}
+            className="pt-20 pb-20 bg-[#8B4513] text-white relative z-20"
         >
             <div className="container mx-auto px-4 lg:px-8">
                 {/* Header with Step Indicator */}

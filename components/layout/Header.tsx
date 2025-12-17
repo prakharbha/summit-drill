@@ -56,17 +56,17 @@ const Header = () => {
 
   return (
     <header className={`${isScrolled ? 'fixed' : 'absolute'} top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled
-      ? 'bg-[#004990] shadow-md'
+      ? 'bg-[#252a54]/80 backdrop-blur-xl'
       : 'bg-transparent'
       }`}>
       <div className="flex flex-col w-full">
         {/* Top Row: Logo & Actions (shown when not scrolled) */}
         {!isScrolled && (
-          <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative h-24">
+          <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative h-24 pt-4">
             {/* Logo - Centered */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <Link href="/" className="flex items-center gap-2 group">
-                <div className="relative w-64 h-20">
+                <div className="relative w-[307px] h-24">
                   <Image
                     src="/images/summit-logo-update.webp"
                     alt="Summit Drilling"
@@ -80,12 +80,12 @@ const Header = () => {
 
             {/* Right: Actions & Socials (Desktop) */}
             <div className="hidden lg:flex items-center justify-end gap-6 w-full">
-              <Link href="/resources/start-a-project" className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors">
+              <Link href="/resources/start-a-project" className="text-base font-bold italic tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors">
                 Start-A-Project
               </Link>
               <Link
                 href="/contact"
-                className="text-sm font-bold uppercase tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors"
+                className="text-base font-bold italic tracking-wide text-white hover:text-sky-300 drop-shadow-md transition-colors"
               >
                 Contact
               </Link>
@@ -120,7 +120,7 @@ const Header = () => {
 
         {/* BOTTOM ROW: Navigation (Desktop, not scrolled) */}
         {!isScrolled && (
-          <div className="hidden lg:block w-full border-t border-white/10 bg-gradient-to-b from-black/10 to-transparent">
+          <div className="hidden lg:block w-full bg-gradient-to-b from-black/10 to-transparent">
             <div className="container mx-auto px-4 lg:px-8">
               <nav className="flex items-center justify-center gap-8 h-14">
                 {navigation.map((item) => (
@@ -148,7 +148,7 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <>
                         <button
-                          className="text-sm font-bold transition-colors flex items-center gap-1 uppercase tracking-wide h-full border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
+                          className="text-base font-bold italic transition-colors flex items-center gap-1 tracking-wide h-full border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
                           onClick={() => {
                             if (item.name === "Services") {
                               setServicesOpen(!servicesOpen);
@@ -169,13 +169,13 @@ const Header = () => {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: 10 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-0 w-64 bg-white rounded-sm shadow-xl border-t-4 border-[#4d7c55] py-2 z-50"
+                              className="absolute top-full left-0 mt-0 w-64 bg-white/90 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
                             >
                               {item.items?.map((subItem) => (
                                 <Link
                                   key={subItem.name}
                                   href={subItem.href}
-                                  className="block px-6 py-3 text-sm font-semibold text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-100 last:border-0"
+                                  className="block px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                                 >
                                   {subItem.name}
                                 </Link>
@@ -187,7 +187,7 @@ const Header = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm font-bold transition-colors uppercase tracking-wide h-full flex items-center border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
+                        className="text-base font-bold italic transition-colors tracking-wide h-full flex items-center border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
                       >
                         {item.name}
                       </Link>
@@ -242,7 +242,7 @@ const Header = () => {
                   {item.hasDropdown ? (
                     <>
                       <button
-                        className="text-sm font-bold transition-colors flex items-center gap-1 uppercase tracking-wide text-white hover:text-sky-300"
+                        className="text-base font-bold italic transition-colors flex items-center gap-1 tracking-wide text-white hover:text-sky-300"
                         onClick={() => {
                           if (item.name === "Services") {
                             setServicesOpen(!servicesOpen);
@@ -263,13 +263,13 @@ const Header = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-sm shadow-xl border-t-4 border-[#4d7c55] py-2 z-50"
+                            className="absolute top-full left-0 mt-0 w-64 bg-white/90 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
                           >
                             {item.items?.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className="block px-6 py-3 text-sm font-semibold text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-100 last:border-0"
+                                className="block px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                               >
                                 {subItem.name}
                               </Link>
@@ -281,7 +281,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-sm font-bold transition-colors uppercase tracking-wide text-white hover:text-sky-300"
+                      className="text-base font-bold italic transition-colors tracking-wide text-white hover:text-sky-300"
                     >
                       {item.name}
                     </Link>
@@ -314,10 +314,10 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-50 bg-white overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#252a54]/95 backdrop-blur-xl overflow-y-auto overflow-x-hidden"
           >
             {/* Mobile Header with Close Button */}
-            <div className="bg-[#004990] w-full">
+            <div className="bg-[#252a54] w-full">
               <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="relative w-48 h-12">
                   <Image
@@ -345,7 +345,7 @@ const Header = () => {
                 </Button>
                 <Link
                   href="/contact"
-                  className="text-center text-sm font-bold text-gray-800 uppercase tracking-wide py-2 border border-gray-200"
+                  className="text-center text-sm font-bold text-white uppercase tracking-wide py-2 border border-white/30"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contact Us
@@ -358,7 +358,7 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <>
                         <button
-                          className="w-full flex items-center justify-between text-sm font-bold text-gray-800 hover:text-sky-600 transition-colors py-3 border-b border-gray-100 uppercase"
+                          className="w-full flex items-center justify-between text-sm font-bold text-white hover:text-sky-300 transition-colors py-3 border-b border-white/10 uppercase"
                           onClick={() => {
                             if (item.name === "Services") {
                               setMobileServicesOpen(!mobileServicesOpen);
@@ -386,13 +386,13 @@ const Header = () => {
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.2 }}
-                                className="pl-4 overflow-hidden bg-gray-50"
+                                className="pl-4 overflow-hidden bg-white/10"
                               >
                                 {item.items?.map((subItem) => (
                                   <Link
                                     key={subItem.name}
                                     href={subItem.href}
-                                    className="block text-sm font-medium text-gray-600 hover:text-sky-600 transition-colors py-3 border-b border-gray-100 last:border-0"
+                                    className="block text-sm font-medium text-white/80 hover:text-sky-300 transition-colors py-3 border-b border-white/10 last:border-0"
                                     onClick={() => {
                                       setMobileMenuOpen(false);
                                       setMobileServicesOpen(false);
@@ -409,7 +409,7 @@ const Header = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm font-bold text-gray-800 hover:text-sky-600 transition-colors py-3 block border-b border-gray-100 uppercase"
+                        className="text-sm font-bold text-white hover:text-sky-300 transition-colors py-3 block border-b border-white/10 uppercase"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -419,14 +419,14 @@ const Header = () => {
                 ))}
 
                 {/* Mobile Social Icons */}
-                <div className="flex items-center gap-8 mt-6 pt-6 border-t border-gray-200 justify-center">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
+                <div className="flex items-center gap-8 mt-6 pt-6 border-t border-white/20 justify-center">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
                     <FaLinkedinIn className="w-6 h-6" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on Facebook">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Facebook">
                     <FaFacebookF className="w-6 h-6" />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-sky-600 transition-colors" aria-label="Visit Summit Drilling on Instagram">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Instagram">
                     <FaInstagram className="w-6 h-6" />
                   </a>
                 </div>

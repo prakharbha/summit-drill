@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { GreenButton } from "@/components/ui/GreenButton";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const FeaturedProject = () => {
   return (
@@ -32,9 +34,9 @@ const FeaturedProject = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
+            <SectionHeading variant="white">
               Featured Project
-            </h2>
+            </SectionHeading>
 
             <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
               Sure, we’ll tell you what we do, but we would rather show you.
@@ -54,17 +56,13 @@ const FeaturedProject = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-4 justify-center lg:items-end"
           >
+            <GreenButton href="/project-gallery" className="py-6 text-lg w-full sm:w-auto">
+              Read more about this project &gt;&gt;
+            </GreenButton>
             <Button
               asChild
               size="lg"
-              className="bg-[#5c8a45] hover:bg-[#4a7038] text-white font-bold px-8 py-6 text-lg w-full sm:w-auto rounded shadow-lg"
-            >
-              <Link href="/project-gallery">Read more about this project &gt;&gt;</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#c25e2e] hover:bg-[#a65027] text-white font-bold px-8 py-6 text-lg w-full sm:w-auto rounded shadow-lg"
+              className="bg-[#c25e2e] hover:bg-[#a65027] text-white font-bold px-8 py-6 text-lg w-full sm:w-auto rounded"
             >
               <Link href="/project-gallery">Visit our project gallery &gt;&gt;</Link>
             </Button>

@@ -26,35 +26,31 @@ const Footer = ({ hasDividerAbove = false }: FooterProps) => {
           <Image
             src="/images/summit-logo-update.webp"
             alt="Summit Drilling, LLC"
-            width={256}
-            height={80}
-            className="h-20 w-auto"
+            width={400}
+            height={125}
+            className="h-32 w-auto"
           />
         </div>
 
         {/* Contact Info Row */}
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm md:text-base font-semibold mb-8">
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm md:text-base font-semibold italic mb-8">
           <span>81 Chimney Rock Road, Bridgewater, NJ 08807</span>
-          <span className="hidden md:inline">|</span>
           <a href="mailto:Sales@SummitDrilling.com" className="hover:text-sky-300 transition-colors">
             Sales@SummitDrilling.com
           </a>
-          <span className="hidden md:inline">|</span>
           <Link href="/locations" className="hover:text-sky-300 transition-colors">
             Locations
           </Link>
-          <span className="hidden md:inline">|</span>
           <a href="tel:800-242-6648" className="hover:text-sky-300 transition-colors">
             800-242-6648
           </a>
-          <span className="hidden md:inline">|</span>
           <Link href="/sitemap.xml" className="hover:text-sky-300 transition-colors">
             Sitemap
           </Link>
         </div>
 
         {/* Copyright */}
-        <div className="text-sm text-sky-200/80">
+        <div className="text-sm text-sky-200/80 italic">
           <p>©{currentYear} Summit Drilling, LLC.</p>
         </div>
       </div>

@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const StartProject = () => {
   return (
     <section
-      className="relative bg-[#913c20] text-white overflow-hidden pt-20 pb-32 lg:pt-24 lg:pb-40 bg-no-repeat"
+      className="relative bg-[#913c20] text-white overflow-hidden pt-12 pb-20 lg:pt-16 lg:pb-24 bg-no-repeat"
       style={{
         backgroundImage: 'url(/images/start-bg.webp)',
         backgroundPosition: 'right center',
@@ -17,27 +18,31 @@ const StartProject = () => {
       }}
     >
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <h2 className="font-extrabold" style={{ fontSize: '3rem', lineHeight: '1.2' }}>
+            <SectionHeading variant="white">
               Start-a-Project 24/7
-            </h2>
+            </SectionHeading>
 
             <h3 className="text-xl md:text-2xl font-bold text-white/90">
               Get a fast, accurate and competitive proposal.
             </h3>
 
+            <p className="text-xl text-white/80 leading-relaxed font-medium !mt-0">
+              Tap into our veteran project managers. Experience increased efficiency through our broad services platform. Leverage our Maine to Florida reach to cover your hard to get to project sites. Use our simple online form to easily upload your scope of work.
+            </p>
+
             <div className="pt-4">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#1a365d] hover:bg-[#132845] text-white px-8 py-6 text-lg font-bold italic shadow-lg"
+                className="bg-[#1a365d] hover:bg-[#132845] text-white px-8 py-6 text-lg font-bold italic"
               >
                 <Link href="/resources/start-a-project">We're eager to serve you &gt;&gt;</Link>
               </Button>
@@ -52,7 +57,7 @@ const StartProject = () => {
             className="relative"
           >
             {/* Right side area for background image visibility */}
-            <div className="relative h-80 lg:h-[400px] w-full invisible">
+            <div className="relative h-48 lg:h-[280px] w-full invisible">
               {/* Content hidden to reveal background */}
             </div>
           </motion.div>
@@ -62,14 +67,14 @@ const StartProject = () => {
       {/* Custom SVG Divider */}
       <div className="absolute bottom-0 left-0 w-full leading-none z-20 translate-y-[1px]">
         <svg
-          viewBox="0 0 1440 100"
+          viewBox="0 0 1440 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-auto block"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 100V40L400 40L550 15L650 35L720 5L790 35L890 15L1040 40H1440V100H0Z"
+            d="M0 50V20L400 20L550 7.5L650 17.5L720 2.5L790 17.5L890 7.5L1040 20H1440V50H0Z"
             fill="#A8C686"
           />
         </svg>

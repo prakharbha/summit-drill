@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { GreenButton } from "@/components/ui/GreenButton";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export default function Careers() {
   return (
@@ -14,7 +16,7 @@ export default function Careers() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative w-full rounded-lg overflow-hidden shadow-2xl"
+            className="relative w-full rounded-lg overflow-hidden"
           >
             <Image
               src="/images/careers-image.webp"
@@ -33,11 +35,11 @@ export default function Careers() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h2 className="text-5xl lg:text-6xl font-extrabold text-[#1e3a8a]">
+            <SectionHeading variant="dark">
               Careers
-            </h2>
+            </SectionHeading>
 
-            <h3 className="text-2xl lg:text-3xl font-bold text-[#1e3a8a] leading-tight">
+            <h3 className="text-2xl font-bold text-[#1e3a8a] leading-tight">
               In our human resources department, you are the customer.
             </h3>
 
@@ -47,9 +49,9 @@ export default function Careers() {
               that provides trainings, certifications and a clear path forward.
             </p>
 
-            <button className="bg-[#5a8c43] hover:bg-[#4a7536] text-white font-bold py-3 px-8 rounded shadow-lg transition-colors text-lg">
+            <GreenButton href="/careers" className="mt-[15px]">
               Start your career track at Summit &gt;&gt;
-            </button>
+            </GreenButton>
           </motion.div>
         </div>
       </div>
@@ -57,14 +59,14 @@ export default function Careers() {
       {/* Bottom Divider */}
       <div className="absolute bottom-0 left-0 right-0 w-full z-30 translate-y-[1px]">
         <svg
-          viewBox="0 0 1440 100"
+          viewBox="0 0 1440 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-auto block"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 100V40L400 40L550 15L650 35L720 5L790 35L890 15L1040 40H1440V100H0Z"
+            d="M0 50V20L400 20L550 7.5L650 17.5L720 2.5L790 17.5L890 7.5L1040 20H1440V50H0Z"
             fill="#4d7c55"
           />
         </svg>

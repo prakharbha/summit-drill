@@ -31,6 +31,8 @@ interface PageHeroBannerProps {
     dividerColor?: string;
     /** Divider height in pixels (default: 50) */
     dividerHeight?: number;
+    /** Bottom margin for overlapping effect (default: 0) */
+    dividerMarginBottom?: number;
 }
 
 /**
@@ -57,6 +59,7 @@ export function PageHeroBanner({
     showDivider = true,
     dividerColor = "#B5D48C",
     dividerHeight = 50,
+    dividerMarginBottom = 0,
 }: PageHeroBannerProps) {
     return (
         <>
@@ -125,7 +128,9 @@ export function PageHeroBanner({
 
             {/* Mountain Divider - integrated into banner */}
             {showDivider && (
-                <MountainDivider fillColor={dividerColor} height={dividerHeight} />
+                <div style={{ marginBottom: dividerMarginBottom ? `-${dividerMarginBottom}px` : undefined }}>
+                    <MountainDivider fillColor={dividerColor} height={dividerHeight} />
+                </div>
             )}
         </>
     );

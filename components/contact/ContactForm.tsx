@@ -20,49 +20,49 @@ const ContactForm = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <Label htmlFor="name" className="text-white font-semibold">Your Name *</Label>
-                                <Input id="name" placeholder="David" className="bg-white/30 border-none text-white placeholder:text-white/70" />
+                                <Input id="name" placeholder="David" className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="company" className="text-white font-semibold">Company Name</Label>
-                                <Input id="company" placeholder="Smith" className="bg-white/30 border-none text-white placeholder:text-white/70" />
+                                <Input id="company" placeholder="Smith" className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]" />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <Label htmlFor="address" className="text-white font-semibold">Address</Label>
-                            <Input id="address" className="bg-white/30 border-none text-white" />
+                            <Input id="address" className="bg-white/30 border-none text-white rounded-[5px]" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <Label htmlFor="city" className="text-white font-semibold">City</Label>
-                                <Input id="city" className="bg-white/30 border-none text-white" />
+                                <Input id="city" className="bg-white/30 border-none text-white rounded-[5px]" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="state" className="text-white font-semibold">State</Label>
-                                <Input id="state" className="bg-white/30 border-none text-white" />
+                                <Input id="state" className="bg-white/30 border-none text-white rounded-[5px]" />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <Label htmlFor="zip" className="text-white font-semibold">Zip Code</Label>
-                            <Input id="zip" className="bg-white/30 border-none text-white" />
+                            <Input id="zip" className="bg-white/30 border-none text-white rounded-[5px]" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <Label htmlFor="phone" className="text-white font-semibold">Phone Number</Label>
-                                <Input id="phone" placeholder="(   )" className="bg-white/30 border-none text-white placeholder:text-white/70" />
+                                <Input id="phone" placeholder="(   )" className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="cell" className="text-white font-semibold">Cell Number</Label>
-                                <Input id="cell" placeholder="(   )" className="bg-white/30 border-none text-white placeholder:text-white/70" />
+                                <Input id="cell" placeholder="(   )" className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]" />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <Label htmlFor="email" className="text-white font-semibold">Email *</Label>
-                            <Input id="email" type="email" className="bg-white/30 border-none text-white" />
+                            <Input id="email" type="email" className="bg-white/30 border-none text-white rounded-[5px]" />
                         </div>
 
                         <div className="flex items-center space-x-2 pt-4">
@@ -79,7 +79,7 @@ const ContactForm = () => {
                             <Label htmlFor="notes" className="text-white font-semibold text-lg">Notes</Label>
                             <Textarea
                                 id="notes"
-                                className="bg-white/30 border-none text-white min-h-[300px] flex-grow resize-none"
+                                className="bg-white/30 border-none text-white min-h-[300px] flex-grow resize-none rounded-[5px]"
                             />
                         </div>
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const TEAM_MEMBERS = [
     { id: 1, name: "Ron Bucca", title: "CEO", image: "/images/team/ron-bucca-ceo.webp" },
@@ -49,14 +50,7 @@ export default function TeamCarousel() {
         setCurrentIndex((prev) => (prev - 1 + TEAM_MEMBERS.length) % TEAM_MEMBERS.length);
     };
 
-    // Auto-play functionality
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 3000);
 
-        return () => clearInterval(interval);
-    }, []);
 
     // Helper to get visible items (circular)
     const getVisibleItems = () => {
@@ -76,7 +70,7 @@ export default function TeamCarousel() {
         center: (offset: number) => ({
             x: offset * spacing,
             opacity: offset === 0 ? 1 : 0.7,
-            scale: offset === 0 ? 1 : 0.85,
+            scale: offset === 0 ? 1.0 : 0.85,
             zIndex: offset === 0 ? 10 : 5 - Math.abs(offset),
         }),
         exit: (dir: number) => ({
@@ -86,13 +80,13 @@ export default function TeamCarousel() {
     };
 
     return (
-        <section className="relative bg-[#4d7c55] py-8 z-20 -mt-1">
+        <section className="relative bg-[#4d7c55] py-4 z-20 -mt-1">
             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white">
+                <SectionHeading variant="white">
                     We Are Responsible for Your Experience
-                </h2>
+                </SectionHeading>
 
-                <div className="relative flex items-center justify-center h-[400px]">
+                <div className="relative flex items-center justify-center h-[320px]">
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
@@ -130,9 +124,9 @@ export default function TeamCarousel() {
                                         onMouseLeave={() => setHoveredId(null)}
                                     >
                                         <div
-                                            className={`relative rounded-full overflow-hidden border-4 transition-all duration-300 ${isActive
-                                                ? "border-white w-44 h-44 lg:w-52 lg:h-52"
-                                                : `border-white/30 w-36 h-36 lg:w-44 lg:h-44 ${isHovered ? "" : "grayscale"}`
+                                            className={`relative rounded-full overflow-hidden border-4 transition-all duration-300 w-40 h-40 lg:w-48 lg:h-48 ${isActive
+                                                ? "border-white"
+                                                : `border-white/30 ${isHovered ? "" : "grayscale"}`
                                                 }`}
                                         >
                                             <Image

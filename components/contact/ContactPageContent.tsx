@@ -50,10 +50,10 @@ function EmployeeCard({ employee }: { employee: { name: string; title: string; e
             <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-300 flex-shrink-0 border-4 border-[#5e745d]">
                 <Image src={employee.image} alt={employee.name} width={96} height={96} className="object-cover w-full h-full" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
                 <h4 className="text-xl font-bold">{employee.name}</h4>
                 <p className="font-medium">{employee.title}</p>
-                <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline">{employee.email}</a>
+                <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline text-sm">{employee.email}</a>
             </div>
         </div>
     );
@@ -74,7 +74,7 @@ export default function ContactPageContent() {
 
                 {/* Keep In Touch Section */}
                 <section
-                    className="py-20 text-[#1A365D] relative overflow-hidden"
+                    className="py-20 text-[#1A365D] relative overflow-visible -mt-[50px] pt-[70px]"
                     style={{ backgroundColor: '#B5D48C' }}
                 >
                     {/* Background texture - positioned right center */}
@@ -116,10 +116,10 @@ export default function ContactPageContent() {
 
                         {/* Corporate Leadership */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Corporate Leadership</h3>
+                            <h3 className="text-3xl font-bold mb-10 text-center">Corporate Leadership</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                                 {CORPORATE.map((employee, i) => (
-                                    <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div key={i} className="p-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
                                 ))}
@@ -128,10 +128,10 @@ export default function ContactPageContent() {
 
                         {/* Operations */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Operations Team</h3>
+                            <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {OPERATIONS.map((employee, i) => (
-                                    <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div key={i} className="p-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
                                 ))}
@@ -140,10 +140,10 @@ export default function ContactPageContent() {
 
                         {/* Business Development */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center border-b-2 border-[#1A365D]/20 pb-4 inline-block mx-auto w-full max-w-md">Business Development</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <h3 className="text-3xl font-bold mb-10 text-center">Business Development</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {BUSINESS_DEVELOPMENT.map((employee, i) => (
-                                    <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div key={i} className="p-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
                                 ))}
@@ -154,10 +154,10 @@ export default function ContactPageContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                             {/* Health & Safety */}
                             <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left border-b border-[#1A365D]/20 pb-2">Health & Safety</h3>
+                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Health & Safety</h3>
                                 <div className="space-y-6">
                                     {HEALTH_SAFETY.map((employee, i) => (
-                                        <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                        <div key={i} className="p-6 rounded-xl transition-colors hover:bg-white/20">
                                             <EmployeeCard employee={employee} />
                                         </div>
                                     ))}
@@ -166,10 +166,10 @@ export default function ContactPageContent() {
 
                             {/* Finance */}
                             <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left border-b border-[#1A365D]/20 pb-2">Finance & Administration</h3>
+                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Finance & Administration</h3>
                                 <div className="space-y-6">
                                     {FINANCE.map((employee, i) => (
-                                        <div key={i} className="bg-white/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                        <div key={i} className="p-6 rounded-xl transition-colors hover:bg-white/20">
                                             <EmployeeCard employee={employee} />
                                         </div>
                                     ))}
@@ -182,10 +182,7 @@ export default function ContactPageContent() {
 
                 {/* Headquarters Section */}
                 <section
-                    className="py-20 bg-[#1A365D] text-white relative z-20 pb-32"
-                    style={{
-                        clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 100px), 35% 100%, 0 calc(100% - 100px))"
-                    }}
+                    className="py-20 bg-[#1A365D] text-white relative z-20"
                 >
                     <div className="container mx-auto px-4 lg:px-8">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
@@ -218,7 +215,7 @@ export default function ContactPageContent() {
                     </div>
                 </section>
             </main>
-            <Footer hasDividerAbove />
+            <Footer />
         </>
     );
 }
