@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Document folders (source files)
+Geophysics Services/
+Industries Served/
+Remediation Services/
