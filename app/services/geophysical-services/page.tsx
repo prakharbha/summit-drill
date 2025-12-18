@@ -103,7 +103,7 @@ export default function GeophysicalServicesPage() {
 
         {/* Services Grid - Matching Drilling Page Design */}
         <section
-          className="py-20 bg-[#5e745d] text-white bg-no-repeat bg-cover"
+          className="py-20 bg-[#52755b] text-white bg-no-repeat bg-cover bg-blend-multiply"
           style={{
             backgroundImage: "url('/images/drilling-types-bg.webp')",
             backgroundPosition: "bottom center"
@@ -119,11 +119,18 @@ export default function GeophysicalServicesPage() {
                 <div key={service.title} className="flex flex-col">
                   {/* Ribbon Title */}
                   <div className="relative mb-4 self-start">
-                    <div className="bg-[#7A9A70] text-white font-bold text-xl px-6 py-2 relative z-10 border border-white/30 shadow-md transform -skew-x-12 ml-4">
-                      <span className="block transform skew-x-12">{service.title}</span>
+                    <div className="relative inline-block">
+                      <Image
+                        src="/images/ribbon.webp"
+                        alt="Ribbon"
+                        width={260}
+                        height={55}
+                        className="object-contain"
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center text-sm font-bold tracking-[0.10em] uppercase text-white font-work-sans z-10 pl-6 pr-6 text-center leading-none">
+                        {service.title}
+                      </span>
                     </div>
-                    {/* Ribbon Tail Effect */}
-                    <div className="absolute top-2 left-0 h-full w-4 bg-[#5e745d] transform -skew-x-12 border-l border-white/30"></div>
                   </div>
 
                   {/* Image Card */}
