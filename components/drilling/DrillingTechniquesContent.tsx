@@ -183,7 +183,7 @@ export default function DrillingTechniquesContent() {
                                                 height={55}
                                                 className="object-contain"
                                             />
-                                            <span className="absolute inset-0 flex items-center justify-center text-sm font-bold tracking-[0.10em] uppercase text-white font-work-sans z-10 pl-6 pr-6 text-center leading-none">
+                                            <span className="absolute inset-0 flex items-center justify-center text-sm font-bold italic tracking-[0.10em] text-white font-work-sans z-10 pl-6 pr-6 text-center leading-none">
                                                 {tech.title}
                                             </span>
                                         </div>
