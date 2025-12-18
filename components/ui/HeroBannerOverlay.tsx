@@ -60,17 +60,13 @@ export function ServiceRibbon({
     return (
         <div className="relative inline-block">
             <img
-                src="/images/ribbon.webp"
+                src="/images/ribbon-update.webp"
                 alt="Ribbon"
                 width={width}
                 height={height}
                 className="object-contain"
             />
-            {/* Dark overlay for text readability */}
-            <div
-                className="absolute inset-0"
-                style={{ backgroundColor: 'rgba(22, 48, 88, 0.7)' }}
-            />
+            {/* Overlay removed as per request - built into image */}
             <span className="absolute inset-0 flex items-center justify-center text-sm font-bold tracking-[0.15em] uppercase text-white font-work-sans z-10">
                 {text}
             </span>

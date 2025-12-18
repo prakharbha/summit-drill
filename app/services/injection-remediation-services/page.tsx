@@ -77,7 +77,7 @@ export default function InjectionPage() {
                             <h2 className="text-2xl font-bold italic text-[#163058] mb-4">
                                 Experience Drilling & Injection with Summit
                             </h2>
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <p className="text-gray-700 leading-relaxed text-lg font-bold">
                                 Summit&apos;s Lauren DiVello is a dedicated and experienced customer advocate. Reach Lauren at <strong>609-238-2815</strong> to discuss your project needs. Or email <a href="mailto:LDivello@SummitDrilling.com" className="text-[#163058] underline hover:text-[#A04020]">LDivello@SummitDrilling.com</a> and she will reply promptly.
                             </p>
                         </div>
