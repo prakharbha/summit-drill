@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GreenButton } from "@/components/ui/GreenButton";
+import { HeroBannerOverlay } from "@/components/ui/HeroBannerOverlay";
 
 const Discovery = () => {
   return (
@@ -33,7 +34,7 @@ const Discovery = () => {
           {/* Base Dark Overlay */}
           <div className="absolute inset-0 bg-black/40" />
           {/* Gradient Overlay for Menu and Text Contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-transparent to-blue-950/95" />
+          <HeroBannerOverlay />
         </div>
 
         {/* 3-Column Service Overlay */}
@@ -60,7 +61,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
                 <span className="text-[#8BC34A] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
               </p>
-              <GreenButton href="/services/geophysics" className="mt-[15px]">
+              <GreenButton href="/services/geophysical-services" className="mt-[15px]">
                 Take a closer look &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -85,7 +86,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
                 <span className="text-[#8BC34A] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
               </p>
-              <GreenButton href="/services/drilling" className="mt-[15px]">
+              <GreenButton href="/services/drilling-techniques" className="mt-[15px]">
                 Go a little deeper &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -110,7 +111,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
                 <span className="text-[#8BC34A] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
               </p>
-              <GreenButton href="/services/remediation" className="mt-[15px]">
+              <GreenButton href="/services/remediation-services" className="mt-[15px]">
                 Dig in &gt;&gt;
               </GreenButton>
             </motion.div>

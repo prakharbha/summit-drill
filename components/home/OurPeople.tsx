@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
+import { SectionDivider } from "@/components/ui/SectionDivider";
+
 const OurPeople = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,7 +56,10 @@ const OurPeople = () => {
   };
 
   return (
-    <section className="py-8 bg-green-800 text-white">
+    <section className="pb-8 bg-green-800 text-white relative">
+      <div className="absolute top-0 left-0 w-full overflow-hidden -mt-[1px] transform -translate-y-full leading-[0]">
+        <SectionDivider className="w-full h-auto" />
+      </div>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

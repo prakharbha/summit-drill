@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 const StartProject = () => {
   return (
@@ -66,18 +67,7 @@ const StartProject = () => {
 
       {/* Custom SVG Divider */}
       <div className="absolute bottom-0 left-0 w-full leading-none z-20 translate-y-[1px]">
-        <svg
-          viewBox="0 0 1440 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto block"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 50V20L400 20L550 7.5L650 17.5L720 2.5L790 17.5L890 7.5L1040 20H1440V50H0Z"
-            fill="#A8C686"
-          />
-        </svg>
+        <SectionDivider className="w-full h-auto block" fill="#A8C686" />
       </div>
     </section>
   );

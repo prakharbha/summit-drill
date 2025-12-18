@@ -242,7 +242,7 @@ const DrillingRequestForm = () => {
                             <div className="flex-1 w-full">
                                 <Textarea
                                     placeholder="Don't see a service you're looking for, add a note here:"
-                                    className="bg-white/20 border-none text-white placeholder:text-white/70 min-h-[80px] text-lg p-4 resize-none rounded-lg w-full"
+                                    className="bg-white/20 border-none text-white placeholder:text-white/70 min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
                                 />
                             </div>
                             <Button
@@ -267,14 +267,14 @@ const DrillingRequestForm = () => {
                                         <label className="text-sm font-medium ml-1">Your Name *</label>
                                         <Input
                                             placeholder="David"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Company Name</label>
                                         <Input
                                             placeholder="Smith"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                 </div>
@@ -283,7 +283,7 @@ const DrillingRequestForm = () => {
                                     <label className="text-sm font-medium ml-1">Address</label>
                                     <Input
                                         placeholder="123 Main Street"
-                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                     />
                                 </div>
 
@@ -292,14 +292,14 @@ const DrillingRequestForm = () => {
                                         <label className="text-sm font-medium ml-1">City</label>
                                         <Input
                                             placeholder="Bridgewater"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">State</label>
                                         <Input
                                             placeholder="NJ"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                 </div>
@@ -308,7 +308,7 @@ const DrillingRequestForm = () => {
                                     <label className="text-sm font-medium ml-1">Zip Code</label>
                                     <Input
                                         placeholder="08807"
-                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                        className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                     />
                                 </div>
 
@@ -317,14 +317,14 @@ const DrillingRequestForm = () => {
                                         <label className="text-sm font-medium ml-1">Phone Number</label>
                                         <Input
                                             placeholder="(     )"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Cell Number</label>
                                         <Input
                                             placeholder="(     )"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@ const DrillingRequestForm = () => {
                                         <label className="text-sm font-medium ml-1">Estimated Start Date</label>
                                         <Input
                                             placeholder="MM/DD/YYYY"
-                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-full px-5"
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
                                     <div className="w-12 h-12 rounded-lg bg-[#c9917a] flex items-center justify-center cursor-pointer hover:bg-[#b8806a] transition-colors">

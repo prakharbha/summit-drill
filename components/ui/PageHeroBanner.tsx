@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HeroBannerOverlay, ServiceRibbon } from "./HeroBannerOverlay";
-import { MountainDivider } from "./SectionDivider";
+import { MountainDivider } from "./MountainDivider";
 import { ReactNode } from "react";
 
 interface PageHeroBannerProps {

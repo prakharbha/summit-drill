@@ -1,96 +1,28 @@
-"use client";
-
-type DividerVariant = "mountain" | "wave" | "slant" | "peak";
+import React from "react";
 
 interface SectionDividerProps {
-    /** Type of divider shape */
-    variant?: DividerVariant;
-    /** Color of the divider - should match the section below */
-    fillColor?: string;
-    /** Height of the divider */
-    height?: number;
-    /** Whether to flip the divider vertically */
-    flip?: boolean;
-    /** Additional CSS classes */
     className?: string;
+    fill?: string;
 }
 
-/**
- * Reusable section divider component with SVG shapes
- * Use between sections for smooth visual transitions
- * 
- * Variants:
- * - mountain: Double peak mountain shape (like the Summit logo)
- * - wave: Smooth curved wave
- * - slant: Diagonal cut
- * - peak: Single center peak
- */
-export function SectionDivider({
-    variant = "mountain",
-    fillColor = "#B5D48C",
-    height = 100,
-    flip = false,
-    className = "",
-}: SectionDividerProps) {
-    const getPath = () => {
-        switch (variant) {
-            case "mountain":
-                // Double mountain peaks - inspired by Summit logo
-                return "M0,100 L0,60 L20,80 L35,20 L50,60 L65,40 L80,70 L100,50 L100,100 Z";
-            case "wave":
-                // Smooth wave curve
-                return "M0,100 L0,50 Q25,0 50,50 T100,50 L100,100 Z";
-            case "slant":
-                // Diagonal cut from left to right
-                return "M0,100 L0,0 L100,100 Z";
-            case "peak":
-                // Single center peak
-                return "M0,100 L0,50 L50,0 L100,50 L100,100 Z";
-            default:
-                return "M0,100 L0,60 L35,20 L65,40 L100,50 L100,100 Z";
-        }
-    };
-
+export const SectionDivider: React.FC<SectionDividerProps> = ({
+    className,
+    fill = "#52755b",
+}) => {
     return (
-        <div
-            className={`w-full overflow-hidden leading-none ${className}`}
-            style={{
-                height: `${height}px`,
-                marginTop: flip ? 0 : `-${height}px`,
-                marginBottom: flip ? `-${height}px` : 0,
-                transform: flip ? "rotate(180deg)" : undefined,
-            }}
+        <svg
+            className={className}
+            viewBox="0 0 1280 60"
+            width="100%"
+            height="auto"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
         >
-            <svg
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                className="w-full h-full"
-                style={{ display: "block" }}
-            >
-                <path d={getPath()} fill={fillColor} />
-            </svg>
-        </div>
+            <path fill={fill} d="m1280 402.22h-433.84-846.27v-345.68h1280.11z" />
+            <path
+                fill={fill}
+                d="m676.21 14.39l84.76-13.54 132.65 20.46 69.65 0.4 109.38 28.05 159.71 31.78h-1232.42l257.96-22.31 155.77-24.28 60.71-2.93 56.39-6.24 51.99 3.27z"
+            />
+        </svg>
     );
-}
-
-/**
- * Mountain silhouette divider - matches the Summit brand
- * A simple triangular peak pointing upward into the section above
- */
-export function MountainDivider({
-    fillColor = "#B5D48C",
-    height = 50,
-    className = "",
-}: Omit<SectionDividerProps, "variant">) {
-    return (
-        <div
-            className={`w-full relative z-20 ${className}`}
-            style={{
-                height: `${height}px`,
-                marginTop: `-${height}px`,
-                clipPath: "polygon(0 100%, 65% 0, 100% 100%)",
-                backgroundColor: fillColor,
-            }}
-        />
-    );
-}
+};

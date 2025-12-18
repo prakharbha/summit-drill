@@ -96,7 +96,7 @@ const Header = () => {
         {!isScrolled && (
           <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative h-24 pt-4">
             {/* Logo - Centered */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[7px]">
               <Link href="/" className="flex items-center gap-2 group">
                 <div className="relative w-[307px] h-24">
                   <Image
@@ -122,7 +122,7 @@ const Header = () => {
                 Contact
               </Link>
 
-              <div className="flex items-center gap-4 pl-6 border-l border-white/30">
+              <div className="flex items-center gap-4">
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
                   <FaLinkedinIn className="w-4 h-4" />
                 </a>
@@ -152,7 +152,7 @@ const Header = () => {
 
         {/* BOTTOM ROW: Navigation (Desktop, not scrolled) */}
         {!isScrolled && (
-          <div className="hidden lg:block w-full bg-gradient-to-b from-black/10 to-transparent">
+          <div className="hidden lg:block w-full">
             <div className="container mx-auto px-4 lg:px-8">
               <nav className="flex items-center justify-center gap-8 h-14">
                 {navigation.map((item) => (
@@ -255,7 +255,7 @@ const Header = () => {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative w-40 h-10 lg:w-44 lg:h-12">
                 <Image
-                  src="/images/summit-logo-update.webp"
+                  src="/images/summit-logo-scrolled.webp"
                   alt="Summit Drilling"
                   fill
                   className="object-contain"

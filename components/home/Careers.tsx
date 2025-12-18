@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { GreenButton } from "@/components/ui/GreenButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export default function Careers() {
   return (
@@ -58,18 +59,7 @@ export default function Careers() {
 
       {/* Bottom Divider */}
       <div className="absolute bottom-0 left-0 right-0 w-full z-30 translate-y-[1px]">
-        <svg
-          viewBox="0 0 1440 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto block"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 50V20L400 20L550 7.5L650 17.5L720 2.5L790 17.5L890 7.5L1040 20H1440V50H0Z"
-            fill="#4d7c55"
-          />
-        </svg>
+        <SectionDivider className="w-full h-auto block" fill="#4d7c55" />
       </div>
     </section>
   );
