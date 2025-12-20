@@ -102,7 +102,7 @@ export default async function NewsPostPage({
                 />
 
                 {/* Content Section with Light Green Background */}
-                <section className="py-16 bg-[#B5D48C] font-work-sans">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             {/* Main Content - 2/3 width */}

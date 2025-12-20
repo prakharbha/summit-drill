@@ -65,7 +65,7 @@ export default function GeophysicalServicesPage() {
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-[#B5D48C]">
+        <section className="py-16 bg-[#a4c5c5]">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-6">
               <h2 className="text-2xl font-bold italic text-[#163058] mb-4">
@@ -103,7 +103,7 @@ export default function GeophysicalServicesPage() {
 
         {/* Services Grid - Matching Drilling Page Design */}
         <section
-          className="py-20 bg-[#52755b] text-white bg-no-repeat bg-cover bg-blend-multiply"
+          className="py-20 bg-[#377d7e] text-white bg-no-repeat bg-cover bg-blend-multiply"
           style={{
             backgroundImage: "url('/images/drilling-types-bg.webp')",
             backgroundPosition: "bottom center"
@@ -151,7 +151,7 @@ export default function GeophysicalServicesPage() {
                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                       {service.description}
                     </p>
-                    <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                    <Button asChild size="sm" className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                       <Link href={service.href}>
                         {service.ctaText} &gt;&gt;
                       </Link>

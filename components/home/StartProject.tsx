@@ -67,7 +67,7 @@ const StartProject = () => {
 
       {/* Custom SVG Divider */}
       <div className="absolute bottom-0 left-0 w-full leading-none z-20 translate-y-[1px]">
-        <SectionDivider className="w-full h-auto block" fill="#A8C686" />
+        <SectionDivider className="w-full h-auto block" fill="#a4c5c5" />
       </div>
     </section>
   );

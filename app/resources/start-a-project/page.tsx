@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function StartProjectPage() {
   return (
-    <PageTemplate title="Start a Project" description="Let's discuss your project needs" dividerColor="#8B4513" footerHasDivider={true}>
+    <PageTemplate title="Start a Project" description="Let's discuss your project needs" dividerColor="#8B4513">
       <DrillingRequestForm />
     </PageTemplate>
   );

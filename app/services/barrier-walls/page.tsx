@@ -20,7 +20,7 @@ export default function BarrierWallsPage() {
                     description="Summit installs high-performance hydraulic, reactive, and impermeable barrier walls designed to control groundwater flow and isolate contaminants with precision and reliability."
                 />
 
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-2 space-y-8">

@@ -71,7 +71,7 @@ const NewsSection = () => {
                 >
                     <Link
                         href="/about-us/news"
-                        className="inline-block bg-[#718f45] hover:bg-sky-500 text-white text-base font-bold italic tracking-wide rounded-sm px-6 py-3 transition-colors"
+                        className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white text-base font-bold italic tracking-wide rounded-sm px-6 py-3 transition-colors"
                     >
                         View All News &gt;&gt;
                     </Link>

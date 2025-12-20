@@ -17,7 +17,7 @@ export function GreenButton({ href, children, className = "" }: GreenButtonProps
     return (
         <Button
             asChild
-            className={`bg-[#718f45] hover:bg-sky-500 text-white text-base font-bold italic tracking-wide rounded-sm px-6 ${className}`}
+            className={`bg-[#377d7e] hover:bg-sky-500 text-white text-base font-bold italic tracking-wide rounded-sm px-6 ${className}`}
         >
             <Link href={href}>{children}</Link>
         </Button>

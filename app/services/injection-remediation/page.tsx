@@ -20,7 +20,7 @@ export default function InjectionRemediationPage() {
                     description="Summit's injection remediation services offer precise, controlled delivery of reagents into the subsurface through single and multi-port systems tailored to site-specific conditions."
                 />
 
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-2 space-y-8">

@@ -20,7 +20,7 @@ export default function EarthworkRemediationPage() {
                     description="Summit provides complete earthwork and ex-situ remediation services, from excavation to ecological restoration, designed to remove contaminants, rebuild site stability, and prepare properties for safe, future use."
                 />
 
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-2 space-y-8">

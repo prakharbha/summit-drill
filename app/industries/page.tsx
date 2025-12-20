@@ -75,11 +75,11 @@ export default function IndustriesPage() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-2">{industry.title}</h3>
-                    <p className="text-[#B5D48C] font-medium text-sm mb-2">{industry.subtitle}</p>
+                    <p className="text-[#a4c5c5] font-medium text-sm mb-2">{industry.subtitle}</p>
                     <p className="text-white/80 text-sm mb-4">
                       {industry.description}
                     </p>
-                    <span className="text-[#B5D48C] font-bold italic group-hover:underline">
+                    <span className="text-[#a4c5c5] font-bold italic group-hover:underline">
                       Learn More &gt;&gt;
                     </span>
                   </div>
@@ -90,7 +90,7 @@ export default function IndustriesPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 bg-[#B5D48C]">
+        <section className="py-16 bg-[#a4c5c5]">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-2xl font-bold italic text-[#163058] mb-4">

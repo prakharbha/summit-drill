@@ -27,7 +27,7 @@ interface PageHeroBannerProps {
     showMountainLogo?: boolean;
     /** Whether to show the mountain divider below the banner */
     showDivider?: boolean;
-    /** Divider fill color (default: #B5D48C) */
+    /** Divider fill color (default: #a4c5c5) */
     dividerColor?: string;
     /** Divider height in pixels (default: 50) */
     dividerHeight?: number;
@@ -57,7 +57,7 @@ export function PageHeroBanner({
     heightClass = "h-screen min-h-[700px]",
     showMountainLogo = true,
     showDivider = true,
-    dividerColor = "#B5D48C",
+    dividerColor = "#a4c5c5",
     dividerHeight = 50,
     dividerMarginBottom = 0,
 }: PageHeroBannerProps) {

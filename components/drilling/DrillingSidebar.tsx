@@ -44,7 +44,7 @@ export default function DrillingSidebar({ currentPage }: DrillingSidebarProps) {
                     <Link
                         key={service.slug}
                         href={service.href}
-                        className="block bg-[#6B8E23] hover:bg-[#5a7a1e] text-white font-bold italic text-xl px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-[1.02]"
+                        className="block bg-[#377d7e] hover:bg-sky-500 text-white font-bold italic text-xl px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-[1.02]"
                     >
                         {service.name} &gt;&gt;
                     </Link>

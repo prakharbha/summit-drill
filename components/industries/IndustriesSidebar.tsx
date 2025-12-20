@@ -43,7 +43,7 @@ export default function IndustriesSidebar({ currentPage }: IndustriesSidebarProp
                     <Link
                         key={industry.slug}
                         href={industry.href}
-                        className="block bg-[#6B8E23] hover:bg-[#5a7a1e] text-white font-bold italic text-xl px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-[1.02]"
+                        className="block bg-[#377d7e] hover:bg-sky-500 text-white font-bold italic text-xl px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-[1.02]"
                     >
                         {industry.name} &gt;&gt;
                     </Link>

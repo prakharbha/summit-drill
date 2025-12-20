@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const HealthSafety = () => {
   return (
-    <section className="py-8 md:py-12 bg-[#A8C686] text-[#0e2a47] overflow-x-hidden">
+    <section className="py-8 md:py-12 bg-[#a4c5c5] text-[#0e2a47] overflow-x-hidden">
       <div className="container mx-auto px-4 lg:px-8 max-w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div

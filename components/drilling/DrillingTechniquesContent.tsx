@@ -48,7 +48,7 @@ export default function DrillingTechniquesContent() {
                 />
 
                 {/* Specialty Applications Section */}
-                <section className="pt-8 pb-20 bg-[#B5D48C]">
+                <section className="pt-8 pb-20 bg-[#a4c5c5]">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
                             {/* Left Column: Text Content - 2/3 width */}
@@ -83,7 +83,7 @@ export default function DrillingTechniquesContent() {
                             </div>
 
                             {/* Right Column: Specialty Applications Card */}
-                            <div className="bg-[#94B568] p-8 md:p-12 rounded-lg shadow-xl">
+                            <div className="bg-[#78a8a8] p-8 md:p-12 rounded-lg shadow-xl">
                                 <div className="text-center mb-8">
                                     {/* Icon Placeholder - using Lucide icon as substitute for the custom graphic */}
                                     <div className="flex justify-center mb-4">
@@ -126,7 +126,7 @@ export default function DrillingTechniquesContent() {
 
                 {/* Drilling Technologies Section */}
                 <section
-                    className="py-20 bg-[#52755b] text-white bg-no-repeat bg-cover bg-blend-multiply"
+                    className="py-20 bg-[#377d7e] text-white bg-no-repeat bg-cover bg-blend-multiply"
                     style={{
                         backgroundImage: "url('/images/drilling-types-bg.webp')",
                         backgroundPosition: "bottom center"
@@ -207,7 +207,7 @@ export default function DrillingTechniquesContent() {
                                         <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                             {tech.description}
                                         </p>
-                                        <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                        <Button asChild size="sm" className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                                             <Link href={tech.href}>
                                                 {tech.ctaText} &gt;&gt;
                                             </Link>

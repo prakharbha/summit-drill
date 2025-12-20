@@ -12,7 +12,7 @@ interface MountainDividerProps {
  * RESTORED FROM GIT HISTORY
  */
 export const MountainDivider: React.FC<MountainDividerProps> = ({
-    fillColor = "#B5D48C",
+    fillColor = "#a4c5c5",
     height = 50,
     className = "",
 }) => {

@@ -85,7 +85,7 @@ export default function RemediationServicesPage() {
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-[#B5D48C]">
+        <section className="py-16 bg-[#a4c5c5]">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* Main Content */}
@@ -120,7 +120,7 @@ export default function RemediationServicesPage() {
               </div>
 
               {/* Sidebar */}
-              <div className="bg-[#94B568] p-8 rounded-lg shadow-xl">
+              <div className="bg-[#78a8a8] p-8 rounded-lg shadow-xl">
                 <div className="text-center mb-6">
                   <div className="flex justify-center mb-4">
                     <div className="relative w-24 h-24">
@@ -152,7 +152,7 @@ export default function RemediationServicesPage() {
 
         {/* Services Grid - Matching Drilling Page Design */}
         <section
-          className="py-20 bg-[#52755b] text-white bg-no-repeat bg-cover bg-blend-multiply"
+          className="py-20 bg-[#377d7e] text-white bg-no-repeat bg-cover bg-blend-multiply"
           style={{
             backgroundImage: "url('/images/drilling-types-bg.webp')",
             backgroundPosition: "bottom center"
@@ -200,7 +200,7 @@ export default function RemediationServicesPage() {
                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                       {service.description}
                     </p>
-                    <Button asChild size="sm" className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                    <Button asChild size="sm" className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                       <Link href={service.href}>
                         {service.ctaText} &gt;&gt;
                       </Link>

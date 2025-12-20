@@ -59,7 +59,7 @@ const Discovery = () => {
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Geophysics</h2>
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
-                <span className="text-[#8BC34A] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
+                <span className="text-[#73a5a5] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
               </p>
               <GreenButton href="/services/geophysical-services" className="mt-[15px]">
                 Take a closer look &gt;&gt;
@@ -84,7 +84,7 @@ const Discovery = () => {
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Drilling</h2>
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
-                <span className="text-[#8BC34A] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
+                <span className="text-[#73a5a5] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
               </p>
               <GreenButton href="/services/drilling-techniques" className="mt-[15px]">
                 Go a little deeper &gt;&gt;
@@ -109,7 +109,7 @@ const Discovery = () => {
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Remediation</h2>
               <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
-                <span className="text-[#8BC34A] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
+                <span className="text-[#73a5a5] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
               </p>
               <GreenButton href="/services/remediation-services" className="mt-[15px]">
                 Dig in &gt;&gt;

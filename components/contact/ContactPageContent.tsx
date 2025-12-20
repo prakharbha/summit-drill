@@ -75,7 +75,7 @@ export default function ContactPageContent() {
                 {/* Keep In Touch Section */}
                 <section
                     className="py-20 text-[#1A365D] relative overflow-visible -mt-[50px] pt-[70px]"
-                    style={{ backgroundColor: '#B5D48C' }}
+                    style={{ backgroundColor: '#a4c5c5' }}
                 >
                     {/* Background texture - positioned right center */}
                     <div
@@ -111,7 +111,7 @@ export default function ContactPageContent() {
                 <ContactForm />
 
                 {/* Team List Section */}
-                <section className="py-20 bg-[#B5D48C] text-[#1A365D]">
+                <section className="py-20 bg-[#a4c5c5] text-[#1A365D]">
                     <div className="container mx-auto px-4 lg:px-8 space-y-20">
 
                         {/* Corporate Leadership */}

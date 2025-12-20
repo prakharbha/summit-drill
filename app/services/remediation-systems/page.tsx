@@ -20,7 +20,7 @@ export default function RemediationSystemsPage() {
                     description="Summit delivers end-to-end remediation system expertise, from vapor mitigation and liner installations to complex treatment systems, O&M programs, and temporary water-handling solutions."
                 />
 
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-2 space-y-8">

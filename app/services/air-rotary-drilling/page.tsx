@@ -23,7 +23,7 @@ export default function AirRotaryPage() {
                 />
 
                 {/* Main Content Section */}
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             {/* Main Content - 2/3 width */}
@@ -66,7 +66,7 @@ export default function AirRotaryPage() {
 
                 <DrillingRequestForm />
             </main>
-            <Footer hasDividerAbove />
+            <Footer />
         </>
     );
 }

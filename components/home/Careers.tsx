@@ -8,7 +8,7 @@ import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export default function Careers() {
   return (
-    <section className="relative bg-[#bad296] pt-32 pb-24 lg:pt-40 lg:pb-40 z-10 -mt-[6.3rem]">
+    <section className="relative bg-[#a4c5c5] pt-32 pb-24 lg:pt-40 lg:pb-40 z-10 -mt-[6.3rem]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Image */}
@@ -59,7 +59,7 @@ export default function Careers() {
 
       {/* Bottom Divider */}
       <div className="absolute bottom-0 left-0 right-0 w-full z-30 translate-y-[1px]">
-        <SectionDivider className="w-full h-auto block" fill="#4d7c55" />
+        <SectionDivider className="w-full h-auto block" fill="#377d7e" />
       </div>
     </section>
   );

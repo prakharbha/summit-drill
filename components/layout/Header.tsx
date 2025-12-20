@@ -207,7 +207,7 @@ const Header = () => {
                                 <div key={subItem.name} className="relative group/sub">
                                   <Link
                                     href={subItem.href}
-                                    className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                    className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#73a5a5] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                                   >
                                     {subItem.name}
                                     {subItem.children && subItem.children.length > 0 && (
@@ -220,7 +220,7 @@ const Header = () => {
                                         <Link
                                           key={child.name}
                                           href={child.href}
-                                          className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                          className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#73a5a5] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                                         >
                                           {child.name}
                                         </Link>
@@ -318,7 +318,7 @@ const Header = () => {
                               <div key={subItem.name} className="relative group/sub">
                                 <Link
                                   href={subItem.href}
-                                  className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                  className="flex items-center justify-between px-6 py-3 text-base font-semibold italic text-[#1A365D] hover:bg-[#73a5a5] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                                 >
                                   {subItem.name}
                                   {subItem.children && subItem.children.length > 0 && (
@@ -331,7 +331,7 @@ const Header = () => {
                                       <Link
                                         key={child.name}
                                         href={child.href}
-                                        className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#4d7c55] hover:text-white transition-colors border-b border-gray-200 last:border-0"
+                                        className="block px-6 py-2 text-sm font-semibold italic text-[#1A365D] hover:bg-[#73a5a5] hover:text-white transition-colors border-b border-gray-200 last:border-0"
                                       >
                                         {child.name}
                                       </Link>

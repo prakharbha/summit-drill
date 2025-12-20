@@ -20,7 +20,7 @@ export default function DrillingSupportPage() {
                     description="Summit provides essential drilling support services, including site access construction, road and ramp installation, and large matting systems, to ensure safe, efficient, and reliable field operations."
                 />
 
-                <section className="py-16 bg-[#B5D48C] font-work-sans font-normal">
+                <section className="py-16 bg-[#a4c5c5] font-work-sans font-normal">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-2 space-y-8">

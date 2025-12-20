@@ -80,7 +80,7 @@ export default function TeamCarousel() {
     };
 
     return (
-        <section className="relative bg-[#4d7c55] py-4 z-20 -mt-1">
+        <section className="relative bg-[#377d7e] py-4 z-20 -mt-1">
             <div className="container mx-auto px-4 text-center">
                 <SectionHeading variant="white">
                     We Are Responsible for Your Experience

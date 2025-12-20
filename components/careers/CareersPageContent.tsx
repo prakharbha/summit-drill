@@ -37,11 +37,11 @@ export default function CareersPageContent() {
                     ribbonText="Careers"
                     title="You Matter Here"
                     description="We enthusiastically welcome new talent to the Summit team and treat all, new members and long-standing contributors, with respect."
-                    dividerColor="#B5D48C"
+                    dividerColor="#a4c5c5"
                 />
 
                 {/* LIGHT GREEN SECTION - Culture */}
-                <section className="bg-[#B5D48C] py-16 -mt-1 relative z-0">
+                <section className="bg-[#a4c5c5] py-16 -mt-1 relative z-0">
                     {/* -mt-1 to fix sub-pixel gap from hero clip */}
                     <div className="container mx-auto px-4 lg:px-8">
                         <div>
@@ -69,7 +69,7 @@ export default function CareersPageContent() {
 
                 {/* DARK GREEN SECTION - Expectations & Grid */}
                 <section
-                    className="py-20 bg-[#52755b] text-white bg-no-repeat bg-cover bg-blend-multiply"
+                    className="py-20 bg-[#377d7e] text-white bg-no-repeat bg-cover bg-blend-multiply"
                     style={{
                         backgroundImage: "url('/images/drilling-types-bg.webp')",
                         backgroundPosition: "bottom center"
@@ -116,7 +116,7 @@ export default function CareersPageContent() {
                                         Companies talk about taking care of their people all of the time. At Summit, it's about teamwork. It's a company value and how we work every day.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Our benefits wrap around you!</h4>
-                                    <Button className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                                         Read more &gt;&gt;
                                     </Button>
                                 </div>
@@ -148,7 +148,7 @@ export default function CareersPageContent() {
                                         Training. Development. Mentorship. Your Opportunity. Your path. Let's walk it together!
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">At Summit, you can earn while you learn!</h4>
-                                    <Button className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                                         Read more &gt;&gt;
                                     </Button>
                                 </div>
@@ -180,7 +180,7 @@ export default function CareersPageContent() {
                                         Summit has open positions across all service lines and within our office administration.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Learn what's needed now!</h4>
-                                    <Button className="bg-[#7A9A70] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
                                         Read more &gt;&gt;
                                     </Button>
                                 </div>
