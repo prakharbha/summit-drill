@@ -96,9 +96,9 @@ const Header = () => {
         {!isScrolled && (
           <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative h-24 pt-4">
             {/* Logo - Centered */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[7px]">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-5">
               <Link href="/" className="flex items-center gap-2 group">
-                <div className="relative w-[307px] h-24">
+                <div className="relative w-[353px] h-28">
                   <Image
                     src="/images/summit-logo-update.webp"
                     alt="Summit Drilling"
@@ -152,7 +152,7 @@ const Header = () => {
 
         {/* BOTTOM ROW: Navigation (Desktop, not scrolled) */}
         {!isScrolled && (
-          <div className="hidden lg:block w-full">
+          <div className="hidden lg:block w-full mt-6">
             <div className="container mx-auto px-4 lg:px-8">
               <nav className="flex items-center justify-center gap-8 h-14">
                 {navigation.map((item) => (
@@ -201,7 +201,7 @@ const Header = () => {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: 10 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-0 w-64 bg-white/90 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
+                              className="absolute top-full left-0 mt-0 w-64 bg-white/80 backdrop-blur-xl rounded-sm border-t-4 border-[#4d7c55] py-2 z-50"
                             >
                               {item.items?.map((subItem) => (
                                 <div key={subItem.name} className="relative group/sub">
@@ -215,7 +215,7 @@ const Header = () => {
                                     )}
                                   </Link>
                                   {subItem.children && subItem.children.length > 0 && (
-                                    <div className="absolute left-full top-0 ml-0 w-56 bg-white/90 backdrop-blur-xl rounded-sm border-l-4 border-[#4d7c55] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50">
+                                    <div className="absolute left-full top-0 ml-0 w-56 bg-white/80 backdrop-blur-xl rounded-sm border-l-4 border-[#4d7c55] py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50">
                                       {subItem.children.map((child: { name: string; href: string }) => (
                                         <Link
                                           key={child.name}

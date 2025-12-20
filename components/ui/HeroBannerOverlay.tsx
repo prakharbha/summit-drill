@@ -15,7 +15,7 @@ interface HeroBannerOverlayProps {
  * Use this on all page hero sections for consistent branding
  */
 export function HeroBannerOverlay({
-    darkBlue = "#163058",
+    darkBlue = "#162f58",
     lightBlue = "#0b87c6",
 }: HeroBannerOverlayProps) {
     return (
@@ -29,7 +29,7 @@ export function HeroBannerOverlay({
             />
             {/* Bottom overlay - dark blue only to transparent going up */}
             <div
-                className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none mix-blend-multiply"
+                className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none"
                 style={{
                     background: `linear-gradient(to top, ${darkBlue} 0%, transparent 100%)`,
                 }}

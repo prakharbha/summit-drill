@@ -38,7 +38,7 @@ export default function TeamCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
-    const spacing = typeof window !== 'undefined' && window.innerWidth < 768 ? 100 : 180;
+    const spacing = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 220;
 
     const nextSlide = () => {
         setDirection(1);
@@ -69,8 +69,8 @@ export default function TeamCarousel() {
         }),
         center: (offset: number) => ({
             x: offset * spacing,
-            opacity: offset === 0 ? 1 : 0.7,
-            scale: offset === 0 ? 1.0 : 0.85,
+            opacity: 1, // All items, including active, are fully opaque
+            scale: 1.0, // All items, including active, are same size by default
             zIndex: offset === 0 ? 10 : 5 - Math.abs(offset),
         }),
         exit: (dir: number) => ({
@@ -80,35 +80,35 @@ export default function TeamCarousel() {
     };
 
     return (
-        <section className="relative bg-[#377d7e] py-4 z-20 -mt-1">
-            <div className="container mx-auto px-4 text-center">
+        <section className="relative bg-[#377d7e] py-4 z-20 -mt-1 overflow-hidden">
+            <div className="w-full text-center">
                 <SectionHeading variant="white">
                     We Are Responsible for Your Experience
                 </SectionHeading>
 
-                <div className="relative flex items-center justify-center h-[320px]">
+                <div className="relative flex items-center justify-center h-[400px]">
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 lg:left-12 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
+                        className="absolute left-0 lg:left-4 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
                         aria-label="Previous team member"
                     >
                         <ChevronLeft size={40} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 lg:right-12 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
+                        className="absolute right-0 lg:right-4 z-30 p-2 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors"
                         aria-label="Next team member"
                     >
                         <ChevronRight size={40} />
                     </button>
 
                     {/* Carousel Items */}
-                    <div className="flex items-center justify-center w-full overflow-hidden">
+                    <div className="flex items-center justify-center w-full h-full relative">
                         <AnimatePresence initial={false} custom={direction} mode="popLayout">
                             {getVisibleItems().map((item) => {
                                 const isActive = item.offset === 0;
-                                const isHovered = hoveredId === item.id && !isActive;
+                                const isHovered = hoveredId === item.id;
 
                                 return (
                                     <motion.div
@@ -119,14 +119,13 @@ export default function TeamCarousel() {
                                         animate="center"
                                         exit="exit"
                                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                                        className="absolute flex flex-col items-center cursor-pointer"
+                                        className="absolute flex flex-col items-center justify-center cursor-pointer h-full pb-12"
                                         onMouseEnter={() => setHoveredId(item.id)}
                                         onMouseLeave={() => setHoveredId(null)}
+                                        style={{ transformOrigin: 'bottom center' }}
                                     >
                                         <div
-                                            className={`relative rounded-full overflow-hidden border-4 transition-all duration-300 w-40 h-40 lg:w-48 lg:h-48 ${isActive
-                                                ? "border-white"
-                                                : `border-white/30 ${isHovered ? "" : "grayscale"}`
+                                            className={`relative rounded-full overflow-hidden border-4 transition-all duration-300 w-36 h-36 lg:w-48 lg:h-48 ${isHovered ? "border-white scale-110" : "border-transparent scale-100"
                                                 }`}
                                         >
                                             <Image
@@ -136,18 +135,16 @@ export default function TeamCarousel() {
                                                 className="object-cover"
                                             />
                                         </div>
-                                        {/* Text below image for active item */}
-                                        {isActive && (
-                                            <div className="mt-4 text-center text-white">
-                                                <h3 className="text-xl lg:text-2xl font-bold">{item.name}</h3>
-                                                <p className="text-sm lg:text-base opacity-90">{item.title}</p>
-                                            </div>
-                                        )}
-                                        {/* Text below image for hovered inactive item */}
-                                        {isHovered && (
-                                            <div className="absolute top-full mt-2 text-center text-white whitespace-nowrap">
-                                                <h3 className="text-sm lg:text-base font-semibold">{item.name}</h3>
-                                                <p className="text-xs opacity-80">{item.title}</p>
+
+                                        {/* Name display - Active or Hovered */}
+                                        {(isActive || isHovered) && (
+                                            <div className="absolute top-[calc(50%+4rem)] lg:top-[calc(50%+5rem)] pt-3 text-center text-white w-64 z-20 pointer-events-none">
+                                                <h3 className={`font-bold leading-tight drop-shadow-md ${isActive ? "text-[1.25rem]" : "text-base"}`}>
+                                                    {item.name}
+                                                </h3>
+                                                <p className={`opacity-90 drop-shadow-md ${isActive ? "text-base" : "text-xs"}`}>
+                                                    {item.title}
+                                                </p>
                                             </div>
                                         )}
                                     </motion.div>

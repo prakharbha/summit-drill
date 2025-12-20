@@ -18,7 +18,7 @@ export default function NewsPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/drilling/sonic.webp"
+          backgroundImage="/images/news/joseph-c-negro-crop-scaled.jpg"
           backgroundAlt="Summit Drilling News"
           ribbonText="SUMMIT NEWS"
           title="Company News"

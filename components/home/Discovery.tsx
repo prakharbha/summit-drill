@@ -147,14 +147,14 @@ const Discovery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto space-y-4"
+            className="max-w-5xl mx-auto space-y-4"
           >
-            <h2 className="text-[2rem] leading-[2.75rem] font-bold not-italic text-white">
+            <h2 className="text-[1.75rem] leading-[2.5rem] font-bold not-italic text-white">
               Summit's ability to consistently manage a diverse range of complex projects safely, efficiently and with excellent results is sustained through our unique customer promise—
               <span>An Exceptional Experience</span>
             </h2>
 
-            <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-5xl mx-auto">
               We care about this work, the environment, and your experience with us. We take pride in listening, responding, and delivering because your satisfaction drives our success.
             </p>
 
