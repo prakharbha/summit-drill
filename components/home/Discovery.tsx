@@ -38,7 +38,7 @@ const Discovery = () => {
         </div>
 
         {/* 3-Column Service Overlay */}
-        <div className="relative lg:absolute inset-0 container mx-auto px-4 lg:px-8 flex items-end pb-10 pt-32 lg:pt-0 lg:pb-40 z-20">
+        <div className="relative md:absolute inset-0 container mx-auto px-4 lg:px-8 flex items-end pb-8 pt-24 md:pt-0 md:pb-28 lg:pb-32 z-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
 
             {/* Column 1: Geophysics */}
@@ -49,7 +49,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="w-44 h-24 relative -ml-4">
+              <div className="w-36 h-16 relative -ml-4 mb-1">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -58,10 +58,10 @@ const Discovery = () => {
                 />
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Geophysics</h2>
-              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+              <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
               </p>
-              <GreenButton href="/services/geophysical-services" className="mt-[15px]">
+              <GreenButton href="/services/geophysical-services" className="mt-2">
                 Take a closer look &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -74,7 +74,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="hidden md:block w-44 h-24 relative -ml-4">
+              <div className="hidden md:block w-36 h-16 relative -ml-4 mb-1">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -83,10 +83,10 @@ const Discovery = () => {
                 />
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Drilling</h2>
-              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+              <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
               </p>
-              <GreenButton href="/services/drilling-techniques" className="mt-[15px]">
+              <GreenButton href="/services/drilling-techniques" className="mt-2">
                 Go a little deeper &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -99,7 +99,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="hidden md:block w-44 h-24 relative -ml-4">
+              <div className="hidden md:block w-36 h-16 relative -ml-4 mb-1">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -108,10 +108,10 @@ const Discovery = () => {
                 />
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Remediation</h2>
-              <p className="hidden md:block text-white text-lg font-medium leading-relaxed drop-shadow-sm mt-4">
+              <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
               </p>
-              <GreenButton href="/services/remediation-services" className="mt-[15px]">
+              <GreenButton href="/services/remediation-services" className="mt-2">
                 Dig in &gt;&gt;
               </GreenButton>
             </motion.div>

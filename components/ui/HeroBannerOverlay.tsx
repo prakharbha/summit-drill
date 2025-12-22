@@ -27,11 +27,11 @@ export function HeroBannerOverlay({
                     background: `linear-gradient(to bottom, ${darkBlue} 0%, ${lightBlue} 50%, transparent 100%)`,
                 }}
             />
-            {/* Bottom overlay - dark blue only to transparent going up */}
+            {/* Bottom overlay - solid #163058 for first 23% from bottom, then fade to transparent */}
             <div
-                className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none"
+                className="absolute bottom-0 left-0 right-0 h-[50%] pointer-events-none mix-blend-multiply"
                 style={{
-                    background: `linear-gradient(to top, ${darkBlue} 0%, transparent 100%)`,
+                    background: `linear-gradient(to top, #163058 0%, #163058 33%, rgba(22, 48, 88, 0.7) 55%, rgba(22, 48, 88, 0.3) 75%, transparent 100%)`,
                 }}
             />
         </>
@@ -60,7 +60,7 @@ export function ServiceRibbon({
     return (
         <div className="relative inline-block">
             <img
-                src="/images/ribbon-update.webp"
+                src="/images/ribbon.webp"
                 alt="Ribbon"
                 width={width}
                 height={height}

@@ -63,7 +63,7 @@ export function PageHeroBanner({
 }: PageHeroBannerProps) {
     return (
         <>
-            <section className={`relative ${heightClass} flex items-end pb-24`}>
+            <section className={`relative ${heightClass} flex items-end pb-20`}>
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
@@ -87,7 +87,7 @@ export function PageHeroBanner({
                     >
                         {/* Mountain Logo */}
                         {showMountainLogo && (
-                            <div className="w-[200px] h-auto relative mb-4">
+                            <div className="w-[200px] h-auto relative mb-2">
                                 <Image
                                     src="/images/mountain.webp"
                                     alt="Summit Mountain"
@@ -100,13 +100,13 @@ export function PageHeroBanner({
 
                         {/* Ribbon */}
                         {ribbonText && (
-                            <div className="mb-6">
+                            <div className="mb-3">
                                 <ServiceRibbon text={ribbonText} />
                             </div>
                         )}
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-2 tracking-tight">
                             {title}
                         </h1>
 
