@@ -112,7 +112,7 @@ export default function RemediationServicesPage() {
                   </p>
                   <Link
                     href="/start-a-project"
-                    className="inline-block bg-[#A04020] hover:bg-[#8a361b] text-white font-bold italic text-lg px-8 py-4 rounded shadow-lg transition-transform hover:scale-105"
+                    className="inline-block bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-8 py-4 rounded shadow-lg transition-transform hover:scale-105"
                   >
                     Submit an RFP &gt;&gt;
                   </Link>
