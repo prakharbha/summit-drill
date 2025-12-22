@@ -91,7 +91,7 @@ export default function CareersPageContent() {
                         {/* 3 Column Grid - Matching Geophysical Services style */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 mb-20">
                             {/* Benefits Column */}
-                            <div className="flex flex-col">
+                            <Link href="/careers/benefits" className="flex flex-col group cursor-pointer">
                                 {/* Ribbon Title */}
                                 <div className="relative mb-4 self-start">
                                     <div className="relative inline-block">
@@ -107,23 +107,23 @@ export default function CareersPageContent() {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
-                                    <Image src="/images/careers/benefits.webp" alt="Benefits" fill className="object-cover" />
+                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
+                                    <Image src="/images/careers/benefits.webp" alt="Benefits" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-bold leading-tight">More than great benefits – it's a great place to belong</h3>
+                                    <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">More than great benefits – it's a great place to belong</h3>
                                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                         Companies talk about taking care of their people all of the time. At Summit, it's about teamwork. It's a company value and how we work every day.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Our benefits wrap around you!</h4>
-                                    <Link href="/careers/benefits" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
-                                        Read more &gt;&gt;
-                                    </Link>
+                                    <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold italic px-6 py-2 shadow-md mt-2 rounded transition-colors">
+                                        READ MORE &gt;&gt;
+                                    </span>
                                 </div>
-                            </div>
+                            </Link>
 
                             {/* Career Column */}
-                            <div className="flex flex-col">
+                            <Link href="/careers/your-career" className="flex flex-col group cursor-pointer">
                                 {/* Ribbon Title */}
                                 <div className="relative mb-4 self-start">
                                     <div className="relative inline-block">
@@ -139,23 +139,23 @@ export default function CareersPageContent() {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
-                                    <Image src="/images/careers/path.jpg" alt="Career Path" fill className="object-cover" />
+                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
+                                    <Image src="/images/careers/path.jpg" alt="Career Path" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-bold leading-tight">A path to growth</h3>
+                                    <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">A path to growth</h3>
                                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                         Training. Development. Mentorship. Your Opportunity. Your path. Let's walk it together!
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">At Summit, you can earn while you learn!</h4>
-                                    <Link href="/careers/your-career" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
-                                        Read more &gt;&gt;
-                                    </Link>
+                                    <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold italic px-6 py-2 shadow-md mt-2 rounded transition-colors">
+                                        LEARN MORE &gt;&gt;
+                                    </span>
                                 </div>
-                            </div>
+                            </Link>
 
                             {/* Positions Column */}
-                            <div className="flex flex-col">
+                            <Link href="/careers/positions" className="flex flex-col group cursor-pointer">
                                 {/* Ribbon Title */}
                                 <div className="relative mb-4 self-start">
                                     <div className="relative inline-block">
@@ -171,20 +171,20 @@ export default function CareersPageContent() {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
-                                    <Image src="/images/careers/positions.jpg" alt="Positions" fill className="object-cover" />
+                                <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
+                                    <Image src="/images/careers/positions.jpg" alt="Positions" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-bold leading-tight">Company-wide Opportunities</h3>
+                                    <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">Company-wide Opportunities</h3>
                                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                         Summit has open positions across all service lines and within our office administration.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Learn what's needed now!</h4>
-                                    <Link href="/careers/positions" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
-                                        Read more &gt;&gt;
-                                    </Link>
+                                    <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold italic px-6 py-2 shadow-md mt-2 rounded transition-colors">
+                                        Open Positions &gt;&gt;
+                                    </span>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
 
                         {/* Phil Valensi Contact */}
