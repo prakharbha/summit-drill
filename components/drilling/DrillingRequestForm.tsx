@@ -42,13 +42,45 @@ const serviceCategories = {
         "Groundwater Treatment Systems",
         "Well Filters",
         "Vapor Mitigation Systems",
-    ],
-    "Drilling Support": [
         "Clearing & Grubbing",
         "Road Building/Matts",
         "Air Bridge Construction",
     ],
 };
+
+// Flat list of all services for balanced grid display
+const allServices = [
+    { category: "Geophysical Services", name: "GPR: Utility Location" },
+    { category: "Geophysical Services", name: "GPR: UST or Septic Detection" },
+    { category: "Geophysical Services", name: "Borehole/Downhole Geophysics" },
+    { category: "Geophysical Services", name: "Electrical Resistivity" },
+    { category: "Geophysical Services", name: "Seismic Refraction" },
+    { category: "Drilling Services", name: "Sonic Drilling" },
+    { category: "Drilling Services", name: "Direct Push Drilling" },
+    { category: "Drilling Services", name: "Drilling & Injection" },
+    { category: "Drilling Services", name: "Air Rotary Drilling" },
+    { category: "Drilling Services", name: "Auger Drilling" },
+    { category: "Drilling Services", name: "Over Water/Barge Drilling" },
+    { category: "Drilling Services", name: "Horizontal Drilling" },
+    { category: "Drilling Services", name: "Low Clearance Drilling" },
+    { category: "Drilling Services", name: "Track Mounted Rigs" },
+    { category: "Remediation Services", name: "Test Pitting" },
+    { category: "Remediation Services", name: "Soil Excavation & Disposal" },
+    { category: "Remediation Services", name: "Stream/Shoreline/Wetland Restoration" },
+    { category: "Remediation Services", name: "Capping" },
+    { category: "Remediation Services", name: "In-Situ Solidification/Stabilization (ISS)" },
+    { category: "Remediation Services", name: "In-Situ Soil Mixing" },
+    { category: "Remediation Services", name: "Slurry Walls" },
+    { category: "Remediation Services", name: "Permeable Reactive Barriers" },
+    { category: "Remediation Services", name: "Ecosystem Restoration" },
+    { category: "Remediation Services", name: "Remediation System Vaults" },
+    { category: "Remediation Services", name: "Groundwater Treatment Systems" },
+    { category: "Remediation Services", name: "Well Filters" },
+    { category: "Remediation Services", name: "Vapor Mitigation Systems" },
+    { category: "Remediation Services", name: "Clearing & Grubbing" },
+    { category: "Remediation Services", name: "Road Building/Matts" },
+    { category: "Remediation Services", name: "Air Bridge Construction" },
+];
 
 const DrillingRequestForm = () => {
     const [currentStep, setCurrentStep] = useState(1);
@@ -112,63 +144,15 @@ const DrillingRequestForm = () => {
 
                             {/* Categorized Checkboxes Section */}
                             <div className="mb-10">
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
-                                    {/* Column 1: Geophysical + Drilling Services */}
-                                    <div className="space-y-6">
-                                        {/* Geophysical Services */}
-                                        <div>
-                                            <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
-                                                Geophysical Services
-                                            </h4>
-                                            <div className="space-y-2.5">
-                                                {serviceCategories["Geophysical Services"].map((service) => (
-                                                    <div key={service} className="flex items-center space-x-3 group">
-                                                        <Checkbox
-                                                            id={service}
-                                                            className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
-                                                        />
-                                                        <label
-                                                            htmlFor={service}
-                                                            className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
-                                                        >
-                                                            {service}
-                                                        </label>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Drilling Services */}
-                                        <div>
-                                            <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
-                                                Drilling Services
-                                            </h4>
-                                            <div className="space-y-2.5">
-                                                {serviceCategories["Drilling Services"].map((service) => (
-                                                    <div key={service} className="flex items-center space-x-3 group">
-                                                        <Checkbox
-                                                            id={service}
-                                                            className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
-                                                        />
-                                                        <label
-                                                            htmlFor={service}
-                                                            className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
-                                                        >
-                                                            {service}
-                                                        </label>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Column 2: Remediation Services */}
+                                {/* Stacked categories - each section below the other */}
+                                <div className="space-y-8">
+                                    {/* Geophysical Services */}
                                     <div>
-                                        <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
-                                            Remediation Services
+                                        <h4 className="text-2xl font-bold italic mb-3 text-white">
+                                            Geophysical Services
                                         </h4>
-                                        <div className="space-y-2.5">
-                                            {serviceCategories["Remediation Services"].map((service) => (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2.5">
+                                            {serviceCategories["Geophysical Services"].map((service) => (
                                                 <div key={service} className="flex items-center space-x-3 group">
                                                     <Checkbox
                                                         id={service}
@@ -176,7 +160,7 @@ const DrillingRequestForm = () => {
                                                     />
                                                     <label
                                                         htmlFor={service}
-                                                        className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                        className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
                                                     >
                                                         {service}
                                                     </label>
@@ -185,60 +169,49 @@ const DrillingRequestForm = () => {
                                         </div>
                                     </div>
 
-                                    {/* Column 3: Additional Services + Drilling Support */}
-                                    <div className="space-y-6">
-                                        {/* Additional Services */}
-                                        <div>
-                                            <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
-                                                Additional Services
-                                            </h4>
-                                            <div className="space-y-2.5">
-                                                {[
-                                                    "Slurry Walls",
-                                                    "Permeable Reactive Barriers",
-                                                    "Ecosystem Restoration",
-                                                    "Remediation System Vaults",
-                                                    "Groundwater Treatment Systems",
-                                                    "Well Filters",
-                                                    "Vapor Mitigation Systems",
-                                                ].map((service) => (
-                                                    <div key={service} className="flex items-center space-x-3 group">
-                                                        <Checkbox
-                                                            id={`add-${service}`}
-                                                            className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
-                                                        />
-                                                        <label
-                                                            htmlFor={`add-${service}`}
-                                                            className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
-                                                        >
-                                                            {service}
-                                                        </label>
-                                                    </div>
-                                                ))}
-                                            </div>
+                                    {/* Drilling Services */}
+                                    <div>
+                                        <h4 className="text-2xl font-bold italic mb-3 text-white">
+                                            Drilling Services
+                                        </h4>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2.5">
+                                            {serviceCategories["Drilling Services"].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={service}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={service}
+                                                        className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
                                         </div>
+                                    </div>
 
-                                        {/* Drilling Support */}
-                                        <div>
-                                            <h4 className="text-lg font-bold italic mb-3 text-white border-b border-white/20 pb-2">
-                                                Drilling Support
-                                            </h4>
-                                            <div className="space-y-2.5">
-                                                {serviceCategories["Drilling Support"].map((service) => (
-                                                    <div key={service} className="flex items-center space-x-3 group">
-                                                        <Checkbox
-                                                            id={service}
-                                                            className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
-                                                        />
-                                                        <label
-                                                            htmlFor={service}
-                                                            className="text-sm leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
-                                                        >
-                                                            {service}
-                                                        </label>
-                                                    </div>
-                                                ))}
-                                            </div>
+                                    {/* Remediation Services */}
+                                    <div>
+                                        <h4 className="text-2xl font-bold italic mb-3 text-white">
+                                            Remediation Services
+                                        </h4>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2.5">
+                                            {serviceCategories["Remediation Services"].map((service) => (
+                                                <div key={service} className="flex items-center space-x-3 group">
+                                                    <Checkbox
+                                                        id={service}
+                                                        className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        htmlFor={service}
+                                                        className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
+                                                    >
+                                                        {service}
+                                                    </label>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
