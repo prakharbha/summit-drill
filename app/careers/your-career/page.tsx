@@ -13,7 +13,7 @@ export default function YourCareerPage() {
             <main className="font-sans">
                 {/* HERO SECTION */}
                 <PageHeroBanner
-                    backgroundImage="/images/careers/path.jpg"
+                    backgroundImage="/images/careers/your-career.webp"
                     backgroundAlt="Career Path at Summit"
                     ribbonText="Your Career"
                     title="What Separates Summit Drilling"

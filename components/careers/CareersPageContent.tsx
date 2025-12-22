@@ -117,7 +117,7 @@ export default function CareersPageContent() {
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Our benefits wrap around you!</h4>
                                     <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold italic px-6 py-2 shadow-md mt-2 rounded transition-colors">
-                                        READ MORE &gt;&gt;
+                                        Read More &gt;&gt;
                                     </span>
                                 </div>
                             </Link>
@@ -149,7 +149,7 @@ export default function CareersPageContent() {
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">At Summit, you can earn while you learn!</h4>
                                     <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold italic px-6 py-2 shadow-md mt-2 rounded transition-colors">
-                                        LEARN MORE &gt;&gt;
+                                        Learn More &gt;&gt;
                                     </span>
                                 </div>
                             </Link>
