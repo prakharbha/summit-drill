@@ -78,16 +78,15 @@ export default function AboutUsPage() {
 
               {/* Sidebar - 1/3 width */}
               <div className="lg:col-span-1">
-                <div className="bg-[#8bad7d] p-8 sticky top-8 font-work-sans">
+                <div className="bg-[#78a8a8] p-8 sticky top-8 font-work-sans">
                   {/* Mountain Logo and Header */}
                   <div className="mb-6 pb-6 border-b-2 border-[#923d21]">
                     <Image
-                      src="/images/mountain.webp"
+                      src="/images/rust-mountain.webp"
                       alt="Summit Mountain"
                       width={200}
                       height={100}
                       className="w-1/2 h-auto object-contain mb-2"
-                      style={{ filter: 'sepia(100%) saturate(300%) brightness(70%) hue-rotate(-10deg)' }}
                     />
                     <span className="block text-[#923d21] font-bold text-[1.5rem] tracking-[0.25rem] uppercase">
                       Summit&apos;s History

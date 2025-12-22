@@ -22,10 +22,10 @@ const FeaturedProject = () => {
           priority={false}
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0e2a47] via-[#0e2a47]/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0e2a47] via-[#0e2a47]/60 to-transparent z-10 mix-blend-multiply" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-20 h-full flex flex-col justify-start pt-24 lg:pt-32">
+      <div className="container mx-auto px-4 lg:px-8 relative z-20 h-full flex flex-col justify-start pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const FeaturedProject = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-4 justify-center lg:items-end"
           >
-            <GreenButton href="/project-gallery" className="py-6 text-lg w-full sm:w-auto">
+            <GreenButton href="/project-gallery/spartanburg-cap" className="py-6 text-lg w-full sm:w-auto">
               Read more about this project &gt;&gt;
             </GreenButton>
             <Button
