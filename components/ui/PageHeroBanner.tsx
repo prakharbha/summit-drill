@@ -63,7 +63,7 @@ export function PageHeroBanner({
 }: PageHeroBannerProps) {
     return (
         <>
-            <section className={`relative ${heightClass} flex items-end pb-20`}>
+            <section className={`relative ${heightClass} flex items-end pb-20 bg-[#163058]`}>
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
