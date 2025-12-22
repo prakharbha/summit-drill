@@ -108,7 +108,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
-                                    <Image src="/images/careers/benefits.jpg" alt="Benefits" fill className="object-cover" />
+                                    <Image src="/images/careers/benefits.webp" alt="Benefits" fill className="object-cover" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight">More than great benefits – it's a great place to belong</h3>
@@ -116,9 +116,9 @@ export default function CareersPageContent() {
                                         Companies talk about taking care of their people all of the time. At Summit, it's about teamwork. It's a company value and how we work every day.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Our benefits wrap around you!</h4>
-                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Link href="/careers/benefits" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
                                         Read more &gt;&gt;
-                                    </Button>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -148,9 +148,9 @@ export default function CareersPageContent() {
                                         Training. Development. Mentorship. Your Opportunity. Your path. Let's walk it together!
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">At Summit, you can earn while you learn!</h4>
-                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Link href="/careers/your-career" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
                                         Read more &gt;&gt;
-                                    </Button>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -180,9 +180,9 @@ export default function CareersPageContent() {
                                         Summit has open positions across all service lines and within our office administration.
                                     </p>
                                     <h4 className="text-xl font-bold leading-tight">Learn what's needed now!</h4>
-                                    <Button className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
+                                    <Link href="/careers/positions" className="inline-block bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-2 shadow-md mt-2 rounded transition-colors">
                                         Read more &gt;&gt;
-                                    </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
