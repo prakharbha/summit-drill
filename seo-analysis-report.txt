@@ -1,0 +1,196 @@
+=== SEO URL & META TAG ANALYSIS ===
+Generated: 2024-12-23
+
+Comparing old WordPress site (seo_export.json) with new Next.js site
+
+================================================================================
+SECTION 1: URL MAPPING STATUS
+================================================================================
+
+URLs WITH REDIRECTS SET UP (old URL -> new URL):
+------------------------------------------------
+✅ /safety -> /health-safety  
+✅ /safety/experience-safety -> /health-safety
+✅ /safety/health-safety-programs -> /health-safety
+✅ /safety/safety-meetings -> /health-safety
+✅ /employment -> /careers
+✅ /employee-benefits -> /careers/benefits
+✅ /military-veterans -> /careers
+✅ /driller-assistants -> /careers
+✅ /licensed-drillers -> /careers
+✅ /resources -> /about-us
+✅ /resources/permits -> /about-us
+✅ /resources/project-mark-out -> /about-us
+✅ /about-us/company-history -> /about-us
+✅ /about-us/customer-list -> /about-us
+✅ /ghost-test -> / (homepage)
+✅ /test-proposal-form -> / (homepage)
+✅ /developer-post-update-test-form -> / (homepage)
+✅ /salesforce -> / (homepage)
+✅ /services/additional-services -> /services/drilling-techniques
+✅ /services/additional-drilling-services -> /services/drilling-techniques
+✅ /services/barge-over-water-drilling -> /services/drilling-techniques
+✅ /services/sonic-drilling-demo -> /services/sonic-drilling
+✅ /services/geotechnical-drilling -> /industries/geotechnical
+✅ /services/cathodic-protection-drilling -> /industries/cathodic
+✅ /services/aggregate-drilling-services -> /industries/aggregate
+✅ /services/environmental-drilling-services -> /industries/environmental
+✅ /services/pfas-drilling -> /industries/environmental
+✅ /services/remediation-systems-services -> /services/remediation-systems
+✅ /services/demolition-services -> /services/remediation-services
+✅ /services/landfill-services -> /services/remediation-services
+✅ /services/shoreline-stabilization-services -> /services/remediation-services
+✅ /services/ust-ast-removal -> /services/remediation-services
+✅ /services/soil-excavation-services -> /services/earthwork-remediation
+✅ /services/equipment-roster -> /about-us
+
+URLs THAT EXIST WITH SAME SLUG (should work automatically):
+-----------------------------------------------------------
+✅ / (Homepage)
+✅ /about-us
+✅ /about-us/news
+✅ /careers
+✅ /contact
+✅ /services
+✅ /services/geophysical-services
+✅ /services/remediation-services
+✅ /services/drilling-techniques
+✅ /services/sonic-drilling
+✅ /services/direct-push
+✅ /services/injection-remediation-services
+✅ /services/utility-locating
+✅ /services/ust-septic-detection
+✅ /services/borehole-geophysics
+✅ /services/electrical-resistivity
+✅ /services/seismic-refraction
+✅ /resources/start-a-project
+
+================================================================================
+SECTION 2: BLOG POSTS (need to be created or redirected)
+================================================================================
+
+The old site has 26 blog posts. These need individual pages or a news archive:
+
+POSTS MISSING IN NEW SITE:
+--------------------------
+1. /summit-drilling-welcomes-joseph-c-negro/
+2. /dermot-dillion-appointed-to-ngwa-board-of-directors/
+3. /summit-drilling-welcomes-south-atlantic-environmental-drilling-and-construction-co-saedacco-to-the-team/
+4. /summit-drilling-acquires-subsurface-environmental-technologies-and-hill-environmental-group-strengthening-its-turn-key-solutions/
+5. /summit-drilling-acquires-tpi-environmental-expanding-services-and-geographic-footprint-in-the-lehigh-valley-area/
+6. /ron-bucca-promoted-to-chief-executive-officer-as-summit-drilling-fortifies-its-expansion-strategy/
+7. /summit-drilling-takes-on-partners-to-support-aggressive-growth/
+8. /summit-drilling-and-awt-environmental-services-demonstrate-their-site-remediation-capability-providing-their-environmental-consultant-client-with-unequaled-efficiency-and-results-2/
+9. /summit-drilling-and-awt-environmental-services-demonstrate-their-site-remediation-capability-providing-their-environmental-consultant-client-with-unequaled-efficiency-and-results/
+10. /summit-drilling-and-awt-environmental-services-have-a-proven-effective-site-remediation-solution-that-provides-environmental-consultants-with-unequaled-efficiency-and-results/
+11. /two-industry-leaders-strengthen-their-alliance-and-capability/
+12. /summit-drilling-knows-its-pfas/
+13. /summit-introducing-the-latest-addition-to-its-expanding-sonic-fleet-the-bl-50-the-industrys-most-powerful-50k-sonic-rig/
+14. /summit-drilling-finds-veterans-to-be-important-asset-for-company/
+15. /summit-drilling-achieves-the-gold-standard-for-safety/
+16. /leading-environmental-driller-fortifies-support-of-mid-atlantic-region/
+17. /the-northeasts-fastest-growing-environmental-driller-names-a-new-leader/
+18. /summit-drilling-opens-regional-office-in-albany/
+19. /summit-drilling-achieves-7th-consecutive-governors-health-safety-award/
+20. /100-attend-summits-demo-on-industry-leading-sonic-technology/
+21. /1-of-164-in-nj-summit-drilling-makes-inc-5000-list-of-the-fastest-growing-companies/
+22. /summit-drilling-rings-in-the-new-year-by-welcoming-another-industry-veteran-to-the-family/
+23. /summit-drilling-increases-its-commitment-to-environmental-consultants-in-pennsylvania/
+24. /summit-drillings-experience-safety-program-recognized-four-years-consecutively-and-counting/
+25. /turning-a-wrench-into-high-performance-customer-satisfaction/
+26. /environmental-services-leader-expands-footprint-in-greater-philadelphia-region/
+
+RECOMMENDATION: Either create individual blog pages or redirect all to /about-us/news
+
+================================================================================
+SECTION 3: META TAGS STATUS
+================================================================================
+
+PAGES WITH PROPER META TAGS IN OLD SITE (should be preserved):
+--------------------------------------------------------------
+| Page | Old Meta Title | Old Meta Description |
+|------|----------------|---------------------|
+| / | Summit Drilling Company - Sonic & Direct Push Drilling, Remediation Services | #description (empty) |
+| /services/geophysical-services | Geophysical Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+| /services/remediation-services | Remediation Services - Summit Drilling Company | Summit Drilling Company provides a wide range of Remediation Services |
+| /services/sonic-drilling | Sonic Drilling Services - Summit Drilling Company | Sonic drilling services are safe, clean and environmentally low impact |
+| /services/direct-push | Direct Push Drilling Services - Summit Drilling Company | Summit offers a variety of direct push drilling services and equipment |
+| /services/injection-remediation-services | Soil Injection & Remediation Services - Summit Drilling Company | Our Remediation division offers enabling technology, experience, & highly trained personnel |
+| /services/utility-locating | Utility Locating Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+| /services/ust-septic-detection | UST & Septic Detection Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+| /services/borehole-geophysics | Borehole Geophysics Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+| /services/electrical-resistivity | Electrical Resistivity Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+| /services/seismic-refraction | Seismic Refraction Services - Summit Drilling | Summit's Geotechnical Division offers a full range of Geophysical services |
+
+PAGES MISSING META DESCRIPTIONS IN OLD SITE (28 pages):
+--------------------------------------------------------
+- /careers
+- /contact
+- /about-us
+- /about-us/news
+- /about-us/company-history
+- /about-us/customer-list
+- /employment
+- /employee-benefits
+- /military-veterans
+- /driller-assistants
+- /licensed-drillers
+- /safety (all sub-pages)
+- /resources (all sub-pages)
+- /services
+- /services/drilling-techniques
+- /services/additional-services
+- /services/additional-drilling-services
+- /services/equipment-roster
+- /services/sonic-drilling-demo
+- /services/shoreline-stabilization-services
+- /services/demolition-services
+- /services/landfill-services
+- /services/ust-ast-removal
+- /services/remediation-systems-services
+- /services/soil-excavation-services
+
+================================================================================
+SECTION 4: ACTION ITEMS
+================================================================================
+
+PRIORITY 1 - CRITICAL (for SEO preservation):
+----------------------------------------------
+[ ] Add meta titles and descriptions to all service pages
+[ ] Redirect blog post URLs to /about-us/news (or create individual pages)
+[ ] Ensure all 301 redirects are permanent
+
+PRIORITY 2 - IMPORTANT:
+-----------------------
+[ ] Add meta descriptions to: /careers, /contact, /about-us, /about-us/news
+[ ] Add proper page-specific meta titles (not just page names)
+[ ] Create sitemap.xml
+
+PRIORITY 3 - RECOMMENDED:
+-------------------------
+[ ] Add Open Graph tags for social sharing
+[ ] Add Twitter Card meta tags
+[ ] Add structured data (JSON-LD) for organization
+
+================================================================================
+SECTION 5: PAGES NEEDING META TAGS IN NEW SITE
+================================================================================
+
+These pages need metadata added to their page.tsx files:
+
+1. /careers - needs: title, description
+2. /careers/benefits - needs: title, description  
+3. /careers/positions - needs: title, description
+4. /contact - needs: title, description
+5. /about-us - needs: title, description
+6. /about-us/news - needs: title, description
+7. /health-safety - needs: title, description
+8. /project-gallery - needs: title, description
+9. /industries/environmental - needs: title, description
+10. /industries/geotechnical - needs: title, description
+11. /industries/cathodic - needs: title, description
+12. /industries/aggregate - needs: title, description
+13. All project gallery sub-pages
+14. All service sub-pages (sonic, direct-push, auger, air-rotary, etc.)
+
+================================================================================

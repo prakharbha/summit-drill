@@ -55,7 +55,7 @@ export function NewsCard({
                 {excerpt}
             </p>
             <Link
-                href={`/about-us/news/${slug}`}
+                href={`/${slug}`}
                 className={`inline-block text-white text-sm font-bold italic tracking-wide rounded-sm px-5 py-2 transition-colors ${isDark
                     ? "bg-sky-500 hover:bg-sky-600"
                     : "bg-[#718f45] hover:bg-sky-500"
