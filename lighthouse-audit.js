@@ -143,7 +143,11 @@ async function main() {
     }
 
     fs.writeFileSync('lighthouse-report.txt', report);
-    console.log('\nReport saved to lighthouse-report.txt');
+
+
+    // Print summary to console
+    console.log('\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);
+    console.log('Full report saved to lighthouse-report.txt');
 }
 
 main().catch(console.error);
