@@ -13,7 +13,7 @@ export default function InjectionRemediationPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/injection-banner.jpg"
+                    backgroundImage="/images/remediation/injection.jpg"
                     backgroundAlt="Summit Injection Remediation"
                     ribbonText="SUMMIT SERVICES"
                     title="Injection Remediation"

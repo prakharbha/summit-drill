@@ -89,7 +89,7 @@ const CompanyNews = () => {
             className="border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white transition-colors uppercase font-bold tracking-wide"
           >
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/summit-drilling/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"

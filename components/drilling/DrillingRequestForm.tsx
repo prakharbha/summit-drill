@@ -147,7 +147,7 @@ const DrillingRequestForm = () => {
                                 {/* Stacked categories - each section below the other */}
                                 <div className="space-y-8">
                                     {/* Geophysical Services */}
-                                    <div>
+                                    <div className="p-4 border border-white/40 rounded-lg">
                                         <h4 className="text-2xl font-bold italic mb-3 text-white">
                                             Geophysical Services
                                         </h4>
@@ -170,7 +170,7 @@ const DrillingRequestForm = () => {
                                     </div>
 
                                     {/* Drilling Services */}
-                                    <div>
+                                    <div className="p-4 border border-white/40 rounded-lg">
                                         <h4 className="text-2xl font-bold italic mb-3 text-white">
                                             Drilling Services
                                         </h4>
@@ -193,7 +193,7 @@ const DrillingRequestForm = () => {
                                     </div>
 
                                     {/* Remediation Services */}
-                                    <div>
+                                    <div className="p-4 border border-white/40 rounded-lg">
                                         <h4 className="text-2xl font-bold italic mb-3 text-white">
                                             Remediation Services
                                         </h4>

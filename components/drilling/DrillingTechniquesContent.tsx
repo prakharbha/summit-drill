@@ -224,8 +224,8 @@ export default function DrillingTechniquesContent() {
                                     Summit&apos;s Lauren DiVello is a dedicated and experienced customer advocate.
                                 </h3>
                                 <p className="text-xl md:text-2xl font-bold">
-                                    Reach Lauren at <span className="text-[#A5D48C]">609-238-2815</span> to discuss your project needs. Or email{' '}
-                                    <a href="mailto:LDivello@SummitDrilling.com" className="text-[#A5D48C] underline hover:text-white transition-colors">
+                                    Reach Lauren at <span className="text-[#377d7e]">609-238-2815</span> to discuss your project needs. Or email{' '}
+                                    <a href="mailto:LDivello@SummitDrilling.com" className="text-[#377d7e] underline hover:text-white transition-colors">
                                         LDivello@SummitDrilling.com
                                     </a>{' '}
                                     and she will reply promptly.

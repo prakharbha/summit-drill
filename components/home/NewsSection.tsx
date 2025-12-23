@@ -36,7 +36,7 @@ const NewsSection = () => {
                         Summit has a lot going on. From new regional offices to people on the move. A growing and sustainable Summit means more capability and expertise to serve you. We're excited about the future and hope you'll keep up with our news.
                     </p>
                     <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/company/summit-drilling/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-sky-500 hover:bg-sky-600 text-white text-base font-bold italic tracking-wide rounded-sm px-6 py-3 mt-2 transition-colors"

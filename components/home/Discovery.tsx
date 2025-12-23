@@ -49,7 +49,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="w-36 h-16 relative -ml-4 mb-1">
+              <div className="w-36 h-16 relative -ml-4">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -61,7 +61,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
               </p>
-              <GreenButton href="/services/geophysical-services" className="mt-2">
+              <GreenButton href="/services/geophysical-services" className="mt-2 mb-8">
                 Take a closer look &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -74,7 +74,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="hidden md:block w-36 h-16 relative -ml-4 mb-1">
+              <div className="hidden md:block w-36 h-16 relative -ml-4">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -86,7 +86,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">Summit has been the go-to source for drilling services across multiple industries for decades.</span> Our drillers are highly trained and deeply experienced. Need a professional partner on your site?
               </p>
-              <GreenButton href="/services/drilling-techniques" className="mt-2">
+              <GreenButton href="/services/drilling-techniques" className="mt-2 mb-8">
                 Go a little deeper &gt;&gt;
               </GreenButton>
             </motion.div>
@@ -99,7 +99,7 @@ const Discovery = () => {
               className="flex flex-col items-center text-center md:items-start md:text-left"
             >
               {/* Custom Mountain Icon */}
-              <div className="hidden md:block w-36 h-16 relative -ml-4 mb-1">
+              <div className="hidden md:block w-36 h-16 relative -ml-4">
                 <Image
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
@@ -111,7 +111,7 @@ const Discovery = () => {
               <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
                 <span className="text-[#73a5a5] font-bold">We're doing big projects.</span> Our field teams approach your work with enthusiasm and a connectedness to the mission. Need a "can do" culture on your team? Positive. Capable. Equipped.
               </p>
-              <GreenButton href="/services/remediation-services" className="mt-2">
+              <GreenButton href="/services/remediation-services" className="mt-2 mb-8">
                 Dig in &gt;&gt;
               </GreenButton>
             </motion.div>

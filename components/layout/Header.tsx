@@ -123,13 +123,13 @@ const Header = () => {
               </Link>
 
               <div className="flex items-center gap-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
+                <a href="https://www.linkedin.com/company/summit-drilling/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
                   <FaLinkedinIn className="w-4 h-4" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Facebook">
+                <a href="https://www.facebook.com/p/Summit-Drilling-LLC-100083102508611/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Facebook">
                   <FaFacebookF className="w-4 h-4" />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Instagram">
+                <a href="https://www.instagram.com/summitdrillingllc/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 drop-shadow-md transition-colors" aria-label="Visit Summit Drilling on Instagram">
                   <FaInstagram className="w-4 h-4" />
                 </a>
               </div>
@@ -505,13 +505,13 @@ const Header = () => {
 
                 {/* Mobile Social Icons */}
                 <div className="flex items-center gap-8 mt-6 pt-6 border-t border-white/20 justify-center">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
+                  <a href="https://www.linkedin.com/company/summit-drilling/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on LinkedIn">
                     <FaLinkedinIn className="w-6 h-6" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Facebook">
+                  <a href="https://www.facebook.com/p/Summit-Drilling-LLC-100083102508611/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Facebook">
                     <FaFacebookF className="w-6 h-6" />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Instagram">
+                  <a href="https://www.instagram.com/summitdrillingllc/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sky-300 transition-colors" aria-label="Visit Summit Drilling on Instagram">
                     <FaInstagram className="w-6 h-6" />
                   </a>
                 </div>

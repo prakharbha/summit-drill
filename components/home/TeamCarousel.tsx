@@ -136,13 +136,13 @@ export default function TeamCarousel() {
                                             />
                                         </div>
 
-                                        {/* Name display - Active or Hovered */}
-                                        {(isActive || isHovered) && (
+                                        {/* Name display - Only on Hover */}
+                                        {isHovered && (
                                             <div className="absolute top-[calc(50%+4rem)] lg:top-[calc(50%+5rem)] pt-3 text-center text-white w-64 z-20 pointer-events-none">
-                                                <h3 className={`font-bold leading-tight drop-shadow-md ${isActive ? "text-[1.25rem]" : "text-base"}`}>
+                                                <h3 className="font-bold leading-tight drop-shadow-md text-base">
                                                     {item.name}
                                                 </h3>
-                                                <p className={`opacity-90 drop-shadow-md ${isActive ? "text-base" : "text-xs"}`}>
+                                                <p className="opacity-90 drop-shadow-md text-xs">
                                                     {item.title}
                                                 </p>
                                             </div>

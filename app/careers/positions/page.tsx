@@ -61,7 +61,7 @@ export default function PositionsPage() {
                                 </p>
                                 <div className="pt-4">
                                     <Link
-                                        href="https://hoops.co"
+                                        href="https://app.hoopshr.com/companies/1323178/jobs"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-8 py-4 rounded shadow-lg transition-transform hover:scale-105"

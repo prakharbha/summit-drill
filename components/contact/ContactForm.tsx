@@ -66,8 +66,8 @@ const ContactForm = () => {
                         </div>
 
                         <div className="flex items-center space-x-2 pt-4">
-                            <Checkbox id="newsletter" className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#5e745d]" />
-                            <Label htmlFor="newsletter" className="text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                            <Checkbox id="newsletter" defaultChecked className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#5e745d]" />
+                            <Label htmlFor="newsletter" className="text-white font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                 I would like to subscribe to Summit’s Dispatch newsletter.
                             </Label>
                         </div>
