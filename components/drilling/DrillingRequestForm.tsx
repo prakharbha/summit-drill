@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CloudUpload } from "lucide-react";
+import { CloudUpload, X, FileText, Image as ImageIcon } from "lucide-react";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 
 // Services organized by category
@@ -48,6 +48,11 @@ const serviceCategories = {
     ],
 };
 
+// Allowed file types
+const ALLOWED_EXTENSIONS = ".pdf,.doc,.docx,.txt,.rtf,.xlsx,.xls,.csv,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp,.bmp,.svg,.heic,.heif";
+const MAX_FILE_SIZE_MB = 10;
+const MAX_TOTAL_SIZE_MB = 25;
+
 interface FormData {
     services: string[];
     additionalNotes: string;
@@ -68,6 +73,9 @@ const DrillingRequestForm = () => {
     const totalSteps = 2;
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+    const [files, setFiles] = useState<File[]>([]);
+    const [dragActive, setDragActive] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const [formData, setFormData] = useState<FormData>({
         services: [],
@@ -110,6 +118,88 @@ const DrillingRequestForm = () => {
         setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
+    const validateFile = (file: File): string | null => {
+        const ext = '.' + file.name.split('.').pop()?.toLowerCase();
+        const allowedExts = ALLOWED_EXTENSIONS.split(',');
+
+        if (!allowedExts.includes(ext)) {
+            return `File type not allowed: ${ext}`;
+        }
+
+        if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+            return `File too large: ${file.name} (max ${MAX_FILE_SIZE_MB}MB)`;
+        }
+
+        return null;
+    };
+
+    const addFiles = (newFiles: FileList | File[]) => {
+        const validFiles: File[] = [];
+        let currentTotalSize = files.reduce((sum, f) => sum + f.size, 0);
+
+        for (const file of Array.from(newFiles)) {
+            const error = validateFile(file);
+            if (error) {
+                setSubmitStatus({ type: "error", message: error });
+                return;
+            }
+
+            if (currentTotalSize + file.size > MAX_TOTAL_SIZE_MB * 1024 * 1024) {
+                setSubmitStatus({ type: "error", message: `Total file size exceeds ${MAX_TOTAL_SIZE_MB}MB limit` });
+                return;
+            }
+
+            // Check for duplicates
+            if (!files.some(f => f.name === file.name && f.size === file.size)) {
+                validFiles.push(file);
+                currentTotalSize += file.size;
+            }
+        }
+
+        setFiles(prev => [...prev, ...validFiles]);
+        setSubmitStatus(null);
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+            addFiles(e.target.files);
+        }
+    };
+
+    const handleDrag = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.type === "dragenter" || e.type === "dragover") {
+            setDragActive(true);
+        } else if (e.type === "dragleave") {
+            setDragActive(false);
+        }
+    };
+
+    const handleDrop = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragActive(false);
+        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+            addFiles(e.dataTransfer.files);
+        }
+    };
+
+    const removeFile = (index: number) => {
+        setFiles(prev => prev.filter((_, i) => i !== index));
+    };
+
+    const formatFileSize = (bytes: number): string => {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    };
+
+    const isImageFile = (filename: string): boolean => {
+        const ext = filename.split('.').pop()?.toLowerCase() || '';
+        return ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg', 'heic', 'heif'].includes(ext);
+    };
+
     const handleSubmit = async () => {
         // Validate required fields
         if (!formData.name || !formData.email) {
@@ -121,10 +211,29 @@ const DrillingRequestForm = () => {
         setSubmitStatus(null);
 
         try {
+            // Build FormData for multipart upload
+            const submitData = new FormData();
+
+            // Add form fields
+            formData.services.forEach(service => submitData.append("services", service));
+            submitData.append("additionalNotes", formData.additionalNotes);
+            submitData.append("name", formData.name);
+            submitData.append("company", formData.company);
+            submitData.append("address", formData.address);
+            submitData.append("city", formData.city);
+            submitData.append("state", formData.state);
+            submitData.append("zip", formData.zip);
+            submitData.append("phone", formData.phone);
+            submitData.append("cell", formData.cell);
+            submitData.append("email", formData.email);
+            submitData.append("startDate", formData.startDate);
+
+            // Add files
+            files.forEach(file => submitData.append("files", file));
+
             const response = await fetch("/api/project-request", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: submitData,
             });
 
             const data = await response.json();
@@ -146,6 +255,7 @@ const DrillingRequestForm = () => {
                     email: "",
                     startDate: "",
                 });
+                setFiles([]);
                 setCurrentStep(1);
             } else {
                 setSubmitStatus({ type: "error", message: data.error || "Failed to submit request" });
@@ -449,29 +559,80 @@ const DrillingRequestForm = () => {
                                             Upload Project Related<br />Documents/Scope of Work
                                         </h4>
                                         <p className="text-white/80 text-sm">
-                                            You Can Upload Multiple Documents
+                                            PDF, Word, Excel, Text, RTF, Images
+                                        </p>
+                                        <p className="text-white/60 text-xs">
+                                            Max 10MB per file, 25MB total
                                         </p>
                                     </div>
 
-                                    {/* Drop Zone with Mountain Background */}
+                                    {/* Drop Zone */}
                                     <div
-                                        className="w-full max-w-[280px] rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity relative"
-                                        style={{
-                                            backgroundImage: 'url(/images/files-bg.webp)',
-                                            backgroundSize: 'contain',
-                                            backgroundPosition: 'center bottom',
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundColor: '#8B4513'
-                                        }}
+                                        className={`w-full max-w-[300px] rounded-lg overflow-hidden cursor-pointer transition-all relative border-2 border-dashed ${dragActive
+                                                ? 'border-white bg-white/20'
+                                                : 'border-white/40 bg-white/10 hover:bg-white/15'
+                                            }`}
+                                        onDragEnter={handleDrag}
+                                        onDragLeave={handleDrag}
+                                        onDragOver={handleDrag}
+                                        onDrop={handleDrop}
+                                        onClick={() => fileInputRef.current?.click()}
                                     >
-                                        <div className="pt-12 pb-4 px-6 flex flex-col items-center">
-                                            <p className="text-lg text-white font-medium">(Drop Files Here)</p>
-                                            <Button type="button" className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30">
+                                        <input
+                                            ref={fileInputRef}
+                                            type="file"
+                                            multiple
+                                            accept={ALLOWED_EXTENSIONS}
+                                            onChange={handleFileChange}
+                                            className="hidden"
+                                        />
+                                        <div className="py-8 px-6 flex flex-col items-center gap-3">
+                                            <p className="text-lg text-white font-medium">
+                                                {dragActive ? "Drop files here" : "Drag & Drop Files"}
+                                            </p>
+                                            <p className="text-white/60 text-sm">or</p>
+                                            <Button
+                                                type="button"
+                                                className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    fileInputRef.current?.click();
+                                                }}
+                                            >
                                                 Select Files
                                             </Button>
                                         </div>
                                     </div>
-                                    <p className="text-white/60 text-xs">File upload coming soon</p>
+
+                                    {/* Selected Files List */}
+                                    {files.length > 0 && (
+                                        <div className="w-full max-w-[300px] space-y-2">
+                                            <p className="text-sm font-medium text-white/90">{files.length} file(s) selected:</p>
+                                            <div className="space-y-1 max-h-[150px] overflow-y-auto">
+                                                {files.map((file, index) => (
+                                                    <div
+                                                        key={`${file.name}-${index}`}
+                                                        className="flex items-center gap-2 bg-white/10 rounded px-3 py-2 text-sm"
+                                                    >
+                                                        {isImageFile(file.name) ? (
+                                                            <ImageIcon className="w-4 h-4 flex-shrink-0" />
+                                                        ) : (
+                                                            <FileText className="w-4 h-4 flex-shrink-0" />
+                                                        )}
+                                                        <span className="flex-1 truncate text-left">{file.name}</span>
+                                                        <span className="text-white/60 text-xs">{formatFileSize(file.size)}</span>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => removeFile(index)}
+                                                            className="p-1 hover:bg-white/20 rounded"
+                                                        >
+                                                            <X className="w-4 h-4" />
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 

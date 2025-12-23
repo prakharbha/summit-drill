@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
-const RECIPIENT_EMAIL = "info@summitdrilling.com";
+const RECIPIENT_EMAIL = process.env.EMAIL_TO || "info@summitdrilling.com";
+const FROM_EMAIL = process.env.EMAIL_FROM || "noreply@summitdrilling.com";
 
 async function sendMailgunEmail(to: string, subject: string, html: string, from: string) {
   const formData = new FormData();
@@ -82,7 +83,7 @@ export async function POST(request: NextRequest) {
       RECIPIENT_EMAIL,
       `New Contact Form: ${name}`,
       emailHtml,
-      `Summit Drilling Website <noreply@${MAILGUN_DOMAIN}>`
+      `Summit Drilling Website <${FROM_EMAIL}>`
     );
 
     console.log("Contact form email sent successfully");
