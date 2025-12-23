@@ -20,7 +20,7 @@ export default function SpartanburgSonicProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/spartanburg-sonic-banner.jpeg"
+                    backgroundImage="/images/projects/spartanburg-sonic-banner.webp"
                     backgroundAlt="Deep Vertical Aquifer Profile (VAP) Investigation"
                     ribbonText="FEATURED PROJECT"
                     title="Deep Vertical Aquifer Profile (VAP) Investigation"

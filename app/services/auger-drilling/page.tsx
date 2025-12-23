@@ -15,7 +15,7 @@ export default function AugerPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/services/drilling/hsa-banner.jpg"
+                    backgroundImage="/images/services/drilling/hsa-banner.webp"
                     backgroundAlt="Summit Hollow Stem Auger Drilling"
                     ribbonText="SUMMIT SERVICES"
                     title="Auger Drilling"

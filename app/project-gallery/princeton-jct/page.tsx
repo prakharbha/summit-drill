@@ -20,7 +20,7 @@ export default function PrincetonJctProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/princeton-jct-banner.jpg"
+                    backgroundImage="/images/projects/princeton-jct-banner.webp"
                     backgroundAlt="Long-Term Injection & Monitoring Well Program"
                     ribbonText="FEATURED PROJECT"
                     title="Long-Term Injection & Monitoring Well Program"

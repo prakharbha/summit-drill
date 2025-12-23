@@ -32,7 +32,7 @@ export default function CareersPageContent() {
 
                 {/* HERO SECTION - Standard Component */}
                 <PageHeroBanner
-                    backgroundImage="/images/careers/hero.jpg"
+                    backgroundImage="/images/careers/hero.webp"
                     backgroundAlt="Summit Drilling Team"
                     ribbonText="Careers"
                     title="You Matter Here"
@@ -140,7 +140,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                                    <Image src="/images/careers/path.jpg" alt="Career Path" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                                    <Image src="/images/careers/path.webp" alt="Career Path" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">A path to growth</h3>
@@ -172,7 +172,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                                    <Image src="/images/careers/positions.jpg" alt="Positions" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                                    <Image src="/images/careers/positions.webp" alt="Positions" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">Company-wide Opportunities</h3>

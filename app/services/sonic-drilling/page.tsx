@@ -15,7 +15,7 @@ export default function SonicDrillingPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/services/drilling/sonic-banner.jpg"
+                    backgroundImage="/images/services/drilling/sonic-banner.webp"
                     backgroundAlt="Summit Sonic Drilling"
                     ribbonText="SUMMIT SERVICES"
                     title="Sonic Drilling"

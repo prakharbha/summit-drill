@@ -13,7 +13,7 @@ export default function EarthworkRemediationPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/earthwork-banner.jpg"
+                    backgroundImage="/images/remediation/earthwork-banner.webp"
                     backgroundAlt="Summit Earthwork Services"
                     ribbonText="SUMMIT SERVICES"
                     title="Earthwork"

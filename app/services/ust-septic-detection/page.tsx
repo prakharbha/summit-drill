@@ -13,7 +13,7 @@ export default function USTSepticDetectionPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/geophysics/ust-septic-detection.jpg"
+          backgroundImage="/images/geophysics/ust-septic-detection.webp"
           backgroundAlt="Summit UST & Septic Detection Services"
           ribbonText="SUMMIT SERVICES"
           title="UST & Septic Detection"

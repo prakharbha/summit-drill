@@ -21,7 +21,7 @@ export default function RaleighProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/raleigh-banner.jpg"
+                    backgroundImage="/images/projects/raleigh-banner.webp"
                     backgroundAlt="Multi-Depth Monitoring Well Installation"
                     ribbonText="FEATURED PROJECT"
                     title="Multi-Depth Monitoring Well Installation"

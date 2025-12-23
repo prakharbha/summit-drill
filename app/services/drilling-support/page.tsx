@@ -13,7 +13,7 @@ export default function DrillingSupportPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/drilling-support-banner.jpg"
+                    backgroundImage="/images/remediation/drilling-support-banner.webp"
                     backgroundAlt="Summit Drilling Support Services"
                     ribbonText="SUMMIT SERVICES"
                     title="Drilling Support"

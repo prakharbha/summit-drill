@@ -13,7 +13,7 @@ export default function AggregatePage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/industries/aggregate-banner.jpg"
+                    backgroundImage="/images/industries/aggregate-banner.webp"
                     backgroundAlt="Summit Aggregate Drilling Services"
                     ribbonText="INDUSTRIES SERVED"
                     title="Aggregate Drilling Services"

@@ -20,7 +20,7 @@ export default function CharlestownProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/charlestown-banner.jpg"
+                    backgroundImage="/images/projects/charlestown-banner.webp"
                     backgroundAlt="Sonic Drilling – Overburden & Bedrock Wells"
                     ribbonText="FEATURED PROJECT"
                     title="Sonic Drilling – Overburden & Bedrock Wells"

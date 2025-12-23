@@ -13,7 +13,7 @@ const FeaturedProject = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/home/featured-project-bg.jpg"
+          src="/images/home/featured-project-bg.webp"
           alt="Featured Project Background"
           fill
           className="object-cover"

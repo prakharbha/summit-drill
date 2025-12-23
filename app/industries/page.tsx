@@ -12,28 +12,28 @@ const industries = [
   {
     title: "Environmental",
     href: "/industries/environmental",
-    image: "/images/industries/environmental-banner.jpg",
+    image: "/images/industries/environmental-banner.webp",
     subtitle: "Partnering with environmental professionals for over 40 years",
     description: "Consultants in need of environmental contracting services recognize that Summit is the go-to source for subsurface investigations and remediation services."
   },
   {
     title: "Geotechnical",
     href: "/industries/geotechnical",
-    image: "/images/industries/geotechnical-banner.jpg",
+    image: "/images/industries/geotechnical-banner.webp",
     subtitle: "We help you strengthen every project from the ground up",
     description: "From large construction projects to solar carports, Summit's geotechnical services offer talented and licensed drillers with decades of experience."
   },
   {
     title: "Cathodic",
     href: "/industries/cathodic",
-    image: "/images/industries/cathodic-banner.jpg",
+    image: "/images/industries/cathodic-banner.webp",
     subtitle: "Drilling that helps protect what matters most",
     description: "Summit delivers precise cathodic protection boreholes that safeguard pipelines, tanks, and other buried infrastructure."
   },
   {
     title: "Aggregate",
     href: "/industries/aggregate",
-    image: "/images/industries/aggregate-banner.jpg",
+    image: "/images/industries/aggregate-banner.webp",
     subtitle: "Core insights that drive smarter, more profitable excavations",
     description: "From coring accuracy to equipment uptime, Summit provides the data and daily production reliability quarry owners count on."
   },
@@ -47,7 +47,7 @@ export default function IndustriesPage() {
         <PageHeroBanner
           title="Industries Served"
           description="Summit serves diverse industries with specialized drilling, geophysics, and remediation solutions. Our multi-regional reach and technical expertise make us the trusted partner for environmental, geotechnical, cathodic, and aggregate projects."
-          backgroundImage="/images/industries/environmental-banner.jpg"
+          backgroundImage="/images/industries/environmental-banner.webp"
           ribbonText="SUMMIT DRILLING"
         />
 

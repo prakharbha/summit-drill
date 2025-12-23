@@ -13,7 +13,7 @@ export default function SeismicRefractionPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/geophysics/seismic-refraction.jpg"
+          backgroundImage="/images/geophysics/seismic-refraction.webp"
           backgroundAlt="Summit Seismic Refraction Services"
           ribbonText="SUMMIT SERVICES"
           title="Seismic Refraction"

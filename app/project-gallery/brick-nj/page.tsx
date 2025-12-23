@@ -20,7 +20,7 @@ export default function BrickNJProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/brick-nj-banner.jpg"
+                    backgroundImage="/images/projects/brick-nj-banner.webp"
                     backgroundAlt="Emergency Storm Sewer Repair Project"
                     ribbonText="FEATURED PROJECT"
                     title="Emergency Storm Sewer Repair"

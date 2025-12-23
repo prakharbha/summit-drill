@@ -16,7 +16,7 @@ export default function InjectionPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/services/drilling/injection-banner.jpg"
+                    backgroundImage="/images/services/drilling/injection-banner.webp"
                     backgroundAlt="Summit Drilling & Injection Services"
                     ribbonText="SUMMIT SERVICES"
                     title="Drilling & Injection"

@@ -21,7 +21,7 @@ export default function SpartanburgCapProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/spartanburg-cap-banner.jpg"
+                    backgroundImage="/images/projects/spartanburg-cap-banner.webp"
                     backgroundAlt="Engineering Cap Repair & Streambank Stabilization"
                     ribbonText="FEATURED PROJECT"
                     title="Engineering Cap Repair & Streambank Stabilization"

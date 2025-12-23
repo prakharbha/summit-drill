@@ -14,7 +14,7 @@ export default function HealthSafetyPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/health-safety-banner.jpg"
+          backgroundImage="/images/health-safety-banner.webp"
           backgroundAlt="Summit Health & Safety"
           ribbonText="SUMMIT"
           title="Health & Safety"

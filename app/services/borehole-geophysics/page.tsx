@@ -13,7 +13,7 @@ export default function BoreholeGeophysicsPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/geophysics/borehole-geophysics.jpg"
+          backgroundImage="/images/geophysics/borehole-geophysics.webp"
           backgroundAlt="Summit Borehole Geophysics Services"
           ribbonText="SUMMIT SERVICES"
           title="Borehole Geophysics"

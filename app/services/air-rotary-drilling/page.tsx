@@ -15,7 +15,7 @@ export default function AirRotaryPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/services/drilling/air-rotary-banner.jpg"
+                    backgroundImage="/images/services/drilling/air-rotary-banner.webp"
                     backgroundAlt="Summit Air Rotary Drilling"
                     ribbonText="SUMMIT SERVICES"
                     title="Air Rotary Drilling"

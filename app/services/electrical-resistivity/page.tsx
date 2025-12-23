@@ -13,7 +13,7 @@ export default function ElectricalResistivityPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/geophysics/electrical-resistivity.jpg"
+          backgroundImage="/images/geophysics/electrical-resistivity.webp"
           backgroundAlt="Summit Electrical Resistivity Services"
           ribbonText="SUMMIT SERVICES"
           title="Electrical Resistivity"

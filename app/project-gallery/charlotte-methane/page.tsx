@@ -19,7 +19,7 @@ export default function CharlotteMethaneProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/charlotte-methane-banner.jpg"
+                    backgroundImage="/images/projects/charlotte-methane-banner.webp"
                     backgroundAlt="Methane Mitigation System with Cupolex & VIMS Integration"
                     ribbonText="FEATURED PROJECT"
                     title="Methane Mitigation System with Cupolex & VIMS Integration"

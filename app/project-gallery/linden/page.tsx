@@ -20,7 +20,7 @@ export default function LindenProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/linden-banner.jpg"
+                    backgroundImage="/images/projects/linden-banner.webp"
                     backgroundAlt="GPR & Drilling – Subsurface Investigation"
                     ribbonText="FEATURED PROJECT"
                     title="GPR & Drilling – Subsurface Investigation"

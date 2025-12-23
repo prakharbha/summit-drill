@@ -13,7 +13,7 @@ export default function UtilityLocatingPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/geophysics/utility-locating-banner.jpg"
+          backgroundImage="/images/geophysics/utility-locating-banner.webp"
           backgroundAlt="Summit Utility Locating Services"
           ribbonText="SUMMIT SERVICES"
           title="Utility Locating"

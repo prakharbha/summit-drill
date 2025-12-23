@@ -13,7 +13,7 @@ const remediationServices = [
   {
     title: "Remediation Systems",
     href: "/services/remediation-systems",
-    image: "/images/remediation/systems-installation.jpg",
+    image: "/images/remediation/systems-installation.webp",
     subtitle: "Deep experience plus multi-regional delivery!",
     description: "Summit delivers end-to-end remediation system expertise from vapor mitigation and liner installations to complex treatment systems, O&M programs, and temporary water-handling solutions. Explore how our experienced multi-regional team supports safer sites, cleaner water, and more successful outcomes.",
     ctaText: "Our Remediation Systems Capabilities"
@@ -21,7 +21,7 @@ const remediationServices = [
   {
     title: "In-Situ Remediation",
     href: "/services/in-situ-remediation",
-    image: "/images/remediation/in-situ.jpg",
+    image: "/images/remediation/in-situ.webp",
     subtitle: "When immobilizing contaminants is the right approach!",
     description: "From ISS soil mixing to auger-based single-column stabilization, Summit applies field-proven in-situ technologies to restore soil integrity and control contaminant mobility. See how our specialized crews and equipment elevate project performance.",
     ctaText: "Our In-Situ Remediation Capabilities"
@@ -29,7 +29,7 @@ const remediationServices = [
   {
     title: "Injection Remediation",
     href: "/services/injection-remediation",
-    image: "/images/remediation/injection.jpg",
+    image: "/images/remediation/injection.webp",
     subtitle: "Need a more targeted approach for your injection project?",
     description: "Summit's injection services offer precise, controlled delivery of reagents into the subsurface through single and multi-port systems tailored to site-specific conditions. Learn how our approach maximizes contact, minimizes rebound, and improves remediation efficiency.",
     ctaText: "Our Injection Remediation Capabilities"
@@ -37,7 +37,7 @@ const remediationServices = [
   {
     title: "Barrier Walls",
     href: "/services/barrier-walls",
-    image: "/images/remediation/barrier-walls.jpg",
+    image: "/images/remediation/barrier-walls.webp",
     subtitle: "Strengthen site protection and long-term remediation goals!",
     description: "Summit's hydraulic cut-off and reactive and permeable barrier walls provide essential control of groundwater flow and treatment, preventing off-site migration and safeguarding adjacent properties. Learn how our advanced installation techniques enhance containment treatment across diverse site conditions.",
     ctaText: "Our Barrier Wall Capabilities"
@@ -45,7 +45,7 @@ const remediationServices = [
   {
     title: "Earthwork",
     href: "/services/earthwork-remediation",
-    image: "/images/remediation/earthwork.jpg",
+    image: "/images/remediation/earthwork.webp",
     subtitle: "Our full suite of earthwork and ex-situ remediation services is getting very deep!",
     description: "By combining heavy civil earthwork with specialized ex-situ remediation practices—such as soil excavation, trenching, stabilization, and engineered capping, Summit is making a major contribution to transforming contaminated sites into stable, compliant, and future-ready assets. Discover the depth of our remediation expertise.",
     ctaText: "Our Earthwork Capabilities"
@@ -53,7 +53,7 @@ const remediationServices = [
   {
     title: "Drilling Support",
     href: "/services/drilling-support",
-    image: "/images/remediation/drilling-support.jpg",
+    image: "/images/remediation/drilling-support.webp",
     subtitle: "Creating stable working platforms that keep our drillers drilling and your projects advancing!",
     description: "From access road construction to heavy-duty matting systems, Summit delivers the infrastructure that enables drilling crews to work safely in challenging conditions. See how our support services reduce downtime and improve site productivity.",
     ctaText: "Our Drilling Support Capabilities"
@@ -80,7 +80,7 @@ export default function RemediationServicesPage() {
         <PageHeroBanner
           title="Remediation Services"
           description="Powered by strategic growth and unified leadership, Summit's talented remediation teams offer comprehensive, tech-forward solutions for complex sites."
-          backgroundImage="/images/remediation/hero-banner.jpg"
+          backgroundImage="/images/remediation/hero-banner.webp"
           ribbonText="SUMMIT SERVICES"
         />
 

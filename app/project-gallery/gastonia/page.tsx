@@ -21,7 +21,7 @@ export default function GastoniaProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/gastonia-banner.jpg"
+                    backgroundImage="/images/projects/gastonia-banner.webp"
                     backgroundAlt="Permeable Reactive Barrier (PRB) Installation"
                     ribbonText="FEATURED PROJECT"
                     title="Permeable Reactive Barrier (PRB) Installation"

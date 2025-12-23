@@ -115,7 +115,7 @@ function LocationsSection() {
     const location = LOCATIONS.find(loc => loc.id === activeLocation) || LOCATIONS[0];
 
     return (
-        <section className="py-20 bg-[#1A365D] text-white relative z-20">
+        <section id="locations" className="py-20 bg-[#1A365D] text-white relative z-20">
             <div className="container mx-auto px-4 lg:px-8">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Locations</h2>
 

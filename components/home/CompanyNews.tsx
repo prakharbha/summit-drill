@@ -38,7 +38,7 @@ const CompanyNews = () => {
     {
       title: "Summit Welcomes SAEDACCO to the Team",
       excerpt: "Summit Drilling is proud to announce the acquisition of SAEDACCO, a leading provider of drilling and remediation services.",
-      image: "/images/news-thumb-1.jpg",
+      image: "/images/news-thumb-1.webp",
       date: "October 24, 2024",
       category: "Acquisition",
       link: "/news",
@@ -46,7 +46,7 @@ const CompanyNews = () => {
     {
       title: "Joseph C. Negro joins Summit to Lead the Expansion of Remediation Services Division",
       excerpt: "Industry veteran Joseph C. Negro has joined Summit Drilling to spearhead the growth of our remediation services across the East Coast.",
-      image: "/images/news-thumb-2.jpg",
+      image: "/images/news-thumb-2.webp",
       date: "September 15, 2024",
       category: "Leadership",
       link: "/news",
@@ -54,7 +54,7 @@ const CompanyNews = () => {
     {
       title: "Summit Doubles Down on Its Commitment to H&S with HIGHWIRE GOLD SAFETY Awards",
       excerpt: "We are honored to receive the Highwire Gold Safety Award, recognizing our unwavering commitment to safety excellence.",
-      image: "/images/news-thumb-3.jpg",
+      image: "/images/news-thumb-3.webp",
       date: "August 10, 2024",
       category: "Awards",
       link: "/news",
@@ -62,7 +62,7 @@ const CompanyNews = () => {
     {
       title: "Expanding Our Fleet with New Sonic Rigs",
       excerpt: "To better serve our clients, we've added two new state-of-the-art sonic rigs to our fleet, enhancing our drilling capabilities.",
-      image: "/images/news-thumb-1.jpg",
+      image: "/images/news-thumb-1.webp",
       date: "July 05, 2024",
       category: "Equipment",
       link: "/news",

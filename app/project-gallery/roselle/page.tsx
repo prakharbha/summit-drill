@@ -20,7 +20,7 @@ export default function RoselleProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/roselle-banner.jpg"
+                    backgroundImage="/images/projects/roselle-banner.webp"
                     backgroundAlt="Shallow Bedrock Well Installation"
                     ribbonText="FEATURED PROJECT"
                     title="Shallow Bedrock Well Installation"

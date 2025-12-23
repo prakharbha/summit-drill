@@ -14,7 +14,7 @@ export default function AboutUsPage() {
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/about/hero-banner.jpg"
+          backgroundImage="/images/about/hero-banner.webp"
           backgroundAlt="Summit Drilling About Us"
           ribbonText="ABOUT US"
           title="Our Vision and Purpose"
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
                   {/* Historical Image */}
                   <div className="mb-6">
                     <Image
-                      src="/images/about/summit-history.jpg"
+                      src="/images/about/summit-history.webp"
                       alt="Summit Drilling Historical Photo"
                       width={400}
                       height={300}

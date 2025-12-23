@@ -13,7 +13,7 @@ const geophysicsServices = [
   {
     title: "Utility Locating",
     href: "/services/utility-locating",
-    image: "/images/geophysics/utility-locating.jpg",
+    image: "/images/geophysics/utility-locating.webp",
     subtitle: "Utility Locating – Prevent accidents and protect critical infrastructure!",
     description: "Utility locating is a critical process that helps prevent accidents, protect the environment, and ensure the efficient and safe execution of construction, excavation, drilling and maintenance activities.",
     ctaText: "Our Utility Locating Capabilities"
@@ -21,7 +21,7 @@ const geophysicsServices = [
   {
     title: "UST & Septic Detection",
     href: "/services/ust-septic-detection",
-    image: "/images/geophysics/ust-septic-detection.jpg",
+    image: "/images/geophysics/ust-septic-detection.webp",
     subtitle: "UST & Septic Detection – Environmental protection starts underground!",
     description: "The importance of locating USTs or detecting septic systems lies in the prevention of environmental contamination, protection of human health and safety, adherence to regulators, and potential cost savings.",
     ctaText: "Our UST & Septic Detection Services"
@@ -29,7 +29,7 @@ const geophysicsServices = [
   {
     title: "Borehole Geophysics",
     href: "/services/borehole-geophysics",
-    image: "/images/geophysics/borehole-geophysics.jpg",
+    image: "/images/geophysics/borehole-geophysics.webp",
     subtitle: "Borehole Geophysics – Characterize subsurface conditions with precision!",
     description: "Borehole geophysics is a valuable technique for characterizing subsurface conditions and obtaining data for a variety of geological, hydrogeological, and environmental applications.",
     ctaText: "Our Borehole Geophysics Capabilities"
@@ -37,7 +37,7 @@ const geophysicsServices = [
   {
     title: "Electrical Resistivity",
     href: "/services/electrical-resistivity",
-    image: "/images/geophysics/electrical-resistivity.jpg",
+    image: "/images/geophysics/electrical-resistivity.webp",
     subtitle: "Electrical Resistivity – Map the subsurface with electrical measurements!",
     description: "Electrical conductivity and resistivity measurements provide valuable information about the subsurface properties of materials, helping professionals make informed decisions.",
     ctaText: "Our Electrical Resistivity Services"
@@ -45,7 +45,7 @@ const geophysicsServices = [
   {
     title: "Seismic Refraction",
     href: "/services/seismic-refraction",
-    image: "/images/geophysics/seismic-refraction.jpg",
+    image: "/images/geophysics/seismic-refraction.webp",
     subtitle: "Seismic Refraction – Study subsurface properties with seismic waves!",
     description: "Seismic Refraction is a valuable geophysical technique used to study subsurface properties and provide insights into the geological and geotechnical characteristics of an area.",
     ctaText: "Our Seismic Refraction Capabilities"
@@ -60,7 +60,7 @@ export default function GeophysicalServicesPage() {
         <PageHeroBanner
           title="Geophysical Services"
           description="Summit's Geophysical Services and growing geophysics division provide a full array of real-time geophysical services to the environmental, engineering, and construction industries."
-          backgroundImage="/images/geophysics/utility-locating-banner.jpg"
+          backgroundImage="/images/geophysics/utility-locating-banner.webp"
           ribbonText="SUMMIT SERVICES"
         />
 

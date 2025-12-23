@@ -13,7 +13,7 @@ export default function CathodicPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/industries/cathodic-banner.jpg"
+                    backgroundImage="/images/industries/cathodic-banner.webp"
                     backgroundAlt="Summit Cathodic Drilling Services"
                     ribbonText="INDUSTRIES SERVED"
                     title="Cathodic Drilling Services"

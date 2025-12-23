@@ -13,7 +13,7 @@ export default function BarrierWallsPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/barrier-walls-banner.jpg"
+                    backgroundImage="/images/remediation/barrier-walls-banner.webp"
                     backgroundAlt="Summit Barrier Wall Installation"
                     ribbonText="SUMMIT SERVICES"
                     title="Cut-Off Barrier Walls"

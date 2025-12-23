@@ -15,7 +15,7 @@ export default function FeaturedProjectPage() {
             <main>
                 {/* Hero Section using PageHeroBanner */}
                 <PageHeroBanner
-                    backgroundImage="/images/drilling-hero.jpg"
+                    backgroundImage="/images/drilling-hero.webp"
                     backgroundAlt="Airport Earth Work Project"
                     ribbonText="Featured Project"
                     title="Airport Earth Work"
@@ -41,7 +41,7 @@ export default function FeaturedProjectPage() {
                                     {/* Image Card */}
                                     <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
                                         <Image
-                                            src="/images/drilling-hero.jpg" // Dummy image
+                                            src="/images/drilling-hero.webp" // Dummy image
                                             alt={`Project ${index + 1}`}
                                             fill
                                             className="object-cover"

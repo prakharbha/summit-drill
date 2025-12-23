@@ -13,7 +13,7 @@ export default function GeotechnicalPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/industries/geotechnical-banner.jpg"
+                    backgroundImage="/images/industries/geotechnical-banner.webp"
                     backgroundAlt="Summit Geotechnical Services"
                     ribbonText="INDUSTRIES SERVED"
                     title="Geotechnical Services"

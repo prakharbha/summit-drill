@@ -23,7 +23,7 @@ export default function PositionsPage() {
             <main className="font-sans">
                 {/* HERO SECTION */}
                 <PageHeroBanner
-                    backgroundImage="/images/careers/positions.jpg"
+                    backgroundImage="/images/careers/positions.webp"
                     backgroundAlt="Summit Drilling Team"
                     ribbonText="Positions"
                     title="Summit Takes Pride"

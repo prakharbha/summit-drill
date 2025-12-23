@@ -19,7 +19,7 @@ export default function PrincetonProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/princeton-banner.jpg"
+                    backgroundImage="/images/projects/princeton-banner.webp"
                     backgroundAlt="Sonic Drilling Investigation on Collegiate Athletic Field"
                     ribbonText="FEATURED PROJECT"
                     title="Sonic Drilling Investigation on Collegiate Athletic Field"

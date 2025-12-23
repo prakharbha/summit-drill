@@ -15,7 +15,7 @@ export default function DirectPushPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/services/drilling/dpt-banner.jpg"
+                    backgroundImage="/images/services/drilling/dpt-banner.webp"
                     backgroundAlt="Summit Direct Push Drilling"
                     ribbonText="SUMMIT SERVICES"
                     title="Direct Push Drilling"

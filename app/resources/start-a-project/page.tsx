@@ -9,7 +9,12 @@ export const metadata: Metadata = {
 
 export default function StartProjectPage() {
   return (
-    <PageTemplate title="Start a Project" description="Let's discuss your project needs" dividerColor="#8B4513">
+    <PageTemplate
+      title="Start a Project"
+      description="Let's discuss your project needs"
+      dividerColor="#8B4513"
+      backgroundImage="/images/start-project-banner.webp"
+    >
       <DrillingRequestForm />
     </PageTemplate>
   );

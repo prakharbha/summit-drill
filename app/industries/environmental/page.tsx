@@ -13,7 +13,7 @@ export default function EnvironmentalPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/industries/environmental-banner.jpg"
+                    backgroundImage="/images/industries/environmental-banner.webp"
                     backgroundAlt="Summit Environmental Services"
                     ribbonText="INDUSTRIES SERVED"
                     title="Environmental Services"

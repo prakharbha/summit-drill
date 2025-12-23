@@ -13,84 +13,84 @@ const projects = [
         title: "Bentonite Hydraulic Cut-Off Wall Installation",
         location: "Charlotte, NC",
         description: "Summit constructed a bentonite-based hydraulic cut-off wall within an active airport environment adjacent to a runway and taxiway.",
-        image: "/images/projects/charlotte-airport-banner.jpg"
+        image: "/images/projects/charlotte-airport-banner.webp"
     },
     {
         slug: "brick-nj",
         title: "Emergency Storm Sewer Repair",
         location: "Brick, NJ",
         description: "Summit delivered a complete investigation-to-restoration solution for an urgent subsurface infrastructure issue involving a monitoring well that punctured a storm sewer line.",
-        image: "/images/projects/brick-nj-banner.jpg"
+        image: "/images/projects/brick-nj-banner.webp"
     },
     {
         slug: "charlestown",
         title: "Sonic Drilling – Overburden & Bedrock Wells",
         location: "Charlestown, RI",
         description: "Large-scale sonic drilling and well installation program at a U.S. Army Corps of Engineers site with 30 overburden wells and rock coring to 150 feet.",
-        image: "/images/projects/charlestown-banner.jpg"
+        image: "/images/projects/charlestown-banner.webp"
     },
     {
         slug: "charlotte-methane",
         title: "Methane Mitigation System with Cupolex & VIMS",
         location: "Charlotte, NC",
         description: "Installation of a complex methane mitigation system for a 7-story building including 15,920 sq. ft. of Cupolex domed forming system.",
-        image: "/images/projects/charlotte-methane-banner.jpg"
+        image: "/images/projects/charlotte-methane-banner.webp"
     },
     {
         slug: "gastonia",
         title: "Permeable Reactive Barrier (PRB) Installation",
         location: "Gastonia, NC",
         description: "Rapid installation of a permeable reactive barrier at a Southeastern superfund site in response to an urgent groundwater issue.",
-        image: "/images/projects/gastonia-banner.jpg"
+        image: "/images/projects/gastonia-banner.webp"
     },
     {
         slug: "linden",
         title: "GPR & Drilling – Subsurface Investigation",
         location: "Linden, NJ",
         description: "Multi-technology subsurface investigation including GPR preclearance, drilling across 16 locations, and installation of injection wells.",
-        image: "/images/projects/linden-banner.jpg"
+        image: "/images/projects/linden-banner.webp"
     },
     {
         slug: "princeton-jct",
         title: "Long-Term Injection & Monitoring Well Program",
         location: "Princeton Junction, NJ",
         description: "Nine years of continuous involvement supporting environmental investigation and remediation efforts with multiple drilling technologies.",
-        image: "/images/projects/princeton-jct-banner.jpg"
+        image: "/images/projects/princeton-jct-banner.webp"
     },
     {
         slug: "princeton",
         title: "Sonic Drilling on Collegiate Athletic Field",
         location: "Princeton, NJ",
         description: "High-resolution subsurface investigation on Princeton University's baseball field using Terra Sonic technology with zero impact to artificial turf.",
-        image: "/images/projects/princeton-banner.jpg"
+        image: "/images/projects/princeton-banner.webp"
     },
     {
         slug: "raleigh",
         title: "Multi-Depth Monitoring Well Installation",
         location: "Raleigh, NC",
         description: "Installation of 10 monitoring wells to depths up to 170 feet, completed 7 days ahead of schedule with multi-crew coordination.",
-        image: "/images/projects/raleigh-banner.jpg"
+        image: "/images/projects/raleigh-banner.webp"
     },
     {
         slug: "roselle",
         title: "Shallow Bedrock Well Installation",
         location: "Roselle, NJ",
         description: "Precision drilling in a space-restricted urban environment with installation of three shallow bedrock monitoring wells.",
-        image: "/images/projects/roselle-banner.jpg"
+        image: "/images/projects/roselle-banner.webp"
     },
     {
         slug: "spartanburg-cap",
         title: "Engineering Cap Repair & Streambank Stabilization",
         location: "Spartanburg, SC",
         description: "Restoration of 200 linear feet of storm-damaged streambank and multi-layer engineered cap system in dense woodland.",
-        image: "/images/projects/spartanburg-cap-banner.jpg"
+        image: "/images/projects/spartanburg-cap-banner.webp"
     },
     {
         slug: "spartanburg-sonic",
         title: "Deep Vertical Aquifer Profile (VAP) Investigation",
         location: "Spartanburg, SC",
         description: "Deep roto-sonic drilling to 300 feet with high-resolution vertical profiling of VOCs in groundwater at 6 VAP locations.",
-        image: "/images/projects/spartanburg-sonic-banner.jpeg"
+        image: "/images/projects/spartanburg-sonic-banner.webp"
     }
 ];
 
@@ -101,7 +101,7 @@ export default function ProjectGalleryPage() {
             <main>
                 {/* Hero Section using PageHeroBanner */}
                 <PageHeroBanner
-                    backgroundImage="/images/projects/gallery-banner.jpg"
+                    backgroundImage="/images/projects/gallery-banner.webp"
                     backgroundAlt="Airport Earth Work Project"
                     ribbonText="FEATURED PROJECT"
                     title="Airport Earth Work"

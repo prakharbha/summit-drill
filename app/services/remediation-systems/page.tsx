@@ -13,7 +13,7 @@ export default function RemediationSystemsPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/systems-banner.jpg"
+                    backgroundImage="/images/remediation/systems-banner.webp"
                     backgroundAlt="Summit Remediation Systems Installation"
                     ribbonText="SUMMIT SERVICES"
                     title="Remediation Systems Installation"

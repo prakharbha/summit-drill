@@ -13,7 +13,7 @@ export default function InSituRemediationPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/remediation/in-situ-banner.jpg"
+                    backgroundImage="/images/remediation/in-situ-banner.webp"
                     backgroundAlt="Summit In-Situ Remediation"
                     ribbonText="SUMMIT SERVICES"
                     title="In-Situ Remediation"

@@ -20,7 +20,7 @@ export default function CharlotteAirportProjectPage() {
             <Header />
             <main>
                 <PageHeroBanner
-                    backgroundImage="/images/projects/charlotte-airport-banner.jpg"
+                    backgroundImage="/images/projects/charlotte-airport-banner.webp"
                     backgroundAlt="Bentonite Hydraulic Cut-Off Wall Installation"
                     ribbonText="FEATURED PROJECT"
                     title="Bentonite Hydraulic Cut-Off Wall Installation"
