@@ -29,7 +29,7 @@ export default function PrincetonProjectPage() {
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-1">
-                                <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                                <div className="bg-[#78a8a8] p-8 rounded-lg shadow-xl">
                                     <div className="text-center mb-6">
                                         <div className="flex justify-center mb-4">
                                             <div className="relative w-24 h-24">
