@@ -313,12 +313,10 @@ const DrillingRequestForm = () => {
                                         <div className="flex-1 space-y-1">
                                             <label className="text-sm font-medium ml-1">Estimated Start Date</label>
                                             <Input
-                                                placeholder="MM/DD/YYYY"
-                                                className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
+                                                type="date"
+                                                min={new Date().toISOString().split('T')[0]}
+                                                className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
                                             />
-                                        </div>
-                                        <div className="w-12 h-12 rounded-lg bg-[#c9917a] flex items-center justify-center cursor-pointer hover:bg-[#b8806a] transition-colors">
-                                            <Calendar className="w-6 h-6 text-white" />
                                         </div>
                                     </div>
                                 </div>
@@ -351,8 +349,8 @@ const DrillingRequestForm = () => {
                                             backgroundColor: '#8B4513'
                                         }}
                                     >
-                                        <div className="pt-8 pb-10 px-6 flex flex-col items-center">
-                                            <p className="text-lg mb-4 text-white font-medium">(Drop Files Here)</p>
+                                        <div className="pt-12 pb-4 px-6 flex flex-col items-center">
+                                            <p className="text-lg text-white font-medium">(Drop Files Here)</p>
                                             <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30">
                                                 Select Files
                                             </Button>
