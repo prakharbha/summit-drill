@@ -114,6 +114,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable} ${workSans.variable}`}>
       <head>
+        {/* Developer Credits */}
+        <meta name="developer" content="Nandann Creative Agency – https://www.nandann.com/" />
+        <meta name="design-agency" content="Nandann Creative Agency" />
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
