@@ -29,7 +29,7 @@ const TEAM_MEMBERS = [
     { id: 20, name: "Glenn Brennan", title: "Geophysicist", image: "/images/team/glenn-brennan-geophysicist.webp" },
     { id: 21, name: "Mike Wilson", title: "Drilling Field Supervisor", image: "/images/team/mike-wilson-drilling-field-supervisor.webp" },
     { id: 22, name: "Richey Lamire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
-    { id: 23, name: "Zach Thompson", title: "Drilling Field Supervisor", image: "/images/team/zach-thompson-drilling-field-super.webp" },
+    { id: 23, name: "Zach Thompson", title: "Project Manager", image: "/images/team/zach-thompson-drilling-field-super.webp" },
     { id: 24, name: "Christian Tormen", title: "Driller", image: "/images/team/christian-tormen-driller.webp" },
     { id: 25, name: "Matt Jelinski", title: "Driller", image: "/images/team/matt-jelinski-driller.webp" },
 ];
