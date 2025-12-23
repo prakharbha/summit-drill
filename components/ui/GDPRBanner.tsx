@@ -43,8 +43,8 @@ export default function GDPRBanner() {
                         <div className="flex-1 text-center md:text-left">
                             <p className="text-sm md:text-base">
                                 We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies.{" "}
-                                <Link href="/privacy-policy" className="underline hover:text-sky-300 transition-colors">
-                                    Learn more
+                                <Link href="/privacy-policy" aria-label="Read our Privacy Policy" className="underline hover:text-sky-300 transition-colors">
+                                    Read our Privacy Policy
                                 </Link>
                             </p>
                         </div>

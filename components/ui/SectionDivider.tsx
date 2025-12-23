@@ -14,7 +14,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
             className={className}
             viewBox="0 0 1280 60"
             width="100%"
-            height="auto"
+            style={{ height: "auto" }}
             preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg"
         >

@@ -25,6 +25,7 @@ export default function Careers() {
               width={1967}
               height={1313}
               className="w-full h-auto"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
 

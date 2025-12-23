@@ -52,6 +52,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  other: {
+    "developer": "Nandann Creative Agency – https://www.nandann.com/",
+    "design-agency": "Nandann Creative Agency"
+  },
   openGraph: {
     title: "Summit Drilling, LLC - Professional Drilling & Geophysics Services",
     description: "Summit Drilling is the Northeast's leading environmental drilling contractor, providing sonic drilling, direct push, geotechnical drilling, and remediation services.",
@@ -113,11 +117,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${lato.variable} ${workSans.variable}`}>
-      <head>
-        {/* Developer Credits */}
-        <meta name="developer" content="Nandann Creative Agency – https://www.nandann.com/" />
-        <meta name="design-agency" content="Nandann Creative Agency" />
-
+      <body className="antialiased font-work-sans">
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -131,8 +131,6 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
-      </head>
-      <body className="antialiased font-work-sans">
         {children}
         <GDPRBanner />
       </body>

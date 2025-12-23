@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "audit": "npm list lighthouse puppeteer || npm install lighthouse puppeteer --no-save && node lighthouse-audit.js"
+    "audit": "export PUPPETEER_CACHE_DIR=./.puppeteer_cache && (npm list lighthouse puppeteer || npm install lighthouse puppeteer --no-save) && node lighthouse-audit.mjs"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.3",

@@ -103,8 +103,10 @@ const Header = () => {
                     src="/images/summit-logo-update.webp"
                     alt="Summit Drilling"
                     fill
+                    sizes="353px"
                     className="object-contain"
                     priority
+                    fetchPriority="high"
                   />
                 </div>
               </Link>

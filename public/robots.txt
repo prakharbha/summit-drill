@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://summit-drill.vercel.app/sitemap.xml
-

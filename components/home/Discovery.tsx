@@ -54,6 +54,7 @@ const Discovery = () => {
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
                   fill
+                  sizes="144px"
                   className="object-contain drop-shadow-md"
                 />
               </div>
@@ -79,6 +80,7 @@ const Discovery = () => {
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
                   fill
+                  sizes="144px"
                   className="object-contain drop-shadow-md"
                 />
               </div>
@@ -104,6 +106,7 @@ const Discovery = () => {
                   src="/images/mountain.webp"
                   alt="Mountain Icon"
                   fill
+                  sizes="144px"
                   className="object-contain drop-shadow-md"
                 />
               </div>

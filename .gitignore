@@ -44,3 +44,10 @@ blank-pages.txt
 
 # Health & Safety raw content
 Health & Safety/
+
+# Logs
+*.log
+
+# Reports
+lighthouse-report.txt
+.puppeteer_cache

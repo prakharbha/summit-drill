@@ -132,6 +132,7 @@ export default function TeamCarousel() {
                                                 src={item.image}
                                                 alt={item.name}
                                                 fill
+                                                sizes="(max-width: 768px) 144px, 192px"
                                                 className="object-cover"
                                             />
                                         </div>

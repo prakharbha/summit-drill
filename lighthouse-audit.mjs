@@ -1,6 +1,7 @@
-const lighthouse = require('lighthouse');
-const puppeteer = require('puppeteer');
-const fs = require('fs');
+import lighthouse from 'lighthouse';
+import puppeteer from 'puppeteer';
+import fs from 'fs';
+import { URL } from 'url';
 
 const BASE_URL = 'http://localhost:3004';
 
@@ -143,7 +144,6 @@ async function main() {
     }
 
     fs.writeFileSync('lighthouse-report.txt', report);
-
 
     // Print summary to console
     console.log('\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);

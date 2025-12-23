@@ -8,6 +8,10 @@ import StartProject from "@/components/home/StartProject";
 import HealthSafety from "@/components/home/HealthSafety";
 import NewsSection from "@/components/home/NewsSection";
 
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/");
+
 export default function Home() {
   return (
     <>
