@@ -83,7 +83,7 @@ export default function SpartanburgSonicProjectPage() {
                                         Project Overview:
                                     </h2>
                                     <p className="text-gray-700 leading-relaxed text-lg">
-                                        A leading global engineering firm engaged Summit to perform a deep vertical aquifer profile (VAP) investigation at a complex site in Spartanburg, SC. The objective of the program was to generate high-resolution vertical profiles of volatile organic compounds (VOCs) in groundwater to better understand contaminant distribution within deep saprolite, fractured bedrock, and potential preferential water-bearing zones. The work involved advancing multiple deep borings using roto-sonic drilling and collecting discrete soil and groundwater samples at targeted depth intervals.
+                                        A leading global engineering firm engaged Summit to perform a deep vertical aquifer profile (VAP) investigation at a complex site in South Carolina. The objective of the program was to generate high-resolution vertical profiles of volatile organic compounds (VOCs) in groundwater to better understand contaminant distribution within deep saprolite, fractured bedrock, and potential preferential water-bearing zones. The work involved advancing multiple deep borings using roto-sonic drilling and collecting discrete soil and groundwater samples at targeted depth intervals.
                                     </p>
                                 </div>
 

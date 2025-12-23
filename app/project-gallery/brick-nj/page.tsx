@@ -83,7 +83,10 @@ export default function BrickNJProjectPage() {
                                         Project Overview:
                                     </h2>
                                     <p className="text-gray-700 leading-relaxed text-lg">
-                                        Summit was contracted by One Atlas Engineering and Ocean County to address an urgent subsurface infrastructure issue involving a monitoring well that had unintentionally punctured an 18-inch storm sewer line beneath a county roadway. Summit delivered a complete investigation-to-restoration solution using its Geophysical, Drilling, and Remediation divisions—eliminating the need for additional subcontractors and ensuring efficient coordination from start to finish.
+                                        Summit was contracted a large Engineering firm and Ocean
+                                        County to address an urgent subsurface infrastructure failure in
+                                        Brick, NJ. A sink hole had developed in a busy parking lot used by
+                                        shoppers and township vehicles. The failure involved a monitoring well that had unintentionally punctured an 18-inch storm sewer line beneath a county roadway. Summit delivered a complete investigation-to-restoration solution using its Geophysical, Drilling, and Remediation divisions—eliminating the need for additional subcontractors and ensuring efficient coordination from start to finish.
                                     </p>
                                 </div>
 

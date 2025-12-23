@@ -29,7 +29,7 @@ export default function PrincetonProjectPage() {
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             <div className="lg:col-span-1">
-                                <div className="bg-[#78a8a8] p-8 rounded-lg shadow-xl">
+                                <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
                                     <div className="text-center mb-6">
                                         <div className="flex justify-center mb-4">
                                             <div className="relative w-24 h-24">
@@ -41,9 +41,9 @@ export default function PrincetonProjectPage() {
                                                 />
                                             </div>
                                         </div>
-                                        <h3 className="text-2xl font-bold text-[#923d21] tracking-widest uppercase">
+                                        <h4 className="font-bold text-[#1e3a8a] mb-4">
                                             Project Details
-                                        </h3>
+                                        </h4>
                                         <div className="w-full h-1 bg-[#923d21] mt-4 mx-auto max-w-[200px]"></div>
                                     </div>
 
@@ -74,11 +74,11 @@ export default function PrincetonProjectPage() {
 
                             <div className="lg:col-span-2 space-y-8">
                                 <div>
-                                    <h2 className="text-2xl font-bold italic text-[#163058] mb-1">
-                                        Project Overview:
-                                    </h2>
+                                    <h3 className="text-xl font-bold text-[#1e3a8a] mb-4">
+                                        Project Overview
+                                    </h3>
                                     <p className="text-gray-700 leading-relaxed text-lg">
-                                        A national environmental and geotechnical engineering consulting firm engaged Summit&apos;s Sonic Drilling Division to perform a high-resolution subsurface investigation on Princeton University&apos;s baseball field. The project required the advancement of sonic borings to depths of up to 40 feet to support environmental and geotechnical data needs. Work was performed using Terra Sonic technology over a four-day drilling program.
+                                        A national environmental and geotechnical engineering consulting firm engaged Summit&apos;s Sonic Drilling Division to perform a high-resolution subsurface investigation on Princeton University&apos;s baseball field. The project required the advancement of sonic borings to depths of up to 40 feet to support environmental and geotechnical data needs. Work was performed using Sonic technology over a four-day drilling program.
                                     </p>
                                 </div>
 

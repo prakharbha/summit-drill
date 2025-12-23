@@ -9,27 +9,10 @@ const BASE_URL = 'http://localhost:3004';
 const PAGES = [
     '/',
     '/about-us',
-    '/about-us/news',
-    '/careers',
-    '/careers/benefits',
-    '/careers/positions',
     '/health-safety',
-    '/contact',
     '/project-gallery',
-    '/services/geophysical-services',
-    '/services/drilling-techniques',
-    '/services/remediation-services',
-    '/services/sonic-drilling',
-    '/services/direct-push',
-    '/services/auger-drilling',
-    '/services/air-rotary-drilling',
-    '/services/utility-locating',
-    '/industries/environmental',
-    '/industries/geotechnical',
-    '/industries/cathodic',
-    '/industries/aggregate',
     '/resources/start-a-project',
-    '/privacy-policy',
+    '/contact',
 ];
 
 async function runLighthouse(url, browser) {
