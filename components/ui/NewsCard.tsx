@@ -44,6 +44,7 @@ export function NewsCard({
                     alt={title}
                     fill
                     className="object-cover"
+                    unoptimized={image.endsWith('.gif')}
                 />
             </div>
 
