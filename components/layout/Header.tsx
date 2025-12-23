@@ -107,6 +107,7 @@ const Header = () => {
                     className="object-contain"
                     priority
                     fetchPriority="high"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </Link>
@@ -262,6 +263,7 @@ const Header = () => {
                   fill
                   className="object-contain"
                   priority
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </Link>

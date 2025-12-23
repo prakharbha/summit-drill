@@ -72,6 +72,7 @@ export function PageHeroBanner({
                         fill
                         className="object-cover"
                         priority
+                        style={{ objectFit: "cover" }}
                     />
                     {/* Gradient Overlay */}
                     <HeroBannerOverlay />

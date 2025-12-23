@@ -13,6 +13,7 @@ const PAGES = [
     '/project-gallery',
     '/resources/start-a-project',
     '/contact',
+    '/services/drilling-techniques',
 ];
 
 async function runLighthouse(url, browser) {
