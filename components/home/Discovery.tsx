@@ -21,6 +21,7 @@ const Discovery = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
             aria-label="Background video showing Summit Drilling operations"
+            poster="/images/drilling-hero.webp"
           >
             <source src="/videos/hero-background.mp4" type="video/mp4" />
             <track

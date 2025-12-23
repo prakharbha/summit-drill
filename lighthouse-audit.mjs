@@ -66,6 +66,7 @@ async function main() {
                         description: audit.description,
                         score: audit.score,
                         displayValue: audit.displayValue || '',
+                        details: audit.details,
                     });
                 }
             }
@@ -127,6 +128,7 @@ async function main() {
     }
 
     fs.writeFileSync('lighthouse-report.txt', report);
+    fs.writeFileSync('lighthouse-issues.json', JSON.stringify(issues, null, 2));
 
     // Print summary to console
     console.log('\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function PrincetonProjectPage() {
     const projectDetails = {
         siteType: "Collegiate athletic facility (artificial turf)",
-        technology: "Terra Sonic drilling",
+        technology: "Sonic drilling",
         depthAchieved: "Up to 40 feet",
         duration: "Four days",
         keyRequirements: "Complete protection of high-value turf surface"
@@ -96,7 +96,7 @@ export default function PrincetonProjectPage() {
                                         Services Provided:
                                     </h2>
                                     <ul className="text-gray-700 leading-relaxed text-lg list-disc pl-6 space-y-1">
-                                        <li>Terra Sonic drilling of multiple borings up to 40 feet</li>
+                                        <li>Sonic drilling of multiple borings up to 40 feet</li>
                                         <li>Continuous soil core collection for environmental and geotechnical evaluation</li>
                                         <li>Protective measures to safeguard artificial turf and sub-surface drainage systems</li>
                                         <li>Controlled equipment mobilization to prevent turf indentation or heat transfer</li>
@@ -109,7 +109,7 @@ export default function PrincetonProjectPage() {
                                         Solutions/Approach:
                                     </h2>
                                     <p className="text-gray-700 leading-relaxed text-lg">
-                                        Summit implemented specialized turf protection protocols, including ground pads, equipment staging mats, and low-impact movement procedures to prevent disturbance to the synthetic playing surface. The Terra Sonic rig was positioned with precision to minimize surface loading, and drilling fluids and cuttings were contained to avoid surface staining or drainage infiltration. Crews advanced sonic borings efficiently over the four-day schedule while maintaining continuous communication with the customer&apos;s project manager and Princeton facilities staff. All work zones were restored daily to maintain field usability and aesthetics.
+                                        Summit implemented specialized turf protection protocols, including ground pads, equipment staging mats, and low-impact movement procedures to prevent disturbance to the synthetic playing surface. The Sonic rig was positioned with precision to minimize surface loading, and drilling fluids and cuttings were contained to avoid surface staining or drainage infiltration. Crews advanced sonic borings efficiently over the four-day schedule while maintaining continuous communication with the customer&apos;s project manager and Princeton facilities staff. All work zones were restored daily to maintain field usability and aesthetics.
                                     </p>
                                 </div>
 

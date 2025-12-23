@@ -30,6 +30,8 @@ const Footer = ({ hasDividerAbove = false }: FooterProps) => {
               width={400}
               height={125}
               className="h-32 w-auto"
+              sizes="(max-width: 768px) 80vw, 400px"
+              style={{ objectFit: "contain" }}
             />
           </Link>
         </div>
