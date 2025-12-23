@@ -27,6 +27,8 @@ interface PageTemplateProps {
   dividerColor?: string;
   /** Whether the footer has a divider above (pulls footer up) */
   footerHasDivider?: boolean;
+  /** Whether to show the mountain divider below the banner */
+  showDivider?: boolean;
 }
 
 /**
@@ -44,6 +46,7 @@ const PageTemplate = ({
   showMountainLogo = true,
   dividerColor,
   footerHasDivider = false,
+  showDivider = true,
 }: PageTemplateProps) => {
   return (
     <>
@@ -59,6 +62,7 @@ const PageTemplate = ({
           button={button}
           showMountainLogo={showMountainLogo}
           dividerColor={dividerColor}
+          showDivider={showDivider}
         />
 
         {/* Content Section */}

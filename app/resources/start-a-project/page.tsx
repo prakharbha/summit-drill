@@ -14,6 +14,7 @@ export default function StartProjectPage() {
       description="Let's discuss your project needs"
       dividerColor="#8B4513"
       backgroundImage="/images/start-project-banner.webp"
+      showDivider={false}
     >
       <DrillingRequestForm />
     </PageTemplate>

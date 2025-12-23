@@ -1,14 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
+const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
+const RECIPIENT_EMAIL = "info@summitdrilling.com";
+
+async function sendMailgunEmail(to: string, subject: string, html: string, from: string) {
+  const formData = new FormData();
+  formData.append("from", from);
+  formData.append("to", to);
+  formData.append("subject", subject);
+  formData.append("html", html);
+
+  const response = await fetch(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, {
+    method: "POST",
+    headers: {
+      Authorization: `Basic ${Buffer.from(`api:${MAILGUN_API_KEY}`).toString("base64")}`,
+    },
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Mailgun error: ${error}`);
+  }
+
+  return response.json();
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, message } = body;
+    const { name, email, phone, company, address, city, state, zip, cell, notes, newsletter } = body;
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Name and email are required" },
         { status: 400 }
       );
     }
@@ -22,23 +49,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Here you would typically:
-    // 1. Send an email using a service like SendGrid, Resend, or Nodemailer
-    // 2. Save to a database
-    // 3. Send to a CRM
-    
-    // For now, we'll just log the data and return success
-    console.log("Contact form submission:", {
-      name,
-      email,
-      phone,
-      company,
-      message,
-      timestamp: new Date().toISOString(),
-    });
+    // Check if Mailgun is configured
+    if (!MAILGUN_API_KEY || !MAILGUN_DOMAIN) {
+      console.error("Mailgun not configured");
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 500 }
+      );
+    }
 
-    // Simulate processing delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    // Build email content
+    const emailHtml = `
+      <h2>New Contact Form Submission</h2>
+      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${name}</td></tr>
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${email}</td></tr>
+        ${company ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Company:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${company}</td></tr>` : ""}
+        ${phone ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Phone:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${phone}</td></tr>` : ""}
+        ${cell ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Cell:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${cell}</td></tr>` : ""}
+        ${address ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Address:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${address}</td></tr>` : ""}
+        ${city ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>City:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${city}</td></tr>` : ""}
+        ${state ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>State:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${state}</td></tr>` : ""}
+        ${zip ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Zip:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${zip}</td></tr>` : ""}
+        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Newsletter:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${newsletter ? "Yes" : "No"}</td></tr>
+      </table>
+      ${notes ? `<h3>Notes:</h3><p>${notes}</p>` : ""}
+      <hr>
+      <p style="color: #666; font-size: 12px;">Submitted at: ${new Date().toLocaleString()}</p>
+    `;
+
+    await sendMailgunEmail(
+      RECIPIENT_EMAIL,
+      `New Contact Form: ${name}`,
+      emailHtml,
+      `Summit Drilling Website <noreply@${MAILGUN_DOMAIN}>`
+    );
+
+    console.log("Contact form email sent successfully");
 
     return NextResponse.json(
       {
@@ -50,9 +97,8 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to send message. Please try again." },
       { status: 500 }
     );
   }
 }
-

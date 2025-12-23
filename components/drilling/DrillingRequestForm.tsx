@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CloudUpload, Calendar, ArrowRight, ArrowLeft } from "lucide-react";
+import { CloudUpload } from "lucide-react";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 
 // Services organized by category
@@ -48,43 +48,41 @@ const serviceCategories = {
     ],
 };
 
-// Flat list of all services for balanced grid display
-const allServices = [
-    { category: "Geophysical Services", name: "GPR: Utility Location" },
-    { category: "Geophysical Services", name: "GPR: UST or Septic Detection" },
-    { category: "Geophysical Services", name: "Borehole/Downhole Geophysics" },
-    { category: "Geophysical Services", name: "Electrical Resistivity" },
-    { category: "Geophysical Services", name: "Seismic Refraction" },
-    { category: "Drilling Services", name: "Sonic Drilling" },
-    { category: "Drilling Services", name: "Direct Push Drilling" },
-    { category: "Drilling Services", name: "Drilling & Injection" },
-    { category: "Drilling Services", name: "Air Rotary Drilling" },
-    { category: "Drilling Services", name: "Auger Drilling" },
-    { category: "Drilling Services", name: "Over Water/Barge Drilling" },
-    { category: "Drilling Services", name: "Horizontal Drilling" },
-    { category: "Drilling Services", name: "Low Clearance Drilling" },
-    { category: "Drilling Services", name: "Track Mounted Rigs" },
-    { category: "Remediation Services", name: "Test Pitting" },
-    { category: "Remediation Services", name: "Soil Excavation & Disposal" },
-    { category: "Remediation Services", name: "Stream/Shoreline/Wetland Restoration" },
-    { category: "Remediation Services", name: "Capping" },
-    { category: "Remediation Services", name: "In-Situ Solidification/Stabilization (ISS)" },
-    { category: "Remediation Services", name: "In-Situ Soil Mixing" },
-    { category: "Remediation Services", name: "Slurry Walls" },
-    { category: "Remediation Services", name: "Permeable Reactive Barriers" },
-    { category: "Remediation Services", name: "Ecosystem Restoration" },
-    { category: "Remediation Services", name: "Remediation System Vaults" },
-    { category: "Remediation Services", name: "Groundwater Treatment Systems" },
-    { category: "Remediation Services", name: "Well Filters" },
-    { category: "Remediation Services", name: "Vapor Mitigation Systems" },
-    { category: "Remediation Services", name: "Clearing & Grubbing" },
-    { category: "Remediation Services", name: "Road Building/Matts" },
-    { category: "Remediation Services", name: "Air Bridge Construction" },
-];
+interface FormData {
+    services: string[];
+    additionalNotes: string;
+    name: string;
+    company: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    phone: string;
+    cell: string;
+    email: string;
+    startDate: string;
+}
 
 const DrillingRequestForm = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const totalSteps = 2;
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+    const [formData, setFormData] = useState<FormData>({
+        services: [],
+        additionalNotes: "",
+        name: "",
+        company: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: "",
+        cell: "",
+        email: "",
+        startDate: "",
+    });
 
     const nextStep = () => {
         if (currentStep < totalSteps) {
@@ -98,16 +96,77 @@ const DrillingRequestForm = () => {
         }
     };
 
+    const handleServiceToggle = (service: string, checked: boolean) => {
+        setFormData((prev) => ({
+            ...prev,
+            services: checked
+                ? [...prev.services, service]
+                : prev.services.filter((s) => s !== service),
+        }));
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData((prev) => ({ ...prev, [id]: value }));
+    };
+
+    const handleSubmit = async () => {
+        // Validate required fields
+        if (!formData.name || !formData.email) {
+            setSubmitStatus({ type: "error", message: "Name and email are required." });
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            const response = await fetch("/api/project-request", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus({ type: "success", message: data.message });
+                // Reset form
+                setFormData({
+                    services: [],
+                    additionalNotes: "",
+                    name: "",
+                    company: "",
+                    address: "",
+                    city: "",
+                    state: "",
+                    zip: "",
+                    phone: "",
+                    cell: "",
+                    email: "",
+                    startDate: "",
+                });
+                setCurrentStep(1);
+            } else {
+                setSubmitStatus({ type: "error", message: data.error || "Failed to submit request" });
+            }
+        } catch {
+            setSubmitStatus({ type: "error", message: "Network error. Please try again." });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <>
-            {/* Mountain Divider at Top */}
-            <div className="w-full leading-none z-20 relative" style={{ marginTop: 'clamp(-67px, -4.7vw, -50px)' }}>
-                <SectionDivider className="w-full h-auto block" fill="#8B4513" />
-            </div>
-
             <section
-                className="pt-12 pb-20 bg-[#8B4513] text-white relative z-10"
+                className="pb-20 bg-[#8B4513] text-white relative z-10"
+                style={{ paddingTop: 'clamp(3rem, 5vw, 8rem)' }}
             >
+                {/* Mountain Divider at Top of Section */}
+                <div className="absolute top-0 left-0 right-0 w-full leading-none z-0 pointer-events-none" style={{ transform: 'translateY(-99%)' }}>
+                    <SectionDivider className="w-full h-auto block" fill="#8B4513" />
+                </div>
                 <div className="container mx-auto px-4 lg:px-8">
                     {/* Header with Step Indicator */}
                     <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -134,6 +193,13 @@ const DrillingRequestForm = () => {
                         </div>
                     </div>
 
+                    {/* Status Message */}
+                    {submitStatus && (
+                        <div className={`mb-6 p-4 rounded-lg ${submitStatus.type === "success" ? "bg-green-600/20 text-green-100" : "bg-red-600/20 text-red-100"}`}>
+                            {submitStatus.message}
+                        </div>
+                    )}
+
                     {/* Step 1: Service Selection */}
                     {currentStep === 1 && (
                         <div className="animate-fadeIn">
@@ -144,7 +210,6 @@ const DrillingRequestForm = () => {
 
                             {/* Categorized Checkboxes Section */}
                             <div className="mb-10">
-                                {/* Stacked categories - each section below the other */}
                                 <div className="space-y-8">
                                     {/* Geophysical Services */}
                                     <div className="p-4 border border-white/40 rounded-lg">
@@ -155,11 +220,13 @@ const DrillingRequestForm = () => {
                                             {serviceCategories["Geophysical Services"].map((service) => (
                                                 <div key={service} className="flex items-center space-x-3 group">
                                                     <Checkbox
-                                                        id={service}
+                                                        id={`geo-${service}`}
+                                                        checked={formData.services.includes(service)}
+                                                        onCheckedChange={(checked) => handleServiceToggle(service, checked as boolean)}
                                                         className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
                                                     />
                                                     <label
-                                                        htmlFor={service}
+                                                        htmlFor={`geo-${service}`}
                                                         className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
                                                     >
                                                         {service}
@@ -178,11 +245,13 @@ const DrillingRequestForm = () => {
                                             {serviceCategories["Drilling Services"].map((service) => (
                                                 <div key={service} className="flex items-center space-x-3 group">
                                                     <Checkbox
-                                                        id={service}
+                                                        id={`drill-${service}`}
+                                                        checked={formData.services.includes(service)}
+                                                        onCheckedChange={(checked) => handleServiceToggle(service, checked as boolean)}
                                                         className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
                                                     />
                                                     <label
-                                                        htmlFor={service}
+                                                        htmlFor={`drill-${service}`}
                                                         className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
                                                     >
                                                         {service}
@@ -201,11 +270,13 @@ const DrillingRequestForm = () => {
                                             {serviceCategories["Remediation Services"].map((service) => (
                                                 <div key={service} className="flex items-center space-x-3 group">
                                                     <Checkbox
-                                                        id={service}
+                                                        id={`rem-${service}`}
+                                                        checked={formData.services.includes(service)}
+                                                        onCheckedChange={(checked) => handleServiceToggle(service, checked as boolean)}
                                                         className="border-white/60 data-[state=checked]:bg-white data-[state=checked]:text-[#8B4513] w-5 h-5 rounded-sm flex-shrink-0"
                                                     />
                                                     <label
-                                                        htmlFor={service}
+                                                        htmlFor={`rem-${service}`}
                                                         className="text-base leading-snug cursor-pointer select-none group-hover:text-white/90 transition-colors"
                                                     >
                                                         {service}
@@ -221,7 +292,10 @@ const DrillingRequestForm = () => {
                             <div className="flex flex-col lg:flex-row items-end gap-6">
                                 <div className="flex-1 w-full">
                                     <Textarea
+                                        id="additionalNotes"
                                         placeholder="Don't see a service you're looking for, add a note here:"
+                                        value={formData.additionalNotes}
+                                        onChange={handleInputChange}
                                         className="bg-white/20 border-none text-white placeholder:text-white/70 min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
                                     />
                                 </div>
@@ -246,23 +320,46 @@ const DrillingRequestForm = () => {
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">Your Name *</label>
                                             <Input
+                                                id="name"
                                                 placeholder="David"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">Company Name</label>
                                             <Input
+                                                id="company"
                                                 placeholder="Smith"
+                                                value={formData.company}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
                                     </div>
 
                                     <div className="space-y-1">
+                                        <label className="text-sm font-medium ml-1">Email *</label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            placeholder="you@company.com"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Address</label>
                                         <Input
+                                            id="address"
                                             placeholder="123 Main Street"
+                                            value={formData.address}
+                                            onChange={handleInputChange}
                                             className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
@@ -271,14 +368,20 @@ const DrillingRequestForm = () => {
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">City</label>
                                             <Input
+                                                id="city"
                                                 placeholder="Bridgewater"
+                                                value={formData.city}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">State</label>
                                             <Input
+                                                id="state"
                                                 placeholder="NJ"
+                                                value={formData.state}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
@@ -287,7 +390,10 @@ const DrillingRequestForm = () => {
                                     <div className="space-y-1">
                                         <label className="text-sm font-medium ml-1">Zip Code</label>
                                         <Input
+                                            id="zip"
                                             placeholder="08807"
+                                            value={formData.zip}
+                                            onChange={handleInputChange}
                                             className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                         />
                                     </div>
@@ -296,14 +402,20 @@ const DrillingRequestForm = () => {
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">Phone Number</label>
                                             <Input
+                                                id="phone"
                                                 placeholder="(     )"
+                                                value={formData.phone}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
                                         <div className="space-y-1">
                                             <label className="text-sm font-medium ml-1">Cell Number</label>
                                             <Input
+                                                id="cell"
                                                 placeholder="(     )"
+                                                value={formData.cell}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5"
                                             />
                                         </div>
@@ -313,8 +425,11 @@ const DrillingRequestForm = () => {
                                         <div className="flex-1 space-y-1">
                                             <label className="text-sm font-medium ml-1">Estimated Start Date</label>
                                             <Input
+                                                id="startDate"
                                                 type="date"
                                                 min={new Date().toISOString().split('T')[0]}
+                                                value={formData.startDate}
+                                                onChange={handleInputChange}
                                                 className="bg-[#c9917a] border-none text-white placeholder:text-white/80 h-12 text-lg rounded-[7px] px-5 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
                                             />
                                         </div>
@@ -351,11 +466,12 @@ const DrillingRequestForm = () => {
                                     >
                                         <div className="pt-12 pb-4 px-6 flex flex-col items-center">
                                             <p className="text-lg text-white font-medium">(Drop Files Here)</p>
-                                            <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30">
+                                            <Button type="button" className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30">
                                                 Select Files
                                             </Button>
                                         </div>
                                     </div>
+                                    <p className="text-white/60 text-xs">File upload coming soon</p>
                                 </div>
                             </div>
 
@@ -370,12 +486,14 @@ const DrillingRequestForm = () => {
                                     &lt;&lt; Previous
                                 </Button>
 
-                                {/* Submit Button - Moved here */}
+                                {/* Submit Button */}
                                 <Button
+                                    onClick={handleSubmit}
+                                    disabled={isSubmitting}
                                     size="lg"
-                                    className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg"
+                                    className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg disabled:opacity-50"
                                 >
-                                    Submit Project
+                                    {isSubmitting ? "Submitting..." : "Submit Project"}
                                 </Button>
                             </div>
                         </div>
@@ -387,4 +505,3 @@ const DrillingRequestForm = () => {
 };
 
 export default DrillingRequestForm;
-
