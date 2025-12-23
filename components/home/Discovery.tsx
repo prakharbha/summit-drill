@@ -38,7 +38,7 @@ const Discovery = () => {
         </div>
 
         {/* 3-Column Service Overlay */}
-        <div className="relative md:absolute inset-0 container mx-auto px-4 lg:px-8 flex items-end pb-8 pt-24 md:pt-0 md:pb-28 lg:pb-32 z-20">
+        <div className="relative md:absolute inset-0 container mx-auto px-4 lg:px-8 flex items-end pb-8 pt-48 md:pt-0 md:pb-28 lg:pb-32 z-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
 
             {/* Column 1: Geophysics */}

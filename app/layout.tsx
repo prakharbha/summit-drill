@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Lato, Work_Sans } from "next/font/google";
 import "./globals.css";
+import GDPRBanner from "@/components/ui/GDPRBanner";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable} ${workSans.variable}`}>
       <body className="antialiased font-work-sans">
         {children}
+        <GDPRBanner />
       </body>
     </html>
   );

@@ -342,16 +342,18 @@ const DrillingRequestForm = () => {
 
                                     {/* Drop Zone with Mountain Background */}
                                     <div
-                                        className="w-full max-w-[220px] rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity relative"
+                                        className="w-full max-w-[280px] rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity relative"
                                         style={{
                                             backgroundImage: 'url(/images/files-bg.webp)',
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center'
+                                            backgroundSize: 'contain',
+                                            backgroundPosition: 'center bottom',
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundColor: '#8B4513'
                                         }}
                                     >
-                                        <div className="py-6 px-4 flex flex-col items-center">
-                                            <p className="text-lg mb-3 text-white">(Drop Files Here)</p>
-                                            <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-6 py-2 border border-white/30">
+                                        <div className="pt-8 pb-10 px-6 flex flex-col items-center">
+                                            <p className="text-lg mb-4 text-white font-medium">(Drop Files Here)</p>
+                                            <Button className="bg-[#3d2b25] hover:bg-[#2a1e1a] text-white font-bold italic text-sm px-8 py-3 border border-white/30">
                                                 Select Files
                                             </Button>
                                         </div>
