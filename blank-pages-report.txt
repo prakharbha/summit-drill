@@ -1,0 +1,91 @@
+=== BLANK PAGES REPORT ===
+Generated: 2023-12-23
+
+These pages use PageTemplate with default "Content coming soon..." or have no custom content.
+Review each to decide: keep, add content, redirect, or delete.
+
+=== PAGES WITH "Content coming soon..." ===
+
+ABOUT US SECTION:
+- /about-us/company-history
+- /about-us/customer-list
+
+RESOURCES SECTION:
+- /resources
+- /resources/project-mark-out
+- /resources/permits
+
+SAFETY SECTION (duplicates of /health-safety?):
+- /safety
+- /safety/health-safety-programs
+- /safety/experience-safety
+- /safety/safety-meetings
+
+EMPLOYMENT/CAREERS (duplicates of /careers?):
+- /employee-benefits
+- /employment
+- /military-veterans
+- /driller-assistants
+- /licensed-drillers
+
+SERVICES (blank or potential duplicates):
+- /services/shoreline-stabilization-services
+- /services/geotechnical-drilling
+- /services/additional-services
+- /services/cathodic-protection-drilling
+- /services/remediation-systems-services
+- /services/soil-excavation-services
+- /services/pfas-drilling
+- /services/ust-ast-removal
+- /services/equipment-roster
+- /services/aggregate-drilling-services
+- /services/additional-drilling-services
+- /services/landfill-services
+- /services/barge-over-water-drilling
+- /services/environmental-drilling-services
+- /services/demolition-services
+- /services/sonic-drilling-demo
+
+TEST/DEV PAGES (should be deleted):
+- /ghost-test
+- /test-proposal-form
+- /developer-post-update-test-form
+- /salesforce
+
+=== PAGES WITH MINIMAL CONTENT ===
+
+MISC:
+- /projects-gallery (duplicate of /project-gallery?)
+- /employee-login
+- /expertise-insights
+- /certifications
+- /services (main services page - may need content)
+
+=== RECOMMENDED ACTIONS ===
+
+1. DELETE (test pages):
+   - /ghost-test
+   - /test-proposal-form  
+   - /developer-post-update-test-form
+   - /salesforce
+
+2. REDIRECT (duplicates):
+   - /safety/* -> /health-safety
+   - /employment -> /careers
+   - /employee-benefits -> /careers/benefits
+   - /projects-gallery -> /project-gallery
+   - /driller-assistants -> /careers
+   - /military-veterans -> /careers
+   - /licensed-drillers -> /careers
+
+3. ADD CONTENT OR REDIRECT (services):
+   - Review each service page and either add content or redirect to relevant parent
+
+4. REVIEW (may need content or removal):
+   - /about-us/company-history
+   - /about-us/customer-list
+   - /resources section pages
+   - /certifications
+   - /expertise-insights
+
+Total blank/minimal pages: ~40
