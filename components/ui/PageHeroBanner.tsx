@@ -73,6 +73,7 @@ export function PageHeroBanner({
                         className="object-cover"
                         priority
                         style={{ objectFit: "cover" }}
+                        unoptimized={backgroundImage.endsWith('.gif')}
                     />
                     {/* Gradient Overlay */}
                     <HeroBannerOverlay />
