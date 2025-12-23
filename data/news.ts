@@ -1,14 +1,22 @@
 // Auto-generated from WordPress export
 export interface NewsPost {
-    id: number;
-    title: string;
-    slug: string;
-    date: string;
-    excerpt: string;
-    image: string;
+  id: number;
+  title: string;
+  slug: string;
+  date: string;
+  excerpt: string;
+  image: string;
 }
 
 export const newsPosts: NewsPost[] = [
+  {
+    "id": 0,
+    "title": "Introducing Summit's Drilling Field Supervisors",
+    "slug": "introducing-summits-drilling-field-supervisors",
+    "date": "2025-12-23",
+    "excerpt": "Experienced Leadership Where It Matters Most—In the Field. Summit has created a new leadership role: Drilling Field Supervisor. Mike Wilson and Richy Lemire, collectively bring more than 50 years of environmental experience...",
+    "image": "/images/news/drilling-field-supervisors-banner.jpg"
+  },
   {
     "id": 1,
     "title": "Summit Drilling Welcomes Joseph C. Negro to Lead the Expansion of Remediation Services Division",
@@ -221,11 +229,11 @@ export const newsPosts: NewsPost[] = [
 
 // Get 3 random posts for homepage
 export function getRandomPosts(count: number = 3): NewsPost[] {
-    const shuffled = [...newsPosts].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+  const shuffled = [...newsPosts].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
 }
 
 // Get all posts sorted by date (newest first)
 export function getAllPosts(): NewsPost[] {
-    return [...newsPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return [...newsPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
