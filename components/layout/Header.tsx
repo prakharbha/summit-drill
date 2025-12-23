@@ -101,13 +101,13 @@ const Header = () => {
                 <div className="relative w-[353px] h-28">
                   <Image
                     src="/images/summit-logo-update.webp"
+                    width={353}
+                    height={112}
                     alt="Summit Drilling"
-                    fill
-                    sizes="353px"
                     className="object-contain"
                     priority
                     fetchPriority="high"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "contain", width: "353px", height: "112px" }}
                   />
                 </div>
               </Link>
