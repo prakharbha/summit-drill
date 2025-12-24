@@ -88,7 +88,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="py-20 bg-[#5e745d] text-white">
+        <section className="py-20 bg-[#377d7e] text-white">
             <div className="container mx-auto px-4 lg:px-8">
                 <h2 className="text-4xl md:text-5xl font-bold mb-12">
                     General Inquiries
@@ -203,7 +203,7 @@ const ContactForm = () => {
                                     id="newsletter"
                                     checked={formData.newsletter}
                                     onCheckedChange={handleCheckboxChange}
-                                    className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#5e745d]"
+                                    className="border-white data-[state=checked]:bg-white data-[state=checked]:text-[#377d7e]"
                                 />
                                 <Label htmlFor="newsletter" className="text-white font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                                     I would like to subscribe to Summit's Dispatch newsletter.
@@ -225,7 +225,7 @@ const ContactForm = () => {
 
                             {/* Status Message */}
                             {submitStatus && (
-                                <div className={`mt-4 p-4 rounded-lg ${submitStatus.type === "success" ? "bg-green-600/20 text-green-100" : "bg-red-600/20 text-red-100"}`}>
+                                <div className={`mt-4 p-4 rounded-lg ${submitStatus.type === "success" ? "bg-[#1A365D]/40 text-white" : "bg-red-600/20 text-red-100"}`}>
                                     {submitStatus.message}
                                 </div>
                             )}

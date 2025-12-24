@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+    getProjectRequestAdminTemplate,
+    getProjectRequestThankYouTemplate,
+} from "@/lib/email-templates";
 
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
@@ -15,6 +19,29 @@ const ALLOWED_EXTENSIONS = [
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB per file
 const MAX_TOTAL_SIZE = 25 * 1024 * 1024; // 25MB total (Mailgun limit)
+
+async function sendMailgunEmail(to: string, subject: string, html: string, from: string) {
+    const formData = new FormData();
+    formData.append("from", from);
+    formData.append("to", to);
+    formData.append("subject", subject);
+    formData.append("html", html);
+
+    const response = await fetch(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, {
+        method: "POST",
+        headers: {
+            Authorization: `Basic ${Buffer.from(`api:${MAILGUN_API_KEY}`).toString("base64")}`,
+        },
+        body: formData,
+    });
+
+    if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Mailgun error: ${error}`);
+    }
+
+    return response.json();
+}
 
 async function sendMailgunEmailWithAttachments(
     to: string,
@@ -137,50 +164,49 @@ export async function POST(request: NextRequest) {
             }
         }
 
-        // Format services list
-        const servicesList = services && services.length > 0
-            ? services.map((s: string) => `<li>${s}</li>`).join("")
-            : "<li>No services selected</li>";
+        // Generate elegant admin notification email
+        const adminEmailHtml = getProjectRequestAdminTemplate({
+            name,
+            email,
+            company,
+            phone,
+            cell,
+            address,
+            city,
+            state,
+            zip,
+            startDate,
+            services,
+            additionalNotes,
+            attachmentCount: attachments.length,
+        });
 
-        // Build email content
-        const emailHtml = `
-      <h2>New Project Request</h2>
-      
-      <h3>Selected Services:</h3>
-      <ul>${servicesList}</ul>
-      ${additionalNotes ? `<p><strong>Additional Notes:</strong> ${additionalNotes}</p>` : ""}
-      
-      <hr>
-      
-      <h3>Contact Information:</h3>
-      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${name}</td></tr>
-        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${email}</td></tr>
-        ${company ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Company:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${company}</td></tr>` : ""}
-        ${phone ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Phone:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${phone}</td></tr>` : ""}
-        ${cell ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Cell:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${cell}</td></tr>` : ""}
-        ${address ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Address:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${address}</td></tr>` : ""}
-        ${city ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>City:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${city}</td></tr>` : ""}
-        ${state ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>State:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${state}</td></tr>` : ""}
-        ${zip ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Zip:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${zip}</td></tr>` : ""}
-        ${startDate ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Estimated Start Date:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${startDate}</td></tr>` : ""}
-      </table>
-      
-      ${attachments.length > 0 ? `<p><strong>Attachments:</strong> ${attachments.length} file(s) attached</p>` : ""}
-      
-      <hr>
-      <p style="color: #666; font-size: 12px;">Submitted at: ${new Date().toLocaleString()}</p>
-    `;
-
+        // Send admin notification with attachments
         await sendMailgunEmailWithAttachments(
             RECIPIENT_EMAIL,
             `New Project Request: ${name}${company ? ` - ${company}` : ""}`,
-            emailHtml,
+            adminEmailHtml,
             `Summit Drilling Website <${FROM_EMAIL}>`,
             attachments
         );
 
-        console.log(`Project request email sent successfully with ${attachments.length} attachments`);
+        console.log(`Project request admin email sent successfully with ${attachments.length} attachments`);
+
+        // Generate and send thank you email to customer
+        const thankYouEmailHtml = getProjectRequestThankYouTemplate({
+            name,
+            email,
+            services,
+        });
+
+        await sendMailgunEmail(
+            email,
+            "Thank You for Your Project Request - Summit Drilling",
+            thankYouEmailHtml,
+            `Summit Drilling <${FROM_EMAIL}>`
+        );
+
+        console.log("Project request thank you email sent to customer");
 
         return NextResponse.json(
             {

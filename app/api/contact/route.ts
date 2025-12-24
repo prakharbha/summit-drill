@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  getContactAdminTemplate,
+  getContactThankYouTemplate
+} from "@/lib/email-templates";
 
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
@@ -59,34 +63,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build email content
-    const emailHtml = `
-      <h2>New Contact Form Submission</h2>
-      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${name}</td></tr>
-        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${email}</td></tr>
-        ${company ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Company:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${company}</td></tr>` : ""}
-        ${phone ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Phone:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${phone}</td></tr>` : ""}
-        ${cell ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Cell:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${cell}</td></tr>` : ""}
-        ${address ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Address:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${address}</td></tr>` : ""}
-        ${city ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>City:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${city}</td></tr>` : ""}
-        ${state ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>State:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${state}</td></tr>` : ""}
-        ${zip ? `<tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Zip:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${zip}</td></tr>` : ""}
-        <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Newsletter:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${newsletter ? "Yes" : "No"}</td></tr>
-      </table>
-      ${notes ? `<h3>Notes:</h3><p>${notes}</p>` : ""}
-      <hr>
-      <p style="color: #666; font-size: 12px;">Submitted at: ${new Date().toLocaleString()}</p>
-    `;
+    // Generate elegant admin notification email
+    const adminEmailHtml = getContactAdminTemplate({
+      name,
+      email,
+      company,
+      phone,
+      cell,
+      address,
+      city,
+      state,
+      zip,
+      notes,
+      newsletter,
+    });
 
+    // Send admin notification email
     await sendMailgunEmail(
       RECIPIENT_EMAIL,
       `New Contact Form: ${name}`,
-      emailHtml,
+      adminEmailHtml,
       `Summit Drilling Website <${FROM_EMAIL}>`
     );
 
-    console.log("Contact form email sent successfully");
+    console.log("Contact form admin email sent successfully");
+
+    // Generate and send thank you email to customer
+    const thankYouEmailHtml = getContactThankYouTemplate({
+      name,
+      email,
+    });
+
+    await sendMailgunEmail(
+      email,
+      "Thank You for Contacting Summit Drilling",
+      thankYouEmailHtml,
+      `Summit Drilling <${FROM_EMAIL}>`
+    );
+
+    console.log("Contact form thank you email sent to customer");
 
     return NextResponse.json(
       {
