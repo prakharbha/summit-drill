@@ -1,5 +1,6 @@
-import { getPageMetadata } from "@/lib/seo";
 "use client";
+
+import { getPageMetadata } from "@/lib/seo";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
