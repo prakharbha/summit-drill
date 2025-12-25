@@ -1,1 +1,2183 @@
-[]
+[
+  {
+    "page": "/services/geophysical-services",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,4,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 7846,
+              "bottom": 7934,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,4,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 6246,
+                    "bottom": 8086,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/services/drilling-techniques",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H2",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,1,H2",
+            "selector": "div.grid > div.bg-[#78a8a8] > div.text-center > h2.text-2xl",
+            "boundingRect": {
+              "top": 2385,
+              "bottom": 2449,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 64
+            },
+            "snippet": "<h2 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "SPECIALTY\nAPPLICATIONS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV",
+                  "selector": "section.pt-8 > div.container > div.grid > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 2241,
+                    "bottom": 2869,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 628
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 md:p-12 rounded-lg shadow-xl\">",
+                  "nodeLabel": "SPECIALTY\nAPPLICATIONS\n•\nOver water barge drilling\n•\nHorizontal drilling\n•\nDril…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,4,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 7748,
+              "bottom": 7836,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-3-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,4,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 6148,
+                    "bottom": 7988,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/services/remediation-services",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,1,H3",
+            "selector": "div.grid > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 2190,
+              "bottom": 2254,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 64
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "SPECIALTY\nAPPLICATIONS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV",
+                  "selector": "section.py-16 > div.container > div.grid > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 2046,
+                    "bottom": 2678,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 632
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 rounded-lg shadow-xl\">",
+                  "nodeLabel": "SPECIALTY\nAPPLICATIONS\n•\nVapor Mitigation Systems\n•\nTreatment Systems Installat…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,4,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 9033,
+              "bottom": 9121,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-3-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,4,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 7433,
+                    "bottom": 9273,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/about-us",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,0,DIV,1,SPAN",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.mb-6 > span.block",
+            "boundingRect": {
+              "top": 3105,
+              "bottom": 3141,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 36
+            },
+            "snippet": "<span class=\"block text-[#923d21] font-bold text-[1.5rem] tracking-[0.25rem] uppercase\">",
+            "nodeLabel": "SUMMIT'S HISTORY",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 3013,
+                    "bottom": 4350,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1337
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "SUMMIT'S HISTORY\nA Legacy Built on Hard Work and Integrity\n\nSummit's story span…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,1,H3",
+            "selector": "div.grid > div.lg:col-span-1 > div.bg-[#78a8a8] > h3.text-[#923d21]",
+            "boundingRect": {
+              "top": 3191,
+              "bottom": 3311,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 120
+            },
+            "snippet": "<h3 class=\"text-[#923d21] text-[2rem] font-bold italic mb-6 leading-tight\">",
+            "nodeLabel": "A Legacy Built on Hard Work and Integrity",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 24.0pt (32px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 3013,
+                    "bottom": 4350,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1337
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "SUMMIT'S HISTORY\nA Legacy Built on Hard Work and Integrity\n\nSummit's story span…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,3,P",
+            "selector": "div.grid > div.lg:col-span-1 > div.bg-[#78a8a8] > p.text-[#923d21]",
+            "boundingRect": {
+              "top": 3697,
+              "bottom": 4318,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 620
+            },
+            "snippet": "<p class=\"text-[#923d21] leading-relaxed text-lg\">",
+            "nodeLabel": "Summit's story spans nearly seven decades and honors the pioneering work of Rob…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 3013,
+                    "bottom": 4350,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1337
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "SUMMIT'S HISTORY\nA Legacy Built on Hard Work and Integrity\n\nSummit's story span…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-4-STRONG",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,3,P,2,STRONG",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > p.text-[#923d21] > strong.text-[1.5rem]",
+            "boundingRect": {
+              "top": 4136,
+              "bottom": 4315,
+              "left": 48,
+              "right": 335,
+              "width": 287,
+              "height": 179
+            },
+            "snippet": "<strong class=\"text-[1.5rem] leading-[1.75rem]\">",
+            "nodeLabel": "Although our fleet, equipment, and service lines have evolved, the values that …",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 3013,
+                    "bottom": 4350,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1337
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "SUMMIT'S HISTORY\nA Legacy Built on Hard Work and Integrity\n\nSummit's story span…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/health-safety",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,0,DIV,1,SPAN",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.mb-6 > span.block",
+            "boundingRect": {
+              "top": 3010,
+              "bottom": 3046,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 36
+            },
+            "snippet": "<span class=\"block text-[#923d21] font-bold text-[1.5rem] tracking-[0.25rem] uppercase\">",
+            "nodeLabel": "CORE H&S TRAINING",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 2917,
+                    "bottom": 4118,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1201
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "CORE H&S TRAINING\n•\nOSHA 40-Hour & 8-Hour Refresher\n•\nLoss Prevention System (L…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV,2,DIV,0,SPAN",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.pt-6 > span.block",
+            "boundingRect": {
+              "top": 3562,
+              "bottom": 3622,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 60
+            },
+            "snippet": "<span class=\"block text-[#923d21] font-bold text-[1.25rem] tracking-[0.15rem] uppercase…\">",
+            "nodeLabel": "SAFETY PRACTICES & FIELD PROTOCOLS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 15.0pt (20px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,1,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 2917,
+                    "bottom": 4118,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 1201
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 sticky top-8 font-work-sans\">",
+                  "nodeLabel": "CORE H&S TRAINING\n•\nOSHA 40-Hour & 8-Hour Refresher\n•\nLoss Prevention System (L…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 5814,
+              "bottom": 5902,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-4-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 4214,
+                    "bottom": 6054,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/industries/environmental",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 4144,
+              "bottom": 4232,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 2544,
+                    "bottom": 4384,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/industries/geotechnical",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 4360,
+              "bottom": 4448,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 2760,
+                    "bottom": 4600,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/industries/cathodic",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 4343,
+              "bottom": 4431,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 2743,
+                    "bottom": 4583,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/industries/aggregate",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 4373,
+              "bottom": 4461,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 2773,
+                    "bottom": 4613,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 9391,
+              "bottom": 9479,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 7791,
+                    "bottom": 9631,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/charlestown",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 887,
+                    "bottom": 1639,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 752
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 rounded-lg shadow-xl\">",
+                  "nodeLabel": "PROJECT DETAILS\nClient Type:\nEnvironmental engineering & federal infrastructure…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 5694,
+              "bottom": 5782,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-3-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 4094,
+                    "bottom": 5934,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/charlestown",
+    "audit": "heading-order",
+    "title": "Heading elements are not in a sequentially-descending order",
+    "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Heading order invalid"
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/raleigh",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 887,
+                    "bottom": 1711,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 824
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 rounded-lg shadow-xl\">",
+                  "nodeLabel": "PROJECT DETAILS\nTotal Wells Installed:\n10 (3 Type II, 7 Type III)\nTotal Footage…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 6191,
+              "bottom": 6279,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-3-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 4591,
+                    "bottom": 6431,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/raleigh",
+    "audit": "heading-order",
+    "title": "Heading elements are not in a sequentially-descending order",
+    "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Heading order invalid"
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/brick-nj",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.73 (foreground color: #923d21, background color: #78a8a8, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 887,
+                    "bottom": 1695,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 808
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 rounded-lg shadow-xl\">",
+                  "nodeLabel": "PROJECT DETAILS\nClient Type:\nEngineering firm & county infrastructure authority…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 6142,
+              "bottom": 6230,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-3-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 4542,
+                    "bottom": 6382,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/brick-nj",
+    "audit": "heading-order",
+    "title": "Heading elements are not in a sequentially-descending order",
+    "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H3",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1063,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 32
+            },
+            "snippet": "<h3 class=\"text-2xl font-bold text-[#923d21] tracking-widest uppercase\">",
+            "nodeLabel": "PROJECT DETAILS",
+            "explanation": "Fix any of the following:\n  Heading order invalid"
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/resources/start-a-project",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,1,SECTION,1,DIV,1,DIV,2,DIV,0,DIV,0,TEXTAREA",
+            "selector": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "boundingRect": {
+              "top": 2423,
+              "bottom": 2511,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 88
+            },
+            "snippet": "<textarea class=\"flex border border-input ring-offset-background focus-visible:outline-none…\" id=\"additionalNotes\" placeholder=\"Don't see a service you're looking for, add a note here:\">",
+            "nodeLabel": "div.animate-fadeIn > div.flex > div.flex-1 > textarea#additionalNotes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #ffffff, background color: #a26a42, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,1,SECTION",
+                  "selector": "body.antialiased > main > section.pb-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 2663,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1840
+                  },
+                  "snippet": "<section class=\"pb-20 bg-[#8B4513] text-white relative z-10\" style=\"padding-top:clamp(3rem, 5vw, 8rem)\">",
+                  "nodeLabel": "Start-a-Project\nQuick Response Proposal Request Form\n1\n2\n\n(Please check all box…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/contact",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,0,DIV,0,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#name",
+            "boundingRect": {
+              "top": 1431,
+              "bottom": 1471,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"name\" placeholder=\"David\" required=\"\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#name",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,0,DIV,1,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#company",
+            "boundingRect": {
+              "top": 1527,
+              "bottom": 1567,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"company\" placeholder=\"Smith\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#company",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,1,DIV,1,INPUT",
+            "selector": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#address",
+            "boundingRect": {
+              "top": 1623,
+              "bottom": 1663,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"address\" value=\"\">",
+            "nodeLabel": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#address",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-4-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,2,DIV,0,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#city",
+            "boundingRect": {
+              "top": 1719,
+              "bottom": 1759,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"city\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#city",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-5-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,2,DIV,1,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#state",
+            "boundingRect": {
+              "top": 1815,
+              "bottom": 1855,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"state\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#state",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-6-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,3,DIV,1,INPUT",
+            "selector": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#zip",
+            "boundingRect": {
+              "top": 1911,
+              "bottom": 1951,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"zip\" value=\"\">",
+            "nodeLabel": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#zip",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-7-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,4,DIV,0,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#phone",
+            "boundingRect": {
+              "top": 2007,
+              "bottom": 2047,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"phone\" placeholder=\"(   )\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#phone",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-8-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,4,DIV,1,DIV,1,INPUT",
+            "selector": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#cell",
+            "boundingRect": {
+              "top": 2103,
+              "bottom": 2143,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"cell\" placeholder=\"(   )\" value=\"\">",
+            "nodeLabel": "div.lg:col-span-2 > div.grid > div.space-y-2 > input#cell",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-9-INPUT",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,0,DIV,5,DIV,1,INPUT",
+            "selector": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#email",
+            "boundingRect": {
+              "top": 2199,
+              "bottom": 2239,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 40
+            },
+            "snippet": "<input type=\"email\" class=\"flex h-10 w-full border border-input px-3 py-2 text-sm ring-offset-backgro…\" id=\"email\" required=\"\" value=\"\">",
+            "nodeLabel": "div.grid > div.lg:col-span-2 > div.space-y-2 > input#email",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-10-TEXTAREA",
+            "path": "2,HTML,1,BODY,4,MAIN,3,SECTION,0,DIV,1,FORM,0,DIV,1,DIV,0,DIV,1,TEXTAREA",
+            "selector": "div.grid > div.lg:col-span-1 > div.space-y-2 > textarea#notes",
+            "boundingRect": {
+              "top": 2391,
+              "bottom": 2691,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 300
+            },
+            "snippet": "<textarea class=\"flex w-full border border-input px-3 py-2 text-sm ring-offset-background p…\" id=\"notes\">",
+            "nodeLabel": "div.grid > div.lg:col-span-1 > div.space-y-2 > textarea#notes",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #ffffff, background color: #73a4a5, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,3,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 1231,
+                    "bottom": 2851,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1620
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#377d7e] text-white\">",
+                  "nodeLabel": "General Inquiries\nYour Name *\nCompany Name\nAddress\nCity\nState\nZip Code\nPhone Nu…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  }
+]

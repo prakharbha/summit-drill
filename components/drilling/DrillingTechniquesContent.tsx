@@ -96,10 +96,10 @@ export default function DrillingTechniquesContent() {
                                             />
                                         </div>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-[#923d21] tracking-widest uppercase">
+                                    <h2 className="text-2xl font-bold text-[#2a1109] tracking-widest uppercase">
                                         Specialty<br />Applications
                                     </h2>
-                                    <div className="w-full h-1 bg-[#923d21] mt-4 mx-auto max-w-[200px]"></div>
+                                    <div className="w-full h-1 bg-[#2a1109] mt-4 mx-auto max-w-[200px]"></div>
                                 </div>
 
                                 <ul className="space-y-4 text-[#1A365D] text-lg font-medium">

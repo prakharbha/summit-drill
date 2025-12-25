@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import { URL } from 'url';
 
-const BASE_URL = 'http://localhost:3004';
+const BASE_URL = 'https://summit-drill.vercel.app';
 
 // Key pages to audit
 const PAGES = [
@@ -25,8 +25,6 @@ const PAGES = [
     '/introducing-summits-drilling-field-supervisors',
     '/resources/start-a-project',
     '/contact',
-
-
 ];
 
 async function runLighthouse(url, browser) {
@@ -35,14 +33,14 @@ async function runLighthouse(url, browser) {
     const result = await lighthouse(url, {
         port,
         output: 'json',
-        onlyCategories: ['best-practices', 'seo'],
+        onlyCategories: ['accessibility'],
     });
 
     return result.lhr;
 }
 
 async function main() {
-    console.log('Starting Lighthouse audits...\n');
+    console.log('Starting Lighthouse Accessibility audits...\n');
 
     const browser = await puppeteer.launch({
         headless: true,
@@ -61,12 +59,11 @@ async function main() {
 
             const pageScore = {
                 url: page,
-                bestPractices: Math.round(lhr.categories['best-practices'].score * 100),
-                seo: Math.round(lhr.categories.seo.score * 100),
+                accessibility: Math.round(lhr.categories.accessibility.score * 100),
             };
             scores.push(pageScore);
 
-            console.log(`  BP: ${pageScore.bestPractices}, SEO: ${pageScore.seo}`);
+            console.log(`  Accessibility: ${pageScore.accessibility}`);
 
             // Collect issues
             for (const audit of Object.values(lhr.audits)) {
@@ -90,25 +87,24 @@ async function main() {
     await browser.close();
 
     // Generate report
-    let report = '=== LIGHTHOUSE AUDIT REPORT ===\n';
+    let report = '=== LIGHTHOUSE ACCESSIBILITY AUDIT REPORT ===\n';
     report += `Generated: ${new Date().toISOString()}\n\n`;
 
     report += '=== SCORES SUMMARY ===\n';
-    report += 'Page                                     | Best Practices | SEO\n';
-    report += '-'.repeat(80) + '\n';
+    report += 'Page                                     | Accessibility\n';
+    report += '-'.repeat(60) + '\n';
 
     for (const s of scores) {
-        report += `${s.url.padEnd(40)} | ${String(s.bestPractices).padStart(14)} | ${String(s.seo).padStart(3)}\n`;
+        report += `${s.url.padEnd(40)} | ${String(s.accessibility).padStart(13)}\n`;
     }
 
     // Calculate averages
     const avg = {
-        bestPractices: Math.round(scores.reduce((a, b) => a + b.bestPractices, 0) / scores.length),
-        seo: Math.round(scores.reduce((a, b) => a + b.seo, 0) / scores.length),
+        accessibility: Math.round(scores.reduce((a, b) => a + b.accessibility, 0) / scores.length),
     };
 
-    report += '-'.repeat(80) + '\n';
-    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.bestPractices).padStart(14)} | ${String(avg.seo).padStart(3)}\n\n`;
+    report += '-'.repeat(60) + '\n';
+    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.accessibility).padStart(13)}\n\n`;
 
     // Group issues by category
     report += '=== TOP ISSUES TO FIX ===\n\n';

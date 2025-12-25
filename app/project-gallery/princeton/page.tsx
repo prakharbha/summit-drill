@@ -48,7 +48,7 @@ export default function PrincetonProjectPage() {
                                         <h4 className="font-bold text-[#1e3a8a] mb-4">
                                             Project Details
                                         </h4>
-                                        <div className="w-full h-1 bg-[#923d21] mt-4 mx-auto max-w-[200px]"></div>
+                                        <div className="w-full h-1 bg-[#2a1109] mt-4 mx-auto max-w-[200px]"></div>
                                     </div>
 
                                     <dl className="space-y-4 text-[#1A365D]">

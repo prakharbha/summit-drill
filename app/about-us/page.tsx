@@ -80,7 +80,7 @@ export default function AboutUsPage() {
               <div className="lg:col-span-1">
                 <div className="bg-[#78a8a8] p-8 sticky top-8 font-work-sans">
                   {/* Mountain Logo and Header */}
-                  <div className="mb-6 pb-6 border-b-2 border-[#923d21]">
+                  <div className="mb-6 pb-6 border-b-2 border-[#2a1109]">
                     <Image
                       src="/images/rust-mountain.webp"
                       alt="Summit Mountain"
@@ -88,13 +88,13 @@ export default function AboutUsPage() {
                       height={100}
                       className="w-1/2 h-auto object-contain mb-2"
                     />
-                    <span className="block text-[#923d21] font-bold text-[1.5rem] tracking-[0.25rem] uppercase">
+                    <span className="block text-[#2a1109] font-bold text-[1.5rem] tracking-[0.25rem] uppercase">
                       Summit&apos;s History
                     </span>
                   </div>
 
                   {/* Italic Title */}
-                  <h3 className="text-[#923d21] text-[2rem] font-bold italic mb-6 leading-tight">
+                  <h3 className="text-[#2a1109] text-[2rem] font-bold italic mb-6 leading-tight">
                     A Legacy Built on Hard Work and Integrity
                   </h3>
 
@@ -110,7 +110,7 @@ export default function AboutUsPage() {
                   </div>
 
                   {/* History Text */}
-                  <p className="text-[#923d21] leading-relaxed text-lg">
+                  <p className="text-[#2a1109] leading-relaxed text-lg">
                     Summit&apos;s story spans nearly seven decades and honors the pioneering work of Robert Kreilick, Sr. and Donald Grahamer, who drilled test borings throughout the Northeast beginning in the 1950s. From the establishment of Summit Well &amp; Pump Co. in 1969 to the founding of Summit Drilling Company, Inc. in 1986, the company steadily built its reputation for quality and reliability. Over the years, strategic acquisitions and the addition of key talent have transformed Summit into a multi-regional industry leader.{" "}
                     <strong className="text-[1.5rem] leading-[1.75rem]">Although our fleet, equipment, and service lines have evolved, the values that shaped Summit&apos;s early days continue to guide us.</strong>
                   </p>

@@ -47,10 +47,10 @@ export default function RaleighProjectPage() {
                                                 />
                                             </div>
                                         </div>
-                                        <h3 className="text-2xl font-bold text-[#923d21] tracking-widest uppercase">
+                                        <h3 className="text-2xl font-bold text-[#2a1109] tracking-widest uppercase">
                                             Project Details
                                         </h3>
-                                        <div className="w-full h-1 bg-[#923d21] mt-4 mx-auto max-w-[200px]"></div>
+                                        <div className="w-full h-1 bg-[#2a1109] mt-4 mx-auto max-w-[200px]"></div>
                                     </div>
 
                                     <dl className="space-y-4 text-[#1A365D]">

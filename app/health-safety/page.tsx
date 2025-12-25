@@ -67,7 +67,7 @@ export default function HealthSafetyPage() {
               <div className="lg:col-span-1">
                 <div className="bg-[#78a8a8] p-8 sticky top-8 font-work-sans">
                   {/* Mountain Logo and Header */}
-                  <div className="mb-6 pb-6 border-b-2 border-[#923d21]">
+                  <div className="mb-6 pb-6 border-b-2 border-[#2a1109]">
                     <Image
                       src="/images/rust-mountain.webp"
                       alt="Summit Mountain"
@@ -75,7 +75,7 @@ export default function HealthSafetyPage() {
                       height={100}
                       className="w-1/2 h-auto object-contain mb-2"
                     />
-                    <span className="block text-[#923d21] font-bold text-[1.5rem] tracking-[0.25rem] uppercase">
+                    <span className="block text-[#2a1109] font-bold text-[1.5rem] tracking-[0.25rem] uppercase">
                       Core H&S Training
                     </span>
                   </div>
@@ -98,15 +98,15 @@ export default function HealthSafetyPage() {
                       "Hot Work Activity Program"
                     ].map((item) => (
                       <li key={item} className="flex items-start">
-                        <span className="mr-2 text-[#923d21] font-bold">•</span>
+                        <span className="mr-2 text-[#2a1109] font-bold">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
 
                   {/* Practices Section */}
-                  <div className="pt-6 border-t-2 border-[#923d21]">
-                    <span className="block text-[#923d21] font-bold text-[1.25rem] tracking-[0.15rem] uppercase mb-4">
+                  <div className="pt-6 border-t-2 border-[#2a1109]">
+                    <span className="block text-[#2a1109] font-bold text-[1.25rem] tracking-[0.15rem] uppercase mb-4">
                       Safety Practices & Field Protocols
                     </span>
                     <ul className="space-y-2 text-[#1A365D] text-base">
@@ -125,7 +125,7 @@ export default function HealthSafetyPage() {
                         "Emergency Stops, Back-Up Alarms & On-Rig Equipment"
                       ].map((item) => (
                         <li key={item} className="flex items-start">
-                          <span className="mr-2 text-[#923d21] font-bold">•</span>
+                          <span className="mr-2 text-[#2a1109] font-bold">•</span>
                           {item}
                         </li>
                       ))}

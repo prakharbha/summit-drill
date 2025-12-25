@@ -406,7 +406,7 @@ const DrillingRequestForm = () => {
                                         placeholder="Don't see a service you're looking for, add a note here:"
                                         value={formData.additionalNotes}
                                         onChange={handleInputChange}
-                                        className="bg-white/20 border-none text-white placeholder:text-white/70 min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
+                                        className="bg-black/20 border-none text-white placeholder:text-white/90 min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
                                     />
                                 </div>
                                 <Button
@@ -569,8 +569,8 @@ const DrillingRequestForm = () => {
                                     {/* Drop Zone */}
                                     <div
                                         className={`w-full max-w-[300px] rounded-lg overflow-hidden cursor-pointer transition-all relative border-2 border-dashed ${dragActive
-                                                ? 'border-white bg-white/20'
-                                                : 'border-white/40 bg-white/10 hover:bg-white/15'
+                                            ? 'border-white bg-white/20'
+                                            : 'border-white/40 bg-white/10 hover:bg-white/15'
                                             }`}
                                         onDragEnter={handleDrag}
                                         onDragLeave={handleDrag}
