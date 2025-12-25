@@ -80,7 +80,7 @@ export default function PrincetonProjectPage() {
                                 <div>
                                     <h3 className="text-xl font-bold text-[#1e3a8a] mb-4">
                                         Project Overview
-                                    </h2>
+                                    </h3>
                                     <p className="text-gray-700 leading-relaxed text-lg">
                                         A national environmental and geotechnical engineering consulting firm engaged Summit&apos;s Sonic Drilling Division to perform a high-resolution subsurface investigation on Princeton University&apos;s baseball field. The project required the advancement of sonic borings to depths of up to 40 feet to support environmental and geotechnical data needs. Work was performed using Sonic technology over a four-day drilling program.
                                     </p>

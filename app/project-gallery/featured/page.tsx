@@ -55,7 +55,7 @@ export default function FeaturedProjectPage() {
                                     <div className="space-y-4">
                                         <h3 className="text-xl font-bold leading-tight">
                                             {index % 2 === 0 ? "Much Lorem ipsum dolor sit consectetuer adipiscing elit" : "Ipsum dolor sit consectetuer adipiscing elit, sed diam"}
-                                        </h2>
+                                        </h3>
                                         <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy ipsum dolor sit amet.
                                         </p>
