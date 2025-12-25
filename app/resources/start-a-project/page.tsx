@@ -1,11 +1,8 @@
-import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import PageTemplate from "@/components/layout/PageTemplate";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
 
-export const metadata: Metadata = {
-  title: "Start a Project - Summit Drilling, LLC",
-  description: "Get in touch with Summit Drilling to discuss your drilling, geophysics, or remediation project needs.",
-};
+export const metadata = getPageMetadata("/resources/start-a-project");
 
 export default function StartProjectPage() {
   return (
