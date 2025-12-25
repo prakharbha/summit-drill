@@ -165,7 +165,11 @@ export default function RemediationServicesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
               {remediationServices.map((service) => (
-                <div key={service.title} className="flex flex-col">
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="flex flex-col group cursor-pointer"
+                >
                   {/* Ribbon Title */}
                   <div className="relative mb-4 self-start">
                     <div className="relative inline-block">
@@ -183,30 +187,28 @@ export default function RemediationServicesPage() {
                   </div>
 
                   {/* Image Card */}
-                  <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg">
+                  <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
                   {/* Content */}
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold leading-tight text-white">
+                    <h3 className="text-xl font-bold leading-tight text-white group-hover:text-sky-300 transition-colors">
                       {service.subtitle}
                     </h3>
                     <p className="text-gray-100 leading-relaxed text-sm md:text-base">
                       {service.description}
                     </p>
-                    <Button asChild size="sm" className="bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 shadow-md mt-2">
-                      <Link href={service.href}>
-                        {service.ctaText} &gt;&gt;
-                      </Link>
-                    </Button>
+                    <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold px-6 py-2 text-sm shadow-md mt-2 w-fit rounded transition-colors">
+                      {service.ctaText} &gt;&gt;
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

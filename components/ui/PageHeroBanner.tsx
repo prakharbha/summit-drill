@@ -89,13 +89,14 @@ export function PageHeroBanner({
                     >
                         {/* Mountain Logo */}
                         {showMountainLogo && (
-                            <div className="w-[200px] h-auto relative mb-2">
+                            <div className="w-[200px] h-auto relative mb-2" style={{ maxWidth: '80%' }}>
                                 <Image
                                     src="/images/mountain.webp"
                                     alt="Summit Mountain"
                                     width={200}
                                     height={50}
                                     className="object-contain"
+                                    style={{ maxWidth: '80%' }}
                                 />
                             </div>
                         )}

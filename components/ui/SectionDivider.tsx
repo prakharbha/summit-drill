@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionDividerProps {
     className?: string;
@@ -11,7 +12,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
 }) => {
     return (
         <svg
-            className={className}
+            className={cn("min-[1501px]:!h-[50px]", className)}
             viewBox="0 0 1280 60"
             width="100%"
             style={{ height: "auto" }}

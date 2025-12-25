@@ -109,22 +109,17 @@ export default async function BlogPostPage({
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             {/* Main Content - 2/3 width */}
                             <div className="lg:col-span-2">
-                                <article className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                                <article className="bg-[#78a8a8] rounded-xl shadow-lg p-8 md:p-12">
                                     {/* Article Content */}
                                     <div
-                                        className="prose prose-lg max-w-none
-                      prose-headings:text-[#1a365d] prose-headings:font-bold
-                      prose-p:text-gray-700 prose-p:leading-relaxed prose-p:text-lg
-                      prose-a:text-[#4d7c55] prose-a:no-underline hover:prose-a:underline
-                      prose-strong:text-[#1a365d]
-                      prose-em:text-gray-600 prose-em:italic"
+                                        className="prose prose-lg max-w-none news-article-content"
                                         dangerouslySetInnerHTML={{
                                             __html: `<p>${cleanContent}</p>`,
                                         }}
                                     />
 
                                     {/* Social Share Section */}
-                                    <div className="mt-12 pt-8 border-t border-gray-200">
+                                    <div className="mt-12 pt-8 border-t border-[#5a8888]">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                             <Link
                                                 href="/about-us/news"
@@ -135,7 +130,7 @@ export default async function BlogPostPage({
                                             </Link>
 
                                             <div className="flex items-center gap-4">
-                                                <span className="text-gray-600 font-semibold">Share:</span>
+                                                <span className="text-[#0e2a47] font-semibold">Share:</span>
                                                 <div className="flex items-center gap-3">
                                                     <a
                                                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
@@ -173,8 +168,8 @@ export default async function BlogPostPage({
 
                             {/* Sidebar - 1/3 width */}
                             <div className="lg:col-span-1">
-                                <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
-                                    <h3 className="text-xl font-bold text-[#1a365d] mb-6 pb-4 border-b border-gray-200">
+                                <div className="bg-[#78a8a8] rounded-xl shadow-lg p-6 sticky top-8">
+                                    <h3 className="text-xl font-bold text-[#0e2a47] mb-6 pb-4 border-b border-[#5a8888]">
                                         Latest News
                                     </h3>
                                     <div className="space-y-6">
@@ -194,10 +189,10 @@ export default async function BlogPostPage({
                                                         />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
-                                                        <h4 className="text-sm font-bold text-[#1a365d] line-clamp-2 group-hover:text-[#4d7c55] transition-colors leading-tight mb-1">
+                                                        <h4 className="text-sm font-bold text-[#0e2a47] line-clamp-2 group-hover:text-[#1a365d] transition-colors leading-tight mb-1">
                                                             {latestPost.title}
                                                         </h4>
-                                                        <time className="text-xs text-gray-500">
+                                                        <time className="text-xs text-[#1a365d]">
                                                             {new Date(latestPost.date).toLocaleDateString("en-US", {
                                                                 month: "short",
                                                                 day: "numeric",
@@ -211,10 +206,10 @@ export default async function BlogPostPage({
                                     </div>
 
                                     {/* View All Link */}
-                                    <div className="mt-6 pt-4 border-t border-gray-200">
+                                    <div className="mt-6 pt-4 border-t border-[#5a8888]">
                                         <Link
                                             href="/about-us/news"
-                                            className="text-[#4d7c55] font-semibold hover:text-[#3d6a45] transition-colors inline-flex items-center gap-2"
+                                            className="text-[#0e2a47] font-semibold hover:text-[#1a365d] transition-colors inline-flex items-center gap-2"
                                         >
                                             View All News
                                             <span>&rarr;</span>
