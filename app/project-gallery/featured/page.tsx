@@ -1,3 +1,4 @@
+import { getPageMetadata } from "@/lib/seo";
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -7,6 +8,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
+
+
+export const metadata = getPageMetadata("/project-gallery/featured");
 
 export default function FeaturedProjectPage() {
     return (

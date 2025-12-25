@@ -423,5 +423,70 @@
     "title": "Privacy Policy | Summit Drilling",
     "description": "Summit Drilling's privacy policy explains how we collect, use, and protect your personal information when you visit our website.",
     "canonical": "https://summitdrilling.com/privacy-policy/"
+  },
+  "/project-gallery/brick-nj": {
+    "title": "Emergency Storm Sewer Repair | Summit Drilling Project",
+    "description": "Summit was contracted by a large Engineering firm and Ocean County to address an urgent subsurface infrastructure failure in Brick, NJ. A sink hole had dev...",
+    "canonical": "https://summitdrilling.com/project-gallery/brick-nj"
+  },
+  "/project-gallery/charlestown": {
+    "title": "Sonic Drilling – Overburden & Bedrock Wells | Summit Drilling Project",
+    "description": "A large US-based environmental firm engaged Summit to complete a large-scale sonic drilling and well installation program at a U.S. Army Corps of Engineers...",
+    "canonical": "https://summitdrilling.com/project-gallery/charlestown"
+  },
+  "/project-gallery/charlotte-airport": {
+    "title": "Bentonite Hydraulic Cut-Off Wall Installation | Summit Drilling Project",
+    "description": "Summit&apos;s Remediation Division was engaged by the City of Charlotte, with a global engineering firm serving as design engineer, and Charlotte Douglas I...",
+    "canonical": "https://summitdrilling.com/project-gallery/charlotte-airport"
+  },
+  "/project-gallery/charlotte-methane": {
+    "title": "Methane Mitigation System with Cupolex & VIMS Integration | Summit Drilling Project",
+    "description": "Summit&apos;s Remediation Division was contracted to install a complex methane mitigation system (MMS) for a new 7-story building in Charlotte, NC. The sys...",
+    "canonical": "https://summitdrilling.com/project-gallery/charlotte-methane"
+  },
+  "/project-gallery/featured": {
+    "title": "Airport Earth Work | Summit Drilling Project",
+    "description": "View our Airport Earth Work project details.",
+    "canonical": "https://summitdrilling.com/project-gallery/featured"
+  },
+  "/project-gallery/gastonia": {
+    "title": "Permeable Reactive Barrier (PRB) Installation | Summit Drilling Project",
+    "description": "Summit&apos;s Remediation Division was contracted by a global engineering firm to perform the rapid installation of a permeable reactive barrier (PRB) at a...",
+    "canonical": "https://summitdrilling.com/project-gallery/gastonia"
+  },
+  "/project-gallery/linden": {
+    "title": "GPR & Drilling – Subsurface Investigation | Summit Drilling Project",
+    "description": "A global engineering & environmental consulting firm engaged Summit to perform a multi-technology subsurface investigation in Linden, NJ, supporting data c...",
+    "canonical": "https://summitdrilling.com/project-gallery/linden"
+  },
+  "/project-gallery/princeton": {
+    "title": "Sonic Drilling Investigation on Collegiate Athletic Field | Summit Drilling Project",
+    "description": "View our Sonic Drilling Investigation on Collegiate Athletic Field project details.",
+    "canonical": "https://summitdrilling.com/project-gallery/princeton"
+  },
+  "/project-gallery/princeton-jct": {
+    "title": "Long-Term Injection & Monitoring Well Program | Summit Drilling Project",
+    "description": "Summit has supported ongoing environmental investigation and remediation efforts at the former site of a petroleum industry support services company for ne...",
+    "canonical": "https://summitdrilling.com/project-gallery/princeton-jct"
+  },
+  "/project-gallery/raleigh": {
+    "title": "Multi-Depth Monitoring Well Installation | Summit Drilling Project",
+    "description": "Summit was contracted by a global engineering firm to drill and install a comprehensive network of Type II and Type III monitoring wells in Raleigh, NC. Th...",
+    "canonical": "https://summitdrilling.com/project-gallery/raleigh"
+  },
+  "/project-gallery/roselle": {
+    "title": "Shallow Bedrock Well Installation | Summit Drilling Project",
+    "description": "A global company specializing in the energy, infrastructure, and environmental sectors engaged Summit to preclear, drill, and install three shallow bedrock...",
+    "canonical": "https://summitdrilling.com/project-gallery/roselle"
+  },
+  "/project-gallery/spartanburg-cap": {
+    "title": "Engineering Cap Repair & Streambank Stabilization | Summit Drilling Project",
+    "description": "Summit&apos;s Remediation Division was contracted by a large engineering & environmental consulting firm to perform restoration and stabilization work on a...",
+    "canonical": "https://summitdrilling.com/project-gallery/spartanburg-cap"
+  },
+  "/project-gallery/spartanburg-sonic": {
+    "title": "Deep Vertical Aquifer Profile (VAP) Investigation | Summit Drilling Project",
+    "description": "A leading global engineering firm engaged Summit to perform a deep vertical aquifer profile (VAP) investigation at a complex site in South Carolina. The ob...",
+    "canonical": "https://summitdrilling.com/project-gallery/spartanburg-sonic"
   }
 }

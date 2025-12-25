@@ -1,9 +1,13 @@
+import { getPageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
 import Image from "next/image";
 import Link from "next/link";
+
+
+export const metadata = getPageMetadata("/project-gallery/charlotte-methane");
 
 export default function CharlotteMethaneProjectPage() {
     const projectDetails = {
