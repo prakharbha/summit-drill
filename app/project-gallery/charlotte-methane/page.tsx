@@ -45,9 +45,9 @@ export default function CharlotteMethaneProjectPage() {
                                                 />
                                             </div>
                                         </div>
-                                        <h3 className="text-2xl font-bold text-[#2a1109] tracking-widest uppercase">
+                                        <h2 className="text-2xl font-bold text-[#2a1109] tracking-widest uppercase">
                                             Project Details
-                                        </h3>
+                                        </h2>
                                         <div className="w-full h-1 bg-[#2a1109] mt-4 mx-auto max-w-[200px]"></div>
                                     </div>
 
