@@ -14,27 +14,32 @@ const OurPeople = () => {
     {
       name: "Ben Shaffer",
       role: "Director of Health & Safety",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+      image: "/images/contact/ben-shaffer-director-of-health-safety.webp",
     },
     {
-      name: "Sarah Johnson",
-      role: "Operations Manager",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+      name: "Zach Thompson",
+      role: "Project Manager",
+      image: "/images/contact/zach-thompson.webp",
     },
     {
-      name: "Michael Chen",
-      role: "Senior Geophysicist",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+      name: "Brian Moriarty",
+      role: "Project Manager",
+      image: "/images/contact/brian-moriarty.webp",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Project Coordinator",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+      name: "Dustin Lutz",
+      role: "General Manager",
+      image: "/images/contact/dustin-lutz.webp",
     },
     {
-      name: "David Thompson",
-      role: "Drilling Supervisor",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+      name: "Glenn Brennan",
+      role: "Project Manager, Geophysicist",
+      image: "/images/contact/glenn-brennan.webp",
+    },
+    {
+      name: "Nick King",
+      role: "Project Manager",
+      image: "/images/contact/nick-king-avatar.webp",
     },
   ];
 
