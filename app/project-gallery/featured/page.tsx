@@ -1,5 +1,3 @@
-"use client";
-
 import { getPageMetadata } from "@/lib/seo";
 
 import Header from "@/components/layout/Header";

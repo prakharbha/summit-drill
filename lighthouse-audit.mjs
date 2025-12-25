@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import { URL } from 'url';
 
-const BASE_URL = 'https://summit-drill.vercel.app';
+const BASE_URL = 'http://localhost:3004';
 
 // Key pages to audit
 const PAGES = [
