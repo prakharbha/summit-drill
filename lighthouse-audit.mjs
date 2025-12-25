@@ -8,12 +8,25 @@ const BASE_URL = 'https://summit-drill.vercel.app';
 // Key pages to audit
 const PAGES = [
     '/',
+    '/services/geophysical-services',
+    '/services/drilling-techniques',
+    '/services/remediation-services',
+    '/careers',
     '/about-us',
     '/health-safety',
+    '/industries/environmental',
+    '/industries/geotechnical',
+    '/industries/cathodic',
+    '/industries/aggregate',
     '/project-gallery',
+    '/project-gallery/charlestown',
+    '/project-gallery/raleigh',
+    '/project-gallery/brick-nj',
+    '/introducing-summits-drilling-field-supervisors',
     '/resources/start-a-project',
     '/contact',
-    '/services/drilling-techniques',
+
+
 ];
 
 async function runLighthouse(url, browser) {
@@ -22,7 +35,7 @@ async function runLighthouse(url, browser) {
     const result = await lighthouse(url, {
         port,
         output: 'json',
-        onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
+        onlyCategories: ['best-practices', 'seo'],
     });
 
     return result.lhr;
@@ -48,14 +61,12 @@ async function main() {
 
             const pageScore = {
                 url: page,
-                performance: Math.round(lhr.categories.performance.score * 100),
-                accessibility: Math.round(lhr.categories.accessibility.score * 100),
                 bestPractices: Math.round(lhr.categories['best-practices'].score * 100),
                 seo: Math.round(lhr.categories.seo.score * 100),
             };
             scores.push(pageScore);
 
-            console.log(`  Performance: ${pageScore.performance}, A11y: ${pageScore.accessibility}, BP: ${pageScore.bestPractices}, SEO: ${pageScore.seo}`);
+            console.log(`  BP: ${pageScore.bestPractices}, SEO: ${pageScore.seo}`);
 
             // Collect issues
             for (const audit of Object.values(lhr.audits)) {
@@ -83,23 +94,21 @@ async function main() {
     report += `Generated: ${new Date().toISOString()}\n\n`;
 
     report += '=== SCORES SUMMARY ===\n';
-    report += 'Page | Performance | Accessibility | Best Practices | SEO\n';
+    report += 'Page                                     | Best Practices | SEO\n';
     report += '-'.repeat(80) + '\n';
 
     for (const s of scores) {
-        report += `${s.url.padEnd(40)} | ${String(s.performance).padStart(3)} | ${String(s.accessibility).padStart(3)} | ${String(s.bestPractices).padStart(3)} | ${String(s.seo).padStart(3)}\n`;
+        report += `${s.url.padEnd(40)} | ${String(s.bestPractices).padStart(14)} | ${String(s.seo).padStart(3)}\n`;
     }
 
     // Calculate averages
     const avg = {
-        performance: Math.round(scores.reduce((a, b) => a + b.performance, 0) / scores.length),
-        accessibility: Math.round(scores.reduce((a, b) => a + b.accessibility, 0) / scores.length),
         bestPractices: Math.round(scores.reduce((a, b) => a + b.bestPractices, 0) / scores.length),
         seo: Math.round(scores.reduce((a, b) => a + b.seo, 0) / scores.length),
     };
 
     report += '-'.repeat(80) + '\n';
-    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.performance).padStart(3)} | ${String(avg.accessibility).padStart(3)} | ${String(avg.bestPractices).padStart(3)} | ${String(avg.seo).padStart(3)}\n\n`;
+    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.bestPractices).padStart(14)} | ${String(avg.seo).padStart(3)}\n\n`;
 
     // Group issues by category
     report += '=== TOP ISSUES TO FIX ===\n\n';
