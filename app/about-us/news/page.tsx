@@ -1,14 +1,11 @@
-import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import { getAllPosts } from "@/data/news";
 import { NewsCard } from "@/components/ui/NewsCard";
 
-export const metadata: Metadata = {
-  title: "News & Updates - Summit Drilling, LLC",
-  description: "Stay updated with the latest news, achievements, and milestones from Summit Drilling. Read about our growth, acquisitions, and industry recognition.",
-};
+export const metadata = getPageMetadata("/about-us/news");
 
 export default function NewsPage() {
   const posts = getAllPosts();

@@ -1,14 +1,11 @@
-import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import DrillingSidebar from "@/components/drilling/DrillingSidebar";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
 
-export const metadata: Metadata = {
-    title: "Drilling & Injection - Summit Drilling, LLC",
-    description: "In-situ remediation support with custom injection solutions. From chemical oxidation to thermal remediation preparation.",
-};
+export const metadata = getPageMetadata("/services/injection-remediation-services");
 
 export default function InjectionPage() {
     return (

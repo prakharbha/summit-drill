@@ -1,12 +1,9 @@
-import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 
-export const metadata: Metadata = {
-    title: "Privacy Policy - Summit Drilling, LLC",
-    description: "Privacy Policy for Summit Drilling, LLC website and services.",
-};
+export const metadata = getPageMetadata("/privacy-policy");
 
 export default function PrivacyPolicyPage() {
     return (
