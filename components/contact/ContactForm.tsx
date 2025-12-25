@@ -107,7 +107,7 @@ const ContactForm = () => {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
-                                        className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]"
+                                        className="bg-black/40 border-none text-white placeholder:text-white/90 rounded-[5px]"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -117,7 +117,7 @@ const ContactForm = () => {
                                         placeholder="Smith"
                                         value={formData.company}
                                         onChange={handleInputChange}
-                                        className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]"
+                                        className="bg-black/40 border-none text-white placeholder:text-white/90 rounded-[5px]"
                                     />
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ const ContactForm = () => {
                                     id="address"
                                     value={formData.address}
                                     onChange={handleInputChange}
-                                    className="bg-white/30 border-none text-white rounded-[5px]"
+                                    className="bg-black/40 border-none text-white rounded-[5px]"
                                 />
                             </div>
 
@@ -139,7 +139,7 @@ const ContactForm = () => {
                                         id="city"
                                         value={formData.city}
                                         onChange={handleInputChange}
-                                        className="bg-white/30 border-none text-white rounded-[5px]"
+                                        className="bg-black/40 border-none text-white rounded-[5px]"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -148,7 +148,7 @@ const ContactForm = () => {
                                         id="state"
                                         value={formData.state}
                                         onChange={handleInputChange}
-                                        className="bg-white/30 border-none text-white rounded-[5px]"
+                                        className="bg-black/40 border-none text-white rounded-[5px]"
                                     />
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ const ContactForm = () => {
                                     id="zip"
                                     value={formData.zip}
                                     onChange={handleInputChange}
-                                    className="bg-white/30 border-none text-white rounded-[5px]"
+                                    className="bg-black/40 border-none text-white rounded-[5px]"
                                 />
                             </div>
 
@@ -171,7 +171,7 @@ const ContactForm = () => {
                                         placeholder="(   )"
                                         value={formData.phone}
                                         onChange={handleInputChange}
-                                        className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]"
+                                        className="bg-black/40 border-none text-white placeholder:text-white/90 rounded-[5px]"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -181,7 +181,7 @@ const ContactForm = () => {
                                         placeholder="(   )"
                                         value={formData.cell}
                                         onChange={handleInputChange}
-                                        className="bg-white/30 border-none text-white placeholder:text-white/70 rounded-[5px]"
+                                        className="bg-black/40 border-none text-white placeholder:text-white/90 rounded-[5px]"
                                     />
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ const ContactForm = () => {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     required
-                                    className="bg-white/30 border-none text-white rounded-[5px]"
+                                    className="bg-black/40 border-none text-white rounded-[5px]"
                                 />
                             </div>
 
@@ -219,7 +219,7 @@ const ContactForm = () => {
                                     id="notes"
                                     value={formData.notes}
                                     onChange={handleInputChange}
-                                    className="bg-white/30 border-none text-white min-h-[300px] flex-grow resize-none rounded-[5px]"
+                                    className="bg-black/40 border-none text-white min-h-[300px] flex-grow resize-none rounded-[5px]"
                                 />
                             </div>
 

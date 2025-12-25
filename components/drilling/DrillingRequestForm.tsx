@@ -406,7 +406,7 @@ const DrillingRequestForm = () => {
                                         placeholder="Don't see a service you're looking for, add a note here:"
                                         value={formData.additionalNotes}
                                         onChange={handleInputChange}
-                                        className="bg-black/20 border-none text-white placeholder:text-white/90 min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
+                                        className="bg-black/40 border-none text-white placeholder:text-white min-h-[80px] text-lg p-4 resize-none rounded-[7px] w-full"
                                     />
                                 </div>
                                 <Button
