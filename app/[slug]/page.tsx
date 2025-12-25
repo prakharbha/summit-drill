@@ -34,12 +34,25 @@ export async function generateStaticParams() {
     }));
 }
 
+import { getPageMetadata } from "@/lib/seo";
+
 export async function generateMetadata({
     params,
 }: {
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const resolvedParams = await params;
+
+    // First try to get metadata from site-metadata.json using the exact path
+    const path = `/${resolvedParams.slug}`;
+    const siteMetadata = getPageMetadata(path);
+
+    // If site-metadata.json has a specific title (not the default fallback), use it
+    if (siteMetadata.title !== "Summit Drilling" && siteMetadata.description !== "Summit Drilling Services") {
+        return siteMetadata;
+    }
+
+    // Fallback to existing logic using news data
     const post = newsPosts.find((p) => p.slug === resolvedParams.slug);
 
     if (!post) {
