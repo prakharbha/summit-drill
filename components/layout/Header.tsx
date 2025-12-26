@@ -182,21 +182,13 @@ const Header = () => {
                   >
                     {item.hasDropdown ? (
                       <>
-                        <button
+                        <Link
+                          href={item.href}
                           className="text-base font-bold italic transition-colors flex items-center gap-1 tracking-wide h-full border-b-2 border-transparent text-white hover:text-sky-300 hover:border-sky-300 drop-shadow-md"
-                          onClick={() => {
-                            if (item.name === "Services") {
-                              setServicesOpen(!servicesOpen);
-                              setIndustriesOpen(false);
-                            } else if (item.name === "Industries") {
-                              setIndustriesOpen(!industriesOpen);
-                              setServicesOpen(false);
-                            }
-                          }}
                         >
                           {item.name}
                           <HiChevronDown className="w-3 h-3" />
-                        </button>
+                        </Link>
                         <AnimatePresence>
                           {(item.name === "Services" && servicesOpen) || (item.name === "Industries" && industriesOpen) ? (
                             <motion.div
@@ -294,21 +286,13 @@ const Header = () => {
                 >
                   {item.hasDropdown ? (
                     <>
-                      <button
+                      <Link
+                        href={item.href}
                         className="text-base font-bold italic transition-colors flex items-center gap-1 tracking-wide text-white hover:text-sky-300"
-                        onClick={() => {
-                          if (item.name === "Services") {
-                            setServicesOpen(!servicesOpen);
-                            setIndustriesOpen(false);
-                          } else if (item.name === "Industries") {
-                            setIndustriesOpen(!industriesOpen);
-                            setServicesOpen(false);
-                          }
-                        }}
                       >
                         {item.name}
                         <HiChevronDown className="w-3 h-3" />
-                      </button>
+                      </Link>
                       <AnimatePresence>
                         {(item.name === "Services" && servicesOpen) || (item.name === "Industries" && industriesOpen) ? (
                           <motion.div

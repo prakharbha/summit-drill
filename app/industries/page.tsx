@@ -53,6 +53,7 @@ export default function IndustriesPage() {
           description="Summit serves diverse industries with specialized drilling, geophysics, and remediation solutions. Our multi-regional reach and technical expertise make us the trusted partner for environmental, geotechnical, cathodic, and aggregate projects."
           backgroundImage="/images/industries/environmental-banner.webp"
           ribbonText="SUMMIT DRILLING"
+          dividerColor="#377d7e"
         />
 
         {/* Industries Grid - Matching Geophysical Services Design */}
