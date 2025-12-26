@@ -182,9 +182,9 @@ export default async function BlogPostPage({
                             {/* Sidebar - 1/3 width */}
                             <div className="lg:col-span-1">
                                 <div className="bg-[#78a8a8] rounded-xl shadow-lg p-6 sticky top-8">
-                                    <h3 className="text-xl font-bold text-[#0e2a47] mb-6 pb-4 border-b border-[#5a8888]">
+                                    <h2 className="text-xl font-bold text-[#0e2a47] mb-6 pb-4 border-b border-[#5a8888]">
                                         Latest News
-                                    </h3>
+                                    </h2>
                                     <div className="space-y-6">
                                         {latestPosts.map((latestPost) => (
                                             <Link
@@ -202,9 +202,9 @@ export default async function BlogPostPage({
                                                         />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
-                                                        <h4 className="text-sm font-bold text-[#0e2a47] line-clamp-2 group-hover:text-[#1a365d] transition-colors leading-tight mb-1">
+                                                        <h3 className="text-sm font-bold text-[#0e2a47] line-clamp-2 group-hover:text-[#1a365d] transition-colors leading-tight mb-1">
                                                             {latestPost.title}
-                                                        </h4>
+                                                        </h3>
                                                         <time className="text-xs text-[#1a365d]">
                                                             {new Date(latestPost.date).toLocaleDateString("en-US", {
                                                                 month: "short",

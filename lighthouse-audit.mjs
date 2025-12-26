@@ -72,7 +72,7 @@ async function runLighthouse(url, browser) {
 }
 
 async function main() {
-    console.log('Starting Lighthouse Audit (Accessibility, Best Practices, SEO)...\\n');
+    console.log('Starting Lighthouse Audit (Accessibility, Best Practices, SEO)...\n');
 
     const browser = await puppeteer.launch({
         headless: true,
@@ -121,16 +121,16 @@ async function main() {
     await browser.close();
 
     // Generate report
-    let report = '=== LIGHTHOUSE FULL AUDIT REPORT ===\\n';
-    report += `Generated: ${new Date().toISOString()}\\n`;
-    report += `Pages audited: ${scores.length}\\n\\n`;
+    let report = '=== LIGHTHOUSE FULL AUDIT REPORT ===\n';
+    report += `Generated: ${new Date().toISOString()}\n`;
+    report += `Pages audited: ${scores.length}\n\n`;
 
-    report += '=== SCORES SUMMARY ===\\n';
-    report += 'Page                                     | A11y | BP   | SEO\\n';
-    report += '-'.repeat(70) + '\\n';
+    report += '=== SCORES SUMMARY ===\n';
+    report += 'Page                                     | A11y | BP   | SEO\n';
+    report += '-'.repeat(70) + '\n';
 
     for (const s of scores) {
-        report += `${s.url.padEnd(40)} | ${String(s.accessibility).padStart(4)} | ${String(s.bestPractices).padStart(4)} | ${String(s.seo).padStart(3)}\\n`;
+        report += `${s.url.padEnd(40)} | ${String(s.accessibility).padStart(4)} | ${String(s.bestPractices).padStart(4)} | ${String(s.seo).padStart(3)}\n`;
     }
 
     // Calculate averages
@@ -140,11 +140,11 @@ async function main() {
         seo: Math.round(scores.reduce((a, b) => a + b.seo, 0) / scores.length),
     };
 
-    report += '-'.repeat(70) + '\\n';
-    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.accessibility).padStart(4)} | ${String(avg.bestPractices).padStart(4)} | ${String(avg.seo).padStart(3)}\\n\\n`;
+    report += '-'.repeat(70) + '\n';
+    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.accessibility).padStart(4)} | ${String(avg.bestPractices).padStart(4)} | ${String(avg.seo).padStart(3)}\n\n`;
 
     // Group issues by category
-    report += '=== TOP ISSUES TO FIX ===\\n\\n';
+    report += '=== TOP ISSUES TO FIX ===\n\n';
 
     const issueGroups = {};
     for (const issue of issues) {
@@ -164,16 +164,16 @@ async function main() {
         .slice(0, 30);
 
     for (const [auditId, data] of sortedIssues) {
-        report += `[${auditId}] ${data.title}\\n`;
-        report += `  Affected pages: ${data.pages.length}\\n`;
-        report += `  Pages: ${data.pages.slice(0, 5).join(', ')}${data.pages.length > 5 ? '...' : ''}\\n\\n`;
+        report += `[${auditId}] ${data.title}\n`;
+        report += `  Affected pages: ${data.pages.length}\n`;
+        report += `  Pages: ${data.pages.slice(0, 5).join(', ')}${data.pages.length > 5 ? '...' : ''}\n\n`;
     }
 
     fs.writeFileSync('lighthouse-report.txt', report);
     fs.writeFileSync('lighthouse-issues.json', JSON.stringify(issues, null, 2));
 
     // Print summary to console
-    console.log('\\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);
+    console.log('\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);
     console.log('Full report saved to lighthouse-report.txt');
 }
 
