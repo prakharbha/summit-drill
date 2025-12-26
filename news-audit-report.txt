@@ -1,0 +1,32 @@
+=== NEWS POSTS AUDIT REPORT ===
+Generated: 2025-12-26T03:36:45.265Z
+Posts audited: 24
+
+Slug                                                | A11y | BP  | SEO
+----------------------------------------------------------------------
+introducing-summits-drilling-field-supervisors      |  100 | 100 | 100
+summit-drilling-welcomes-joseph-c-negro             |  100 | 100 | 100
+dermot-dillion-appointed-to-ngwa-board-of-director  |  100 | 100 | 100
+summit-drilling-welcomes-south-atlantic-environmen  |  100 | 100 | 100
+summit-drilling-acquires-subsurface-environmental-  |  100 | 100 | 100
+summit-drilling-acquires-tpi-environmental-expandi  |  100 | 100 | 100
+ron-bucca-promoted-to-chief-executive-officer-as-s  |  100 | 100 | 100
+summit-drilling-takes-on-partners-to-support-aggre  |  100 | 100 | 100
+two-industry-leaders-strengthen-their-alliance-and  |  100 | 100 | 100
+summit-drilling-knows-its-pfas                      |  100 | 100 | 100
+summit-introducing-the-latest-addition-to-its-expa  |  100 | 100 | 100
+summit-drilling-finds-veterans-to-be-important-ass  |  100 | 100 | 100
+summit-drilling-achieves-the-gold-standard-for-saf  |  100 |  75 | 100
+leading-environmental-driller-fortifies-support-of  |   98 | 100 | 100
+the-northeasts-fastest-growing-environmental-drill  |   98 | 100 | 100
+summit-drilling-opens-regional-office-in-albany     |  100 | 100 | 100
+summit-drilling-achieves-7th-consecutive-governors  |  100 | 100 | 100
+100-attend-summits-demo-on-industry-leading-sonic-  |  100 | 100 | 100
+1-of-164-in-nj-summit-drilling-makes-inc-5000-list  |  100 | 100 | 100
+summit-drilling-rings-in-the-new-year-by-welcoming  |  100 | 100 | 100
+summit-drilling-increases-its-commitment-to-enviro  |  100 | 100 | 100
+summit-drillings-experience-safety-program-recogni  |  100 | 100 | 100
+turning-a-wrench-into-high-performance-customer-sa  |  100 | 100 | 100
+environmental-services-leader-expands-footprint-in  |  100 | 100 | 100
+----------------------------------------------------------------------
+AVERAGE                                             |  100 |  99 | 100
