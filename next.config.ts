@@ -75,6 +75,15 @@ const nextConfig: NextConfig = {
       { source: '/services/equipment-roster', destination: '/about-us', permanent: true },
     ];
   },
+  async rewrites() {
+    return [
+      // WordPress legacy URL support for email signatures and blasts
+      {
+        source: '/wp-content/uploads/2025/12/summit-logo-update.webp',
+        destination: '/images/summit-logo-update.webp',
+      },
+    ];
+  },
   async headers() {
     return [
       {

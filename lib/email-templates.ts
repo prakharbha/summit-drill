@@ -28,7 +28,7 @@ function getEmailHeader(): string {
           style="background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);">
           <tr>
             <td align="center" style="padding: 36px 48px;">
-              <div style="display: inline-block; padding: 5px 10px;">
+              <div style="display: inline-block; padding: 12px 16px; background-color: #ffffff; border-radius: 8px;">
                 <img src="https://summitdrilling.com/wp-content/uploads/2025/12/summit-logo-update.webp"
                   alt="Summit Drilling" width="200" style="max-width: 200px; height: auto; display: block;" />
               </div>
@@ -59,9 +59,11 @@ function getEmailFooter(): string {
           <tr>
             <td align="center">
               <!-- Logo -->
-              <img src="https://summitdrilling.com/wp-content/uploads/2025/12/summit-logo-update.webp"
-                alt="Summit Drilling" width="140"
-                style="max-width: 140px; height: auto; display: block; margin-bottom: 20px; opacity: 0.95;" />
+              <div style="display: inline-block; padding: 10px 14px; background-color: #ffffff; border-radius: 8px; margin-bottom: 20px;">
+                <img src="https://summitdrilling.com/wp-content/uploads/2025/12/summit-logo-update.webp"
+                  alt="Summit Drilling" width="140"
+                  style="max-width: 140px; height: auto; display: block;" />
+              </div>
               
               <!-- Company Name -->
               <p style="margin: 0 0 12px 0; font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 500;">
