@@ -5,26 +5,58 @@ import { URL } from 'url';
 
 const BASE_URL = 'https://summit-drill.vercel.app';
 
-// Key pages to audit
+// All public pages to audit
 const PAGES = [
     '/',
-    '/services/geophysical-services',
-    '/services/drilling-techniques',
-    '/services/remediation-services',
-    '/careers',
     '/about-us',
+    '/about-us/news',
+    '/careers',
+    '/careers/benefits',
+    '/careers/positions',
+    '/careers/your-career',
+    '/contact',
     '/health-safety',
+    '/industries',
     '/industries/environmental',
     '/industries/geotechnical',
     '/industries/cathodic',
     '/industries/aggregate',
+    '/privacy-policy',
     '/project-gallery',
-    '/project-gallery/charlestown',
-    '/project-gallery/raleigh',
     '/project-gallery/brick-nj',
-    '/introducing-summits-drilling-field-supervisors',
+    '/project-gallery/charlestown',
+    '/project-gallery/charlotte-airport',
+    '/project-gallery/charlotte-methane',
+    '/project-gallery/featured',
+    '/project-gallery/gastonia',
+    '/project-gallery/linden',
+    '/project-gallery/princeton',
+    '/project-gallery/princeton-jct',
+    '/project-gallery/raleigh',
+    '/project-gallery/roselle',
+    '/project-gallery/spartanburg-cap',
+    '/project-gallery/spartanburg-sonic',
     '/resources/start-a-project',
-    '/contact',
+    '/services',
+    '/services/air-rotary-drilling',
+    '/services/auger-drilling',
+    '/services/barrier-walls',
+    '/services/borehole-geophysics',
+    '/services/direct-push',
+    '/services/drilling-support',
+    '/services/drilling-techniques',
+    '/services/earthwork-remediation',
+    '/services/electrical-resistivity',
+    '/services/geophysical-services',
+    '/services/in-situ-remediation',
+    '/services/injection-remediation',
+    '/services/injection-remediation-services',
+    '/services/remediation-services',
+    '/services/remediation-systems',
+    '/services/seismic-refraction',
+    '/services/sonic-drilling',
+    '/services/ust-septic-detection',
+    '/services/utility-locating',
 ];
 
 async function runLighthouse(url, browser) {
@@ -33,14 +65,14 @@ async function runLighthouse(url, browser) {
     const result = await lighthouse(url, {
         port,
         output: 'json',
-        onlyCategories: ['accessibility'],
+        onlyCategories: ['accessibility', 'best-practices', 'seo'],
     });
 
     return result.lhr;
 }
 
 async function main() {
-    console.log('Starting Lighthouse Accessibility audits...\n');
+    console.log('Starting Lighthouse Audit (Accessibility, Best Practices, SEO)...\\n');
 
     const browser = await puppeteer.launch({
         headless: true,
@@ -60,10 +92,12 @@ async function main() {
             const pageScore = {
                 url: page,
                 accessibility: Math.round(lhr.categories.accessibility.score * 100),
+                bestPractices: Math.round(lhr.categories['best-practices'].score * 100),
+                seo: Math.round(lhr.categories.seo.score * 100),
             };
             scores.push(pageScore);
 
-            console.log(`  Accessibility: ${pageScore.accessibility}`);
+            console.log(`  A11y: ${pageScore.accessibility} | BP: ${pageScore.bestPractices} | SEO: ${pageScore.seo}`);
 
             // Collect issues
             for (const audit of Object.values(lhr.audits)) {
@@ -87,27 +121,30 @@ async function main() {
     await browser.close();
 
     // Generate report
-    let report = '=== LIGHTHOUSE ACCESSIBILITY AUDIT REPORT ===\n';
-    report += `Generated: ${new Date().toISOString()}\n\n`;
+    let report = '=== LIGHTHOUSE FULL AUDIT REPORT ===\\n';
+    report += `Generated: ${new Date().toISOString()}\\n`;
+    report += `Pages audited: ${scores.length}\\n\\n`;
 
-    report += '=== SCORES SUMMARY ===\n';
-    report += 'Page                                     | Accessibility\n';
-    report += '-'.repeat(60) + '\n';
+    report += '=== SCORES SUMMARY ===\\n';
+    report += 'Page                                     | A11y | BP   | SEO\\n';
+    report += '-'.repeat(70) + '\\n';
 
     for (const s of scores) {
-        report += `${s.url.padEnd(40)} | ${String(s.accessibility).padStart(13)}\n`;
+        report += `${s.url.padEnd(40)} | ${String(s.accessibility).padStart(4)} | ${String(s.bestPractices).padStart(4)} | ${String(s.seo).padStart(3)}\\n`;
     }
 
     // Calculate averages
     const avg = {
         accessibility: Math.round(scores.reduce((a, b) => a + b.accessibility, 0) / scores.length),
+        bestPractices: Math.round(scores.reduce((a, b) => a + b.bestPractices, 0) / scores.length),
+        seo: Math.round(scores.reduce((a, b) => a + b.seo, 0) / scores.length),
     };
 
-    report += '-'.repeat(60) + '\n';
-    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.accessibility).padStart(13)}\n\n`;
+    report += '-'.repeat(70) + '\\n';
+    report += `${'AVERAGE'.padEnd(40)} | ${String(avg.accessibility).padStart(4)} | ${String(avg.bestPractices).padStart(4)} | ${String(avg.seo).padStart(3)}\\n\\n`;
 
     // Group issues by category
-    report += '=== TOP ISSUES TO FIX ===\n\n';
+    report += '=== TOP ISSUES TO FIX ===\\n\\n';
 
     const issueGroups = {};
     for (const issue of issues) {
@@ -116,7 +153,6 @@ async function main() {
                 title: issue.title,
                 description: issue.description,
                 pages: [],
-                avgScore: 0,
             };
         }
         issueGroups[issue.audit].pages.push(issue.page);
@@ -128,17 +164,18 @@ async function main() {
         .slice(0, 30);
 
     for (const [auditId, data] of sortedIssues) {
-        report += `[${auditId}] ${data.title}\n`;
-        report += `  Affected pages: ${data.pages.length}\n`;
-        report += `  Pages: ${data.pages.slice(0, 5).join(', ')}${data.pages.length > 5 ? '...' : ''}\n\n`;
+        report += `[${auditId}] ${data.title}\\n`;
+        report += `  Affected pages: ${data.pages.length}\\n`;
+        report += `  Pages: ${data.pages.slice(0, 5).join(', ')}${data.pages.length > 5 ? '...' : ''}\\n\\n`;
     }
 
     fs.writeFileSync('lighthouse-report.txt', report);
     fs.writeFileSync('lighthouse-issues.json', JSON.stringify(issues, null, 2));
 
     // Print summary to console
-    console.log('\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);
+    console.log('\\n' + report.split('=== TOP ISSUES TO FIX ===')[0]);
     console.log('Full report saved to lighthouse-report.txt');
 }
 
 main().catch(console.error);
+

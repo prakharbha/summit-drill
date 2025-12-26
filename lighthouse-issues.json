@@ -1,6 +1,6 @@
 [
   {
-    "page": "/project-gallery/charlestown",
+    "page": "/about-us/news",
     "audit": "heading-order",
     "title": "Heading elements are not in a sequentially-descending order",
     "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
@@ -24,18 +24,18 @@
           "node": {
             "type": "node",
             "lhId": "1-0-H3",
-            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
-            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,ARTICLE,0,A,1,H3",
+            "selector": "div.grid > article > a.flex > h3.text-lg",
             "boundingRect": {
-              "top": 1031,
-              "bottom": 1063,
-              "left": 48,
-              "right": 364,
-              "width": 316,
-              "height": 32
+              "top": 1126,
+              "bottom": 1182,
+              "left": 16,
+              "right": 396,
+              "width": 380,
+              "height": 56
             },
-            "snippet": "<h3 class=\"text-2xl font-bold text-[#2a1109] tracking-widest uppercase\">",
-            "nodeLabel": "PROJECT DETAILS",
+            "snippet": "<h3 class=\"text-lg font-bold mb-3 line-clamp-2 px-2 transition-colors text-white grou…\">",
+            "nodeLabel": "Introducing Summit's Drilling Field Supervisors",
             "explanation": "Fix any of the following:\n  Heading order invalid"
           }
         }
@@ -51,10 +51,10 @@
     }
   },
   {
-    "page": "/project-gallery/raleigh",
-    "audit": "heading-order",
-    "title": "Heading elements are not in a sequentially-descending order",
-    "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
+    "page": "/industries",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
     "score": 0,
     "displayValue": "",
     "details": {
@@ -74,38 +74,783 @@
         {
           "node": {
             "type": "node",
-            "lhId": "1-0-H3",
-            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
-            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "lhId": "1-0-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A,1,DIV,1,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-[#a4c5c5]",
             "boundingRect": {
-              "top": 1031,
-              "bottom": 1063,
-              "left": 48,
-              "right": 364,
-              "width": 316,
-              "height": 32
+              "top": 1311,
+              "bottom": 1351,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 40
             },
-            "snippet": "<h3 class=\"text-2xl font-bold text-[#2a1109] tracking-widest uppercase\">",
-            "nodeLabel": "PROJECT DETAILS",
-            "explanation": "Fix any of the following:\n  Heading order invalid"
+            "snippet": "<p class=\"text-[#a4c5c5] font-medium text-sm mb-2\">",
+            "nodeLabel": "Partnering with environmental professionals for over 40 years",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1023,
+                    "bottom": 1503,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/environmental\">",
+                  "nodeLabel": "Environmental\n\nPartnering with environmental professionals for over 40 years\n\nC…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A,1,DIV,2,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-white/80",
+            "boundingRect": {
+              "top": 1359,
+              "bottom": 1439,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 80
+            },
+            "snippet": "<p class=\"text-white/80 text-sm mb-4\">",
+            "nodeLabel": "Consultants in need of environmental contracting services recognize that Summit…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #e2e6e2, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1023,
+                    "bottom": 1503,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/environmental\">",
+                  "nodeLabel": "Environmental\n\nPartnering with environmental professionals for over 40 years\n\nC…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-4-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A,1,DIV,3,SPAN",
+            "selector": "div.grid > a.group > div.p-6 > span.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 1457,
+              "bottom": 1476,
+              "left": 40,
+              "right": 154,
+              "width": 114,
+              "height": 19
+            },
+            "snippet": "<span class=\"text-[#a4c5c5] font-bold italic group-hover:underline\">",
+            "nodeLabel": "Learn More >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1023,
+                    "bottom": 1503,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/environmental\">",
+                  "nodeLabel": "Environmental\n\nPartnering with environmental professionals for over 40 years\n\nC…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-5-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A,1,DIV,1,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 1823,
+              "bottom": 1863,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 40
+            },
+            "snippet": "<p class=\"text-[#a4c5c5] font-medium text-sm mb-2\">",
+            "nodeLabel": "We help you strengthen every project from the ground up",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-6-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1535,
+                    "bottom": 2015,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/geotechnical\">",
+                  "nodeLabel": "Geotechnical\n\nWe help you strengthen every project from the ground up\n\nFrom lar…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-7-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A,1,DIV,2,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-white/80",
+            "boundingRect": {
+              "top": 1871,
+              "bottom": 1951,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 80
+            },
+            "snippet": "<p class=\"text-white/80 text-sm mb-4\">",
+            "nodeLabel": "From large construction projects to solar carports, Summit's geotechnical servi…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #e2e6e2, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-6-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1535,
+                    "bottom": 2015,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/geotechnical\">",
+                  "nodeLabel": "Geotechnical\n\nWe help you strengthen every project from the ground up\n\nFrom lar…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-8-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A,1,DIV,3,SPAN",
+            "selector": "div.grid > a.group > div.p-6 > span.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 1969,
+              "bottom": 1988,
+              "left": 40,
+              "right": 154,
+              "width": 114,
+              "height": 19
+            },
+            "snippet": "<span class=\"text-[#a4c5c5] font-bold italic group-hover:underline\">",
+            "nodeLabel": "Learn More >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-6-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 1535,
+                    "bottom": 2015,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 480
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/geotechnical\">",
+                  "nodeLabel": "Geotechnical\n\nWe help you strengthen every project from the ground up\n\nFrom lar…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-9-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A,1,DIV,1,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 2335,
+              "bottom": 2355,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 20
+            },
+            "snippet": "<p class=\"text-[#a4c5c5] font-medium text-sm mb-2\">",
+            "nodeLabel": "Drilling that helps protect what matters most",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-10-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2047,
+                    "bottom": 2487,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 440
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/cathodic\">",
+                  "nodeLabel": "Cathodic\n\nDrilling that helps protect what matters most\n\nSummit delivers precis…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-11-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A,1,DIV,2,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-white/80",
+            "boundingRect": {
+              "top": 2363,
+              "bottom": 2423,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 60
+            },
+            "snippet": "<p class=\"text-white/80 text-sm mb-4\">",
+            "nodeLabel": "Summit delivers precise cathodic protection boreholes that safeguard pipelines,…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #e2e6e2, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-10-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2047,
+                    "bottom": 2487,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 440
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/cathodic\">",
+                  "nodeLabel": "Cathodic\n\nDrilling that helps protect what matters most\n\nSummit delivers precis…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-12-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A,1,DIV,3,SPAN",
+            "selector": "div.grid > a.group > div.p-6 > span.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 2441,
+              "bottom": 2460,
+              "left": 40,
+              "right": 154,
+              "width": 114,
+              "height": 19
+            },
+            "snippet": "<span class=\"text-[#a4c5c5] font-bold italic group-hover:underline\">",
+            "nodeLabel": "Learn More >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-10-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2047,
+                    "bottom": 2487,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 440
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/cathodic\">",
+                  "nodeLabel": "Cathodic\n\nDrilling that helps protect what matters most\n\nSummit delivers precis…"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-13-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A,1,DIV,1,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 2807,
+              "bottom": 2847,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 40
+            },
+            "snippet": "<p class=\"text-[#a4c5c5] font-medium text-sm mb-2\">",
+            "nodeLabel": "Core insights that drive smarter, more profitable excavations",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-14-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2519,
+                    "bottom": 2979,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 460
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/aggregate\">",
+                  "nodeLabel": "Aggregate\n\nCore insights that drive smarter, more profitable excavations\n\nFrom …"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-15-P",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A,1,DIV,2,P",
+            "selector": "div.grid > a.group > div.p-6 > p.text-white/80",
+            "boundingRect": {
+              "top": 2855,
+              "bottom": 2915,
+              "left": 40,
+              "right": 372,
+              "width": 332,
+              "height": 60
+            },
+            "snippet": "<p class=\"text-white/80 text-sm mb-4\">",
+            "nodeLabel": "From coring accuracy to equipment uptime, Summit provides the data and daily pr…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #e2e6e2, background color: #6e826d, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-14-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2519,
+                    "bottom": 2979,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 460
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/aggregate\">",
+                  "nodeLabel": "Aggregate\n\nCore insights that drive smarter, more profitable excavations\n\nFrom …"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-16-SPAN",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A,1,DIV,3,SPAN",
+            "selector": "div.grid > a.group > div.p-6 > span.text-[#a4c5c5]",
+            "boundingRect": {
+              "top": 2933,
+              "bottom": 2952,
+              "left": 40,
+              "right": 154,
+              "width": 114,
+              "height": 19
+            },
+            "snippet": "<span class=\"text-[#a4c5c5] font-bold italic group-hover:underline\">",
+            "nodeLabel": "Learn More >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #a4c5c5, background color: #6e826d, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-14-A",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,A",
+                  "selector": "section.py-20 > div.container > div.grid > a.group",
+                  "boundingRect": {
+                    "top": 2519,
+                    "bottom": 2979,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 460
+                  },
+                  "snippet": "<a class=\"group bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-…\" href=\"/industries/aggregate\">",
+                  "nodeLabel": "Aggregate\n\nCore insights that drive smarter, more profitable excavations\n\nFrom …"
+                }
+              },
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-2-SECTION",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION",
+                  "selector": "body.antialiased > main > section.py-20",
+                  "boundingRect": {
+                    "top": 823,
+                    "bottom": 3059,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 2236
+                  },
+                  "snippet": "<section class=\"py-20 bg-[#5e745d] text-white\">",
+                  "nodeLabel": "Explore Our Industry Expertise\nEnvironmental\n\nPartnering with environmental pro…"
+                }
+              }
+            ]
           }
         }
       ],
       "debugData": {
         "type": "debugdata",
-        "impact": "moderate",
+        "impact": "serious",
         "tags": [
-          "cat.semantics",
-          "best-practice"
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
         ]
       }
     }
   },
   {
-    "page": "/project-gallery/brick-nj",
-    "audit": "heading-order",
-    "title": "Heading elements are not in a sequentially-descending order",
-    "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. [Learn more about heading order](https://dequeuniversity.com/rules/axe/4.10/heading-order).",
+    "page": "/project-gallery/featured",
+    "audit": "errors-in-console",
+    "title": "Browser errors were logged to the console",
+    "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "sourceLocation",
+          "valueType": "source-location",
+          "label": "Source"
+        },
+        {
+          "key": "description",
+          "valueType": "code",
+          "label": "Description"
+        }
+      ],
+      "items": [
+        {
+          "source": "network",
+          "description": "Failed to load resource: the server responded with a status of 404 ()",
+          "sourceLocation": {
+            "type": "source-location",
+            "url": "https://summit-drill.vercel.app/project-gallery/airport-earth-work?_rsc=158un",
+            "urlProvider": "network",
+            "line": 0,
+            "column": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "page": "/project-gallery/featured",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
     "score": 0,
     "displayValue": "",
     "details": {
@@ -125,29 +870,290 @@
         {
           "node": {
             "type": "node",
-            "lhId": "1-0-H3",
-            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H3",
-            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h3.text-2xl",
+            "lhId": "1-0-A",
+            "path": "2,HTML,1,BODY,4,MAIN,0,SECTION,1,DIV,0,DIV,4,DIV,0,A",
+            "selector": "div.container > div.text-white > div.mt-6 > a.inline-flex",
             "boundingRect": {
-              "top": 1031,
-              "bottom": 1063,
-              "left": 48,
-              "right": 364,
-              "width": 316,
-              "height": 32
+              "top": 695,
+              "bottom": 743,
+              "left": 16,
+              "right": 277,
+              "width": 261,
+              "height": 48
             },
-            "snippet": "<h3 class=\"text-2xl font-bold text-[#2a1109] tracking-widest uppercase\">",
-            "nodeLabel": "PROJECT DETAILS",
-            "explanation": "Fix any of the following:\n  Heading order invalid"
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offse…\" href=\"/project-gallery/airport-earth-work\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-1-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,0,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 1460,
+              "bottom": 1496,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,1,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 2013,
+              "bottom": 2049,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,2,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 2566,
+              "bottom": 2602,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-4-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,3,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 3119,
+              "bottom": 3155,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-5-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,4,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 3672,
+              "bottom": 3708,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-6-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,5,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 4225,
+              "bottom": 4261,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-7-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,6,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 4778,
+              "bottom": 4814,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-8-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,7,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 5331,
+              "bottom": 5367,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-9-A",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,1,DIV,8,DIV,1,DIV,2,A",
+            "selector": "div.grid > div.flex > div.space-y-4 > a.inline-flex",
+            "boundingRect": {
+              "top": 5884,
+              "bottom": 5920,
+              "left": 16,
+              "right": 218,
+              "width": 202,
+              "height": 36
+            },
+            "snippet": "<a class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ri…\" href=\"#\">",
+            "nodeLabel": "Read the Full Story >>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #ffffff, background color: #6b8e4e, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
           }
         }
       ],
       "debugData": {
         "type": "debugdata",
-        "impact": "moderate",
+        "impact": "serious",
         "tags": [
-          "cat.semantics",
-          "best-practice"
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    }
+  },
+  {
+    "page": "/project-gallery/princeton",
+    "audit": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn how to provide sufficient color contrast](https://dequeuniversity.com/rules/axe/4.10/color-contrast).",
+    "score": 0,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-H2",
+            "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV,0,DIV,1,H2",
+            "selector": "div.lg:col-span-1 > div.bg-[#78a8a8] > div.text-center > h2.font-bold",
+            "boundingRect": {
+              "top": 1031,
+              "bottom": 1055,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 24
+            },
+            "snippet": "<h2 class=\"font-bold text-[#1e3a8a] mb-4\">",
+            "nodeLabel": "Project Details",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.92 (foreground color: #1e3a8a, background color: #78a8a8, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-DIV",
+                  "path": "2,HTML,1,BODY,4,MAIN,2,SECTION,0,DIV,0,DIV,0,DIV,0,DIV",
+                  "selector": "div.container > div.grid > div.lg:col-span-1 > div.bg-[#78a8a8]",
+                  "boundingRect": {
+                    "top": 887,
+                    "bottom": 1531,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 644
+                  },
+                  "snippet": "<div class=\"bg-[#78a8a8] p-8 rounded-lg shadow-xl\">",
+                  "nodeLabel": "Project Details\nSite Type:\nCollegiate athletic facility (artificial turf)\nTechn…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
         ]
       }
     }
