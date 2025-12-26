@@ -93,9 +93,11 @@ async function main() {
     report += `${'AVERAGE'.padEnd(52)}| ${String(avg.a11y).padStart(4)} | ${String(avg.bp).padStart(3)} | ${String(avg.seo).padStart(3)}\n`;
 
     fs.writeFileSync('news-audit-report.txt', report);
+    fs.writeFileSync('news-audit-results.json', JSON.stringify(results, null, 2));
 
     console.log('\n' + report);
     console.log('Full report saved to news-audit-report.txt');
+    console.log('Detailed JSON saved to news-audit-results.json');
 }
 
 main().catch(console.error);
