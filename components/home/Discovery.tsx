@@ -14,12 +14,25 @@ const Discovery = () => {
       <section className="relative min-h-[800px] h-auto lg:h-[900px] w-full overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile: Show poster image only */}
+          <div className="block md:hidden absolute inset-0">
+            <Image
+              src="/images/drilling-hero.webp"
+              alt="Summit Drilling operations"
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+            />
+          </div>
+          {/* Desktop: Show video */}
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Background video showing Summit Drilling operations"
             poster="/images/drilling-hero.webp"
           >

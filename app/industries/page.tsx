@@ -98,6 +98,7 @@ export default function IndustriesPage() {
                       src={industry.image}
                       alt={industry.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

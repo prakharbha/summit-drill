@@ -73,6 +73,7 @@ export function PageHeroBanner({
                         className="object-cover"
                         priority
                         fetchPriority="high"
+                        sizes="100vw"
                         style={{ objectFit: "cover" }}
                         unoptimized={backgroundImage.endsWith('.gif')}
                     />

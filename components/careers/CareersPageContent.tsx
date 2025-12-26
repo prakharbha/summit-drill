@@ -108,7 +108,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                                    <Image src="/images/careers/benefits.webp" alt="Benefits" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                                    <Image src="/images/careers/benefits.webp" alt="Benefits" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">More than great benefits – it's a great place to belong</h3>
@@ -140,7 +140,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                                    <Image src="/images/careers/path.webp" alt="Career Path" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                                    <Image src="/images/careers/path.webp" alt="Career Path" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">A path to growth</h3>
@@ -172,7 +172,7 @@ export default function CareersPageContent() {
                                     </div>
                                 </div>
                                 <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
-                                    <Image src="/images/careers/positions.webp" alt="Positions" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                                    <Image src="/images/careers/positions.webp" alt="Positions" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">Company-wide Opportunities</h3>
