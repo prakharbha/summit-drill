@@ -30,9 +30,9 @@ const TEAM_MEMBERS = [
     { id: 21, name: "Mike Wilson", title: "Drilling Field Supervisor", image: "/images/team/mike-wilson-drilling-field-supervisor.webp" },
     { id: 22, name: "Richey Lamire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
     { id: 23, name: "Zach Thompson", title: "Project Manager", image: "/images/team/zach-thompson-drilling-field-super.webp" },
-    { id: 24, name: "Christian Tormen", title: "Driller", image: "/images/team/christian-tormen-driller.webp" },
-    { id: 25, name: "Matt Jelinski", title: "Driller", image: "/images/team/matt-jelinski-driller.webp" },
-    { id: 26, name: "Nick King", title: "Project Manager", image: "/images/team/nick-king.webp" },
+    { id: 24, name: "Nick King", title: "Project Manager", image: "/images/team/nick-king.webp" },
+    { id: 25, name: "Christian Tormen", title: "Driller", image: "/images/team/christian-tormen-driller.webp" },
+    { id: 26, name: "Matt Jelinski", title: "Driller", image: "/images/team/matt-jelinski-driller.webp" },
 ];
 
 export default function TeamCarousel() {
