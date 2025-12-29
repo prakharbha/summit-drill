@@ -45,8 +45,9 @@ const HealthSafety = () => {
               How? We blend best practice trainings, PPE use, equipment maintenance and Sr. team mentors with the industry's most hands-on approach. Our H&amp;S leaders are out in the field to guide where the work is being done.
             </p>
 
-            <GreenButton href="/health-safety" className="mt-[15px] w-full md:w-auto whitespace-normal md:whitespace-nowrap text-center">
-              Learn more about our H&amp;S culture and leadership &gt;&gt;
+            <GreenButton href="/health-safety" className="mt-[15px] w-full md:w-auto text-center">
+              <span className="md:hidden">Health &amp; Safety &gt;&gt;</span>
+              <span className="hidden md:inline">Learn more about our H&amp;S culture and leadership &gt;&gt;</span>
             </GreenButton>
           </motion.div>
         </div>

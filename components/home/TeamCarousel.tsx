@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -38,7 +38,17 @@ export default function TeamCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const [direction, setDirection] = useState(1); // 1 for next, -1 for prev
-    const spacing = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 220;
+    const [spacing, setSpacing] = useState(220); // Default to desktop value for SSR
+
+    // Set correct spacing after mount to avoid hydration mismatch
+    useEffect(() => {
+        const updateSpacing = () => {
+            setSpacing(window.innerWidth < 768 ? 140 : 220);
+        };
+        updateSpacing();
+        window.addEventListener('resize', updateSpacing);
+        return () => window.removeEventListener('resize', updateSpacing);
+    }, []);
 
     const nextSlide = () => {
         setDirection(1);
@@ -80,13 +90,13 @@ export default function TeamCarousel() {
     };
 
     return (
-        <section className="relative bg-[#377d7e] py-4 z-20 -mt-1 overflow-hidden">
+        <section className="relative bg-[#377d7e] py-2 md:py-4 z-20 -mt-1 overflow-hidden">
             <div className="w-full text-center">
                 <SectionHeading variant="white">
                     We Are Responsible for Your Experience
                 </SectionHeading>
 
-                <div className="relative flex items-center justify-center h-[400px]">
+                <div className="relative flex items-center justify-center h-[280px] md:h-[400px]">
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}

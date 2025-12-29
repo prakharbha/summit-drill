@@ -27,7 +27,7 @@ const OPERATIONS = [
     { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
     { name: "Dustin Lutz", title: "General Manager", email: "DLutz@summitdrilling.com", image: "/images/contact/dustin-lutz.webp" },
     { name: "Glenn Brennan", title: "Project Manager, Geophysicist", email: "GBrennan@summitdrilling.com", image: "/images/contact/glenn-brennan.webp" },
-    { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king-avatar.webp" },
+    { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
 ];
 
 const HEALTH_SAFETY = [

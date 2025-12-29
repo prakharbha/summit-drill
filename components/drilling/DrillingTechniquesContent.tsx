@@ -75,7 +75,7 @@ export default function DrillingTechniquesContent() {
 
                                 <div className="pt-4">
                                     <Button asChild className="bg-[#A04020] hover:bg-[#8a361b] text-white font-bold text-lg px-8 py-6 rounded shadow-lg transition-transform hover:scale-105">
-                                        <Link href="/contact">
+                                        <Link href="/resources/start-a-project">
                                             Submit a Proposal Online &gt;&gt;
                                         </Link>
                                     </Button>

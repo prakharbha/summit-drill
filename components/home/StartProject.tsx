@@ -10,7 +10,7 @@ import { SectionDivider } from "@/components/ui/SectionDivider";
 const StartProject = () => {
   return (
     <section
-      className="relative bg-[#913c20] text-white overflow-hidden pt-12 pb-20 lg:pt-16 lg:pb-24 bg-no-repeat"
+      className="relative bg-[#913c20] text-white overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-24 bg-no-repeat"
       style={{
         backgroundImage: 'url(/images/start-bg.webp)',
         backgroundPosition: 'right center',
@@ -55,10 +55,10 @@ const StartProject = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             {/* Right side area for background image visibility */}
-            <div className="relative h-48 lg:h-[280px] w-full invisible">
+            <div className="relative h-[280px] w-full invisible">
               {/* Content hidden to reveal background */}
             </div>
           </motion.div>

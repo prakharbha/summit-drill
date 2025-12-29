@@ -39,7 +39,7 @@ const OurPeople = () => {
     {
       name: "Nick King",
       role: "Project Manager",
-      image: "/images/contact/nick-king-avatar.webp",
+      image: "/images/contact/nick-king.webp",
     },
   ];
 
@@ -71,16 +71,16 @@ const OurPeople = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6 md:mb-10 px-4"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
             We Are Responsible for Your Experience
           </h2>
         </motion.div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Carousel */}
-          <div className="relative h-80 flex items-center justify-center overflow-hidden">
+          <div className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="sync">
               {getVisibleMembers().map((member, idx) => (
                 <motion.div
@@ -115,17 +115,34 @@ const OurPeople = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Below carousel on mobile, sides on desktop */}
+          <div className="flex justify-center gap-4 mt-4 md:hidden">
+            <button
+              onClick={prevSlide}
+              className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
+              aria-label="Previous"
+            >
+              <HiChevronLeft className="w-6 h-6 text-green-800" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
+              aria-label="Next"
+            >
+              <HiChevronRight className="w-6 h-6 text-green-800" />
+            </button>
+          </div>
+          {/* Desktop arrows on sides */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-20"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-20"
             aria-label="Previous"
           >
             <HiChevronLeft className="w-6 h-6 text-green-800" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-20"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-20"
             aria-label="Next"
           >
             <HiChevronRight className="w-6 h-6 text-green-800" />
