@@ -315,7 +315,7 @@ export function getContactThankYouTemplate(data: {
         </p>
 
         <p style="margin: 0 0 36px 0; font-size: 16px; line-height: 1.85; color: ${COLORS.text};">
-          One of our team members will review your message and get back to you within <strong style="color: ${COLORS.navy};">1-2 business days</strong>.
+          One of our team members will review your message and get back to you soon.
         </p>
 
         <!-- What You Can Expect Card -->
@@ -588,7 +588,7 @@ export function getProjectRequestThankYouTemplate(data: {
         </p>
 
         <p style="margin: 0 0 36px 0; font-size: 16px; line-height: 1.85; color: ${COLORS.text};">
-          A Summit representative will contact you within <strong style="color: ${COLORS.navy};">1 business day</strong> to discuss your project in detail and provide a customized solution.
+          A Summit representative will contact you soon to discuss your project in detail and provide a customized solution.
         </p>
 
         ${servicesList ? `
