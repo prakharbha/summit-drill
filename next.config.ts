@@ -73,6 +73,172 @@ const nextConfig: NextConfig = {
       { source: '/services/ust-ast-removal', destination: '/services/remediation-services', permanent: true },
       { source: '/services/soil-excavation-services', destination: '/services/earthwork-remediation', permanent: true },
       { source: '/services/equipment-roster', destination: '/services/drilling-techniques', permanent: true },
+
+      // ============================================
+      // Saedacco.com → Summitdrilling.com Redirects
+      // ============================================
+      // Homepage redirects
+      {
+        source: '/',
+        has: [{ type: 'host', value: 'saedacco.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      {
+        source: '/',
+        has: [{ type: 'host', value: 'www.saedacco.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      {
+        source: '/homepage',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      // Drilling services
+      {
+        source: '/drilling',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/services/drilling-techniques',
+        permanent: true,
+      },
+      {
+        source: '/roto-sonic',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/services/sonic-drilling',
+        permanent: true,
+      },
+      {
+        source: '/direct-push',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/services/direct-push',
+        permanent: true,
+      },
+      // Remediation
+      {
+        source: '/remediation',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/services/remediation-services',
+        permanent: true,
+      },
+      // Safety
+      {
+        source: '/safety',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/health-safety',
+        permanent: true,
+      },
+      // Contact
+      {
+        source: '/contact-us',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/contact',
+        permanent: true,
+      },
+      // Careers/Employment
+      {
+        source: '/employment',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/careers',
+        permanent: true,
+      },
+      {
+        source: '/careers',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/careers',
+        permanent: true,
+      },
+      {
+        source: '/saedacco-job-application',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/careers',
+        permanent: true,
+      },
+      // Proposals
+      {
+        source: '/proposal',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/resources/start-a-project',
+        permanent: true,
+      },
+      {
+        source: '/proposalold',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/resources/start-a-project',
+        permanent: true,
+      },
+      // Clients/Testimonials
+      {
+        source: '/clients',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us',
+        permanent: true,
+      },
+      {
+        source: '/client-testimonials',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us',
+        permanent: true,
+      },
+      {
+        source: '/client-test-page',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us',
+        permanent: true,
+      },
+      {
+        source: '/clients-slider-page',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us',
+        permanent: true,
+      },
+      // News
+      {
+        source: '/news-events',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us/news',
+        permanent: true,
+      },
+      {
+        source: '/blog-1',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/about-us/news',
+        permanent: true,
+      },
+      // Survey/Contact fallback
+      {
+        source: '/survey',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/contact',
+        permanent: true,
+      },
+      // Thank you / Summit
+      {
+        source: '/thank-you',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      {
+        source: '/summit',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
+      // Catch-all for any other saedacco.com pages
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '(www\\.)?saedacco\\.com' }],
+        destination: 'https://summitdrilling.com/',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
