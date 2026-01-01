@@ -369,7 +369,6 @@ const Header = () => {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed top-0 left-0 right-0 bottom-0 z-[100] bg-[#252a54] overflow-y-auto overflow-x-hidden min-h-screen"
-            style={{ height: '100vh', width: '100vw' }}
           >
             {/* Mobile Header with Close Button */}
             <div className="bg-[#252a54] w-full sticky top-0 z-10">
