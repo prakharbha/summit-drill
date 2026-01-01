@@ -9,8 +9,8 @@ type SiteMetadata = Record<string, {
 }>;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    // Use environment variable for base URL, fallback to the verified Vercel domain
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://summit-drill.vercel.app'
+    // Use environment variable for base URL, fallback to production domain
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://summitdrilling.com'
 
     // Get all routes from our centralized metadata
     const routes = Object.keys(siteMetadata as SiteMetadata).map((route) => {
