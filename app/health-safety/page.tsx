@@ -69,7 +69,7 @@ export default function HealthSafetyPage() {
                   {/* Mountain Logo and Header */}
                   <div className="mb-6 pb-6 border-b-2 border-[#2a1109]">
                     <Image
-                      src="/images/rust-mountain.webp"
+                      src="/images/dark-mountain.webp"
                       alt="Summit Mountain"
                       width={200}
                       height={100}
