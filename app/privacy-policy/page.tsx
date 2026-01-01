@@ -56,9 +56,26 @@ export default function PrivacyPolicyPage() {
                                 </section>
 
                                 <section>
-                                    <h2 className="text-2xl font-bold mb-4">Cookies</h2>
+                                    <h2 className="text-2xl font-bold mb-4">Cookies and Analytics</h2>
+                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                        We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors come from.
+                                    </p>
+                                    <h3 className="text-xl font-semibold mb-2">Google Analytics</h3>
+                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                        We use Google Analytics 4 (GA4) to understand how visitors interact with our website. This service is only activated after you provide consent through our cookie banner. When enabled, GA4 may collect:
+                                    </p>
+                                    <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                                        <li>Pages visited and time spent on each page</li>
+                                        <li>Referring website or source</li>
+                                        <li>Browser and device information</li>
+                                        <li>Approximate geographic location (anonymized IP)</li>
+                                    </ul>
+                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                        You can opt out of analytics tracking by declining cookies when prompted, or by adjusting your browser settings.
+                                    </p>
+                                    <h3 className="text-xl font-semibold mb-2">Cloudflare Turnstile</h3>
                                     <p className="text-gray-700 leading-relaxed">
-                                        We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors come from. You can control cookie settings through your browser preferences. By using our website, you consent to our use of cookies in accordance with this policy.
+                                        Our forms are protected by Cloudflare Turnstile, a privacy-preserving CAPTCHA alternative. Turnstile does not use cookies and does not collect personal information for advertising purposes. It may process the following data to verify you are not a bot: IP address, browser information, and interaction patterns. For more information, see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-[#377d7e] hover:underline">Cloudflare&apos;s Privacy Policy</a>.
                                     </p>
                                 </section>
 

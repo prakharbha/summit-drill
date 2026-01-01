@@ -72,7 +72,7 @@ const nextConfig: NextConfig = {
       { source: '/services/shoreline-stabilization-services', destination: '/services/remediation-services', permanent: true },
       { source: '/services/ust-ast-removal', destination: '/services/remediation-services', permanent: true },
       { source: '/services/soil-excavation-services', destination: '/services/earthwork-remediation', permanent: true },
-      { source: '/services/equipment-roster', destination: '/about-us', permanent: true },
+      { source: '/services/equipment-roster', destination: '/services/drilling-techniques', permanent: true },
     ];
   },
   async rewrites() {

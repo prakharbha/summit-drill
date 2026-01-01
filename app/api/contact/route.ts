@@ -35,7 +35,7 @@ async function sendMailgunEmail(to: string, subject: string, html: string, from:
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, address, city, state, zip, cell, notes, newsletter } = body;
+    const { name, email, phone, company, address, city, state, zip, cell, notes, newsletter, turnstileToken } = body;
 
     // Validate required fields
     if (!name || !email) {
@@ -50,6 +50,35 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Invalid email address" },
+        { status: 400 }
+      );
+    }
+
+    // Verify Turnstile token
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecretKey && turnstileToken) {
+      const turnstileResponse = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: turnstileSecretKey,
+            response: turnstileToken,
+          }),
+        }
+      );
+      const turnstileResult = await turnstileResponse.json();
+      if (!turnstileResult.success) {
+        console.error("Turnstile verification failed:", turnstileResult);
+        return NextResponse.json(
+          { error: "Bot verification failed. Please try again." },
+          { status: 400 }
+        );
+      }
+    } else if (turnstileSecretKey && !turnstileToken) {
+      return NextResponse.json(
+        { error: "Bot verification required" },
         { status: 400 }
       );
     }

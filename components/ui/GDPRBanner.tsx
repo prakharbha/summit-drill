@@ -21,11 +21,19 @@ export default function GDPRBanner() {
 
     const handleAccept = () => {
         localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+        // Dispatch custom event for Google Analytics consent update
+        window.dispatchEvent(new CustomEvent("cookieConsentChange", {
+            detail: { consent: "accepted" }
+        }));
         setShowBanner(false);
     };
 
     const handleDecline = () => {
         localStorage.setItem(COOKIE_CONSENT_KEY, "declined");
+        // Dispatch custom event for Google Analytics consent update
+        window.dispatchEvent(new CustomEvent("cookieConsentChange", {
+            detail: { consent: "declined" }
+        }));
         setShowBanner(false);
     };
 

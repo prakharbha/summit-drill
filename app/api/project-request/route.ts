@@ -114,6 +114,36 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // Verify Turnstile token
+        const turnstileToken = formData.get("turnstileToken") as string;
+        const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+        if (turnstileSecretKey && turnstileToken) {
+            const turnstileResponse = await fetch(
+                "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams({
+                        secret: turnstileSecretKey,
+                        response: turnstileToken,
+                    }),
+                }
+            );
+            const turnstileResult = await turnstileResponse.json();
+            if (!turnstileResult.success) {
+                console.error("Turnstile verification failed:", turnstileResult);
+                return NextResponse.json(
+                    { error: "Bot verification failed. Please try again." },
+                    { status: 400 }
+                );
+            }
+        } else if (turnstileSecretKey && !turnstileToken) {
+            return NextResponse.json(
+                { error: "Bot verification required" },
+                { status: 400 }
+            );
+        }
+
         // Check if Mailgun is configured
         if (!MAILGUN_API_KEY || !MAILGUN_DOMAIN) {
             console.error("Mailgun not configured");

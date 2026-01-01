@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Lato, Work_Sans } from "next/font/google";
 import "./globals.css";
 import GDPRBanner from "@/components/ui/GDPRBanner";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/seo";
 
 const lato = Lato({
@@ -131,6 +132,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <GoogleAnalytics />
         {children}
         <GDPRBanner />
       </body>

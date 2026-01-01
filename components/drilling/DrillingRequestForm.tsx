@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CloudUpload, X, FileText, Image as ImageIcon } from "lucide-react";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import Turnstile from "@/components/ui/Turnstile";
 
 // Services organized by category
 const serviceCategories = {
@@ -76,6 +77,7 @@ const DrillingRequestForm = () => {
     const [files, setFiles] = useState<File[]>([]);
     const [dragActive, setDragActive] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
     const [formData, setFormData] = useState<FormData>({
         services: [],
@@ -207,6 +209,11 @@ const DrillingRequestForm = () => {
             return;
         }
 
+        if (!turnstileToken) {
+            setSubmitStatus({ type: "error", message: "Please complete the verification." });
+            return;
+        }
+
         setIsSubmitting(true);
         setSubmitStatus(null);
 
@@ -230,6 +237,9 @@ const DrillingRequestForm = () => {
 
             // Add files
             files.forEach(file => submitData.append("files", file));
+
+            // Add Turnstile token
+            submitData.append("turnstileToken", turnstileToken);
 
             const response = await fetch("/api/project-request", {
                 method: "POST",
@@ -257,6 +267,7 @@ const DrillingRequestForm = () => {
                 });
                 setFiles([]);
                 setCurrentStep(1);
+                setTurnstileToken(null);
             } else {
                 setSubmitStatus({ type: "error", message: data.error || "Failed to submit request" });
             }
@@ -636,6 +647,15 @@ const DrillingRequestForm = () => {
                                 </div>
                             </div>
 
+                            {/* Turnstile CAPTCHA */}
+                            <div className="flex justify-center mt-6">
+                                <Turnstile
+                                    onVerify={(token) => setTurnstileToken(token)}
+                                    onExpire={() => setTurnstileToken(null)}
+                                    theme="dark"
+                                />
+                            </div>
+
                             {/* Navigation Buttons */}
                             <div className="flex justify-between mt-8">
                                 <Button
@@ -650,7 +670,7 @@ const DrillingRequestForm = () => {
                                 {/* Submit Button */}
                                 <Button
                                     onClick={handleSubmit}
-                                    disabled={isSubmitting}
+                                    disabled={isSubmitting || !turnstileToken}
                                     size="lg"
                                     className="bg-[#1a365d] hover:bg-[#132845] text-white font-bold italic text-lg px-10 py-6 rounded-lg shadow-lg disabled:opacity-50"
                                 >

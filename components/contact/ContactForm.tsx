@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import Turnstile from "@/components/ui/Turnstile";
 
 interface FormData {
     name: string;
@@ -37,6 +38,7 @@ const ContactForm = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { id, value } = e.target;
@@ -49,6 +51,12 @@ const ContactForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!turnstileToken) {
+            setSubmitStatus({ type: "error", message: "Please complete the verification." });
+            return;
+        }
+
         setIsSubmitting(true);
         setSubmitStatus(null);
 
@@ -56,7 +64,7 @@ const ContactForm = () => {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, turnstileToken }),
             });
 
             const data = await response.json();
@@ -77,6 +85,7 @@ const ContactForm = () => {
                     notes: "",
                     newsletter: true,
                 });
+                setTurnstileToken(null);
             } else {
                 setSubmitStatus({ type: "error", message: data.error || "Failed to send message" });
             }
@@ -230,10 +239,19 @@ const ContactForm = () => {
                                 </div>
                             )}
 
+                            {/* Turnstile CAPTCHA */}
+                            <div className="pt-4">
+                                <Turnstile
+                                    onVerify={(token) => setTurnstileToken(token)}
+                                    onExpire={() => setTurnstileToken(null)}
+                                    theme="dark"
+                                />
+                            </div>
+
                             <div className="pt-8 flex justify-end">
                                 <Button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={isSubmitting || !turnstileToken}
                                     className="bg-[#1A365D] hover:bg-[#152c4d] text-white font-bold text-lg px-12 py-6 shadow-lg rounded-md disabled:opacity-50"
                                 >
                                     {isSubmitting ? "Sending..." : "Submit"}
