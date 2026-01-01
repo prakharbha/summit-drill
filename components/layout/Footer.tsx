@@ -55,9 +55,6 @@ const Footer = ({ hasDividerAbove = false }: FooterProps) => {
           <a href="tel:+18002426648" className="hover:text-sky-300 transition-colors">
             800-242-6648
           </a>
-          <Link href="/sitemap.xml" className="hover:text-sky-300 transition-colors">
-            Sitemap
-          </Link>
         </div>
 
         {/* Copyright */}
