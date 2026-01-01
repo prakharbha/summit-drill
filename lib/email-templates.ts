@@ -6,21 +6,21 @@
 
 // Brand colors from existing template
 const COLORS = {
-    navy: '#113361',
-    navyLight: '#1a4a7a',
-    blue: '#0e5e9d',
-    accent: '#40b3de',
-    text: '#444444',
-    textDark: '#333333',
-    white: '#ffffff',
-    bgLight: '#f5f9fc',
+  navy: '#113361',
+  navyLight: '#1a4a7a',
+  blue: '#0e5e9d',
+  accent: '#40b3de',
+  text: '#444444',
+  textDark: '#333333',
+  white: '#ffffff',
+  bgLight: '#f5f9fc',
 };
 
 /**
  * Common header used across all email templates
  */
 function getEmailHeader(): string {
-    return `
+  return `
     <!-- Header with Logo -->
     <tr>
       <td style="background-color: ${COLORS.navy}; background: linear-gradient(135deg, ${COLORS.navy} 0%, ${COLORS.blue} 50%, ${COLORS.navyLight} 100%); padding: 0;">
@@ -51,7 +51,7 @@ function getEmailHeader(): string {
  * Common footer used across all email templates
  */
 function getEmailFooter(): string {
-    return `
+  return `
     <!-- Footer -->
     <tr>
       <td style="background-color: ${COLORS.navy}; background: linear-gradient(135deg, ${COLORS.navy} 0%, #0a2444 100%); padding: 36px 52px;">
@@ -82,14 +82,6 @@ function getEmailFooter(): string {
               <p style="margin: 0 0 6px 0; font-size: 12px;">
                 <a href="tel:+18002426648" style="color: rgba(255,255,255,0.6); text-decoration: none;">
                   Phone: 800-242-6648
-                </a>
-              </p>
-
-              <!-- Email -->
-              <p style="margin: 0 0 16px 0; font-size: 12px;">
-                <a href="mailto:info@summitdrilling.com" style="color: ${COLORS.accent}; text-decoration: none;">
-                  info@summitdrilling.com
-                </a>
               </p>
 
               <!-- Social Media Links -->
@@ -117,7 +109,7 @@ function getEmailFooter(): string {
  * Email wrapper template
  */
 function wrapEmailContent(content: string): string {
-    return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,28 +161,28 @@ function wrapEmailContent(content: string): string {
  * Generate admin notification email for contact form
  */
 export function getContactAdminTemplate(data: {
-    name: string;
-    email: string;
-    company?: string;
-    phone?: string;
-    cell?: string;
-    address?: string;
-    city?: string;
-    state?: string;
-    zip?: string;
-    notes?: string;
-    newsletter?: boolean;
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  cell?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  notes?: string;
+  newsletter?: boolean;
 }): string {
-    const { name, email, company, phone, cell, address, city, state, zip, notes, newsletter } = data;
-    const timestamp = new Date().toLocaleString('en-US', {
-        dateStyle: 'full',
-        timeStyle: 'short'
-    });
+  const { name, email, company, phone, cell, address, city, state, zip, notes, newsletter } = data;
+  const timestamp = new Date().toLocaleString('en-US', {
+    dateStyle: 'full',
+    timeStyle: 'short'
+  });
 
-    const locationParts = [address, city, state, zip].filter(Boolean);
-    const location = locationParts.length > 0 ? locationParts.join(', ') : null;
+  const locationParts = [address, city, state, zip].filter(Boolean);
+  const location = locationParts.length > 0 ? locationParts.join(', ') : null;
 
-    const content = `
+  const content = `
     <!-- Content Area -->
     <tr>
       <td class="content-padding" style="padding: 48px 52px;">
@@ -295,19 +287,19 @@ export function getContactAdminTemplate(data: {
     </tr>
   `;
 
-    return wrapEmailContent(content);
+  return wrapEmailContent(content);
 }
 
 /**
  * Generate thank you email for contact form submission
  */
 export function getContactThankYouTemplate(data: {
-    name: string;
-    email: string;
+  name: string;
+  email: string;
 }): string {
-    const firstName = data.name.split(' ')[0];
+  const firstName = data.name.split(' ')[0];
 
-    const content = `
+  const content = `
     <!-- Content Area -->
     <tr>
       <td class="content-padding" style="padding: 48px 52px;">
@@ -387,51 +379,51 @@ export function getContactThankYouTemplate(data: {
     </tr>
   `;
 
-    return wrapEmailContent(content);
+  return wrapEmailContent(content);
 }
 
 /**
  * Generate admin notification email for project request
  */
 export function getProjectRequestAdminTemplate(data: {
-    name: string;
-    email: string;
-    company?: string;
-    phone?: string;
-    cell?: string;
-    address?: string;
-    city?: string;
-    state?: string;
-    zip?: string;
-    startDate?: string;
-    services: string[];
-    additionalNotes?: string;
-    attachmentCount?: number;
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  cell?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  startDate?: string;
+  services: string[];
+  additionalNotes?: string;
+  attachmentCount?: number;
 }): string {
-    const {
-        name, email, company, phone, cell, address, city, state, zip,
-        startDate, services, additionalNotes, attachmentCount
-    } = data;
+  const {
+    name, email, company, phone, cell, address, city, state, zip,
+    startDate, services, additionalNotes, attachmentCount
+  } = data;
 
-    const timestamp = new Date().toLocaleString('en-US', {
-        dateStyle: 'full',
-        timeStyle: 'short'
-    });
+  const timestamp = new Date().toLocaleString('en-US', {
+    dateStyle: 'full',
+    timeStyle: 'short'
+  });
 
-    const locationParts = [address, city, state, zip].filter(Boolean);
-    const location = locationParts.length > 0 ? locationParts.join(', ') : null;
+  const locationParts = [address, city, state, zip].filter(Boolean);
+  const location = locationParts.length > 0 ? locationParts.join(', ') : null;
 
-    const servicesList = services && services.length > 0
-        ? services.map(s => `
+  const servicesList = services && services.length > 0
+    ? services.map(s => `
       <tr>
         <td style="padding: 8px 0; font-size: 16px; color: ${COLORS.text};">
           <span style="color: ${COLORS.blue}; margin-right: 12px;">✓</span> ${s}
         </td>
       </tr>
     `).join('')
-        : `<tr><td style="padding: 8px 0; font-size: 16px; color: #999;">No services selected</td></tr>`;
+    : `<tr><td style="padding: 8px 0; font-size: 16px; color: #999;">No services selected</td></tr>`;
 
-    const content = `
+  const content = `
     <!-- Content Area -->
     <tr>
       <td class="content-padding" style="padding: 48px 52px;">
@@ -557,30 +549,30 @@ export function getProjectRequestAdminTemplate(data: {
     </tr>
   `;
 
-    return wrapEmailContent(content);
+  return wrapEmailContent(content);
 }
 
 /**
  * Generate thank you email for project request submission
  */
 export function getProjectRequestThankYouTemplate(data: {
-    name: string;
-    email: string;
-    services: string[];
+  name: string;
+  email: string;
+  services: string[];
 }): string {
-    const firstName = data.name.split(' ')[0];
+  const firstName = data.name.split(' ')[0];
 
-    const servicesList = data.services && data.services.length > 0
-        ? data.services.map(s => `
+  const servicesList = data.services && data.services.length > 0
+    ? data.services.map(s => `
       <tr>
         <td style="padding: 6px 0; font-size: 15px; color: ${COLORS.text};">
           <span style="color: ${COLORS.blue}; margin-right: 12px;">✓</span> ${s}
         </td>
       </tr>
     `).join('')
-        : '';
+    : '';
 
-    const content = `
+  const content = `
     <!-- Content Area -->
     <tr>
       <td class="content-padding" style="padding: 48px 52px;">
@@ -648,5 +640,5 @@ export function getProjectRequestThankYouTemplate(data: {
     </tr>
   `;
 
-    return wrapEmailContent(content);
+  return wrapEmailContent(content);
 }
