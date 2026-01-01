@@ -6,7 +6,7 @@ import {
 
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
-const RECIPIENT_EMAIL = process.env.EMAIL_TO || "info@summitdrilling.com";
+const RECIPIENT_EMAIL = process.env.EMAIL_TO || "Sales@SummitDrilling.com";
 const FROM_EMAIL = process.env.EMAIL_FROM || "noreply@summitdrilling.com";
 
 // Allowed file types

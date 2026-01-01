@@ -14,7 +14,7 @@ export const businessInfo = {
     description: "Summit Drilling is the Northeast's leading environmental drilling contractor, providing sonic drilling, direct push, geotechnical drilling, and remediation services.",
     foundingDate: "1996",
     telephone: "+1-908-725-0050",
-    email: "info@summitdrilling.com",
+    email: "Sales@SummitDrilling.com",
     address: {
         streetAddress: "1050 U.S. Highway 206, Suite 3",
         addressLocality: "Bridgewater",

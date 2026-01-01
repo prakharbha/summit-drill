@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
                                         <p>745 Bound Brook Road</p>
                                         <p>Bridgewater, NJ 08807</p>
                                         <p className="mt-2">Phone: <a href="tel:+18002426648" className="text-[#377d7e] hover:underline">800-242-6648</a></p>
-                                        <p>Email: <a href="mailto:info@summitdrilling.com" className="text-[#377d7e] hover:underline">info@summitdrilling.com</a></p>
+                                        <p>Email: <a href="mailto:Sales@SummitDrilling.com" className="text-[#377d7e] hover:underline">Sales@SummitDrilling.com</a></p>
                                     </div>
                                 </section>
                             </div>
