@@ -93,7 +93,7 @@ export default function TeamCarousel() {
 
     return (
         <section className="relative bg-[#377d7e] py-2 md:py-4 z-20 -mt-1 overflow-hidden">
-            <div className="w-full text-center">
+            <div className="w-full text-center px-6 md:px-8">
                 <SectionHeading variant="white">
                     We Are Responsible for Your Experience
                 </SectionHeading>
