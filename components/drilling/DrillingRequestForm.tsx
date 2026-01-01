@@ -647,12 +647,13 @@ const DrillingRequestForm = () => {
                                 </div>
                             </div>
 
-                            {/* Turnstile CAPTCHA */}
-                            <div className="flex justify-center mt-6">
+                            {/* Turnstile CAPTCHA - Compact */}
+                            <div className="mt-6">
                                 <Turnstile
                                     onVerify={(token) => setTurnstileToken(token)}
                                     onExpire={() => setTurnstileToken(null)}
                                     theme="dark"
+                                    size="compact"
                                 />
                             </div>
 
