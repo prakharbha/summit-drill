@@ -249,13 +249,6 @@ const ContactForm = () => {
                                 />
                             </div>
 
-                            {/* Status Message */}
-                            {submitStatus && (
-                                <div className={`mt-4 p-4 rounded-lg ${submitStatus.type === "success" ? "bg-[#1A365D]/40 text-white" : "bg-red-600/20 text-red-100"}`}>
-                                    {submitStatus.message}
-                                </div>
-                            )}
-
                             <div className="pt-6 flex justify-end">
                                 <Button
                                     type="submit"
