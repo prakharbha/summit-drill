@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
 
 interface TurnstileProps {
@@ -29,7 +29,6 @@ declare global {
             reset: (widgetId: string) => void;
             remove: (widgetId: string) => void;
         };
-        onloadTurnstileCallback?: () => void;
     }
 }
 
@@ -43,58 +42,77 @@ export default function Turnstile({
 }: TurnstileProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const widgetIdRef = useRef<string | null>(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const isRenderedRef = useRef(false);
+    const callbacksRef = useRef({ onVerify, onExpire, onError });
+
+    // Update callbacks ref without causing re-renders
+    callbacksRef.current = { onVerify, onExpire, onError };
 
     const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-    useEffect(() => {
-        if (!siteKey) {
-            console.error("Turnstile site key is not configured");
+    const renderWidget = useCallback(() => {
+        if (!containerRef.current || !window.turnstile || isRenderedRef.current || !siteKey) {
             return;
         }
 
-        const renderWidget = () => {
-            if (containerRef.current && window.turnstile && !widgetIdRef.current) {
-                widgetIdRef.current = window.turnstile.render(containerRef.current, {
-                    sitekey: siteKey,
-                    callback: onVerify,
-                    "expired-callback": onExpire,
-                    "error-callback": onError,
-                    theme,
-                    size,
-                });
-            }
-        };
+        // Mark as rendered before actually rendering to prevent double-render
+        isRenderedRef.current = true;
 
+        try {
+            widgetIdRef.current = window.turnstile.render(containerRef.current, {
+                sitekey: siteKey,
+                callback: (token: string) => callbacksRef.current.onVerify(token),
+                "expired-callback": () => callbacksRef.current.onExpire?.(),
+                "error-callback": () => callbacksRef.current.onError?.(),
+                theme,
+                size,
+            });
+        } catch (error) {
+            console.error("Turnstile render error:", error);
+            isRenderedRef.current = false;
+        }
+    }, [siteKey, theme, size]);
+
+    useEffect(() => {
         // If turnstile is already loaded, render immediately
-        if (window.turnstile) {
+        if (window.turnstile && !isRenderedRef.current) {
             renderWidget();
-        } else {
-            // Set up callback for when script loads
-            window.onloadTurnstileCallback = () => {
-                setIsLoaded(true);
-                renderWidget();
-            };
         }
 
         return () => {
             // Cleanup widget on unmount
             if (widgetIdRef.current && window.turnstile) {
-                window.turnstile.remove(widgetIdRef.current);
+                try {
+                    window.turnstile.remove(widgetIdRef.current);
+                } catch {
+                    // Ignore removal errors
+                }
                 widgetIdRef.current = null;
+                isRenderedRef.current = false;
             }
         };
-    }, [siteKey, onVerify, onExpire, onError, theme, size, isLoaded]);
+    }, [renderWidget]);
+
+    const handleScriptLoad = useCallback(() => {
+        // Small delay to ensure turnstile is fully initialized
+        setTimeout(() => {
+            if (!isRenderedRef.current) {
+                renderWidget();
+            }
+        }, 100);
+    }, [renderWidget]);
 
     if (!siteKey) {
+        console.error("Turnstile: NEXT_PUBLIC_TURNSTILE_SITE_KEY is not set");
         return null;
     }
 
     return (
         <>
             <Script
-                src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+                src="https://challenges.cloudflare.com/turnstile/v0/api.js"
                 strategy="afterInteractive"
+                onLoad={handleScriptLoad}
             />
             <div ref={containerRef} className={className} />
         </>
