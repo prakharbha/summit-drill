@@ -17,6 +17,7 @@ const Footer = ({ hasDividerAbove = false }: FooterProps) => {
           alt=""
           fill
           className="object-cover"
+          unoptimized
         />
       </div>
 

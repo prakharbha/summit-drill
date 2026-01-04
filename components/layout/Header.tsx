@@ -108,6 +108,7 @@ const Header = () => {
                     priority
                     fetchPriority="high"
                     style={{ objectFit: "contain", width: "353px", height: "112px" }}
+                    sizes="353px"
                   />
                 </div>
               </Link>
@@ -256,6 +257,8 @@ const Header = () => {
                   className="object-contain"
                   priority
                   style={{ objectFit: "contain" }}
+                  sizes="176px"
+                  unoptimized
                 />
               </div>
             </Link>
@@ -379,6 +382,8 @@ const Header = () => {
                     alt="Summit Drilling"
                     fill
                     className="object-contain"
+                    sizes="192px"
+                    unoptimized
                   />
                 </Link>
                 <button

@@ -54,7 +54,7 @@ function EmployeeCard({ employee }: { employee: { name: string; title: string; e
     return (
         <div className="flex items-center gap-6">
             <div className="w-[125px] h-[125px] rounded-full overflow-hidden bg-gray-300 flex-shrink-0 border-4 border-[#377d7e]">
-                <Image src={employee.image} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" />
+                <Image src={employee.image} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" unoptimized />
             </div>
             <div className="min-w-0 flex-1">
                 <h4 className="text-xl font-bold">{employee.name}</h4>
