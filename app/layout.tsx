@@ -4,6 +4,7 @@ import "./globals.css";
 import GDPRBanner from "@/components/ui/GDPRBanner";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { getOrganizationSchema, getLocalBusinessSchema } from "@/lib/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const lato = Lato({
   weight: ["300", "400", "700"],
@@ -135,6 +136,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         {children}
         <GDPRBanner />
+        <SpeedInsights />
       </body>
     </html>
   );
