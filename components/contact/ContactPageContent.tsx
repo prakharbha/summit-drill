@@ -279,7 +279,7 @@ export default function ContactPageContent() {
 
                         {/* IT Ops */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">IT Ops</h3>
+                            <h3 className="text-3xl font-bold mb-10 text-center">IT Operations</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {IT_OPS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
