@@ -265,11 +265,11 @@ export default function ContactPageContent() {
                             </div>
                         </div>
 
-                        {/* IT Ops */}
+                        {/* Operations */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">IT Ops</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                                {IT_OPS.map((employee, i) => (
+                            <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {OPERATIONS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
@@ -277,11 +277,11 @@ export default function ContactPageContent() {
                             </div>
                         </div>
 
-                        {/* Operations */}
+                        {/* IT Ops */}
                         <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {OPERATIONS.map((employee, i) => (
+                            <h3 className="text-3xl font-bold mb-10 text-center">IT Ops</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {IT_OPS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
