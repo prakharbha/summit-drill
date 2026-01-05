@@ -27,7 +27,7 @@ const TEAM_MEMBERS = [
     { id: 18, name: "Mary Holmes", title: "Project Administrator", image: "/images/team/mary-holmes-project-administrator.webp" },
     { id: 19, name: "Abigail George", title: "Accounts Receivable Manager", image: "/images/team/abigail-george-accounts-receiveable-manager.webp" },
     { id: 20, name: "Mike Wilson", title: "Drilling Field Supervisor", image: "/images/team/mike-wilson-drilling-field-supervisor.webp" },
-    { id: 21, name: "Richey Lamire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
+    { id: 21, name: "Richy Lemire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
     { id: 22, name: "Zach Thompson", title: "Project Manager", image: "/images/team/zach-thompson-drilling-field-super.webp" },
     { id: 23, name: "Brian Moriarty", title: "Project Manager", image: "/images/team/brian-moriarty-project-manager.webp" },
     { id: 24, name: "Dustin Lutz", title: "General Manager", image: "/images/contact/dustin-lutz.webp" },

@@ -20,7 +20,7 @@ const OPERATIONS = [
     { name: "Jess Parell", title: "Project Manager", email: "JParell@summitdrilling.com", image: "/images/contact/jessica-parell-pm.webp" },
     { name: "Katie West", title: "Project Manager", email: "KWest@summitdrilling.com", image: "/images/contact/katie-west.webp" },
     { name: "Michael Wilson", title: "Drilling Field Supervisor", email: "MWilson@summitdrilling.com", image: "/images/contact/mike-wilson-drilling-field-supervisor.webp" },
-    { name: "Richey Lemire", title: "Drilling Field Supervisor", email: "RLemire@summitdrilling.com", image: "/images/contact/richey-lamire-drilling-field-supervisor.webp" },
+    { name: "Richy Lemire", title: "Drilling Field Supervisor", email: "RLemire@summitdrilling.com", image: "/images/contact/richey-lamire-drilling-field-supervisor.webp" },
     { name: "Mary Holmes", title: "Project Administrator", email: "MHolmes@summitdrilling.com", image: "/images/contact/mary-holmes-project-administrator.webp" },
     { name: "Zach Thompson", title: "Project Manager", email: "ZThompson@summitdrilling.com", image: "/images/contact/zach-thompson.webp" },
     { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
