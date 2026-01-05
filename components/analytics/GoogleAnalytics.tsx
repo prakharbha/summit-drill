@@ -66,25 +66,18 @@ export default function GoogleAnalytics() {
                     window.gtag = gtag;
                     gtag('js', new Date());
 
-                    // Set default consent to denied (GDPR compliant)
-                    gtag('consent', 'default', {
-                        'analytics_storage': 'denied',
-                        'ad_storage': 'denied',
-                        'ad_user_data': 'denied',
-                        'ad_personalization': 'denied',
-                        'wait_for_update': 500
-                    });
-
-                    // Check if consent was already given
+                    // Check if user explicitly declined cookies
                     const savedConsent = localStorage.getItem('${COOKIE_CONSENT_KEY}');
-                    if (savedConsent === 'accepted') {
-                        gtag('consent', 'update', {
-                            'analytics_storage': 'granted',
-                            'ad_storage': 'granted',
-                            'ad_user_data': 'granted',
-                            'ad_personalization': 'granted'
-                        });
-                    }
+                    const isDeclined = savedConsent === 'declined';
+
+                    // Set default consent to granted (opt-out model)
+                    // Only deny if user explicitly declined
+                    gtag('consent', 'default', {
+                        'analytics_storage': isDeclined ? 'denied' : 'granted',
+                        'ad_storage': isDeclined ? 'denied' : 'granted',
+                        'ad_user_data': isDeclined ? 'denied' : 'granted',
+                        'ad_personalization': isDeclined ? 'denied' : 'granted'
+                    });
 
                     gtag('config', '${GA_MEASUREMENT_ID}', {
                         page_path: window.location.pathname,
