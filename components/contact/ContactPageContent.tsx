@@ -15,7 +15,6 @@ const OPERATIONS = [
     { name: "Jack Byer", title: "Regional Vice President of Operations – Southeast", email: "JByer@summitdrilling.com", image: "/images/contact/jack-byer-vice-president-operations.webp" },
     { name: "Joseph C. Negro", title: "Vice President of Remediation", email: "JNegro@summitdrilling.com", image: "/images/contact/joey-negro-vp-remediation.webp" },
     { name: "Jerry Aquino", title: "Director of Fleet Services", email: "JAquino@summitdrilling.com", image: "/images/contact/jerry-aquino-director-of-fleet-services.webp" },
-    { name: "Trevor Quinn", title: "Director of IT", email: "TQuinn@summitdrilling.com", image: "/images/contact/trevor-quinn-director-it.webp" },
     { name: "Ed Ruger", title: "Project Manager", email: "ERuger@summitdrilling.com", image: "/images/contact/ed-ruger-project-manager.webp" },
     { name: "Yecenia DeTorrice", title: "Project Manager", email: "YDetorrice@summitdrilling.com", image: "/images/contact/yecenia-detorrice-pm.webp" },
     { name: "Jess Parell", title: "Project Manager", email: "JParell@summitdrilling.com", image: "/images/contact/jessica-parell-pm.webp" },
@@ -26,8 +25,12 @@ const OPERATIONS = [
     { name: "Zach Thompson", title: "Project Manager", email: "ZThompson@summitdrilling.com", image: "/images/contact/zach-thompson.webp" },
     { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
     { name: "Dustin Lutz", title: "General Manager", email: "DLutz@summitdrilling.com", image: "/images/contact/dustin-lutz.webp" },
-    { name: "Glenn Brennan", title: "Project Manager, Geophysicist", email: "GBrennan@summitdrilling.com", image: "/images/contact/glenn-brennan.webp" },
     { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
+];
+
+const IT_OPS = [
+    { name: "Trevor Quinn", title: "Director of IT", email: "TQuinn@summitdrilling.com", image: "/images/contact/trevor-quinn-director-it.webp" },
+    { name: "Kaylyn Johnson", title: "Digital Transformation and Integration Manager", email: "KJohnson@summitdrilling.com", image: "/images/contact/kaylyn-johnson.webp" },
 ];
 
 const HEALTH_SAFETY = [
@@ -255,6 +258,18 @@ export default function ContactPageContent() {
                             <h3 className="text-3xl font-bold mb-10 text-center">Corporate Leadership</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
                                 {CORPORATE.map((employee, i) => (
+                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                        <EmployeeCard employee={employee} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* IT Ops */}
+                        <div>
+                            <h3 className="text-3xl font-bold mb-10 text-center">IT Ops</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                                {IT_OPS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
                                     </div>
