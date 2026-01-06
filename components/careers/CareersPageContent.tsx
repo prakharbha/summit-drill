@@ -191,7 +191,7 @@ export default function CareersPageContent() {
                         <div className="text-center md:text-left">
                             <p className="text-xl md:text-2xl font-bold">
                                 Summit's Phil Valensi is a dedicated and experienced career-building advocate.
-                                Reach Phil at <span className="text-[#377d7e]">800-424-6648</span> to discuss your career path at Summit. Or email your resume to <a href="mailto:PValensi@SummitDrilling.com" className="text-[#377d7e] underline hover:text-white">PValensi@SummitDrilling.com</a> and he will reply promptly.
+                                Reach Phil at <span className="text-[#377d7e]">800-242-6648</span> to discuss your career path at Summit. Or email your resume to <a href="mailto:PValensi@SummitDrilling.com" className="text-[#377d7e] underline hover:text-white">PValensi@SummitDrilling.com</a> and he will reply promptly.
                             </p>
                         </div>
                     </div>

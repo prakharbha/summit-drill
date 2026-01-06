@@ -33,7 +33,7 @@ export default function YourCareerPage() {
                                     Our programs are comprehensive and designed to support our people in their advancement. For example, we offer a unique Driller Apprentice Training Program that includes a comprehensive list of health and safety programs and equipment operating licensure opportunities, such as CDLs, OSHA Safety Certifications, heavy machinery and more. This ensures that our teams are well trained and prepared for successful outcomes and a rewarding career path.
                                 </p>
                                 <p className="font-bold text-xl">
-                                    Have questions? Reach out to our Vice President of Human Resources, Philip Valensi at <span className="text-[#913c20]">800-424-6648</span> or email your resume to <a href="mailto:Employment@SummitDrilling.com" className="text-[#913c20] underline hover:text-[#1A365D]">Employment@SummitDrilling.com</a>
+                                    Have questions? Reach out to our Vice President of Human Resources, Philip Valensi at <span className="text-[#913c20]">800-242-6648</span> or email your resume to <a href="mailto:Employment@SummitDrilling.com" className="text-[#913c20] underline hover:text-[#1A365D]">Employment@SummitDrilling.com</a>
                                 </p>
                                 <div className="pt-4">
                                     <Link
