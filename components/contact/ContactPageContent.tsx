@@ -39,7 +39,7 @@ const HEALTH_SAFETY = [
 
 const BUSINESS_DEVELOPMENT = [
     { name: "Lauren DiVello", title: "VP of Sales & Business Development", email: "ldivello@summitdrilling.com", image: "/images/contact/lauren-divello-vp-of-sales.webp" },
-    { name: "Dermot P. Dillon", title: "Vice President of Major Accounts", email: "DDillon@summitdrilling.com", image: "/images/contact/dermot-dillon-vice-president-major-accounts.webp" },
+    { name: "Dermot P. Dillon", title: "Vice President of Major Accounts", email: "DDillon@summitdrilling.com", image: "/images/team/dermot-dillon.webp" },
 ];
 
 const FINANCE = [

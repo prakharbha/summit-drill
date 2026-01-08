@@ -14,7 +14,7 @@ const TEAM_MEMBERS = [
     { id: 5, name: "Jack Byer", title: "VP Operations", image: "/images/team/jack-byer-vice-president-operations.webp" },
     { id: 6, name: "Joey Negro", title: "VP Remediation", image: "/images/team/joey-negro-vp-remediation.webp" },
     { id: 7, name: "Lauren DiVello", title: "VP of Sales", image: "/images/team/lauren-divello-vp-of-sales.webp" },
-    { id: 8, name: "Dermot Dillon", title: "VP Major Accounts", image: "/images/team/dermot-dillon-vice-president-major-accounts.webp" },
+    { id: 8, name: "Dermot Dillon", title: "VP Major Accounts", image: "/images/team/dermot-dillon.webp" },
     { id: 9, name: "Pete Byer", title: "Head of Corp Dev", image: "/images/team/pete-byer-head-of-corp-dev.webp" },
     { id: 10, name: "Ben Shaffer", title: "Director of Health & Safety", image: "/images/team/ben-shaffer-director-of-health-safety.webp" },
     { id: 11, name: "Jerry Aquino", title: "Director of Fleet Services", image: "/images/team/jerry-aquino-director-of-fleet-services.webp" },
