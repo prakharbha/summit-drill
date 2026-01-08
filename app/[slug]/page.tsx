@@ -5,36 +5,15 @@ import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import Image from "next/image";
 import Link from "next/link";
-import { newsPosts } from "@/data/news";
 import { FaLinkedinIn, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { getNewsPostBySlug, getLatestPosts, getAllNewsSlugs, getNewsImageUrl, SanityNewsPost } from "@/lib/sanity-queries";
+import { PortableText } from "@/components/sanity/PortableText";
 
-// Read full content from parsed data
-import fs from "fs";
-import path from "path";
-
-// Get full post data from the parsed JSON
-function getFullPostContent(slug: string) {
-    try {
-        const postsData = JSON.parse(
-            fs.readFileSync(
-                path.join(process.cwd(), "scripts/posts-data.json"),
-                "utf8"
-            )
-        );
-        return postsData.find((p: { slug: string }) => p.slug === slug);
-    } catch {
-        return null;
-    }
-}
-
-// Generate static params for all blog posts (for old URL structure)
+// Generate static params for all blog posts
 export async function generateStaticParams() {
-    return newsPosts.map((post) => ({
-        slug: post.slug,
-    }));
+    const slugs = await getAllNewsSlugs();
+    return slugs.map((slug) => ({ slug }));
 }
-
-import { getPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
     params,
@@ -42,18 +21,7 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const resolvedParams = await params;
-
-    // First try to get metadata from site-metadata.json using the exact path
-    const path = `/${resolvedParams.slug}`;
-    const siteMetadata = getPageMetadata(path);
-
-    // If site-metadata.json has a specific title (not the default fallback), use it
-    if (siteMetadata.title !== "Summit Drilling" && siteMetadata.description !== "Summit Drilling Services") {
-        return siteMetadata;
-    }
-
-    // Fallback to existing logic using news data
-    const post = newsPosts.find((p) => p.slug === resolvedParams.slug);
+    const post = await getNewsPostBySlug(resolvedParams.slug);
 
     if (!post) {
         return {
@@ -62,8 +30,8 @@ export async function generateMetadata({
     }
 
     return {
-        title: `${post.title} - Summit Drilling News`,
-        description: post.excerpt,
+        title: post.metaTitle || `${post.title} - Summit Drilling News`,
+        description: post.metaDescription || post.excerpt,
     };
 }
 
@@ -73,30 +41,16 @@ export default async function BlogPostPage({
     params: Promise<{ slug: string }>;
 }) {
     const resolvedParams = await params;
-    const post = newsPosts.find((p) => p.slug === resolvedParams.slug);
-    const fullPost = getFullPostContent(resolvedParams.slug);
+    const post = await getNewsPostBySlug(resolvedParams.slug);
 
-    // If slug doesn't match any blog post, show 404
     if (!post) {
         notFound();
     }
 
-    // Get latest posts for sidebar (excluding current post)
-    const latestPosts = newsPosts
-        .filter((p) => p.slug !== post.slug)
-        .slice(0, 5);
+    const latestPosts = await getLatestPosts(resolvedParams.slug, 5);
+    const imageUrl = getNewsImageUrl(post);
 
-    // Clean HTML content for display
-    const content = fullPost?.fullContent || post.excerpt;
-    const cleanContent = content
-        .replace(/<em>/g, "<em>")
-        .replace(/<\/em>/g, "</em>")
-        .replace(/<strong>/g, "<strong>")
-        .replace(/<\/strong>/g, "</strong>")
-        .replace(/\n\n/g, "</p><p>")
-        .replace(/\n/g, "<br/>");
-
-    const shareUrl = `https://summitdrilling.com/${post.slug}`;
+    const shareUrl = `https://summitdrilling.com/${post.slug.current}`;
     const shareText = encodeURIComponent(post.title);
 
     return (
@@ -105,15 +59,15 @@ export default async function BlogPostPage({
             <main className="min-h-screen">
                 {/* Hero Banner */}
                 <PageHeroBanner
-                    backgroundImage={post.image}
+                    backgroundImage={imageUrl}
                     backgroundAlt={post.title}
-                    ribbonText="SUMMIT NEWS"
+                    ribbonText={post.ribbonText || "SUMMIT NEWS"}
                     title={post.title}
-                    description={new Date(post.date).toLocaleDateString("en-US", {
+                    description={post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
-                    })}
+                    }) : undefined}
                 />
 
                 {/* Content Section with Light Green Background */}
@@ -123,13 +77,14 @@ export default async function BlogPostPage({
                             {/* Main Content - 2/3 width */}
                             <div className="lg:col-span-2">
                                 <article className="bg-[#78a8a8] rounded-xl shadow-lg p-8 md:p-12">
-                                    {/* Article Content */}
-                                    <div
-                                        className="prose prose-lg max-w-none news-article-content"
-                                        dangerouslySetInnerHTML={{
-                                            __html: `<p>${cleanContent}</p>`,
-                                        }}
-                                    />
+                                    {/* Article Content from Sanity */}
+                                    {post.content && post.content.length > 0 ? (
+                                        <PortableText value={post.content} className="news-article-content" />
+                                    ) : (
+                                        <div className="prose prose-lg max-w-none">
+                                            <p>{post.excerpt}</p>
+                                        </div>
+                                    )}
 
                                     {/* Social Share Section */}
                                     <div className="mt-12 pt-8 border-t border-[#5a8888]">
@@ -186,32 +141,36 @@ export default async function BlogPostPage({
                                         Latest News
                                     </h2>
                                     <div className="space-y-6">
-                                        {latestPosts.map((latestPost) => (
+                                        {latestPosts.map((latestPost: SanityNewsPost) => (
                                             <Link
-                                                key={latestPost.id}
-                                                href={`/${latestPost.slug}`}
+                                                key={latestPost._id}
+                                                href={`/${latestPost.slug.current}`}
                                                 className="block group"
                                             >
                                                 <div className="flex gap-4">
                                                     <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
                                                         <Image
-                                                            src={latestPost.image}
+                                                            src={getNewsImageUrl(latestPost)}
                                                             alt={latestPost.title}
                                                             fill
+                                                            sizes="80px"
                                                             className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                                            unoptimized={getNewsImageUrl(latestPost).includes('cdn.sanity.io')}
                                                         />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
                                                         <h3 className="text-sm font-bold text-[#0e2a47] line-clamp-2 group-hover:text-[#1a365d] transition-colors leading-tight mb-1">
                                                             {latestPost.title}
                                                         </h3>
-                                                        <time className="text-xs text-[#1a365d]">
-                                                            {new Date(latestPost.date).toLocaleDateString("en-US", {
-                                                                month: "short",
-                                                                day: "numeric",
-                                                                year: "numeric",
-                                                            })}
-                                                        </time>
+                                                        {latestPost.publishedAt && (
+                                                            <time className="text-xs text-[#1a365d]">
+                                                                {new Date(latestPost.publishedAt).toLocaleDateString("en-US", {
+                                                                    month: "short",
+                                                                    day: "numeric",
+                                                                    year: "numeric",
+                                                                })}
+                                                            </time>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </Link>

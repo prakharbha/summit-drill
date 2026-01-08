@@ -75,7 +75,7 @@ export function PageHeroBanner({
                         fetchPriority="high"
                         sizes="100vw"
                         style={{ objectFit: "cover" }}
-                        unoptimized={backgroundImage.endsWith('.gif')}
+                        unoptimized={backgroundImage.endsWith('.gif') || backgroundImage.includes('cdn.sanity.io')}
                     />
                     {/* Gradient Overlay */}
                     <HeroBannerOverlay />

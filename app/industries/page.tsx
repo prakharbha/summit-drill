@@ -1,62 +1,50 @@
-import { getPageMetadata } from "@/lib/seo";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import DrillingRequestForm from "@/components/drilling/DrillingRequestForm";
 import Image from "next/image";
 import Link from "next/link";
+import { getAllIndustries, getIndustryImageUrl, getPageBySlug, getPageImageUrl, SanityIndustry } from "@/lib/sanity-queries";
 
-export const metadata = getPageMetadata("/industries");
+export const revalidate = 60; // Revalidate every 60 seconds
 
-const industries = [
-  {
-    title: "Environmental",
-    href: "/industries/environmental",
-    image: "/images/industries/environmental-banner.webp",
-    subtitle: "Environmental – Partnering with environmental professionals for over 40 years!",
-    description: "Consultants in need of environmental contracting services recognize that Summit is the go-to source for subsurface investigations and remediation services.",
-    ctaText: "Our Environmental Expertise"
-  },
-  {
-    title: "Geotechnical",
-    href: "/industries/geotechnical",
-    image: "/images/industries/geotechnical-banner.webp",
-    subtitle: "Geotechnical – We help you strengthen every project from the ground up!",
-    description: "From large construction projects to solar carports, Summit's geotechnical services offer talented and licensed drillers with decades of experience.",
-    ctaText: "Our Geotechnical Expertise"
-  },
-  {
-    title: "Cathodic",
-    href: "/industries/cathodic",
-    image: "/images/industries/cathodic-banner.webp",
-    subtitle: "Cathodic – Drilling that helps protect what matters most!",
-    description: "Summit delivers precise cathodic protection boreholes that safeguard pipelines, tanks, and other buried infrastructure.",
-    ctaText: "Our Cathodic Expertise"
-  },
-  {
-    title: "Aggregate",
-    href: "/industries/aggregate",
-    image: "/images/industries/aggregate-banner.webp",
-    subtitle: "Aggregate – Core insights that drive smarter, more profitable excavations!",
-    description: "From coring accuracy to equipment uptime, Summit provides the data and daily production reliability quarry owners count on.",
-    ctaText: "Our Aggregate Expertise"
-  },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug("industries");
+  if (!page) return {};
 
-export default function IndustriesPage() {
+  return {
+    title: page.metaTitle || page.title,
+    description: page.metaDescription || page.heroDescription,
+  };
+}
+
+export default async function IndustriesPage() {
+  const [page, industries] = await Promise.all([
+    getPageBySlug("industries"),
+    getAllIndustries()
+  ]);
+
+  if (!page) {
+    notFound();
+  }
+
+  const heroImage = getPageImageUrl(page);
+
   return (
     <>
       <Header />
       <main>
         <PageHeroBanner
-          title="Industries Served"
-          description="Summit serves diverse industries with specialized drilling, geophysics, and remediation solutions. Our multi-regional reach and technical expertise make us the trusted partner for environmental, geotechnical, cathodic, and aggregate projects."
-          backgroundImage="/images/industries/environmental-banner.webp"
-          ribbonText="SUMMIT DRILLING"
-          dividerColor="#377d7e"
+          title={page.title}
+          description={page.heroDescription}
+          backgroundImage={heroImage}
+          ribbonText={page.ribbonText}
+          dividerColor={page.dividerColor}
         />
 
-        {/* Industries Grid - Matching Geophysical Services Design */}
+        {/* Industries Grid */}
         <section
           className="py-20 bg-[#377d7e] text-white bg-no-repeat bg-cover bg-blend-multiply"
           style={{
@@ -70,10 +58,10 @@ export default function IndustriesPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-              {industries.map((industry) => (
+              {industries.map((industry: SanityIndustry) => (
                 <Link
-                  key={industry.title}
-                  href={industry.href}
+                  key={industry._id}
+                  href={`/industries/${industry.slug.current}`}
                   className="flex flex-col group cursor-pointer"
                 >
                   {/* Ribbon Title */}
@@ -87,7 +75,7 @@ export default function IndustriesPage() {
                         className="object-contain"
                       />
                       <span className="absolute inset-0 flex items-center justify-center text-sm font-bold italic tracking-[0.10em] text-white font-work-sans z-10 pl-6 pr-6 text-center leading-none">
-                        {industry.title}
+                        {industry.title.replace(' Services', '').replace(' Drilling', '').replace(' Protection', '')}
                       </span>
                     </div>
                   </div>
@@ -95,24 +83,27 @@ export default function IndustriesPage() {
                   {/* Image Card */}
                   <div className="relative h-64 w-full mb-6 rounded-lg overflow-hidden border-4 border-white/20 shadow-lg group-hover:border-white/40 transition-all duration-300">
                     <Image
-                      src={industry.image}
+                      src={getIndustryImageUrl(industry)}
                       alt={industry.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      unoptimized={getIndustryImageUrl(industry).includes('cdn.sanity.io')}
                     />
                   </div>
 
                   {/* Content */}
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold leading-tight group-hover:text-sky-300 transition-colors">
-                      {industry.subtitle}
+                      {industry.subtitle || industry.title}
                     </h3>
-                    <p className="text-gray-100 leading-relaxed text-sm md:text-base">
-                      {industry.description}
-                    </p>
+                    {industry.excerpt && (
+                      <p className="text-gray-100 leading-relaxed text-sm md:text-base">
+                        {industry.excerpt}
+                      </p>
+                    )}
                     <span className="inline-block bg-[#377d7e] group-hover:bg-sky-500 text-white font-bold px-6 py-2 text-sm shadow-md mt-2 w-fit rounded transition-colors">
-                      {industry.ctaText} &gt;&gt;
+                      {industry.ctaText || 'Learn More'} &gt;&gt;
                     </span>
                   </div>
                 </Link>

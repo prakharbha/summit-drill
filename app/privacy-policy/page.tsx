@@ -1,9 +1,24 @@
-import { getPageMetadata } from "@/lib/seo";
+import { Metadata } from "next";
+import { getPageBySlug } from "@/lib/sanity-queries";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 
-export const metadata = getPageMetadata("/privacy-policy");
+export async function generateMetadata(): Promise<Metadata> {
+    const page = await getPageBySlug("privacy-policy");
+
+    if (!page) {
+        return {
+            title: "Privacy Policy | Summit Drilling",
+            description: "Your privacy is important to us",
+        };
+    }
+
+    return {
+        title: page.metaTitle || page.title,
+        description: page.metaDescription || page.heroDescription,
+    };
+}
 
 export default function PrivacyPolicyPage() {
     return (

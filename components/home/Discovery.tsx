@@ -6,8 +6,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GreenButton } from "@/components/ui/GreenButton";
 import { HeroBannerOverlay } from "@/components/ui/HeroBannerOverlay";
+import { SanityHomePage } from "@/lib/sanity-queries";
 
-const Discovery = () => {
+interface DiscoveryProps {
+  hero?: SanityHomePage['hero'];
+}
+
+const Discovery = ({ hero }: DiscoveryProps) => {
   return (
     <div className="relative">
       {/* HERO SECTION */}
@@ -36,7 +41,7 @@ const Discovery = () => {
             aria-label="Background video showing Summit Drilling operations"
             poster="/images/drilling-hero.webp"
           >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
+            {hero?.videoUrl && <source src={hero.videoUrl} type="video/mp4" />}
             <track
               kind="captions"
               srcLang="en"
@@ -164,25 +169,20 @@ const Discovery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto space-y-4"
+            className="max-w-5xl mx-auto space-y-8"
           >
-            <h2 className="text-[1.75rem] leading-[2.5rem] font-bold not-italic text-white">
-              Summit's ability to consistently manage a diverse range of complex projects safely, efficiently and with excellent results is sustained through our unique customer promise—
-              <span>An Exceptional Experience</span>
-            </h2>
-
-            <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-5xl mx-auto">
-              We care about this work, the environment, and your experience with us. We take pride in listening, responding, and delivering because your satisfaction drives our success.
-            </p>
-
-            <p className="text-2xl text-white font-bold">
-              Approachable. Appreciative. Eager to Serve.
-            </p>
+            {hero?.description && (
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-5xl mx-auto whitespace-pre-wrap">
+                {hero.description}
+              </p>
+            )}
 
             <div className="pt-4">
-              <GreenButton href="/about-us" className="px-10 py-6 text-xl">
-                About Us &gt;&gt;
-              </GreenButton>
+              {hero?.ctaLink && hero?.ctaText && (
+                <GreenButton href={hero.ctaLink} className="px-10 py-6 text-xl">
+                  {hero.ctaText}
+                </GreenButton>
+              )}
             </div>
           </motion.div>
         </div>

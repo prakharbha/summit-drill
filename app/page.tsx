@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Discovery from "@/components/home/Discovery";
@@ -7,22 +8,31 @@ import FeaturedProject from "@/components/home/FeaturedProject";
 import StartProject from "@/components/home/StartProject";
 import HealthSafety from "@/components/home/HealthSafety";
 import NewsSection from "@/components/home/NewsSection";
+import { getHomePage } from "@/lib/sanity-queries";
 
-import { getPageMetadata } from "@/lib/seo";
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getHomePage();
+  if (!page) return {};
 
-export const metadata = getPageMetadata("/");
+  return {
+    title: page.metaTitle || page.title,
+    description: page.metaDescription,
+  };
+}
 
-export default function Home() {
+export default async function Home() {
+  const page = await getHomePage();
+
   return (
     <>
       <Header />
       <main>
-        <Discovery />
-        <Careers />
+        <Discovery hero={page?.hero} />
+        <Careers data={page?.careers} />
         <TeamCarousel />
         <FeaturedProject />
-        <StartProject />
-        <HealthSafety />
+        <StartProject data={page?.startProject} />
+        <HealthSafety data={page?.healthSafety} />
         <NewsSection />
       </main>
       <Footer />

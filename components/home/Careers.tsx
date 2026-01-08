@@ -5,8 +5,16 @@ import { motion } from "framer-motion";
 import { GreenButton } from "@/components/ui/GreenButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { SanityHomePage } from "@/lib/sanity-queries";
+import { urlFor } from "@/lib/sanity";
 
-export default function Careers() {
+interface CareersProps {
+  data?: SanityHomePage['careers'];
+}
+
+export default function Careers({ data }: CareersProps) {
+  const imageUrl = data?.image?.asset?._ref ? urlFor(data.image).url() : null;
+
   return (
     <section className="relative bg-[#a4c5c5] pt-32 pb-24 lg:pt-40 lg:pb-40 z-10 -mt-[6.3rem]">
       <div className="container mx-auto px-4 lg:px-8">
@@ -19,14 +27,17 @@ export default function Careers() {
             transition={{ duration: 0.8 }}
             className="relative w-full rounded-lg overflow-hidden"
           >
-            <Image
-              src="/images/careers-image.webp"
-              alt="Summit Drilling Careers"
-              width={1967}
-              height={1313}
-              className="w-full h-auto"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+            {imageUrl && (
+              <Image
+                src={imageUrl}
+                alt={data?.title || "Careers"}
+                width={1967}
+                height={1313}
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                unoptimized={imageUrl.includes('cdn.sanity.io')}
+              />
+            )}
           </motion.div>
 
           {/* Right Column: Content */}
@@ -37,23 +48,23 @@ export default function Careers() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <SectionHeading variant="dark">
-              Careers
-            </SectionHeading>
+            {data?.title && (
+              <SectionHeading variant="dark">
+                {data.title}
+              </SectionHeading>
+            )}
 
-            <h3 className="text-2xl font-bold text-[#1e3a8a] leading-tight">
-              In our human resources department, you are the customer.
-            </h3>
+            {data?.description && (
+              <p className="text-[1.5rem] leading-[1.325] text-[#1e3a8a]/90 max-w-xl whitespace-pre-wrap">
+                {data.description}
+              </p>
+            )}
 
-            <p className="text-[1.5rem] leading-[1.325] text-[#1e3a8a]/90 max-w-xl">
-              Creating opportunities for our people to grow is not lip service,
-              it’s a commitment. We have a successful career development program
-              that provides trainings, certifications and a clear path forward.
-            </p>
-
-            <GreenButton href="/careers" className="mt-[15px]">
-              Start your career track at Summit &gt;&gt;
-            </GreenButton>
+            {data?.ctaLink && data?.ctaText && (
+              <GreenButton href={data.ctaLink} className="mt-[15px]">
+                {data.ctaText}
+              </GreenButton>
+            )}
           </motion.div>
         </div>
       </div>

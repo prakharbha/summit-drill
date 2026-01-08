@@ -1,26 +1,45 @@
-import { getPageMetadata } from "@/lib/seo";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
-import { getAllPosts } from "@/data/news";
 import { NewsCard } from "@/components/ui/NewsCard";
+import { getAllNewsPosts, getNewsImageUrl, getPageBySlug, getPageImageUrl, SanityNewsPost } from "@/lib/sanity-queries";
 
-export const metadata = getPageMetadata("/about-us/news");
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug("news");
+  if (!page) return {};
 
-export default function NewsPage() {
-  const posts = getAllPosts();
+  return {
+    title: page.metaTitle || page.title,
+    description: page.metaDescription || page.heroDescription,
+  };
+}
+
+export default async function NewsPage() {
+  const [page, posts] = await Promise.all([
+    getPageBySlug("news"),
+    getAllNewsPosts()
+  ]);
+
+  if (!page) {
+    notFound();
+  }
+
+  const heroImage = getPageImageUrl(page);
 
   return (
     <>
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/news/drilling-field-supervisors-banner.jpg"
-          backgroundAlt="Summit Drilling News"
-          ribbonText="SUMMIT NEWS"
-          title="Company News"
-          description="Stay updated with the latest news, achievements, and milestones from Summit Drilling."
-          dividerColor="#162f58"
+          backgroundImage={heroImage}
+          backgroundAlt={page.title}
+          ribbonText={page.ribbonText}
+          title={page.title}
+          description={page.heroDescription}
+          dividerColor={page.dividerColor}
         />
 
         {/* News Grid Section */}
@@ -29,14 +48,14 @@ export default function NewsPage() {
             <h2 className="sr-only">All News Articles</h2>
             {/* News Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post, index) => (
+              {posts.map((post: SanityNewsPost, index: number) => (
                 <NewsCard
-                  key={post.id}
-                  id={post.id}
-                  slug={post.slug}
+                  key={post._id}
+                  id={post._id}
+                  slug={post.slug.current}
                   title={post.title}
-                  excerpt={post.excerpt}
-                  image={post.image}
+                  excerpt={post.excerpt || ""}
+                  image={getNewsImageUrl(post)}
                   index={index}
                   variant="dark"
                 />

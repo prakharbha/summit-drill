@@ -4,8 +4,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { GreenButton } from "@/components/ui/GreenButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SanityHomePage } from "@/lib/sanity-queries";
+import { urlFor } from "@/lib/sanity";
 
-const HealthSafety = () => {
+interface HealthSafetyProps {
+  data?: SanityHomePage['healthSafety'];
+}
+
+const HealthSafety = ({ data }: HealthSafetyProps) => {
+  const imageUrl = data?.image?.asset?._ref ? urlFor(data.image).url() : null;
+
   return (
     <section className="py-8 md:py-12 bg-[#a4c5c5] text-[#0e2a47] overflow-x-hidden">
       <div className="container mx-auto px-4 lg:px-8 max-w-full">
@@ -17,12 +25,16 @@ const HealthSafety = () => {
             viewport={{ once: true }}
           >
             <div className="relative h-80 lg:h-[450px] rounded-3xl overflow-hidden">
-              <Image
-                src="/images/health-safety-home-bg.webp"
-                alt="Health &amp; Safety Team"
-                fill
-                className="object-cover"
-              />
+              {imageUrl && (
+                <Image
+                  src={imageUrl}
+                  alt={data?.title || "Health & Safety"}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized={imageUrl.includes('cdn.sanity.io')}
+                />
+              )}
             </div>
           </motion.div>
 
@@ -33,22 +45,23 @@ const HealthSafety = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <SectionHeading variant="light">
-              Health & Safety
-            </SectionHeading>
+            {data?.title && (
+              <SectionHeading variant="light">
+                {data.title}
+              </SectionHeading>
+            )}
 
-            <h3 className="text-xl md:text-2xl font-bold text-[#0e2a47]/90">
-              Our Health &amp; Safety programs are unique.
-            </h3>
+            {data?.description && (
+              <p className="text-xl text-[#0e2a47]/80 leading-relaxed font-medium !mt-0 whitespace-pre-wrap">
+                {data.description}
+              </p>
+            )}
 
-            <p className="text-xl text-[#0e2a47]/80 leading-relaxed font-medium !mt-0">
-              How? We blend best practice trainings, PPE use, equipment maintenance and Sr. team mentors with the industry's most hands-on approach. Our H&amp;S leaders are out in the field to guide where the work is being done.
-            </p>
-
-            <GreenButton href="/health-safety" className="mt-[15px] w-full md:w-auto text-center">
-              <span className="md:hidden">Health &amp; Safety &gt;&gt;</span>
-              <span className="hidden md:inline">Learn more about our H&amp;S culture and leadership &gt;&gt;</span>
-            </GreenButton>
+            {data?.ctaLink && data?.ctaText && (
+              <GreenButton href={data.ctaLink} className="mt-[15px] w-full md:w-auto text-center">
+                <span>{data.ctaText}</span>
+              </GreenButton>
+            )}
           </motion.div>
         </div>
       </div>

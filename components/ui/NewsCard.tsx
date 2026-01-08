@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface NewsCardProps {
-    id: number;
+    id: string | number;
     slug: string;
     title: string;
     excerpt: string;
@@ -54,7 +54,7 @@ export function NewsCard({
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        unoptimized={image.endsWith('.gif')}
+                        unoptimized={true}
                     />
                 </div>
 

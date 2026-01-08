@@ -7,120 +7,41 @@ import Footer from "@/components/layout/Footer";
 import Image from "next/image";
 import ContactForm from "@/components/contact/ContactForm";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
+import { SanityPage, SanityTeamMember, SanityLocation, getPageImageUrl, getTeamMemberImageUrl } from "@/lib/sanity-queries";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-// Employee data organized by department
-const OPERATIONS = [
-    { name: "Joel Bernstein", title: "Senior Vice President", email: "JBernstein@summitdrilling.com", image: "/images/contact/joel-bernstein-sr-vp.webp" },
-    { name: "Joan Baer", title: "Regional Vice President of Operations – Greater Philadelphia", email: "JBaer@summitdrilling.com", image: "/images/contact/joan-baer.webp" },
-    { name: "Jack Byer", title: "Regional Vice President of Operations – Southeast", email: "JByer@summitdrilling.com", image: "/images/contact/jack-byer-vice-president-operations.webp" },
-    { name: "Joseph C. Negro", title: "Vice President of Remediation", email: "JNegro@summitdrilling.com", image: "/images/contact/joey-negro-vp-remediation.webp" },
-    { name: "Jerry Aquino", title: "Director of Fleet Services", email: "JAquino@summitdrilling.com", image: "/images/contact/jerry-aquino-director-of-fleet-services.webp" },
-    { name: "Ed Ruger", title: "Project Manager", email: "ERuger@summitdrilling.com", image: "/images/contact/ed-ruger-project-manager.webp" },
-    { name: "Yecenia DeTorrice", title: "Project Manager", email: "YDetorrice@summitdrilling.com", image: "/images/contact/yecenia-detorrice-pm.webp" },
-    { name: "Jess Parell", title: "Project Manager", email: "JParell@summitdrilling.com", image: "/images/contact/jessica-parell-pm.webp" },
-    { name: "Katie West", title: "Project Manager", email: "KWest@summitdrilling.com", image: "/images/contact/katie-west.webp" },
-    { name: "Michael Wilson", title: "Drilling Field Supervisor", email: "MWilson@summitdrilling.com", image: "/images/contact/mike-wilson-drilling-field-supervisor.webp" },
-    { name: "Richy Lemire", title: "Drilling Field Supervisor", email: "RLemire@summitdrilling.com", image: "/images/contact/richey-lamire-drilling-field-supervisor.webp" },
-    { name: "Mary Holmes", title: "Project Administrator", email: "MHolmes@summitdrilling.com", image: "/images/contact/mary-holmes-project-administrator.webp" },
-    { name: "Zach Thompson", title: "Project Manager", email: "ZThompson@summitdrilling.com", image: "/images/contact/zach-thompson.webp" },
-    { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
-    { name: "Dustin Lutz", title: "General Manager", email: "DLutz@summitdrilling.com", image: "/images/contact/dustin-lutz.webp" },
-    { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
-];
-
-const IT_OPS = [
-    { name: "Trevor Quinn", title: "Director of IT", email: "TQuinn@summitdrilling.com", image: "/images/contact/trevor-quinn-director-it.webp" },
-    { name: "Kaylyn Johnson", title: "Digital Transformation and Integration Manager", email: "KJohnson@summitdrilling.com", image: "/images/contact/kaylyn-johnson.webp" },
-];
-
-const HEALTH_SAFETY = [
-    { name: "Ben Shaffer", title: "Director of Health and Safety", email: "BShaffer@summitdrilling.com", image: "/images/contact/ben-shaffer-director-of-health-safety.webp" },
-];
-
-const BUSINESS_DEVELOPMENT = [
-    { name: "Lauren DiVello", title: "VP of Sales & Business Development", email: "ldivello@summitdrilling.com", image: "/images/contact/lauren-divello-vp-of-sales.webp" },
-    { name: "Dermot P. Dillon", title: "Vice President of Major Accounts", email: "DDillon@summitdrilling.com", image: "/images/contact/dermot-dillon-vice-president-major-accounts.webp" },
-];
-
-const FINANCE = [
-    { name: "Abigail George", title: "Accounts Receivable Manager", email: "AGeorge@summitdrilling.com", image: "/images/contact/abigail-george-accounts-receiveable-manager.webp" },
-];
-
-const CORPORATE = [
-    { name: "Ron Bucca", title: "Chief Executive Officer", email: "RBucca@summitdrilling.com", image: "/images/contact/ron-bucca-ceo.webp" },
-    { name: "Matthew Vetter", title: "Chief Operating Officer", email: "MVetter@summitdrilling.com", image: "/images/contact/matthew-vetter-coo.webp" },
-    { name: "Pete Byer", title: "Head of Corporate Development", email: "PByer@summitdrilling.com", image: "/images/contact/pete-byer-head-of-corp-dev.webp" },
-];
+interface ContactPageContentProps {
+    page: SanityPage;
+    employees: SanityTeamMember[];
+    locations: SanityLocation[];
+}
 
 // Reusable employee card component
-function EmployeeCard({ employee }: { employee: { name: string; title: string; email: string; image: string } }) {
+function EmployeeCard({ employee }: { employee: SanityTeamMember }) {
+    const imageUrl = getTeamMemberImageUrl(employee);
     return (
         <div className="flex items-center gap-6">
             <div className="w-[125px] h-[125px] rounded-full overflow-hidden bg-gray-300 flex-shrink-0 border-4 border-[#377d7e]">
-                <Image src={employee.image} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" unoptimized />
+                <Image src={imageUrl} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" unoptimized />
             </div>
             <div className="min-w-0 flex-1">
                 <h4 className="text-xl font-bold">{employee.name}</h4>
                 <p className="font-medium">{employee.title}</p>
-                <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline text-sm">{employee.email}</a>
+                {employee.email && (
+                    <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline text-sm">{employee.email}</a>
+                )}
             </div>
         </div>
     );
 }
 
-// Location data
-const LOCATIONS = [
-    {
-        id: "headquarters",
-        name: "Bridgewater, NJ",
-        label: "Headquarters",
-        address: "81 Chimney Rock Road, Bridgewater, NJ 08807",
-        phone: "800-242-6648",
-        fax: "732-356-1009",
-        mapQuery: "81+Chimney+Rock+Road,+Bridgewater,+NJ+08807"
-    },
-    {
-        id: "runnemede",
-        name: "Runnemede, NJ",
-        label: "Regional Office",
-        address: "190 Ninth Avenue, Runnemede, NJ 08078",
-        phone: "800-242-6648",
-        fax: "732-356-1009",
-        mapQuery: "190+Ninth+Avenue,+Runnemede,+NJ+08078"
-    },
-    {
-        id: "jackson",
-        name: "Jackson Township, NJ",
-        label: "Regional Office",
-        address: "629 Wright Debow Road, Jackson Township, NJ 08527",
-        phone: "800-242-6648",
-        fax: "732-356-1009",
-        mapQuery: "629+Wright+Debow+Road,+Jackson+Township,+NJ+08527"
-    },
-    {
-        id: "easton",
-        name: "Easton, PA",
-        label: "Regional Office",
-        address: "724 S 27th St, Easton, PA 18045",
-        phone: "888-204-3266",
-        fax: "888-204-3266",
-        mapQuery: "724+S+27th+St,+Easton,+PA+18045"
-    },
-    {
-        id: "fortmill",
-        name: "Fort Mill, SC",
-        label: "Regional Office",
-        address: "9088 Northfield Drive, Fort Mill, SC 29707",
-        phone: "800-849-0353",
-        fax: "888-204-3266",
-        mapQuery: "9088+Northfield+Drive,+Fort+Mill,+SC+29707"
-    }
-];
-
 // Locations Section Component with Tabs
-function LocationsSection() {
-    const [activeLocation, setActiveLocation] = useState("headquarters");
-    const location = LOCATIONS.find(loc => loc.id === activeLocation) || LOCATIONS[0];
+function LocationsSection({ locations }: { locations: SanityLocation[] }) {
+    // Default to first location if available, otherwise empty string (though locations should exist)
+    const [activeLocation, setActiveLocation] = useState(locations[0]?._id || "");
+    const location = locations.find(loc => loc._id === activeLocation) || locations[0];
+
+    if (!location) return null;
 
     return (
         <section id="locations" className="py-20 bg-[#1A365D] text-white relative z-20">
@@ -129,17 +50,17 @@ function LocationsSection() {
 
                 {/* Tab Navigation */}
                 <div className="flex flex-wrap justify-center gap-2 mb-8">
-                    {LOCATIONS.map((loc) => (
+                    {locations.map((loc) => (
                         <button
-                            key={loc.id}
-                            onClick={() => setActiveLocation(loc.id)}
-                            className={`px-4 py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 ${activeLocation === loc.id
+                            key={loc._id}
+                            onClick={() => setActiveLocation(loc._id)}
+                            className={`px-4 py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 ${activeLocation === loc._id
                                 ? "bg-white text-[#1A365D] shadow-lg scale-105"
                                 : "bg-white/10 hover:bg-white/20 text-white"
                                 }`}
                         >
                             <span className="block">{loc.name}</span>
-                            <span className={`text-xs font-normal ${activeLocation === loc.id ? "text-[#377d7e]" : "text-white/70"}`}>
+                            <span className={`text-xs font-normal ${activeLocation === loc._id ? "text-[#377d7e]" : "text-white/70"}`}>
                                 {loc.label}
                             </span>
                         </button>
@@ -157,39 +78,47 @@ function LocationsSection() {
                             {location.address}
                         </p>
                         <div className="space-y-3 text-lg">
-                            <p className="flex items-center gap-3">
-                                <span className="font-bold">Phone:</span>
-                                <a href={`tel:+1${location.phone.replace(/-/g, '')}`} className="hover:text-sky-300 transition-colors">
-                                    {location.phone}
-                                </a>
-                            </p>
-                            <p className="flex items-center gap-3">
-                                <span className="font-bold">Fax:</span>
-                                <span>{location.fax}</span>
-                            </p>
+                            {location.phone && (
+                                <p className="flex items-center gap-3">
+                                    <span className="font-bold">Phone:</span>
+                                    <a href={`tel:+1${location.phone.replace(/-/g, '')}`} className="hover:text-sky-300 transition-colors">
+                                        {location.phone}
+                                    </a>
+                                </p>
+                            )}
+                            {location.fax && (
+                                <p className="flex items-center gap-3">
+                                    <span className="font-bold">Fax:</span>
+                                    <span>{location.fax}</span>
+                                </p>
+                            )}
                         </div>
-                        <a
-                            href={`https://www.google.com/maps/dir/?api=1&destination=${location.mapQuery}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block mt-6 bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-3 rounded-lg transition-colors"
-                        >
-                            Get Directions →
-                        </a>
+                        {location.mapQuery && (
+                            <a
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${location.mapQuery}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block mt-6 bg-[#377d7e] hover:bg-sky-500 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                            >
+                                Get Directions →
+                            </a>
+                        )}
                     </div>
 
                     {/* Map Embed */}
                     <div className="relative h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-xl border-4 border-white/20 lg:col-span-2">
-                        <iframe
-                            key={location.id}
-                            width="100%"
-                            height="100%"
-                            src={`https://maps.google.com/maps?q=${location.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
-                            frameBorder="0"
-                            scrolling="no"
-                            className="absolute inset-0"
-                            title={`Map of ${location.name}`}
-                        />
+                        {location.mapQuery && (
+                            <iframe
+                                key={location._id}
+                                width="100%"
+                                height="100%"
+                                src={`https://maps.google.com/maps?q=${location.mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                                frameBorder="0"
+                                scrolling="no"
+                                className="absolute inset-0"
+                                title={`Map of ${location.name}`}
+                            />
+                        )}
                     </div>
                 </div>
             </div>
@@ -197,17 +126,38 @@ function LocationsSection() {
     );
 }
 
-export default function ContactPageContent() {
+const components: PortableTextComponents = {
+    block: {
+        h2: ({ children }) => (
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{children}</h2>
+        ),
+        normal: ({ children }) => (
+            <p className="text-xl font-medium max-w-3xl mb-8">{children}</p>
+        ),
+    },
+};
+
+export default function ContactPageContent({ page, employees, locations }: ContactPageContentProps) {
+    const heroImage = getPageImageUrl(page);
+
+    // Filter employees by department
+    const corporate = employees.filter(e => e.department === 'corporate');
+    const operations = employees.filter(e => e.department === 'operations');
+    const itOps = employees.filter(e => e.department === 'it_ops');
+    const businessDev = employees.filter(e => e.department === 'business_dev');
+    const healthSafety = employees.filter(e => e.department === 'health_safety');
+    const finance = employees.filter(e => e.department === 'finance');
+
     return (
         <>
             <Header />
             <main>
                 {/* Hero Section using PageHeroBanner */}
                 <PageHeroBanner
-                    backgroundImage="/images/contact/hero-banner.webp"
-                    backgroundAlt="Summit Drilling Team"
-                    ribbonText="Contact"
-                    title="We're here to help. Let's connect."
+                    backgroundImage={heroImage}
+                    backgroundAlt={page.title}
+                    ribbonText={page.ribbonText}
+                    title={page.title}
                 />
 
                 {/* Keep In Touch Section */}
@@ -227,10 +177,8 @@ export default function ContactPageContent() {
                         }}
                     />
                     <div className="container mx-auto px-4 lg:px-8 relative z-10">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Keep In Touch</h2>
-                        <p className="text-xl font-medium max-w-3xl mb-8">
-                            A lot is happening at Summit, follow us on social media, contact one of our experts below, or complete the form so we can learn more about your needs.
-                        </p>
+                        {page.content && <PortableText value={page.content} components={components} />}
+
                         <div className="flex gap-4">
                             {/* Social Icons */}
                             <a href="https://www.linkedin.com/company/summit-drilling/" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn" className="bg-[#377d7e] p-3 rounded-sm hover:bg-[#2a5e5f] transition-colors text-white">
@@ -254,85 +202,97 @@ export default function ContactPageContent() {
                     <div className="container mx-auto px-4 lg:px-8 space-y-20">
 
                         {/* Corporate Leadership */}
-                        <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">Corporate Leadership</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
-                                {CORPORATE.map((employee, i) => (
-                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                        <EmployeeCard employee={employee} />
-                                    </div>
-                                ))}
+                        {corporate.length > 0 && (
+                            <div>
+                                <h3 className="text-3xl font-bold mb-10 text-center">Corporate Leadership</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+                                    {corporate.map((employee) => (
+                                        <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                            <EmployeeCard employee={employee} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Operations */}
-                        <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {OPERATIONS.map((employee, i) => (
-                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                        <EmployeeCard employee={employee} />
-                                    </div>
-                                ))}
+                        {operations.length > 0 && (
+                            <div>
+                                <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {operations.map((employee) => (
+                                        <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                            <EmployeeCard employee={employee} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* IT Ops */}
-                        <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">IT Operations</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {IT_OPS.map((employee, i) => (
-                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                        <EmployeeCard employee={employee} />
-                                    </div>
-                                ))}
+                        {itOps.length > 0 && (
+                            <div>
+                                <h3 className="text-3xl font-bold mb-10 text-center">IT Operations</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {itOps.map((employee) => (
+                                        <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                            <EmployeeCard employee={employee} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Business Development */}
-                        <div>
-                            <h3 className="text-3xl font-bold mb-10 text-center">Business Development</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {BUSINESS_DEVELOPMENT.map((employee, i) => (
-                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                        <EmployeeCard employee={employee} />
-                                    </div>
-                                ))}
+                        {businessDev.length > 0 && (
+                            <div>
+                                <h3 className="text-3xl font-bold mb-10 text-center">Business Development</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {businessDev.map((employee) => (
+                                        <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                            <EmployeeCard employee={employee} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Support Departments */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                             {/* Health & Safety */}
-                            <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Health & Safety</h3>
-                                <div className="space-y-4">
-                                    {HEALTH_SAFETY.map((employee, i) => (
-                                        <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                            <EmployeeCard employee={employee} />
-                                        </div>
-                                    ))}
+                            {healthSafety.length > 0 && (
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Health & Safety</h3>
+                                    <div className="space-y-4">
+                                        {healthSafety.map((employee) => (
+                                            <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                                <EmployeeCard employee={employee} />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
                             {/* Finance */}
-                            <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Finance & Administration</h3>
-                                <div className="space-y-4">
-                                    {FINANCE.map((employee, i) => (
-                                        <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                            <EmployeeCard employee={employee} />
-                                        </div>
-                                    ))}
+                            {finance.length > 0 && (
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Finance & Administration</h3>
+                                    <div className="space-y-4">
+                                        {finance.map((employee) => (
+                                            <div key={employee._id} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                                <EmployeeCard employee={employee} />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
 
                     </div>
                 </section>
 
                 {/* Locations Section - Tabbed Layout */}
-                <LocationsSection />
+                <LocationsSection locations={locations} />
             </main>
             <Footer />
         </>

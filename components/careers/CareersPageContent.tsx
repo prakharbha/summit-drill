@@ -6,8 +6,28 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
+import { SanityPage, getPageImageUrl } from "@/lib/sanity-queries";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-export default function CareersPageContent() {
+interface CareersPageContentProps {
+    page: SanityPage;
+}
+
+const components: PortableTextComponents = {
+    block: {
+        h2: ({ children }) => (
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1A365D] italic mb-2">{children}</h2>
+        ),
+        h3: ({ children }) => (
+            <h3 className="text-xl md:text-2xl font-bold text-[#1A365D] mb-8 italic">{children}</h3>
+        ),
+        normal: ({ children }) => (
+            <p className="mb-6">{children}</p>
+        ),
+    },
+};
+
+export default function CareersPageContent({ page }: CareersPageContentProps) {
     const positionsList = [
         "Early Career Apprentice Field Positions",
         "Drilling Positions",
@@ -25,6 +45,8 @@ export default function CareersPageContent() {
         }
     };
 
+    const heroImage = getPageImageUrl(page);
+
     return (
         <>
             <Header />
@@ -32,37 +54,24 @@ export default function CareersPageContent() {
 
                 {/* HERO SECTION - Standard Component */}
                 <PageHeroBanner
-                    backgroundImage="/images/careers/hero.webp"
-                    backgroundAlt="Summit Drilling Team"
-                    ribbonText="Careers"
-                    title="You Matter Here"
-                    description="We enthusiastically welcome new talent to the Summit team and treat all, new members and long-standing contributors, with respect."
-                    dividerColor="#a4c5c5"
+                    backgroundImage={heroImage}
+                    backgroundAlt={page.title}
+                    ribbonText={page.ribbonText}
+                    title={page.title}
+                    description={page.heroDescription}
+                    dividerColor={page.dividerColor}
                 />
 
-                {/* LIGHT GREEN SECTION - Culture */}
+                {/* LIGHT GREEN SECTION - Culture (Dynamic Content) */}
                 <section className="bg-[#a4c5c5] py-16 -mt-1 relative z-0">
                     {/* -mt-1 to fix sub-pixel gap from hero clip */}
                     <div className="container mx-auto px-4 lg:px-8">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#1A365D] italic mb-2">
-                                A Culture of Service. What we promise:
-                            </h2>
-                            <h3 className="text-xl md:text-2xl font-bold text-[#1A365D] mb-8 italic">
-                                We listen with patience and empathy.
-                            </h3>
-
-                            <div className="space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
-                                <p>
-                                    Our goal is to be responsive and to follow up in a timely manner to your questions with the answers you need. From understanding details about our comprehensive benefits, to building your career direction, we are here to support you.
-                                </p>
-                                <p>
-                                    We invite open discussion to establish a full understanding of your goals, needs or situations. We will be accessible for you and provide an open door to revisit conversations to ensure a mutual understanding and a positive path forward.
-                                </p>
-                                <p className="font-bold text-2xl">
-                                    At Summit, you are our customer
-                                </p>
-                            </div>
+                            {page.content && (
+                                <div className="space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
+                                    <PortableText value={page.content} components={components} />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>

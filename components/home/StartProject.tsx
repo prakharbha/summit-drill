@@ -1,18 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { SanityHomePage } from "@/lib/sanity-queries";
+import { urlFor } from "@/lib/sanity";
 
-const StartProject = () => {
+interface StartProjectProps {
+  data?: SanityHomePage['startProject'];
+}
+
+const StartProject = ({ data }: StartProjectProps) => {
+  const bgImage = data?.image?.asset?._ref ? urlFor(data.image).url() : null;
+
   return (
     <section
       className="relative bg-[#913c20] text-white overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-24 bg-no-repeat"
       style={{
-        backgroundImage: 'url(/images/start-bg.webp)',
+        backgroundImage: bgImage ? `url(${bgImage})` : 'none',
         backgroundPosition: 'right center',
         backgroundSize: 'auto 100%',
         backgroundBlendMode: 'multiply'
@@ -27,26 +34,30 @@ const StartProject = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <SectionHeading variant="white">
-              Start-a-Project 24/7
-            </SectionHeading>
+            {data?.title && (
+              <SectionHeading variant="white">
+                {data.title}
+              </SectionHeading>
+            )}
 
-            <h3 className="text-xl md:text-2xl font-bold text-white/90">
-              Get a fast, accurate and competitive proposal.
-            </h3>
-
-            <p className="text-xl text-white/80 leading-relaxed font-medium !mt-0">
-              Tap into our veteran project managers. Experience increased efficiency through our broad services platform. Leverage our Maine to Florida reach to cover your hard to get to project sites. Use our simple online form to easily upload your scope of work.
-            </p>
+            {data?.description && (
+              <p className="text-xl text-white/80 leading-relaxed font-medium !mt-0 whitespace-pre-wrap">
+                {data.description}
+              </p>
+            )}
 
             <div className="pt-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[#1a365d] hover:bg-[#132845] text-white px-8 py-6 text-lg font-bold italic"
-              >
-                <Link href="/resources/start-a-project">We're eager to serve you &gt;&gt;</Link>
-              </Button>
+              {data?.ctaLink && data?.ctaText && (
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[#1a365d] hover:bg-[#132845] text-white px-8 py-6 text-lg font-bold italic"
+                >
+                  <Link href={data.ctaLink}>
+                    {data.ctaText}
+                  </Link>
+                </Button>
+              )}
             </div>
           </motion.div>
 
