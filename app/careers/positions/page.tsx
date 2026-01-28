@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import Link from "next/link";
+import CareersSidebar from "@/components/careers/CareersSidebar";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata = getPageMetadata("/careers/positions");
@@ -34,8 +35,9 @@ export default function PositionsPage() {
                 {/* Main Content Section */}
                 <section className="bg-[#a4c5c5] py-16 -mt-1">
                     <div className="container mx-auto px-4 lg:px-8">
-                        <div className="max-w-4xl">
-                            <div className="space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            {/* Main Content */}
+                            <div className="lg:col-span-2 space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
                                 <p>
                                     Whether you're in the field or in the office, you'll find approachable leaders, open communication, and colleagues who are eager to share knowledge and lend a hand.
                                 </p>
@@ -72,6 +74,11 @@ export default function PositionsPage() {
                                 <p className="font-bold text-xl pt-4">
                                     Have questions? Reach out to our Vice President of Human Resources, Philip Valensi at <span className="text-[#913c20]">800-242-6648</span> or email your resume to <a href="mailto:Employment@SummitDrilling.com" className="text-[#913c20] underline hover:text-[#1A365D]">Employment@SummitDrilling.com</a>
                                 </p>
+                            </div>
+
+                            {/* Sidebar */}
+                            <div className="lg:col-span-1">
+                                <CareersSidebar currentPage="positions" />
                             </div>
                         </div>
                     </div>

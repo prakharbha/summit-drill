@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import Link from "next/link";
+import CareersSidebar from "@/components/careers/CareersSidebar";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata = getPageMetadata("/careers/your-career");
@@ -24,8 +25,9 @@ export default function YourCareerPage() {
                 {/* Main Content Section */}
                 <section className="bg-[#a4c5c5] py-16 -mt-1">
                     <div className="container mx-auto px-4 lg:px-8">
-                        <div className="max-w-4xl">
-                            <div className="space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            {/* Main Content */}
+                            <div className="lg:col-span-2 space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
                                 <p>
                                     Summit always welcomes the best and brightest and we are committed in training and developing the next wave of Summit team members. We welcome talented individuals who are just starting out to people with some work experience from related fields, such as engineering, construction, manufacturing, auto mechanics, farming, as well as military veterans re-entering the workforce.
                                 </p>
@@ -43,6 +45,11 @@ export default function YourCareerPage() {
                                         Learn more about our current open positions &gt;&gt;
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Sidebar */}
+                            <div className="lg:col-span-1">
+                                <CareersSidebar currentPage="your-career" />
                             </div>
                         </div>
                     </div>

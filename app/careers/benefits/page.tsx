@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { PageHeroBanner } from "@/components/ui/PageHeroBanner";
 import Link from "next/link";
+import CareersSidebar from "@/components/careers/CareersSidebar";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata = getPageMetadata("/careers/benefits");
@@ -24,8 +25,9 @@ export default function BenefitsPage() {
                 {/* Main Content Section */}
                 <section className="bg-[#a4c5c5] py-16 -mt-1">
                     <div className="container mx-auto px-4 lg:px-8">
-                        <div className="max-w-4xl">
-                            <div className="space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            {/* Main Content */}
+                            <div className="lg:col-span-2 space-y-6 text-lg text-[#1A365D] leading-relaxed font-medium">
                                 <p>
                                     At Summit, people are more than their job titles, they're valued members of a close-knit team that looks out for one another. New team members quickly discover a culture built on respect, collaboration, and genuine support. That's why so many of us reach anniversary milestones.
                                 </p>
@@ -43,6 +45,11 @@ export default function BenefitsPage() {
                                         Learn more about our current open positions &gt;&gt;
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Sidebar */}
+                            <div className="lg:col-span-1">
+                                <CareersSidebar currentPage="benefits" />
                             </div>
                         </div>
                     </div>
