@@ -1601,32 +1601,22 @@ export default function DeckPage() {
                 </div >
 
                 {/* Page 19: Thank You */}
-                < div className="page" style={{ background: '#fff', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ position: 'absolute', top: 0, right: 0, width: '55%', height: '38%', background: 'linear-gradient(135deg, transparent 40%, rgba(29,29,31,0.88) 100%)', pointerEvents: 'none', zIndex: 1 }}></div>
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, #f5f5f7 0%, #eef0f3 100%)', zIndex: 0 }}></div>
+                < div className="page" style={{ background: 'rgb(164, 197, 197)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px' }}>
+                    <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
 
-                    <div style={{ position: 'relative', zIndex: 2, width: '78%', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 24px 70px rgba(0,0,0,0.18)', marginTop: '60px' }}>
-                        <img src="/images/deck2-thank-you-new.jpg" alt="Summit Equipment on Field" style={{ width: '100%', display: 'block' }} />
-                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '6px', background: 'linear-gradient(90deg, var(--summit-red), var(--summit-blue))' }}></div>
+                    {/* Centered Image with Rounded Corners */}
+                    <div style={{ width: '100%', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', marginBottom: '40px' }}>
+                        <img src="/images/deck2-thank-you-new.jpg" alt="Summit Team" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
 
-                    <div style={{ position: 'relative', zIndex: 2, marginTop: '48px', textAlign: 'left', width: '78%' }}>
-                        <div style={{ marginBottom: '10px', background: 'rgba(29,29,31,0.85)', padding: '14px 18px', borderRadius: '10px', display: 'inline-block' }}>
-                            <img src="/images/summit-logo-update.webp" alt="Summit Drilling" style={{ height: '55px', width: 'auto' }} />
-                        </div>
-                        <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '52px', color: 'rgb(166, 80, 39)', letterSpacing: '-1.5px', lineHeight: 1, marginBottom: '14px' }}>Thank You</h1>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            <div style={{ width: '72px', height: '6px', background: 'rgb(166, 80, 39)', borderRadius: '4px' }}></div>
-                            <div style={{ width: '24px', height: '6px', background: 'var(--medium-gray)', borderRadius: '4px', opacity: 0.5 }}></div>
-                            <div style={{ width: '12px', height: '6px', background: 'var(--medium-gray)', borderRadius: '4px', opacity: 0.3 }}></div>
-                        </div>
-                    </div>
+                    {/* Centered Thank You Text */}
+                    <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '64px', color: 'rgb(166, 80, 39)', letterSpacing: '-1px', lineHeight: 1, textAlign: 'center', textTransform: 'none' }}>
+                        Thank You
+                    </h1>
 
-                    {/* Decorative Lines */}
-                    <div style={{ position: 'absolute', bottom: '60px', right: '60px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '15px', zIndex: 2 }}>
-                        <div style={{ width: '120px', height: '3px', background: 'rgb(166, 80, 39)' }}></div>
-                        <div style={{ width: '80px', height: '3px', background: 'var(--medium-gray)', opacity: 0.6 }}></div>
-                        <div style={{ width: '160px', height: '3px', background: 'var(--summit-blue)', opacity: 0.8 }}></div>
+                    <div className="page-footer">
+                        <span className="footer-logo"><img src="/images/summit-logo-scrolled.webp" alt="Summit" /></span>
+                        <span>Thank You / 19</span>
                     </div>
                 </div>
             </div>
