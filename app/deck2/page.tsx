@@ -552,7 +552,7 @@ export default function DeckPage() {
             <div className="deck-container">
                 {/* Page 1: Cover */}
                 <div className="page" style={{ padding: 0, position: 'relative', overflow: 'hidden' }}>
-                    <img src="/images/deck-cover.jpg" alt="Summit Drilling - An Exceptional Experience" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <img src="/images/deck-cover.jpg" alt="Summit Drilling - An Exceptional Experience" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
 
                 {/* Page 2: Table of Contents */}
@@ -1005,7 +1005,7 @@ export default function DeckPage() {
                             </div>
                         </div>
                         <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.12)', height: '195px' }}>
-                            <img src="/images/geophysics/utility-locating-banner.webp" alt="Geophysics" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/geophysics/utility-locating-banner.webp" alt="Geophysics" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
@@ -1029,7 +1029,7 @@ export default function DeckPage() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                         {/* TPI */}
                         <div style={{ display: 'flex', flexDirection: 'column', borderRadius: '16px', overflow: 'hidden', background: 'rgba(0,48,135,0.03)', border: '1px solid rgba(0,48,135,0.10)', boxShadow: '0 4px 18px rgba(0,0,0,0.06)' }}>
-                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/remediation/injection.webp" alt="TPI Environmental" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/remediation/injection.webp" alt="TPI Environmental" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div style={{ padding: '16px 18px 18px' }}>
                                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px', color: 'var(--dark-gray)', marginBottom: '5px' }}>TPI Environmental <span style={{ color: '#000000', fontWeight: 400, fontSize: '13.5px' }}>(NJ)</span></h3>
                                 <div style={{ width: '42px', height: '3px', background: 'linear-gradient(90deg, var(--summit-blue), var(--summit-red))', borderRadius: '3px', marginBottom: '7px' }}></div>
@@ -1038,7 +1038,7 @@ export default function DeckPage() {
                         </div>
                         {/* SET */}
                         <div style={{ display: 'flex', flexDirection: 'column', borderRadius: '16px', overflow: 'hidden', background: 'rgba(200,16,46,0.03)', border: '1px solid rgba(200,16,46,0.10)', boxShadow: '0 4px 18px rgba(0,0,0,0.06)' }}>
-                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/remediation/in-situ.webp" alt="Subsurface Env Tech" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/remediation/in-situ.webp" alt="Subsurface Env Tech" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div style={{ padding: '16px 18px 18px' }}>
                                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px', color: 'var(--dark-gray)', marginBottom: '5px' }}>Subsurface Env. Technologies <span style={{ color: '#000000', fontWeight: 400, fontSize: '13.5px' }}>(PA)</span></h3>
                                 <div style={{ width: '42px', height: '3px', background: 'linear-gradient(90deg, var(--summit-blue), var(--summit-red))', borderRadius: '3px', marginBottom: '7px' }}></div>
@@ -1047,7 +1047,7 @@ export default function DeckPage() {
                         </div>
                         {/* Hill */}
                         <div style={{ display: 'flex', flexDirection: 'column', borderRadius: '16px', overflow: 'hidden', background: 'rgba(0,48,135,0.03)', border: '1px solid rgba(0,48,135,0.10)', boxShadow: '0 4px 18px rgba(0,0,0,0.06)' }}>
-                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/drilling/direct-push.webp" alt="Hill Environmental" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/drilling/direct-push.webp" alt="Hill Environmental" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div style={{ padding: '16px 18px 18px' }}>
                                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px', color: 'var(--dark-gray)', marginBottom: '5px' }}>Hill Environmental Group <span style={{ color: '#000000', fontWeight: 400, fontSize: '13.5px' }}>(NY)</span></h3>
                                 <div style={{ width: '42px', height: '3px', background: 'linear-gradient(90deg, var(--summit-blue), var(--summit-red))', borderRadius: '3px', marginBottom: '7px' }}></div>
@@ -1056,7 +1056,7 @@ export default function DeckPage() {
                         </div>
                         {/* SAEDACCO */}
                         <div style={{ display: 'flex', flexDirection: 'column', borderRadius: '16px', overflow: 'hidden', background: 'rgba(200,16,46,0.03)', border: '1px solid rgba(200,16,46,0.10)', boxShadow: '0 4px 18px rgba(0,0,0,0.06)' }}>
-                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/projects/linden-banner.webp" alt="SAEDACCO" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ height: '140px', overflow: 'hidden' }}><img src="/images/projects/linden-banner.webp" alt="SAEDACCO" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div style={{ padding: '16px 18px 18px' }}>
                                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '14px', color: 'var(--dark-gray)', marginBottom: '5px' }}>SAEDACCO <span style={{ color: '#000000', fontWeight: 400, fontSize: '13.5px' }}>(SC)</span></h3>
                                 <div style={{ width: '42px', height: '3px', background: 'linear-gradient(90deg, var(--summit-blue), var(--summit-red))', borderRadius: '3px', marginBottom: '7px' }}></div>
@@ -1104,7 +1104,7 @@ export default function DeckPage() {
                             </div>
                         </div>
                         <div style={{ borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)', height: '100%', minHeight: '430px' }}>
-                            <img src="/images/drilling/hero-banner.webp" alt="Drilling Rig" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/drilling/hero-banner.webp" alt="Drilling Rig" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
@@ -1123,7 +1123,7 @@ export default function DeckPage() {
                 {/* Page 10: Site Characterization + Remediation */}
                 < div className="page" style={{ padding: '44px 56px 50px', background: 'rgb(164, 197, 197)', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', right: '56px', top: '44px', width: '250px', height: 'calc(100% - 140px)', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)' }}>
-                        <img src="/images/remediation/hero-banner.webp" alt="Worker" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/images/remediation/hero-banner.webp" alt="Worker" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
 
                     <div style={{ maxWidth: 'calc(100% - 275px)' }}>
@@ -1179,7 +1179,7 @@ export default function DeckPage() {
                     </div>
 
                     <div style={{ flex: 1, minHeight: '310px', overflow: 'hidden', position: 'relative' }}>
-                        <img src="/images/drilling/hero-banner.webp" alt="Drill Site" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                        <img src="/images/drilling/hero-banner.webp" alt="Drill Site" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '55px', background: 'linear-gradient(to bottom, transparent, rgba(0,48,135,0.7))' }}></div>
                     </div>
 
@@ -1203,14 +1203,14 @@ export default function DeckPage() {
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
                         <div style={{ display: 'grid', gridTemplateColumns: '155px 1fr', gap: '18px', alignItems: 'center', padding: '14px', borderRadius: '16px', background: 'rgba(0,48,135,0.04)', border: '1px solid rgba(0,48,135,0.08)' }}>
-                            <div style={{ borderRadius: '12px', overflow: 'hidden', height: '105px' }}><img src="/images/careers/hero.webp" alt="Employees" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ borderRadius: '12px', overflow: 'hidden', height: '105px' }}><img src="/images/careers/hero.webp" alt="Employees" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div>
                                 <h4 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '17px', color: 'var(--dark-gray)', marginBottom: '4px' }}>75+ Employees</h4>
                                 <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.5 }}>Field crews, drillers, injection specialists, safety personnel, and project managers.</p>
                             </div>
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: '155px 1fr', gap: '18px', alignItems: 'center', padding: '14px', borderRadius: '16px', background: 'rgba(200,16,46,0.03)', border: '1px solid rgba(200,16,46,0.08)' }}>
-                            <div style={{ borderRadius: '12px', overflow: 'hidden', height: '105px' }}><img src="/images/projects/charlotte-airport-banner.webp" alt="Multi-State" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                            <div style={{ borderRadius: '12px', overflow: 'hidden', height: '105px' }}><img src="/images/projects/charlotte-airport-banner.webp" alt="Multi-State" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                             <div>
                                 <h4 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '17px', color: 'var(--dark-gray)', marginBottom: '4px' }}>Multi-State Coverage</h4>
                                 <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.5 }}>Operating across the East Coast from Massachusetts to Georgia, and west through Tennessee and Alabama.</p>
@@ -1233,7 +1233,7 @@ export default function DeckPage() {
                             </div>
                         </div>
                         <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}>
-                            <img src="/images/drilling/sonic.webp" alt="Fleet" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/drilling/sonic.webp" alt="Fleet" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
@@ -1320,8 +1320,8 @@ export default function DeckPage() {
                         Training the Next Generation of Drill Leaders
                     </h3>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '14px' }}>
-                        <div style={{ borderRadius: '14px', overflow: 'hidden', height: '175px', boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}><img src="/images/careers/your-career.webp" alt="Training 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
-                        <div style={{ borderRadius: '14px', overflow: 'hidden', height: '175px', boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}><img src="/images/careers/hero.webp" alt="Training 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                        <div style={{ borderRadius: '14px', overflow: 'hidden', height: '175px', boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}><img src="/images/careers/your-career.webp" alt="Training 1" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                        <div style={{ borderRadius: '14px', overflow: 'hidden', height: '175px', boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}><img src="/images/careers/hero.webp" alt="Training 2" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                     </div>
 
                     <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.6, marginBottom: '10px' }}>Summit's <strong style={{ color: 'var(--summit-blue)' }}>Driller Apprentice Training Program</strong> is designed to build skilled professionals from the ground up. Apprentices receive hands-on mentoring, safety training, and equipment experience.</p>
@@ -1336,7 +1336,7 @@ export default function DeckPage() {
 
                     {/* Bottom image banner */}
                     <div style={{ marginTop: '20px', borderRadius: '14px', overflow: 'hidden', height: '140px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
-                        <img src="/images/careers/positions.webp" alt="Summit Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/images/careers/positions.webp" alt="Summit Team" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
                         <svg className="w-full h-auto block" viewBox="0 0 1280 60" width="100%" style={{ height: '30px' }} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -1382,10 +1382,10 @@ export default function DeckPage() {
                         {/* Right Column - Images */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '200px', boxShadow: '0 10px 40px rgba(0,0,0,0.12)' }}>
-                                <img src="/images/drilling/hero-banner.webp" alt="Drilling Operations" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src="/images/drilling/hero-banner.webp" alt="Drilling Operations" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
                             <div style={{ borderRadius: '16px', overflow: 'hidden', height: '200px', boxShadow: '0 10px 40px rgba(0,0,0,0.12)' }}>
-                                <img src="/images/health-safety-banner.webp" alt="Safety First" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src="/images/health-safety-banner.webp" alt="Safety First" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
                         </div>
                     </div>
@@ -1425,7 +1425,7 @@ export default function DeckPage() {
                         <div style={{ borderRadius: '18px', overflow: 'hidden', background: 'rgb(120, 168, 168)', boxShadow: '0 6px 28px rgba(0,0,0,0.15)' }}>
                             <div style={{ position: 'relative' }}>
                                 <div style={{ background: 'rgba(0,0,0,0.5)', borderRadius: '8px', padding: '5px 12px', display: 'inline-block', position: 'absolute', top: '12px', left: '12px', zIndex: 2 }}><span style={{ fontSize: '10px', color: '#fff', fontWeight: 700, letterSpacing: '0.5px' }}>CASE STUDY - 1</span></div>
-                                <div style={{ height: '150px', overflow: 'hidden' }}><img src="/images/projects/charlotte-airport-banner.webp" alt="Airport Facility" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                                <div style={{ height: '150px', overflow: 'hidden' }}><img src="/images/projects/charlotte-airport-banner.webp" alt="Airport Facility" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '50px', background: 'linear-gradient(transparent, rgba(0,0,0,0.6))' }}></div>
                                 <span style={{ position: 'absolute', bottom: '10px', left: '14px', fontSize: '10px', color: '#fff', fontWeight: 600 }}>Industrial Airport Facility – New Jersey</span>
                             </div>
@@ -1444,7 +1444,7 @@ export default function DeckPage() {
                         <div style={{ borderRadius: '18px', overflow: 'hidden', background: 'rgb(120, 168, 168)', boxShadow: '0 6px 28px rgba(0,0,0,0.15)' }}>
                             <div style={{ position: 'relative' }}>
                                 <div style={{ background: 'rgba(0,0,0,0.5)', borderRadius: '8px', padding: '5px 12px', display: 'inline-block', position: 'absolute', top: '12px', left: '12px', zIndex: 2 }}><span style={{ fontSize: '10px', color: '#fff', fontWeight: 700, letterSpacing: '0.5px' }}>CASE STUDY - 2</span></div>
-                                <div style={{ height: '150px', overflow: 'hidden' }}><img src="/images/drilling/air-rotary.webp" alt="Drilling Site" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                                <div style={{ height: '150px', overflow: 'hidden' }}><img src="/images/drilling/air-rotary.webp" alt="Drilling Site" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '50px', background: 'linear-gradient(transparent, rgba(0,0,0,0.6))' }}></div>
                                 <span style={{ position: 'absolute', bottom: '10px', left: '14px', fontSize: '10px', color: '#fff', fontWeight: 600 }}>Superfund Site – Hudson County, NJ</span>
                             </div>
@@ -1463,7 +1463,7 @@ export default function DeckPage() {
 
                     {/* Bottom banner image */}
                     <div style={{ marginTop: '20px', borderRadius: '14px', overflow: 'hidden', height: '280px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
-                        <img src="/images/drilling/sonic.webp" alt="Summit Fleet" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/images/drilling/sonic.webp" alt="Summit Fleet" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
                         <svg className="w-full h-auto block" viewBox="0 0 1280 60" width="100%" style={{ height: '30px' }} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -1485,7 +1485,7 @@ export default function DeckPage() {
                         <div style={{ borderRadius: '18px', overflow: 'hidden', background: 'rgb(120, 168, 168)', boxShadow: '0 6px 28px rgba(0,0,0,0.15)' }}>
                             <div style={{ position: 'relative' }}>
                                 <div style={{ background: 'rgba(0,0,0,0.5)', borderRadius: '8px', padding: '5px 12px', display: 'inline-block', position: 'absolute', top: '12px', left: '12px', zIndex: 2 }}><span style={{ fontSize: '10px', color: '#fff', fontWeight: 700, letterSpacing: '0.5px' }}>CASE STUDY - 3</span></div>
-                                <div style={{ height: '175px', overflow: 'hidden' }}><img src="/images/geophysics/utility-locating-banner.webp" alt="Brooklyn" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                                <div style={{ height: '175px', overflow: 'hidden' }}><img src="/images/geophysics/utility-locating-banner.webp" alt="Brooklyn" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '55px', background: 'linear-gradient(transparent, rgba(0,0,0,0.6))' }}></div>
                                 <span style={{ position: 'absolute', bottom: '10px', left: '14px', fontSize: '10px', color: '#fff', fontWeight: 600 }}>Brownfield Redevelopment – Brooklyn, NY</span>
                             </div>
@@ -1504,7 +1504,7 @@ export default function DeckPage() {
                         <div style={{ borderRadius: '18px', overflow: 'hidden', background: 'rgb(120, 168, 168)', boxShadow: '0 6px 28px rgba(0,0,0,0.15)' }}>
                             <div style={{ position: 'relative' }}>
                                 <div style={{ background: 'rgba(0,0,0,0.5)', borderRadius: '8px', padding: '5px 12px', display: 'inline-block', position: 'absolute', top: '12px', left: '12px', zIndex: 2 }}><span style={{ fontSize: '10px', color: '#fff', fontWeight: 700, letterSpacing: '0.5px' }}>CASE STUDY - 4</span></div>
-                                <div style={{ height: '175px', overflow: 'hidden' }}><img src="/images/projects/spartanburg-sonic-banner.webp" alt="Georgia" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                                <div style={{ height: '175px', overflow: 'hidden' }}><img src="/images/projects/spartanburg-sonic-banner.webp" alt="Georgia" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '55px', background: 'linear-gradient(transparent, rgba(0,0,0,0.6))' }}></div>
                                 <span style={{ position: 'absolute', bottom: '10px', left: '14px', fontSize: '10px', color: '#fff', fontWeight: 600 }}>Riverfront Industrial Site – Georgia</span>
                             </div>
@@ -1524,16 +1524,16 @@ export default function DeckPage() {
                     {/* Bottom image grid */}
                     <div style={{ marginTop: '22px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '150px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}>
-                            <img src="/images/projects/roselle-banner.webp" alt="Project 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/projects/roselle-banner.webp" alt="Project 1" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '150px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}>
-                            <img src="/images/projects/gastonia-banner.webp" alt="Project 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/projects/gastonia-banner.webp" alt="Project 2" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '150px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}>
-                            <img src="/images/projects/princeton-banner.webp" alt="Project 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/projects/princeton-banner.webp" alt="Project 3" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '150px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)' }}>
-                            <img src="/images/projects/linden-banner.webp" alt="Project 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/projects/linden-banner.webp" alt="Project 4" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
