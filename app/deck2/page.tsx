@@ -673,7 +673,7 @@ export default function DeckPage() {
                         </div>
 
                         <div className="side-image">
-                            <img src="/images/careers/your-career.webp" alt="Team Member" />
+                            <img src="/images/careers/your-career.webp" alt="Team Member" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
@@ -1561,7 +1561,7 @@ export default function DeckPage() {
                     <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.6, marginBottom: '22px' }}>Whether you need environmental drilling, complex injections, utility clearance, or geophysical services, we're ready to help you move forward with confidence.</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: '20px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.15)', marginBottom: '30px' }}>
-                        <div style={{ overflow: 'hidden' }}><img src="/images/contact/hero-banner.webp" alt="Contact Summit" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                        <div style={{ overflow: 'hidden' }}><img src="/images/contact/hero-banner.webp" alt="Contact Summit" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                         <div style={{ background: 'var(--dark-gray)', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '24px', color: '#fff', marginBottom: '20px' }}>Contact Summit Drilling</h3>
                             {[

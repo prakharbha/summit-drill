@@ -40,13 +40,56 @@ export default function PDFDownloadButton() {
                 // html2canvas captures scale 1:1 by default if windowWidth matches.
 
                 const canvas = await html2canvas(page, {
-                    scale: 2, // 2x scale for better resolution (Retina-like)
+                    scale: 3, // 3x scale for high resolution print quality
                     useCORS: true, // Allow loading cross-origin images
                     logging: false,
                     windowWidth: 1200, // Simulate desktop width for layout consistency
                     // Ensure the canvas capture size matches the 8.5x11 ratio
                     width: page.offsetWidth,
                     height: page.offsetHeight,
+                    onclone: (clonedDoc) => {
+                        // Fix for object-fit: cover images
+                        // html2canvas sometimes struggles with object-fit: cover on img tags.
+                        // We replace them with divs using background-image, which renders correctly.
+
+                        // Get original images to check computed styles
+                        const originalImages = Array.from(page.querySelectorAll('img'));
+                        // Get cloned images to modify
+                        const clonedImages = Array.from(clonedDoc.querySelectorAll('img'));
+
+                        originalImages.forEach((originalImg, index) => {
+                            const clonedImg = clonedImages[index];
+                            if (!clonedImg) return;
+
+                            const computedStyle = window.getComputedStyle(originalImg);
+
+                            if (computedStyle.objectFit === 'cover' || originalImg.classList.contains('pdf-object-fit-cover')) {
+                                // Create replacement div
+                                const div = clonedDoc.createElement('div');
+                                div.style.display = 'block';
+                                div.style.width = computedStyle.width;
+                                div.style.height = computedStyle.height;
+                                div.style.backgroundImage = `url(${originalImg.src})`;
+                                div.style.backgroundSize = 'cover';
+                                div.style.backgroundPosition = computedStyle.objectPosition || 'center';
+                                div.style.borderRadius = computedStyle.borderRadius;
+                                div.style.position = computedStyle.position;
+                                div.style.top = computedStyle.top;
+                                div.style.left = computedStyle.left;
+                                div.style.right = computedStyle.right;
+                                div.style.bottom = computedStyle.bottom;
+                                div.style.zIndex = computedStyle.zIndex;
+                                div.style.margin = computedStyle.margin;
+                                div.style.padding = computedStyle.padding;
+                                div.style.border = computedStyle.border;
+                                div.style.opacity = computedStyle.opacity;
+
+                                if (clonedImg.parentNode) {
+                                    clonedImg.parentNode.replaceChild(div, clonedImg);
+                                }
+                            }
+                        });
+                    }
                 });
 
                 // Add page to PDF (except for the first one which is created by default)
@@ -54,7 +97,7 @@ export default function PDFDownloadButton() {
                     doc.addPage([8.5, 11], 'portrait');
                 }
 
-                const imgData = canvas.toDataURL('image/jpeg', 0.95); // High quality JPEG
+                const imgData = canvas.toDataURL('image/jpeg', 1.0); // Max quality JPEG
 
                 // Calculate dimensions for PDF placement (fit full page)
                 doc.addImage(imgData, 'JPEG', 0, 0, 8.5, 11);
