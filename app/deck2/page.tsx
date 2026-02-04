@@ -552,7 +552,7 @@ export default function DeckPage() {
             <div className="deck-container">
                 {/* Page 1: Cover */}
                 <div className="page" style={{ padding: 0, position: 'relative', overflow: 'hidden' }}>
-                    <img src="/images/deck-cover.jpg" alt="Summit Drilling - An Exceptional Experience" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <img src="/images/deck2-cover-new.jpg" alt="Summit Drilling - An Exceptional Experience" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
 
                 {/* Page 2: Table of Contents */}
@@ -1103,8 +1103,8 @@ export default function DeckPage() {
                                 ))}
                             </div>
                         </div>
-                        <div style={{ borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)', height: '100%', minHeight: '430px' }}>
-                            <img src="/images/drilling/hero-banner.webp" alt="Drilling Rig" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div style={{ borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)', height: '100%', minHeight: '430px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <img src="/images/drilling/hero-banner.webp" alt="Drilling Rig" style={{ height: '100%', width: 'auto', maxWidth: 'none' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
@@ -1122,8 +1122,8 @@ export default function DeckPage() {
 
                 {/* Page 10: Site Characterization + Remediation */}
                 < div className="page" style={{ padding: '44px 56px 50px', background: 'rgb(164, 197, 197)', position: 'relative', overflow: 'hidden' }}>
-                    <div style={{ position: 'absolute', right: '56px', top: '44px', width: '250px', height: 'calc(100% - 140px)', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)' }}>
-                        <img src="/images/remediation/hero-banner.webp" alt="Worker" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ position: 'absolute', right: '56px', top: '44px', width: '250px', height: 'calc(100% - 140px)', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.14)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <img src="/images/remediation/hero-banner.webp" alt="Worker" style={{ height: '100%', width: 'auto', maxWidth: 'none' }} />
                     </div>
 
                     <div style={{ maxWidth: 'calc(100% - 275px)' }}>
@@ -1561,7 +1561,7 @@ export default function DeckPage() {
                     <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.6, marginBottom: '22px' }}>Whether you need environmental drilling, complex injections, utility clearance, or geophysical services, we're ready to help you move forward with confidence.</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: '20px', overflow: 'hidden', boxShadow: '0 16px 50px rgba(0,0,0,0.15)', marginBottom: '30px' }}>
-                        <div style={{ overflow: 'hidden' }}><img src="/images/contact/hero-banner.webp" alt="Contact Summit" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                        <div style={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src="/images/contact/hero-banner.webp" alt="Contact Summit" style={{ height: '500px', width: 'auto', maxWidth: 'none' }} /></div>
                         <div style={{ background: 'var(--dark-gray)', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '24px', color: '#fff', marginBottom: '20px' }}>Contact Summit Drilling</h3>
                             {[
@@ -1606,7 +1606,7 @@ export default function DeckPage() {
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, #f5f5f7 0%, #eef0f3 100%)', zIndex: 0 }}></div>
 
                     <div style={{ position: 'relative', zIndex: 2, width: '78%', borderRadius: '22px', overflow: 'hidden', boxShadow: '0 24px 70px rgba(0,0,0,0.18)', marginTop: '60px' }}>
-                        <img src="/images/drilling/hero-banner.webp" alt="Summit Equipment on Field" style={{ width: '100%', display: 'block' }} />
+                        <img src="/images/deck2-thank-you-new.jpg" alt="Summit Equipment on Field" style={{ width: '100%', display: 'block' }} />
                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '6px', background: 'linear-gradient(90deg, var(--summit-red), var(--summit-blue))' }}></div>
                     </div>
 
