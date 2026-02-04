@@ -1393,8 +1393,8 @@ export default function DeckPage() {
                     <p style={{ fontSize: '14px', color: '#000000', lineHeight: 1.6, marginTop: '20px', fontStyle: 'italic', textAlign: 'center' }}>We don't just show up to drill. We show up to help you protect the environment, support your data integrity, and bring your project across the finish line.</p>
 
                     {/* Bottom image banner */}
-                    <div style={{ marginTop: '20px', borderRadius: '14px', overflow: 'hidden', height: '140px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
-                        <img src="/images/careers/path.webp" alt="Summit Careers" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ marginTop: '20px', borderRadius: '14px', overflow: 'hidden', height: '354px', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }}>
+                        <img src="/images/careers/path.webp" alt="Summit Careers" style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
                         <svg className="w-full h-auto block" viewBox="0 0 1280 60" width="100%" style={{ height: '30px' }} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
