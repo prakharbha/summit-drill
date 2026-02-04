@@ -1605,19 +1605,11 @@ export default function DeckPage() {
                     <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
 
                     {/* Centered Image with Rounded Corners */}
-                    <div style={{ width: '100%', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', marginBottom: '40px' }}>
+                    <div style={{ width: '100%', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.15)' }}>
                         <img src="/images/deck2-thank-you-new.jpg" alt="Summit Team" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
 
-                    {/* Centered Thank You Text */}
-                    <h1 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: '64px', color: 'rgb(166, 80, 39)', letterSpacing: '-1px', lineHeight: 1, textAlign: 'center', textTransform: 'none' }}>
-                        Thank You
-                    </h1>
 
-                    <div className="page-footer">
-                        <span className="footer-logo"><img src="/images/summit-logo-scrolled.webp" alt="Summit" /></span>
-                        <span>Thank You / 19</span>
-                    </div>
                 </div>
             </div>
             <PDFDownloadButton />
