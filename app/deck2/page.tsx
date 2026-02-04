@@ -672,8 +672,8 @@ export default function DeckPage() {
                             </div>
                         </div>
 
-                        <div className="side-image">
-                            <img src="/images/careers/your-career.webp" alt="Team Member" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div className="side-image" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+                            <img src="/images/careers/your-career.webp" alt="Team Member" style={{ height: '100%', width: 'auto', maxWidth: 'none' }} />
                         </div>
                     </div>
                     <div className="absolute bottom-10 left-0 right-0 w-full z-30 translate-y-[1px]">
