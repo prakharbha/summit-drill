@@ -1601,15 +1601,8 @@ export default function DeckPage() {
                 </div >
 
                 {/* Page 19: Thank You */}
-                < div className="page" style={{ background: 'rgb(164, 197, 197)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px' }}>
-                    <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
-
-                    {/* Centered Image with Rounded Corners */}
-                    <div style={{ width: '100%', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.15)' }}>
-                        <img src="/images/deck2-thank-you-new.jpg" alt="Summit Team" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    </div>
-
-
+                < div className="page" style={{ padding: 0, position: 'relative', overflow: 'hidden' }}>
+                    <img src="/images/deck2-thank-you-new.jpg" alt="Thank You" className="pdf-object-fit-cover" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
             </div>
             <PDFDownloadButton />
