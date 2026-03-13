@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
+    minimumCacheTTL: 2592000,
     // Reduced sizes to minimize Vercel Image Transformations
     deviceSizes: [640, 1080, 1920],
     imageSizes: [128, 256, 384],

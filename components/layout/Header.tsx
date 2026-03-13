@@ -258,7 +258,6 @@ const Header = () => {
                   priority
                   style={{ objectFit: "contain" }}
                   sizes="176px"
-                  unoptimized
                 />
               </div>
             </Link>
@@ -383,7 +382,6 @@ const Header = () => {
                     fill
                     className="object-contain"
                     sizes="192px"
-                    unoptimized
                   />
                 </Link>
                 <button

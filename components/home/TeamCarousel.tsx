@@ -146,7 +146,6 @@ export default function TeamCarousel() {
                                                 fill
                                                 sizes="(max-width: 768px) 144px, 192px"
                                                 className="object-cover"
-                                                unoptimized
                                             />
                                         </div>
 

@@ -32,6 +32,7 @@ const Discovery = () => {
             loop
             muted
             playsInline
+            preload="metadata"
             className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Background video showing Summit Drilling operations"
             poster="/images/drilling-hero.webp"
@@ -70,6 +71,7 @@ const Discovery = () => {
                   fill
                   sizes="144px"
                   className="object-contain drop-shadow-md"
+                  priority
                 />
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Geophysics</h2>

@@ -99,7 +99,6 @@ export function PageHeroBanner({
                                     height={50}
                                     className="object-contain"
                                     style={{ maxWidth: '80%' }}
-                                    unoptimized
                                 />
                             </div>
                         )}
