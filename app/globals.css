@@ -112,8 +112,8 @@ body {
 .news-article-content h2,
 .news-article-content h3,
 .news-article-content h4 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.4rem !important;
   color: #0e2a47;
   font-weight: bold;
 }

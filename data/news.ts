@@ -10,6 +10,14 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": 27,
+    "title": "Summit Drilling Acquires Preferred Drilling Solutions, Expanding Environmental Services Across the Southeast and Gulf Coast",
+    "slug": "summit-drilling-acquires-preferred-drilling-solutions",
+    "date": "2026-04-29",
+    "excerpt": "Summit Drilling, LLC announced the acquisition of Preferred Drilling Solutions, Inc. (PDS), a premier environmental drilling and remediation contractor headquartered in Florida. This strategic acquisition significantly expands Summit's operational footprint across the Southeastern United States and Gulf Coast...",
+    "image": "/images/news/summit-pds-acquisition.webp"
+  },
+  {
     "id": 0,
     "title": "Introducing Summit's Drilling Field Supervisors",
     "slug": "introducing-summits-drilling-field-supervisors",

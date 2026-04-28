@@ -89,6 +89,7 @@ export default async function BlogPostPage({
     // Clean HTML content for display
     const content = fullPost?.fullContent || post.excerpt;
     const cleanContent = content
+        .replace(/\r/g, "")
         .replace(/<em>/g, "<em>")
         .replace(/<\/em>/g, "</em>")
         .replace(/<strong>/g, "<strong>")

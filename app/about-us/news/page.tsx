@@ -9,14 +9,15 @@ export const metadata = getPageMetadata("/about-us/news");
 
 export default function NewsPage() {
   const posts = getAllPosts();
+  const latestPost = posts[0];
 
   return (
     <>
       <Header />
       <main>
         <PageHeroBanner
-          backgroundImage="/images/news/drilling-field-supervisors-banner.jpg"
-          backgroundAlt="Summit Drilling News"
+          backgroundImage={latestPost.image}
+          backgroundAlt={latestPost.title}
           ribbonText="SUMMIT NEWS"
           title="Company News"
           description="Stay updated with the latest news, achievements, and milestones from Summit Drilling."
