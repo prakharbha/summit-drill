@@ -10,6 +10,14 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": 28,
+    "title": "Summit Drilling's Restructured Remediation Division Marks One Year of Strategic Growth and Expanded Capabilities",
+    "slug": "summit-remediation-division-one-year-anniversary",
+    "date": "2026-05-05",
+    "excerpt": "Summit Drilling, LLC proudly marks the one-year anniversary of its restructured Remediation Division, an evolution that has transformed a focused, regional capability into a comprehensive, multi-regional platform delivering integrated environmental solutions across the Eastern United States...",
+    "image": "/images/news/summit-remediation-anniversary.gif"
+  },
+  {
     "id": 27,
     "title": "Summit Drilling Acquires Preferred Drilling Solutions, Expanding Environmental Services Across the Southeast and Gulf Coast",
     "slug": "summit-drilling-acquires-preferred-drilling-solutions",
