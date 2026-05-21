@@ -35,6 +35,22 @@ const TEAM_MEMBERS = [
     { id: 26, name: "Nick King", title: "Project Manager", image: "/images/team/nick-king.webp" },
     { id: 27, name: "Christian Tormen", title: "Driller", image: "/images/team/christian-tormen-driller.webp" },
     { id: 28, name: "Matt Jelinski", title: "Driller", image: "/images/team/matt-jelinski-driller.webp" },
+    { id: 29, name: "Barrie Woodington", title: "Driller", image: "/images/team/barrie-woodington-driller.webp" },
+    { id: 30, name: "Bo Crandell", title: "Driller", image: "/images/team/bo-crandell-driller.webp" },
+    { id: 31, name: "Brad Frace", title: "Driller", image: "/images/team/brad-frace-driller.webp" },
+    { id: 32, name: "Chris Smolda", title: "Driller", image: "/images/team/chris-smolda-driller.webp" },
+    { id: 33, name: "Devan Albert", title: "Driller", image: "/images/team/devan-albert-driller.webp" },
+    { id: 34, name: "Dezmond Boyce", title: "Driller", image: "/images/team/dezmond-boyce-driller.webp" },
+    { id: 35, name: "Fred Kushner", title: "Driller", image: "/images/team/fred-kushner-driller.webp" },
+    { id: 36, name: "Jeremy Logel", title: "Driller", image: "/images/team/jeremy-logel-driller.webp" },
+    { id: 37, name: "Justin Verba", title: "Driller", image: "/images/team/justin-verba-driller.webp" },
+    { id: 38, name: "Kevin Barber", title: "Driller", image: "/images/team/kevin-barber-driller.webp" },
+    { id: 39, name: "Patrick Shine", title: "Driller", image: "/images/team/patrick-shine-driller.webp" },
+    { id: 40, name: "Robert Kimley", title: "Driller", image: "/images/team/robert-kimley-driller.webp" },
+    { id: 41, name: "Tom McNally", title: "Driller", image: "/images/team/tom-mcnally-driller.webp" },
+    { id: 42, name: "William Shinn", title: "Driller", image: "/images/team/william-shinn-driller.webp" },
+    { id: 43, name: "Connor Storms", title: "Remediation Foreman", image: "/images/team/connor-storms-remediation-foreman.webp" },
+    { id: 44, name: "Jon Emers", title: "Remediation Project Manager", image: "/images/team/jon-emers-remediation-pm.webp" },
 ];
 
 export default function TeamCarousel() {

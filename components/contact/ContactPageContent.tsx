@@ -53,8 +53,27 @@ const CORPORATE = [
     { name: "Pete Byer", title: "Head of Corporate Development", email: "PByer@summitdrilling.com", image: "/images/contact/pete-byer-head-of-corp-dev.webp" },
 ];
 
+const FIELD_TEAM = [
+    { name: "Connor Storms", title: "Remediation Foreman", email: "CStorms@summitdrilling.com", image: "/images/contact/connor-storms-remediation-foreman.webp" },
+    { name: "Jon Emers", title: "Remediation Project Manager", email: "JEmers@summitdrilling.com", image: "/images/contact/jon-emers-remediation-pm.webp" },
+    { name: "Barrie Woodington", title: "Driller", email: "BWoodington@summitdrilling.com", image: "/images/contact/barrie-woodington-driller.webp", smallEmail: true },
+    { name: "Bo Crandell", title: "Driller", email: "BCrandell@summitdrilling.com", image: "/images/contact/bo-crandell-driller.webp" },
+    { name: "Brad Frace", title: "Driller", email: "BFrace@summitdrilling.com", image: "/images/contact/brad-frace-driller.webp" },
+    { name: "Chris Smolda", title: "Driller", email: "CSmolda@summitdrilling.com", image: "/images/contact/chris-smolda-driller.webp" },
+    { name: "Devan Albert", title: "Driller", email: "DAlbert@summitdrilling.com", image: "/images/contact/devan-albert-driller.webp" },
+    { name: "Dezmond Boyce", title: "Driller", email: "DBoyce@summitdrilling.com", image: "/images/contact/dezmond-boyce-driller.webp" },
+    { name: "Fred Kushner", title: "Driller", email: "FKushner@summitdrilling.com", image: "/images/contact/fred-kushner-driller.webp" },
+    { name: "Jeremy Logel", title: "Driller", email: "JLogel@summitdrilling.com", image: "/images/contact/jeremy-logel-driller.webp" },
+    { name: "Justin Verba", title: "Driller", email: "JVerba@summitdrilling.com", image: "/images/contact/justin-verba-driller.webp" },
+    { name: "Kevin Barber", title: "Driller", email: "KBarber@summitdrilling.com", image: "/images/contact/kevin-barber-driller.webp" },
+    { name: "Patrick Shine", title: "Driller", email: "PShine@summitdrilling.com", image: "/images/contact/patrick-shine-driller.webp" },
+    { name: "Robert Kimley", title: "Driller", email: "RKimley@summitdrilling.com", image: "/images/contact/robert-kimley-driller.webp" },
+    { name: "Tom McNally", title: "Driller", email: "TMcNally@summitdrilling.com", image: "/images/contact/tom-mcnally-driller.webp" },
+    { name: "William Shinn", title: "Driller", email: "WShinn@summitdrilling.com", image: "/images/contact/william-shinn-driller.webp" },
+];
+
 // Reusable employee card component
-function EmployeeCard({ employee }: { employee: { name: string; title: string; email: string; image: string } }) {
+function EmployeeCard({ employee }: { employee: { name: string; title: string; email: string; image: string; smallEmail?: boolean } }) {
     return (
         <div className="flex items-center gap-6">
             <div className="w-[125px] h-[125px] rounded-full overflow-hidden bg-gray-300 flex-shrink-0 border-4 border-[#377d7e]">
@@ -63,7 +82,7 @@ function EmployeeCard({ employee }: { employee: { name: string; title: string; e
             <div className="min-w-0 flex-1">
                 <h4 className="text-xl font-bold">{employee.name}</h4>
                 <p className="font-medium">{employee.title}</p>
-                <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline text-sm">{employee.email}</a>
+                <a href={`mailto:${employee.email}`} className="block text-[#1A365D] hover:underline" style={{ fontSize: employee.smallEmail ? '0.8rem' : '0.875rem' }}>{employee.email}</a>
             </div>
         </div>
     );
@@ -257,7 +276,7 @@ export default function ContactPageContent() {
                         {/* Corporate Leadership */}
                         <div>
                             <h3 className="text-3xl font-bold mb-10 text-center">Corporate Leadership</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
                                 {CORPORATE.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
@@ -269,7 +288,7 @@ export default function ContactPageContent() {
                         {/* Operations */}
                         <div>
                             <h3 className="text-3xl font-bold mb-10 text-center">Operations Team</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
                                 {OPERATIONS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
@@ -281,7 +300,7 @@ export default function ContactPageContent() {
                         {/* IT Ops */}
                         <div>
                             <h3 className="text-3xl font-bold mb-10 text-center">IT Operations</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
                                 {IT_OPS.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
@@ -293,7 +312,7 @@ export default function ContactPageContent() {
                         {/* Business Development */}
                         <div>
                             <h3 className="text-3xl font-bold mb-10 text-center">Business Development</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
                                 {BUSINESS_DEVELOPMENT.map((employee, i) => (
                                     <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
                                         <EmployeeCard employee={employee} />
@@ -326,6 +345,18 @@ export default function ContactPageContent() {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Field Team */}
+                        <div>
+                            <h3 className="text-3xl font-bold mb-10 text-center">Field Team</h3>
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
+                                {FIELD_TEAM.map((employee, i) => (
+                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                        <EmployeeCard employee={employee} />
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
