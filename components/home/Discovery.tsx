@@ -76,7 +76,7 @@ const Discovery = () => {
               </div>
               <h2 className="text-4xl font-bold text-[#22A7F0] drop-shadow-md">Geophysics</h2>
               <p className="hidden md:block text-white text-lg font-medium leading-6 drop-shadow-sm mt-2">
-                <span className="text-[#73a5a5] font-bold">We've added x-ray vision to help you see underground.</span> Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
+                Our geophysicists leverage multiple technologies to bring infrastructure and contaminants into full view.
               </p>
               <GreenButton href="/services/geophysical-services" className="mt-4 mb-8">
                 Take a closer look &gt;&gt;
