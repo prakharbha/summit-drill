@@ -105,7 +105,6 @@ export default function DrillingTechniquesContent() {
                                 <ul className="space-y-4 text-[#1A365D] text-lg font-medium">
                                     {[
                                         "Over water barge drilling",
-                                        "Horizontal drilling",
                                         "Drilling & In-Situ injection",
                                         "Low clearance / Remote access",
                                         "Well decommissioning",

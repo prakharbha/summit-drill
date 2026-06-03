@@ -25,7 +25,6 @@ const serviceCategories = {
         "Air Rotary Drilling",
         "Auger Drilling",
         "Over Water/Barge Drilling",
-        "Horizontal Drilling",
         "Low Clearance Drilling",
         "Track Mounted Rigs",
     ],
