@@ -10,6 +10,14 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": 29,
+    "title": "Summit Drilling Welcomes Trent Kuster to the Business Development Team",
+    "slug": "summit-drilling-welcomes-trent-kuster",
+    "date": "2026-06-09",
+    "excerpt": "Please join us in welcoming Trent Kuster to Summit, where he will play an important role in supporting business development initiatives, customer engagement, and CRM optimization. Trent brings a unique combination of customer relationship management, data analysis, and customer support experience...",
+    "image": "/images/news/trent-kuster.webp"
+  },
+  {
     "id": 28,
     "title": "Summit Drilling's Restructured Remediation Division Marks One Year of Strategic Growth and Expanded Capabilities",
     "slug": "summit-remediation-division-one-year-anniversary",
