@@ -13,8 +13,8 @@ const FeaturedProject = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/home/featured-project-bg.webp"
-          alt="Featured Project Background"
+          src="/images/projects/charlotte-airport-banner.webp"
+          alt="Charlotte Douglas International Airport Bentonite Wall Project"
           fill
           className="object-cover"
           sizes="100vw"
@@ -56,7 +56,7 @@ const FeaturedProject = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-4 justify-center lg:items-end"
           >
-            <GreenButton href="/project-gallery/spartanburg-cap" className="py-6 text-lg w-full sm:w-auto">
+            <GreenButton href="/project-gallery/charlotte-airport" className="py-6 text-lg w-full sm:w-auto">
               Read more about this project &gt;&gt;
             </GreenButton>
             <Button

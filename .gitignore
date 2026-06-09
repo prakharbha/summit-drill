@@ -60,3 +60,6 @@ public/user_extracted_images/
 
 # Temporary headshot uploads
 new-headshots/
+
+# Backup files
+*.backup.tsx
