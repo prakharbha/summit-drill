@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout -b fix/scroll-flicker-image-loading)",
+      "Bash(git add next.config.ts app/globals.css components/layout/Footer.tsx components/layout/Header.tsx components/ui/PageHeroBanner.tsx components/home/TeamCarousel.tsx components/contact/ContactPageContent.tsx components/home/HealthSafety.tsx components/home/Discovery.tsx)",
+      "Bash(git commit -m \"fix: resolve scroll flicker and late image loading issues:*)",
+      "Bash(git push -u origin fix/scroll-flicker-image-loading)",
+      "Bash(git checkout master)",
+      "Bash(git merge fix/scroll-flicker-image-loading)",
+      "Bash(git push origin master)"
+    ]
+  }
+}
