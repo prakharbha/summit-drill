@@ -55,7 +55,10 @@ const CORPORATE = [
 
 const FIELD_TEAM = [
     { name: "Connor Storms", title: "Remediation Foreman", email: "CStorms@summitdrilling.com", image: "/images/contact/connor-storms-remediation-foreman.webp" },
-    { name: "Jon Emers", title: "Remediation Project Manager", email: "JEmers@summitdrilling.com", image: "/images/contact/jon-emers-remediation-pm.webp" },
+    { name: "Jonathan Emers", title: "Remediation Project Manager", email: "JEmers@summitdrilling.com", image: "/images/contact/jonathan-emers-remediation-project-manager.webp" },
+    { name: "Matthew Dyson", title: "Remediation Technician II", email: "MDyson@summitdrilling.com", image: "/images/contact/matthew-dyson-remediation-technician-ii.webp" },
+    { name: "Michael Bess Sr.", title: "Remediation Site Manager", email: "MBess@summitdrilling.com", image: "/images/contact/michael-bess-sr-remediation-site-manager.webp" },
+    { name: "Randall Barney", title: "Remediation Supervisor", email: "RBarney@summitdrilling.com", image: "/images/contact/randall-barney-remediation-supervisor.webp" },
     { name: "Barrie Woodington", title: "Driller", email: "BWoodington@summitdrilling.com", image: "/images/contact/barrie-woodington-driller.webp", smallEmail: true },
     { name: "Bo Crandell", title: "Driller", email: "BCrandell@summitdrilling.com", image: "/images/contact/bo-crandell-driller.webp" },
     { name: "Brad Frace", title: "Driller", email: "BFrace@summitdrilling.com", image: "/images/contact/brad-frace-driller.webp" },

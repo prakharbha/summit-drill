@@ -50,7 +50,10 @@ const TEAM_MEMBERS = [
     { id: 41, name: "Tom McNally", title: "Driller", image: "/images/team/tom-mcnally-driller.webp" },
     { id: 42, name: "William Shinn", title: "Driller", image: "/images/team/william-shinn-driller.webp" },
     { id: 43, name: "Connor Storms", title: "Remediation Foreman", image: "/images/team/connor-storms-remediation-foreman.webp" },
-    { id: 44, name: "Jon Emers", title: "Remediation Project Manager", image: "/images/team/jon-emers-remediation-pm.webp" },
+    { id: 44, name: "Jonathan Emers", title: "Remediation Project Manager", image: "/images/team/jonathan-emers-remediation-project-manager.webp" },
+    { id: 45, name: "Matthew Dyson", title: "Remediation Technician II", image: "/images/team/matthew-dyson-remediation-technician-ii.webp" },
+    { id: 46, name: "Michael Bess Sr.", title: "Remediation Site Manager", image: "/images/team/michael-bess-sr-remediation-site-manager.webp" },
+    { id: 47, name: "Randall Barney", title: "Remediation Supervisor", image: "/images/team/randall-barney-remediation-supervisor.webp" },
 ];
 
 export default function TeamCarousel() {
