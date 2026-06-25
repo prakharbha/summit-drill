@@ -22,6 +22,7 @@ const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-work-sans",
   display: "swap",
+  preload: false,
 });
 
 const SITE_URL = "https://summitdrilling.com";
