@@ -10,6 +10,14 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": 30,
+    "title": "Summit Drilling Welcomes Phil Hilton as Inside Sales Representative",
+    "slug": "summit-drilling-welcomes-phil-hilton",
+    "date": "2026-07-21",
+    "excerpt": "Summit Drilling is pleased to welcome Phil Hilton as the company's newest Inside Sales Representative, further strengthening Summit's commitment to providing responsive customer support and technical expertise. Phil brings more than four decades of experience spanning industrial operations, technical applications, national account management, and customer relationship development...",
+    "image": "/images/news/phil-hilton-welcome.webp"
+  },
+  {
     "id": 29,
     "title": "Summit Drilling Welcomes Trent Kuster to the Business Development Team",
     "slug": "summit-drilling-welcomes-trent-kuster",
