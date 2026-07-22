@@ -13,8 +13,12 @@ const OPERATIONS = [
     { name: "Joel Bernstein", title: "Senior Vice President", email: "JBernstein@summitdrilling.com", image: "/images/contact/joel-bernstein-sr-vp.webp" },
     { name: "Joan Baer", title: "Regional Vice President of Operations – Greater Philadelphia", email: "JBaer@summitdrilling.com", image: "/images/contact/joan-baer.webp" },
     { name: "Jack Byer", title: "Regional Vice President of Operations – Southeast", email: "JByer@summitdrilling.com", image: "/images/contact/jack-byer-vice-president-operations.webp" },
+    { name: "Chad Campbell", title: "VP of Operations, Florida", email: "CCampbell@summitdrilling.com", image: "/images/contact/chad-campbell-vp-operations-florida.webp" },
     { name: "Joseph C. Negro", title: "Vice President of Remediation", email: "JNegro@summitdrilling.com", image: "/images/contact/joey-negro-vp-remediation.webp" },
+    { name: "Jon Berntsen", title: "Remediation Operations Manager", email: "JBerntsen@summitdrilling.com", image: "/images/contact/jon-berntsen-remediation-operations-manager.webp" },
+    { name: "Brian Lombardo", title: "Regional Operations Manager", email: "BLombardo@summitdrilling.com", image: "/images/contact/brian-lombardo-regional-operations-manager.webp" },
     { name: "John Passananti", title: "Compliance Officer", email: "JPassananti@summitdrilling.com", image: "/images/contact/john-passananti-compliance-officer.png" },
+    { name: "Greg Campbell", title: "Permitting and Compliance Manager", email: "GCampbell@summitdrilling.com", image: "/images/contact/greg-campbell-permitting-compliance-manager.webp" },
     { name: "Juan Diaz", title: "Fleet Director", email: "JDiaz@summitdrilling.com", image: "/images/contact/juan-diaz-fleet-director.png" },
     { name: "Ed Ruger", title: "Project Manager", email: "ERuger@summitdrilling.com", image: "/images/contact/ed-ruger-project-manager.webp" },
     { name: "Yecenia DeTorrice", title: "Project Manager", email: "YDetorrice@summitdrilling.com", image: "/images/contact/yecenia-detorrice-pm.webp" },
@@ -26,12 +30,8 @@ const OPERATIONS = [
     { name: "Zach Thompson", title: "Project Manager", email: "ZThompson@summitdrilling.com", image: "/images/contact/zach-thompson.webp" },
     { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
     { name: "Dustin Lutz", title: "General Manager", email: "DLutz@summitdrilling.com", image: "/images/contact/dustin-lutz.webp" },
-    { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
-    { name: "Brian Lombardo", title: "Regional Operations Manager", email: "BLombardo@summitdrilling.com", image: "/images/contact/brian-lombardo-regional-operations-manager.webp" },
-    { name: "Chad Campbell", title: "VP of Operations, Florida", email: "CCampbell@summitdrilling.com", image: "/images/contact/chad-campbell-vp-operations-florida.webp" },
-    { name: "Greg Campbell", title: "Permitting and Compliance Manager", email: "GCampbell@summitdrilling.com", image: "/images/contact/greg-campbell-permitting-compliance-manager.webp" },
-    { name: "Jon Berntsen", title: "Remediation Operations Manager", email: "JBerntsen@summitdrilling.com", image: "/images/contact/jon-berntsen-remediation-operations-manager.webp" },
     { name: "Shannon Martin", title: "Business Manager, Florida", email: "SMartin@summitdrilling.com", image: "/images/contact/shannon-martin-business-manager-florida.webp" },
+    { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
 ];
 
 const IT_OPS = [
