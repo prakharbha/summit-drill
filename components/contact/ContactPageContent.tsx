@@ -27,6 +27,11 @@ const OPERATIONS = [
     { name: "Brian Moriarty", title: "Project Manager", email: "BMoriarty@summitdrilling.com", image: "/images/contact/brian-moriarty.webp" },
     { name: "Dustin Lutz", title: "General Manager", email: "DLutz@summitdrilling.com", image: "/images/contact/dustin-lutz.webp" },
     { name: "Nick King", title: "Project Manager", email: "NKing@summitdrilling.com", image: "/images/contact/nick-king.webp" },
+    { name: "Brian Lombardo", title: "Regional Operations Manager", email: "BLombardo@summitdrilling.com", image: "/images/contact/brian-lombardo-regional-operations-manager.webp" },
+    { name: "Chad Campbell", title: "VP of Operations, Florida", email: "CCampbell@summitdrilling.com", image: "/images/contact/chad-campbell-vp-operations-florida.webp" },
+    { name: "Greg Campbell", title: "Permitting and Compliance Manager", email: "GCampbell@summitdrilling.com", image: "/images/contact/greg-campbell-permitting-compliance-manager.webp" },
+    { name: "Jon Berntsen", title: "Remediation Operations Manager", email: "JBerntsen@summitdrilling.com", image: "/images/contact/jon-berntsen-remediation-operations-manager.webp" },
+    { name: "Shannon Martin", title: "Business Manager, Florida", email: "SMartin@summitdrilling.com", image: "/images/contact/shannon-martin-business-manager-florida.webp" },
 ];
 
 const IT_OPS = [
