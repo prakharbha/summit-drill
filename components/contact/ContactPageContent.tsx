@@ -50,6 +50,7 @@ const BUSINESS_DEVELOPMENT = [
 
 const FINANCE = [
     { name: "Abigail George", title: "Accounts Receivable Manager", email: "AGeorge@summitdrilling.com", image: "/images/contact/abigail-george-accounts-receiveable-manager.webp" },
+    { name: "Ron Bartoszek", title: "AR/Collections Manager", email: "RBartoszek@summitdrilling.com", image: "/images/contact/ron-bartoszek-ar-collections-manager.webp" },
 ];
 
 const CORPORATE = [

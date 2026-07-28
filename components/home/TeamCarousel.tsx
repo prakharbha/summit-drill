@@ -27,6 +27,7 @@ const TEAM_MEMBERS = [
     { id: 18, name: "Yecenia DeTorrice", title: "Project Manager", image: "/images/team/yecenia-detorrice-pm.webp" },
     { id: 19, name: "Tiffany Patterson", title: "Office Manager – Easton, PA", image: "/images/team/tiffany-patterson-office-manager.png" },
     { id: 20, name: "Abigail George", title: "Accounts Receivable Manager", image: "/images/team/abigail-george-accounts-receiveable-manager.webp" },
+    { id: 53, name: "Ron Bartoszek", title: "AR/Collections Manager", image: "/images/team/ron-bartoszek-ar-collections-manager.webp" },
     { id: 21, name: "Mike Wilson", title: "Drilling Field Supervisor", image: "/images/team/mike-wilson-drilling-field-supervisor.webp" },
     { id: 22, name: "Richy Lemire", title: "Drilling Field Supervisor", image: "/images/team/richey-lamire-drilling-field-supervisor.webp" },
     { id: 23, name: "Zach Thompson", title: "Project Manager", image: "/images/team/zach-thompson-drilling-field-super.webp" },
