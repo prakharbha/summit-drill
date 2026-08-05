@@ -341,7 +341,7 @@ export default function ContactPageContent() {
                         </div>
 
                         {/* Support Departments */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                             {/* Health & Safety */}
                             <div>
                                 <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Health & Safety</h3>
@@ -365,17 +365,17 @@ export default function ContactPageContent() {
                                     ))}
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Human Resources */}
-                            <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Human Resources</h3>
-                                <div className="space-y-4">
-                                    {HUMAN_RESOURCES.map((employee, i) => (
-                                        <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
-                                            <EmployeeCard employee={employee} />
-                                        </div>
-                                    ))}
-                                </div>
+                        {/* Human Resources */}
+                        <div>
+                            <h3 className="text-3xl font-bold mb-10 text-center">Human Resources</h3>
+                            <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))' }}>
+                                {HUMAN_RESOURCES.map((employee, i) => (
+                                    <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
+                                        <EmployeeCard employee={employee} />
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
