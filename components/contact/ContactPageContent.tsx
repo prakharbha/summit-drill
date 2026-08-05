@@ -53,6 +53,8 @@ const FINANCE = [
 ];
 
 const HUMAN_RESOURCES = [
+    { name: "Philip Valensi", title: "Managing Director of Human Resources", email: "PValensi@summitdrilling.com" },
+    { name: "Michelle Betro", title: "Benefits and Payroll Manager", email: "MBetro@summitdrilling.com" },
     { name: "Abigail George", title: "HR Operations Analyst", email: "AGeorge@summitdrilling.com", image: "/images/contact/abigail-george-accounts-receiveable-manager.webp" },
 ];
 
@@ -85,11 +87,16 @@ const FIELD_TEAM = [
 ];
 
 // Reusable employee card component
-function EmployeeCard({ employee }: { employee: { name: string; title: string; email: string; image: string; smallEmail?: boolean } }) {
+function EmployeeCard({ employee }: { employee: { name: string; title: string; email: string; image?: string; smallEmail?: boolean } }) {
+    const initials = employee.name.split(" ").map((part) => part[0]).join("").slice(0, 2);
     return (
         <div className="flex items-center gap-6">
             <div className="w-[125px] h-[125px] rounded-full overflow-hidden bg-gray-300 flex-shrink-0 border-4 border-[#377d7e]">
-                <Image src={employee.image} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" sizes="125px" />
+                {employee.image ? (
+                    <Image src={employee.image} alt={employee.name} width={125} height={125} className="object-cover w-full h-full" sizes="125px" />
+                ) : (
+                    <div aria-hidden="true" className="w-full h-full flex items-center justify-center bg-[#377d7e] text-white text-3xl font-bold">{initials}</div>
+                )}
             </div>
             <div className="min-w-0 flex-1">
                 <h4 className="text-xl font-bold">{employee.name}</h4>
