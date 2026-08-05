@@ -356,7 +356,7 @@ export default function ContactPageContent() {
 
                             {/* Finance */}
                             <div>
-                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Finance & Administration</h3>
+                                <h3 className="text-2xl font-bold mb-8 text-center md:text-left">Finance</h3>
                                 <div className="space-y-4">
                                     {FINANCE.map((employee, i) => (
                                         <div key={i} className="py-4 px-6 rounded-xl transition-colors hover:bg-white/20">
