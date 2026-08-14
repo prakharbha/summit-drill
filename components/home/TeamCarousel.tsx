@@ -23,7 +23,6 @@ const TEAM_MEMBERS = [
     { id: 14, name: "Kaylyn Johnson", title: "Digital Transformation Manager", image: "/images/team/kaylyn-johnson.webp" },
     { id: 15, name: "Ed Ruger", title: "Project Manager", image: "/images/team/ed-ruger-project-manager.webp" },
     { id: 16, name: "Jessica Parell", title: "Project Manager", image: "/images/team/jessica-parell-pm.webp" },
-    { id: 17, name: "Katie West", title: "Project Manager", image: "/images/team/katie-west-proj-mangr.webp" },
     { id: 18, name: "Yecenia DeTorrice", title: "Project Manager", image: "/images/team/yecenia-detorrice-pm.webp" },
     { id: 19, name: "Tiffany Patterson", title: "Office Manager – Easton, PA", image: "/images/team/tiffany-patterson-office-manager.png" },
     { id: 20, name: "Abigail George", title: "HR Operations Analyst", image: "/images/team/abigail-george-accounts-receiveable-manager.webp" },
