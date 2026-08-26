@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -49,7 +49,15 @@ const Discovery = () => {
   // (and mismatch on hydration).
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
 
+  // Guard against picking twice. React Strict Mode (on by default in `next
+  // dev`) runs effects twice on mount, and a second pick would swap the src
+  // mid-load — the browser aborts the first video and restarts, which looks
+  // like the hero stuttering. Refs survive the Strict Mode double-invoke.
+  const hasPicked = useRef(false);
+
   useEffect(() => {
+    if (hasPicked.current) return;
+    hasPicked.current = true;
     setVideoSrc(pickHeroVideo());
   }, []);
 
@@ -77,7 +85,7 @@ const Discovery = () => {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Background video showing Summit Drilling operations"
             poster="/images/drilling-hero.webp"
