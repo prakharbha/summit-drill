@@ -13,6 +13,7 @@ import { HeroBannerOverlay } from "@/components/ui/HeroBannerOverlay";
 const HERO_VIDEOS = [
   "/videos/hero-background.mp4",
   "/videos/hero-background-2.mp4",
+  "/videos/hero-background-3.mp4",
 ];
 
 const LAST_VIDEO_KEY = "summit:lastHeroVideo";
