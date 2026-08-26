@@ -63,3 +63,7 @@ new-headshots/
 
 # Backup files
 *.backup.tsx
+
+# Raw video masters (multi-hundred-MB source files).
+# Optimized web versions live in public/videos/ and ARE tracked.
+/Web Video Project *.mp4

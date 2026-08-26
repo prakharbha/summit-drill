@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,7 +8,50 @@ import { Button } from "@/components/ui/button";
 import { GreenButton } from "@/components/ui/GreenButton";
 import { HeroBannerOverlay } from "@/components/ui/HeroBannerOverlay";
 
+// Hero background videos, picked at random on each visit.
+// To add another, drop the optimized .mp4 in /public/videos and list it here.
+const HERO_VIDEOS = [
+  "/videos/hero-background.mp4",
+  "/videos/hero-background-2.mp4",
+];
+
+const LAST_VIDEO_KEY = "summit:lastHeroVideo";
+
+// Pick a random video, avoiding an immediate repeat of the previous visit's pick
+// so the hero actually looks different when someone comes back.
+const pickHeroVideo = () => {
+  let previous: string | null = null;
+  try {
+    previous = window.localStorage.getItem(LAST_VIDEO_KEY);
+  } catch {
+    // Private browsing / storage disabled — fall back to plain random.
+  }
+
+  const candidates =
+    HERO_VIDEOS.length > 1
+      ? HERO_VIDEOS.filter((src) => src !== previous)
+      : HERO_VIDEOS;
+  const choice = candidates[Math.floor(Math.random() * candidates.length)];
+
+  try {
+    window.localStorage.setItem(LAST_VIDEO_KEY, choice);
+  } catch {
+    // Ignore — storage is a nicety, not a requirement.
+  }
+
+  return choice;
+};
+
 const Discovery = () => {
+  // Chosen after mount, never during render: the home page is cached as static
+  // HTML, so a server-side pick would freeze one video into the cached page
+  // (and mismatch on hydration).
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    setVideoSrc(pickHeroVideo());
+  }, []);
+
   return (
     <div className="relative">
       {/* HERO SECTION */}
@@ -36,8 +80,8 @@ const Discovery = () => {
             className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Background video showing Summit Drilling operations"
             poster="/images/drilling-hero.webp"
+            src={videoSrc}
           >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
             <track
               kind="captions"
               srcLang="en"
