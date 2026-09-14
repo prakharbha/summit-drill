@@ -16,6 +16,7 @@ const OPERATIONS = [
     { name: "Chad Campbell", title: "VP of Operations, Florida", email: "CCampbell@summitdrilling.com", image: "/images/contact/chad-campbell-vp-operations-florida.webp" },
     { name: "Joseph C. Negro", title: "Vice President of Remediation", email: "JNegro@summitdrilling.com", image: "/images/contact/joey-negro-vp-remediation.webp" },
     { name: "Jon Berntsen", title: "Remediation Operations Manager", email: "JBerntsen@summitdrilling.com", image: "/images/contact/jon-berntsen-remediation-operations-manager.webp" },
+    { name: "James Henderson", title: "Remediation Manager", email: "JHenderson@summitdrilling.com", image: "/images/contact/james-henderson-remediation-manager.webp" },
     { name: "Brian Lombardo", title: "Regional Operations Manager", email: "BLombardo@summitdrilling.com", image: "/images/contact/brian-lombardo-regional-operations-manager.webp" },
     { name: "John Passananti", title: "Compliance Officer", email: "JPassananti@summitdrilling.com", image: "/images/contact/john-passananti-compliance-officer.png" },
     { name: "Greg Campbell", title: "Permitting and Compliance Manager", email: "GCampbell@summitdrilling.com", image: "/images/contact/greg-campbell-permitting-compliance-manager.webp" },
@@ -65,6 +66,7 @@ const CORPORATE = [
 
 const FIELD_TEAM = [
     { name: "Connor Storms", title: "Remediation Foreman", email: "CStorms@summitdrilling.com", image: "/images/contact/connor-storms-remediation-foreman.webp" },
+    { name: "Morvin Coronado Chacon", title: "Site Lead Equipment Operator", email: "MCoronado@summitdrilling.com", image: "/images/contact/morvin-coronado-chacon-site-lead-equipment-operator.webp" },
     { name: "Jonathan Emers", title: "Remediation Project Manager", email: "JEmers@summitdrilling.com", image: "/images/contact/jonathan-emers-remediation-project-manager.webp" },
     { name: "Matthew Dyson", title: "Remediation Technician II", email: "MDyson@summitdrilling.com", image: "/images/contact/matthew-dyson-remediation-technician-ii.webp" },
     { name: "Michael Bess Sr.", title: "Remediation Site Manager", email: "MBess@summitdrilling.com", image: "/images/contact/michael-bess-sr-remediation-site-manager.webp" },
